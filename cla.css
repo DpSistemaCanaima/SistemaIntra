@@ -1,0 +1,61 @@
+
+
+
+body{
+	background: white;
+	font-family: 'Oswald', sans-serif;
+}
+
+.classy {
+	width: 800px;
+	height: 650px;
+	margin: 50px auto;
+	padding: 20px;
+	background: rgb(255, 255, 255);
+	overflow: auto;
+	/*font-family: 'Open Sans';*/
+	border-radius: 4px;
+}
+
+
+
+.classy hr {
+	background: #e4dcd0;
+	width: 1000%;
+	
+	border: none;
+	margin: 20px 0;
+	border-radius: 50px;
+}
+
+/* Scroll Personalizado */
+
+.classy::-webkit-scrollbar {
+	width: 6px;
+}
+
+.classy::-webkit-scrollbar-thumb {
+	background: #797979;
+	border-radius: 50px;
+	width: 7px;
+}
+
+
+.classy hr,p{
+	margin-top: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 300px;
+	
+	
+}
+
+
+.imagen{
+	width: 350px;
+	margin-right: 1000px;
+	border-radius: 50px;
+	
+}
+
