@@ -617,7 +617,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                               $conn = mysqli_connect($servername, $username, $password, $database);
                               $query = "SELECT IDDATOS, NAME FROM user_datos WHERE IDROLS='3'";
                               $res = mysqli_query($conn, $query);
-                              while ($row = mysqli_fetch_assoc($res)) {
+                              
 
                              
                              ?>
@@ -627,22 +627,22 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <header>
                         <form action="enviar.php" method="POST">
 
-                            
-                           
-                                <input type="hidden" value="<?php echo $row['IDDATOS']; ?>">
-                                <input type="text" value="<?php echo $row['NAME']; ?>" >
-                             
-
+                           	<select name = "report">
+					<?php
+						foreach ($res as $row):
+					?>
+					<option value="<?php echo $row['IDDATOS'];?>"><?php echo $row['NAME'];?></option>
+					<?php  
+                              			endforeach;
+					?>				
+				</select>                              
+				 
                             <button type="submit" class="btn btn-primary">Enviar</button>
 
                         </form>
                     </header>
 
-       <?php  
-
-                              }
-
-      ?>
+      
 
                     <div class="container mt-3">
                         <div class="row">

@@ -4,7 +4,7 @@
      include('conexion.php');
 
      
-      $IDDATOS=$_POST['IDDATOS'];
+      $IDDATOS=$_POST['report'];
 
       
       mysqli_query($conn, "INSERT INTO `report` (`ID_NAME`) VALUES (null,'$IDDATOS')");
