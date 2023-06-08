@@ -626,10 +626,12 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <br>
                     <header>
                         <form action="enviar.php" method="POST">
-                            <h2>Tecnicos disponibles</h2>
-                             <select name="IDDATOS">
-                                <option value="<?php echo $row['IDDATOS']?>"><?php echo $row['NAME']; ?></option>
-                             </select>
+
+                            
+                           
+                                <input type="hidden" value="<?php echo $row['IDDATOS']; ?>">
+                                <input type="text" value="<?php echo $row['NAME']; ?>" >
+                             
 
                             <button type="submit" class="btn btn-primary">Enviar</button>
 
