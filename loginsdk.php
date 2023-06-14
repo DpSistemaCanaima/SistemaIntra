@@ -322,6 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $_SESSION['Users'][3] = $office;
                                     $_SESSION['Users'][4] = $id;
                                     $_SESSION['Users'][5] = $apellido;
+                                    $_SESSION['Users'][6]=0;
                                         header("location:dashboard.php");
                                 
                                 }else{
