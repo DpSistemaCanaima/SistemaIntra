@@ -737,7 +737,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             </li>
                             <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
-                            <li><a href="casos.php">Encargar casos de soporte</a></li>
+                            <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
 
                             <li><a href="dashboard.php?logout=on">
                                     <font color="red">cerrar sesion

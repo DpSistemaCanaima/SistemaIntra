@@ -238,6 +238,8 @@
   .u-section-1 .u-shape-1 {
     margin-top: 136px;
     margin-bottom: 0;
+    position: relative;
+    top: 0px;
   }
 }
 

@@ -1,5 +1,18 @@
 <?php 
 session_start();
+if(isset($_GET['All']) && $_GET['All']=="true"){
+  $_SESSION['Users'][6]=0; 
+}
+ elseif(isset($_GET['Active']) && $_GET['Active']=="true"){
+  $_SESSION['Users'][6]=1;
+  }else if(isset($_GET['close']) && $_GET['close']=="true"){
+    $_SESSION['Users'][6]=2;
+  }else if(isset($_GET['hold']) && $_GET['hold']=="true"){
+    $_SESSION['Users'][6]=3;
+  }else if($_SESSION['Users'][6]==1 or $_SESSION['Users'][6]==2 or $_SESSION['Users'][6]==3){
+  }else{
+    $_SESSION['Users'][6]=0;  
+  }
 ?><script type="text/javascript">function disableIE() {
   if (document.all) {
       return false;
@@ -40,6 +53,7 @@ function limitar_cadena($cadena, $limite, $sufijo){
       header("location:index.php");
     }else{
 		if ($_SESSION['Users'][1]== 3){
+      
         ?>
         <!DOCTYPE html> 
 <html style="font-size: 16px;" lang="es"><head>
@@ -60,7 +74,7 @@ function limitar_cadena($cadena, $limite, $sufijo){
   </head>
   <body class="u-body u-xl-mode" data-lang="es">
     <section class="u-clearfix u-valign-top-xs u-section-1" id="sec-bcdc">
-      <div class="u-expanded-width u-hidden-xs u-table u-table-responsive u-table-1">
+      <div class="u-expanded-width u-hidden-xs u-table u-table-responsive u-table-1" style:position: static;>
         <table class="u-table-entity">
           <colgroup>
             <col width="11.5%">
@@ -90,8 +104,8 @@ function limitar_cadena($cadena, $limite, $sufijo){
           </colgroup>
           <tbody class="u-align-center u-custom-font u-font-oswald u-table-body u-table-body-2">
           
-      <?php if(isset($_GET['Active']) && $_GET['Active']=="true"){//activo
-             $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=1");
+      <?php if($_SESSION['Users'][6]==1){//activo
+             $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=1 ORDER BY report.ID_REPORT desc");
              $a=mysqli_num_rows($select_stmt);
              if ($a==0){
               echo "<br><center>Sin reporte en este momento</center>";
@@ -117,8 +131,9 @@ function limitar_cadena($cadena, $limite, $sufijo){
              <?php
           }
         }
-      }elseif(isset($_GET['close']) && $_GET['close']=="true"){
-          $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=2");
+      }elseif($_SESSION['Users'][6]==2){//Cerrado
+        
+          $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=2 ORDER BY report.FECHA_SOLUTION desc");
           $a=mysqli_num_rows($select_stmt);
           if ($a==0){
            echo "<br><center>Sin reporte en este momento</center>";
@@ -144,8 +159,8 @@ function limitar_cadena($cadena, $limite, $sufijo){
           <?php
        }
      }
-    }elseif(isset($_GET['hold']) && $_GET['hold']=="true"){
-      $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=3");
+    }elseif($_SESSION['Users'][6]==3){//en espera
+      $select_stmt=mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) where STATUS=3 ORDER BY report.ID_REPORT desc");
           $a=mysqli_num_rows($select_stmt);
           if ($a==0){
            echo "<br><center>Sin reporte en este momento</center>";
@@ -171,8 +186,8 @@ function limitar_cadena($cadena, $limite, $sufijo){
           <?php
           }
         }
-      } else {
-        $select_stmt = mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send)");
+      } elseif($_SESSION['Users'][6]==0) {
+        $select_stmt = mysqli_query($conn, "SELECT report.ID_REPORT,report.TITLE,user_datos.NAME, report.ID_NAME,report.DESCRIPTION, report.CREATION_DATE, report.STATUS FROM `report` INNER JOIN user_datos ON(user_datos.IDDATOS=report.User_send) ORDER BY report.ID_REPORT desc");
         $a = mysqli_num_rows($select_stmt);
         if ($a == 0) {
           echo "<br><center>Sin reporte en este momento</center>";
