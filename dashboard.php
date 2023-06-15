@@ -515,7 +515,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                         </li>
                         <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
-                        <li><a href="./Reporte">Reporte</a></li>
+                        <li><a href="reporte/index.php">Reporte</a></li>
                         <li><a href="dashboard.php?logout=on">
                                 <font color="red">cerrar sesion
                             </a></li>
