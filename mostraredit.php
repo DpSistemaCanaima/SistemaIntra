@@ -198,8 +198,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet prefetch'
-        href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
@@ -471,12 +471,16 @@
 						header('refresh:3; mostraredit.php?User=true');
 					}else{echo '';}?>
                     <form id="form" action="registrar.php" method="POST">
+
                         <input type="hidden" name="IDDATOS">
-                        <input type="text" id="name" name="name" placeholder=" Nombres" size="20">
-                        <input type="text" id="surname" name="surname" placeholder="Apellidos">
-                        <select name="" id="">
-                            <option value="v">V</option>
-                            <option value="">E</option>
+                       
+                        <input type="text" id="name" name="name" placeholder="Nombre" size="20">
+                       
+                        <input type="text" id="surname"  name="surname" placeholder="Apellido">
+                        
+                        <select name="nacionalidad" id="">
+                            <option value="venezolano">V</option>
+                            <option value="estrangero">E</option>
                         </select> <input type="text" id="cedula" name="cedula" placeholder="Cedula" size="20">
                         <select name="" id="">
                             <option value="">primaria</option>
@@ -500,7 +504,8 @@
                             <option value="1">Habilitado</option>
                             <option value="2">Deshabilitado</option>
                         </select>
-                        <select name="gender">
+                        <select name="gender" >
+                           
                             <option value=1>Hombre</option>
                             <option value=2>Mujer</option>
                             <option value=3>Otro</option>
@@ -508,7 +513,7 @@
 
                         <?php $result3 = mysqli_query($conn, "SELECT * FROM area");?>
                         <select name="assgned_area" class="selectpicker" data-show-subtext="true"
-                            data-live-search="true">
+                            data-live-search="true" >
                             <option value="<?php echo $mostrar['ASSIGNED_AREA']?>" selected="true">--Defecto--</option>
                             <?php while ($area = mysqli_fetch_array($result3)) {
 						?>
@@ -519,11 +524,16 @@
 
                         <h2>Tienes hijos </h2>
 
-                        Si<input name="intereses" type="radio" value="si" class="radi" />
-                        No<input name="intereses" type="radio" value="no" class="radi" />
+                       
+                     <input type="radio" name="gender" class="i-radio" value="si"> Si
+                     <input type="radio" name="gender" class="i-radio" value="no"> No<br>
+                     <br>
+                    <input type="number" name="numero" class="i-text" placeholder="Numero de hijos">
+                    <input type="text" name="nombreCarajito" class="i-text" placeholder="Nombre del ñiño">
+                    <input type="text" name="nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
 
                         <br>
-                        <br>
+                       
 
 
 
@@ -576,9 +586,9 @@
                             <h2>Menu</h2>
                         </header>
                         <ul>
-                            <li><a href="dashboard.php">noticias</a></li>
+                            <li><a href="noticias.php">noticias</a></li>
 
-
+                            <li><a href="dashboard.php">Subir publicacion</a></li>
                             <li>
                                 <span class="opener">solicitudes</span>
                                 <ul>

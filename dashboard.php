@@ -654,10 +654,14 @@ while ($row = mysqli_fetch_assoc($res)) {
                                             <p><?php echo $row['nombre']; ?>
                                             <p>
 
-
+                                                  
+                                                  
+                                                  
                                             <form action="elimin.php" method="pot">
                                                 <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
-                                                <input type="submit" value="elimimar" name="BtnElininar">
+
+                                                
+                                                <button class="sub">eliminar</button>
                                               
                                                        
                                             </form>
@@ -698,7 +702,8 @@ while ($row = mysqli_fetch_assoc($res)) {
                             <h3>Menu</h3>
                         </header>
                         <ul>
-                            <li><a href="dashboard.php">noticias</a></li>
+                        <li><a href="noticias.php">Noticias</a></li>
+                            <li><a href="dashboard.php">Subir publicacion</a></li>
 
 
                             <li>

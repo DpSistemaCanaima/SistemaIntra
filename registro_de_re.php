@@ -51,7 +51,7 @@
 					  <th scope="col">Correo</th>
 					  <th scope="col">Cargo</th>
 					  <th scope="col">Estado</th>
-					  <th scope="col">Area asignada</th>
+					  <th scope="col">direccion</th>
 					  <th scope="col">Opcion</th>
 					 
 					  
