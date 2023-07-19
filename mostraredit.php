@@ -45,15 +45,14 @@
                         <thead>
                             <tr>
 
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
+                                <th scope="col">Nombre y Apellido</th>
                                 <th scope="col">Cedula</th>
                                 <th scope="col">Usuario</th>
                                 <th scope="col">Genero</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Cargo</th>
                                 <th scope="col">Estatus</th>
-                                <th scope="col">Direccion</th>
+                                <th scope="col">Area</th>
                                 <th scope="col">Opcion</th>
 
 
@@ -72,8 +71,7 @@
 					
 					?>
                             <tr>
-                                <th><?php echo $mostrar ['NAME'] ?></th>
-                                <th><?php echo $mostrar ['SURNAME'] ?></th>
+                                <th><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></th>
                                 <th><?php echo $mostrar ['CEDULA'] ?></th>
                                 <th><?php echo $mostrar ['USER'] ?></th>
                                 <th><?php if($mostrar ['GENDER']==1){
@@ -529,9 +527,15 @@
                      <input type="radio" name="gender" class="i-radio" value="si"> Si
                      <input type="radio" name="gender" class="i-radio" value="no"> No<br>
                      <br>
+<<<<<<< HEAD
                     <input type="number" name="numero_de_hijos" class="i-text" placeholder="Numero de hijos">
                     <input type="text" name="nombre_y_apellido" class="i-text" placeholder="Nombre del ñiño">
                     <input type="date" name="fecha_de_nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
+=======
+                    <input type="number" name="numero" class="i-text" placeholder="Numero de hijos">
+                    <input type="text" name="nombreCarajito" class="i-text" placeholder="Nombre del ñiño">
+                    <input type="date" name="nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
+>>>>>>> 3077b33d158a20a848513292eaf2fbc7bbb6244b
 
                         <br>
                        
