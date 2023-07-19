@@ -1,9 +1,9 @@
 <?php
 
-$servername = "10.10.5.28";
+$servername = "localhost";
 $database = "bbs";
-$username = "intranet";
-$password = "123456";
+$username = "root";
+$password = "";
 
 
 $conn = mysqli_connect($servername, $username, $password, $database);

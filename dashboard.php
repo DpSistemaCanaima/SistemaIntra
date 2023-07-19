@@ -25,82 +25,66 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
 				header("location: dashboard.php");
 			}else{
 				?>
-<!DOCTYPE html>
-<!DOCTYPE HTML>
-<html>
+<DOPCTYPE html>
+    <html>
 
-<head>
-    <title>Industria Canaima</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="tabla.css" />
-    <link rel="stylesheet" href="style.css">
+    <head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="cla.css">
+        <title>Inicio</title>
+    </head>
 
-</head>
+    <body class="is-preload">
 
-<body class="is-preload">
+        <!-- Wrapper -->
+        <div id="wrapper">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
 
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
+                    <!-- Header -->
+                    <br>
+                    <br>
+                    <header>
+                        <img src="fondo.jpg" width="105%" height="260px">
+                    </header>
 
-                <!-- Header -->
+                         <br>
+                         <br>
+                         <br>
 
-                <header>
-                    <center><img src="fondo.jpg" width="100%" height="250px" /></center>
-                </header>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-12">
 
-
-
-                <table>
-
-                    <div class="table-wrapper">
-                        <table class="fl-table">
-                            <thead>
+                                <table class="table table-striped">
+                                <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
+                                    <th>Nombre y Apellido</th>
+                              
                                     <th>Cédula</th>
                                     <th>Solicitudes</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
-                            <?php
-
-       $sql_registe= mysqli_query($conn,"SELECT COUNT(*) as total_registro FROM `recursos`");
-       $result_resgister= mysqli_fetch_array($sql_registe);
-
-       $total_registro = $result_resgister['total_registro'];
+                                <?php
 
 
-       $por_pagina= 5;
 
-       if(empty($_GET['pagina'])){
-        $pagina = 1;
-       }else{
-         $pagina =$_GET['pagina'];
-       }
+                      $result =mysqli_query($conn,"SELECT * FROM recursos");
 
-     
-       $desde =($pagina-1)  *$por_pagina;
-       $total_paginas = ceil($total_registro / $por_pagina);
+                      while ($mostrar = mysqli_fetch_array($result)){
 
-
-$result =mysqli_query($conn,"SELECT id,nombre,apellido,cedula,solicitud FROM `recursos` ORDER BY nombre ASC,apellido,cedula,solicitud
-  LIMIT $desde,$por_pagina");
-while ($mostrar = mysqli_fetch_array($result)){
-
-    ?>
-                            <tbody>
-                                <tr>
-                                    <td><?php echo $mostrar['nombre'];?></td>
-                                    <td><?php echo $mostrar['apellido'];?></td>
+?>
+                                    <tbody>
+                                         
+                                    <tr>
+                                    <td><?php echo $mostrar['nombre'];?>  <?php echo $mostrar['apellido'];?></td>
+                                   
                                     <td><?php echo $mostrar['cedula']?></td>
                                     <td><?php echo $mostrar['solicitud']?></td>
                                     <td>
@@ -122,81 +106,105 @@ while ($mostrar = mysqli_fetch_array($result)){
                                 <?php 
 }
         ?>
-                            <tbody>
-                        </table>
-                        <div class="paginador">
-                            <ul>
-                                <?php
-            if ($pagina != 1) {
-            ?>
-                                <li><a href="?pagina=<?php echo 1; ?>">!<< /a>
-                                </li>
-                                <li><a href="?pagina=<?php echo $pagina-1; ?>">
-                                        <<< /a>
-                                </li>
-                                <?php                
-            }
-            for ($i=1; $i < $total_paginas; $i++) { 
-                if ($i == $pagina) {
-                    echo '<li class="pageselected">'.$i.'</li>';
-                }else {
-                    echo '<li><a href="?pagina='.$i.'">'.$i.'</a></li>';
-                }
-            }
+                                     
+                                    </tbody>
+                                </table>
 
-            if ($pagina != $total_paginas) {
-            ?>
-                                <li><a href="?pagina=<?php echo $pagina+1;?>">>></a></li>
-                                <li><a href="?pagina=<?php echo $total_paginas;?>">>!</a></li>
-                                <?php    
-            }
-            ?>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    <!-- Sidebar -->
-                    <header class="header">
-                        <div class="container">
-                            <div class="btn-menu">
-                                <label for="btn-menu">☰</label>
                             </div>
-
-                        </div>
-
-
-
-
-                    </header>
-                    <div class="capa"></div>
-                    <!--	--------------->
-                    <input type="checkbox" id="btn-menu">
-                    <div class="container-menu">
-                        <div class="cont-menu">
-
-                            <nav>
-                                <a href="registro_de_re.php">registro</a>
-                                <a href="solicitudes.php?Soporte">soporte tecnico</a>
-                                <a href="https://bdvenlinea.banvenez.com">banco de venezuela</a>
-                                <a href="https://www.patria.org.ve/">patria</a>
-                                <a href="https://calculadorapetro.bt.gob.ve/">calculadora petro</a>
-                                <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
-                                <a href="dashboard.php?logout=on">cerrar sesion</a>
-                            </nav>
-                            <label for="btn-menu">✖️</label>
                         </div>
                     </div>
-                    <!-- Scripts -->
-                    <script src="assets/js/jquery.min.js"></script>
-                    <script src="assets/js/browser.min.js"></script>
-                    <script src="assets/js/breakpoints.min.js"></script>
-                    <script src="assets/js/util.js"></script>
-                    <script src="assets/js/main.js"></script>
 
-</body>
 
-</html>
+
+
+                    <!-- Banner -->
+
+                    <!-- Section -->
+
+
+
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <div class="inner">
+
+                    <!-- Search -->
+
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>RRHH<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
+                            <h3>Menu</h3>
+                        </header>
+                        <ul>
+                            <li><a href="recurso_noti.php">Noticias</a></li>
+                            <li><a href="dashboard.php">ver solicitudes</a></li>
+
+
+                            <li>
+                                <span class="opener">solicitudes</span>
+                                <ul>
+                                    <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">web</span>
+                                <ul>
+                                    <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
+                                    </li>
+                                    <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
+                                    <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
+                                    <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
+                                            petro</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Biblioteca digital</span>
+                                <ul>
+
+                                    <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
+                                            canaima(.PDF)</a></li>
+                                    <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
+                                            canaima(.DOCX)</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="mostraredit.php">Gestor de usuario</a>
+                            </li>
+                            <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
+
+                           
+
+                            <li><a href="dashboard.php?logout=on">
+                                    <font color="red">cerrar sesion
+                                </a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Section -->
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+
+    </html>
 <?php }
 
 			}else{
@@ -236,11 +244,11 @@ while ($mostrar = mysqli_fetch_array($result)){
                 </header>
                 <br>
                 <div class="espacio-tabla">
-                <table class="table table-striped">
+                    <table class="table table-striped">
 
-<tbody>
+                        <tbody>
 
-    <?php
+                            <?php
 include('conexion.php');
 $conn = mysqli_connect($servername, $username, $password, $database);
 $query = "SELECT ID,nombre,tipo,contenido FROM imagen ORDER BY ID ASC, nombre,tipo,contenido";
@@ -248,27 +256,27 @@ $res = mysqli_query($conn, $query);
 while ($row = mysqli_fetch_assoc($res)) {
 ?>
 
-    <div class="classy">
+                            <div class="classy">
 
 
-        <hr>
+                                <hr>
 
 
-        <img class="imagen"
-            src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
+                                <img class="imagen"
+                                    src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
 
-        <p><?php echo $row['nombre']; ?>
-        <p>
+                                <p><?php echo $row['nombre']; ?>
+                                <p>
 
 
-        
 
-    </div>
-    <?php
+
+                            </div>
+                            <?php
 }
 ?>
-</tbody>
-</table>
+                        </tbody>
+                    </table>
                 </div>
 
 
@@ -654,16 +662,16 @@ while ($row = mysqli_fetch_assoc($res)) {
                                             <p><?php echo $row['nombre']; ?>
                                             <p>
 
-                                                  
-                                                  
-                                                  
+
+
+
                                             <form action="elimin.php" method="pot">
                                                 <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
 
-                                                
+
                                                 <button class="sub">eliminar</button>
-                                              
-                                                       
+
+
                                             </form>
 
                                         </div>
@@ -702,7 +710,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             <h3>Menu</h3>
                         </header>
                         <ul>
-                        <li><a href="noticias.php">Noticias</a></li>
+                            <li><a href="noticias.php">Noticias</a></li>
                             <li><a href="dashboard.php">Subir publicacion</a></li>
 
 

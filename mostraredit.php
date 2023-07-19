@@ -479,14 +479,15 @@
                         <input type="text" id="surname"  name="surname" placeholder="Apellido">
                         
                         <select name="nacionalidad" id="">
-                            <option value="venezolano">V</option>
-                            <option value="estrangero">E</option>
-                        </select> <input type="text" id="cedula" name="cedula" placeholder="Cedula" size="20">
-                        <select name="" id="">
-                            <option value="">primaria</option>
-                            <option value="">bachiller</option>
-                            <option value="">universitario</option>
-                            <option value="">otro</option>
+                            <option value="1">V</option>
+                            <option value="2">E</option>
+                        </select> 
+                        <input type="text" id="cedula" name="cedula" placeholder="Cedula" size="20">
+                        <select name="nivel" id="nivel">
+                            <option value="1">primaria</option>
+                            <option value="2">bachiller</option>
+                            <option value="3">universitario</option>
+                            <option value="4">otro</option>
                         </select>
                         <input type="text" namer="oficio" placeholder="Oficio ó Abilidad">
                         <input type="text" name="direccion" placeholder="Direccion Completa">
@@ -528,9 +529,9 @@
                      <input type="radio" name="gender" class="i-radio" value="si"> Si
                      <input type="radio" name="gender" class="i-radio" value="no"> No<br>
                      <br>
-                    <input type="number" name="numero" class="i-text" placeholder="Numero de hijos">
-                    <input type="text" name="nombreCarajito" class="i-text" placeholder="Nombre del ñiño">
-                    <input type="text" name="nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
+                    <input type="number" name="numero_de_hijos" class="i-text" placeholder="Numero de hijos">
+                    <input type="text" name="nombre_y_apellido" class="i-text" placeholder="Nombre del ñiño">
+                    <input type="date" name="fecha_de_nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
 
                         <br>
                        

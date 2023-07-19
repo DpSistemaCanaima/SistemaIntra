@@ -21,6 +21,12 @@ select{
     height: 50px;
  }
 
+ input[type="date"]{
+  width: 500px;
+  height: 50px;
+}
+
+
   
 
 /* oculto los elementos */

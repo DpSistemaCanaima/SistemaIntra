@@ -131,10 +131,11 @@
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 100%;
+    width: 70%;
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
+    float: right;
 }
 
 .fl-table td, .fl-table th {
@@ -144,7 +145,7 @@
 
 .fl-table td {
     border-right: 1px solid #f8f8f8;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .fl-table thead th {
@@ -228,6 +229,8 @@
     }
 }
 
+/* paginador*/
+
 .paginador ul{
     padding: 15px;
     list-style: none;
@@ -260,4 +263,14 @@ color: #fff;
 background: #428bca;
 border: 1px solid #428bca;
 
+}
+
+
+
+/*imajen*/
+
+.ima{
+  width: 70% ;
+  height: 200px;
+  float: right;
 }
