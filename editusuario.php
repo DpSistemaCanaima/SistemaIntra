@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
@@ -70,9 +72,9 @@
 
                             <br>
                             <form action="procesar_editar.php" method="POST">
-                                <input type="hidden" value="<?php echo $mostrar['IDDATOS']; ?>" name="IDDATOS">
+                                <input type="hidden"   value="<?php echo $mostrar['IDDATOS']; ?>" name="IDDATOS">
                                 <p>Nombre</p>
-                                <input type="text" value="<?php echo $mostrar['NAME'] ?>" name="NAME">
+                                <input type="text"  value="<?php echo $mostrar['NAME'] ?>" name="NAME">
                                 <br>
                                 <p>Apellido</p>
                                 <input type="text" value="<?php echo $mostrar['SURNAME'] ?>" name="SURNAME">

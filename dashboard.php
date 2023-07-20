@@ -707,55 +707,67 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <nav id="menu">
                         <header class="major">
                             <h2>Administrador<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
-                            <h3>Menu</h3>
-                        </header>
-                        <ul>
-                            <li><a href="noticias.php">Noticias</a></li>
-                            <li><a href="dashboard.php">Subir publicacion</a></li>
+                            <h3>Menu</h3>	
 
 
-                            <li>
-                                <span class="opener">solicitudes</span>
-                                <ul>
-                                    <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+</ul>
+</header>
+<ul>
+<li><a href="noticias.php">Noticias</a></li>
+<li><a href="dashboard.php">Subir publicacion</a></li>
 
 
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="opener">web</span>
-                                <ul>
-                                    <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
-                                    </li>
-                                    <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
-                                    <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
-                                    <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
-                                            petro</a></li>
+<li>
+    <span class="opener">solicitudes</span>
+    <ul>
+        <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
 
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="opener">Biblioteca digital</span>
-                                <ul>
 
-                                    <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
-                                            canaima(.PDF)</a></li>
-                                    <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
-                                            canaima(.DOCX)</a></li>
-                                </ul>
-                            </li>
+    </ul>
+</li>
+<li>
+    <span class="opener">web</span>
+    <ul>
+        <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
+        </li>
+        <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
+        <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
+        <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
+                petro</a></li>
 
-                            <li>
-                                <a href="gestiondeusuario.php">Gestor de usuario</a>
-                            </li>
-                            <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
+    </ul>
+</li>
+<li>
+    <span class="opener">Biblioteca digital</span>
+    <ul>
 
-                            <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
+        <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
+                canaima(.PDF)</a></li>
+        <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
+                canaima(.DOCX)</a></li>
+    </ul>
+</li>
 
-                            <li><a href="dashboard.php?logout=on">
-                                    <font color="red">cerrar sesion
-                                </a></li>
-                        </ul>
+<li>
+    <a href="gestiondeusuario.php">Gestor de usuario</a>
+</li>
+<li><a href="https://mail.industriacanaima.gob.ve/" target="_blank">Correo</a></li>
+
+<li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
+
+<li><a href="dashboard.php?logout=on">
+        <font color="red">cerrar sesion
+    </a></li><br>
+    <br>
+    <br>
+    <ul class="icons">
+<li><a href="https://twitter.com/ind_canaima" class="icon brands fa-twitter"><span
+        class="label">twitter</span></a></li>
+<li><a href="https://es-la.facebook.com/IndustriaCanaima/"
+    class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+<li><a href="https://www.instagram.com/ind_canaima/" class="icon brands fa-instagram"><span
+        class="label">Instagram</span></a></li>
+</ul>
                     </nav>
 
                     <!-- Section -->

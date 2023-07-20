@@ -726,7 +726,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             </li>
 
                             <li>
-                                <a href="mostraredit.php">Gestor de usuario</a>
+                                <a href="gestiondeusuario.php">Gestor de usuario</a>
                             </li>
                             <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
