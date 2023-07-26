@@ -24,6 +24,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="bu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
@@ -51,15 +52,15 @@
                     ?>
 
                 <br>
-                <div class="espacio-tabla">
-                    <table id= "example" class="table table-striped" style="width:100%">
+          
+                    <table id="example" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
 
                                 <th scope="col">Nombre y Apellido</th>
                                 <th scope="col">Cedula</th>
                                 <th scope="col">Oficina</th>
-                                <th scope="col"></th>
+                               
 
 
                             </tr>
@@ -67,32 +68,28 @@
                         <tbody>
                             <?php
                     $IDDATOS1=$_SESSION['Users'][4];
-                     // $sql="SELECT user_datos.IDDATOS,user_datos.NAME,user_datos.SURNAME,user_datos.CEDULA,user_datos.USER,user_datos.GENDER,user_datos.PASSWORD,user_datos.EMAIL,user_datos.IDROLS,user_datos.LOGIN, area.AREA FROM user_datos INNER JOIN area on user_datos.ASSIGNED_AREA=area.ID_AREA WHERE IDDATOS NOT IN ('$IDDATOS1')";
+                        //  $sql="SELECT user_datos.IDDATOS,user_datos.NAME,user_datos.SURNAME,user_datos.CEDULA,user_datos.USER,user_datos.GENDER,user_datos.PASSWORD,user_datos.EMAIL,user_datos.IDROLS,user_datos.LOGIN, area.AREA FROM user_datos INNER JOIN area on user_datos.ASSIGNED_AREA=area.ID_AREA WHERE IDDATOS NOT IN ('$IDDATOS1')";
                       
                     
-                    $sql = "SELECT  u.IDDATOS, u.NAME, u.SURNAME, u.CEDULA, u.USER, u.GENDER, u.PASSWORD, u.EMAIL, u.IDROLS, u.LOGIN, a.AREA FROM user_datos AS u 
-                    INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  WHERE IDDATOS NOT IN ('$IDDATOS1')";  
+                $sql = "SELECT  u.IDDATOS, u.NAME, u.SURNAME, u.CEDULA, u.USER, u.GENDER, u.PASSWORD, u.EMAIL, u.IDROLS, u.LOGIN, a.AREA FROM user_datos AS u 
+                 INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  WHERE IDDATOS NOT IN ('$IDDATOS1')";  
 
+                       
                     $result =mysqli_query($conn,$sql);
-
+                         
                       
-                      while ($mostrar = mysqli_fetch_assoc($result)){
-                      
-                
-                
-                    
-                    ?>
+                      while ($mostrar = mysqli_fetch_assoc($result)){?>
                             <tr>
                                 <th><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></th>
                                 <th><?php echo $mostrar ['CEDULA'] ?></th>
                                 <th><?php echo $mostrar ['AREA'] ?></th>
 
                                 <th>
-
-                                    <!------Editar------>
+                                           
+                                 <!------Editar------>
 
                                     <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-warning dropdown-toggle"
+                                        <button type="button" class="btn btn-warning boton dropdown-toggle "
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Opciones
                                         </button>
@@ -122,17 +119,19 @@
                                                     </svg> Ver Mas</a></li>
                                         </ul>
                                     </div>
+                                   
                                 </th>
 
                             </tr>
 
                             <?php
+
                             include "modalvermas.php";
                            
                       }
                     ?>
                     </table>
-                </div>
+                
 
                 <!-- Banner -->
 
@@ -234,7 +233,6 @@
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
     
-     
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>

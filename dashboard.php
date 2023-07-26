@@ -32,9 +32,13 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="cla.css">
+        
         <title>Inicio</title>
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="assets/css/main.css" />
+       
     </head>
 
     <body class="is-preload">
@@ -61,7 +65,7 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
                         <div class="row">
                             <div class="col-12">
 
-                                <table class="table table-striped">
+                            <table id="example" class="table table-striped" style="width:100%">
                                 <thead>
                                 <tr>
                                     <th>Nombre y Apellido</th>
@@ -202,6 +206,14 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
+        
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+   <script>
+    new DataTable('#example');
+   </script>
+
     </body>
 
     </html>
@@ -217,7 +229,8 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="cla.css">
+    <link rel="stylesheet" href="usuario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body class="is-preload">
@@ -249,29 +262,31 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
                         <tbody>
 
                             <?php
-include('conexion.php');
-$conn = mysqli_connect($servername, $username, $password, $database);
-$query = "SELECT ID,nombre,tipo,contenido FROM imagen ORDER BY ID ASC, nombre,tipo,contenido";
-$res = mysqli_query($conn, $query);
-while ($row = mysqli_fetch_assoc($res)) {
-?>
+                include('conexion.php');
+                        $conn = mysqli_connect($servername, $username, $password, $database);
+                        $query = "SELECT ID,nombre,tipo,contenido FROM imagen ORDER BY ID ASC, nombre,tipo,contenido";
+                        $res = mysqli_query($conn, $query);
+                        while ($row = mysqli_fetch_assoc($res)) {
+                  ?>
+    
+    <div class="contenedor">                
+<div class="capa"></div>
+   <div class="parrafo">
+   <img  src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
+   <p><?php echo $row['nombre']; ?> </p>
+   </div>
+                            
+                        </div>
+  
+                              
+              
 
-                            <div class="classy">
-
-
-                                <hr>
-
-
-                                <img class="imagen"
-                                    src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
-
-                                <p><?php echo $row['nombre']; ?>
-                                <p>
+                            
+                      
 
 
 
 
-                            </div>
                             <?php
 }
 ?>
@@ -605,6 +620,7 @@ while ($row = mysqli_fetch_assoc($res)) {
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="cla.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <title>Inicio</title>
     </head>
 
@@ -623,9 +639,9 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <header>
                         <form action="dashboard.php" method="post" enctype="multipart/form-data">
 
-                            <input type="file" class="form-control-file" name="foto">
+                            <input type="file"  name="foto"><br>
 
-                            <input type="text" name="nombre" placeholder="comentario">
+                            <input type="text" name="nombre" class="inpu" ><br>
 
                             <button type="submit" class="btn btn-primary" name="guardar">Enviar</button>
 
@@ -650,29 +666,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                         while ($row = mysqli_fetch_assoc($res)) {
                         ?>
 
-                                        <div class="classy">
-
-
-                                            <hr>
-
-
-                                            <img class="imagen"
-                                                src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
-
-                                            <p><?php echo $row['nombre']; ?>
-                                            <p>
-
-
-
-
-                                            <form action="elimin.php" method="pot">
-                                                <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
-
-
-                                                <button class="sub">eliminar</button>
-
-
-                                            </form>
+                                   
 
                                         </div>
                                         <?php

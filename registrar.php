@@ -1,32 +1,85 @@
 <?php
 
-include("conexion.php");
+require_once('conexion.php');
+    
+    $NAME =htmlentities(filter_var($_POST['name'],FILTER_SANITIZE_STRING));
+    $SURNAME =htmlentities(filter_var($_POST['surname'],FILTER_SANITIZE_STRING));
+    $CEDULA =htmlentities(filter_var($_POST['cedula'],FILTER_VALIDATE_INT));
+    $USER =htmlentities(filter_var($_POST['user'],FILTER_SANITIZE_STRING));
+    $PASSWORD =$_POST['password'];
+    $correo =htmlentities(($_POST['email']));
+    $IDROLS =$_POST['idrols'];
+    $LOGIN =$_POST['login'];
+    $GENDER=$_POST['gender'];
+    $AREA =htmlentities($_POST['assgned_area']);
 
-$IDDATOS=$_POST['IDDATOS'];
-$NAME=$_POST['name'];
-$SURNAME=$_POST['surname'];
-$NACINALIDAD=$_POST['nacionalidad'];
-$CEDULA=$_POST['cedula'];
-$NIVEL=$_POST['nivel'];
-$OFICIO=$_POST['oficio'];
-$DIRECCION=$_POST['direccion'];
-$CIUDAD=$_POST['ciudad'];
-$MUNICIPIO=$_POST['municipio'];
-$PARROQUIA=$_POST['parroquia'];
-$USER=$_POST['user'];
-$PASSWORD=$_POST['password'];
-$EMAIL=$_POST['email'];
-$IDROLS=$_POST['idrols'];
-$LOGIN=$_POST['login'];
-$GENDER=$_POST['gender'];
-$AREA=$_POST['assgned_area'];
-$NUMERO_DE_HIJOS=$_POST['numero_de_hijos'];
-$NOMBRE_Y_APELLIDO=$_POST['nombre_y_apellido'];
-$FECHA_DE_NACIMIENTO=$_POST['fecha_de_nacimiento'];
+ 
+
+    //limpiar espacio
+   $NAME=trim($NAME);
+   $SURNAME=trim($SURNAME);
+   $CEDULA=trim($CEDULA);
+   $EMAIL=trim($correo);
+   $USER=trim($USER);
+
+    //limpieza
+    $cadena=preg_replace('/[0-9]+/','', $NAME);
+    $cadena2=preg_replace('/[0-9]+/','', $SURNAME);
+    $CEDULA=preg_replace('/([a-z|A-Z|@|^|\|s|+|"])+/','', $CEDULA);
+
+    //minuscula
+    $NAME=strtolower($cadena);
+    $SURNAME=strtolower($cadena2);
+    $EMAIL=strtolower($EMAIL);
+    $completo=$NAME.$SURNAME;
+
+    $COMPROB=mysqli_query($conn,"SELECT * FROM user_datos WHERE CEDULA='$CEDULA'");
+   $COMPROB=mysqli_num_rows($COMPROB);
+   if(filter_var($EMAIL, FILTER_VALIDATE_EMAIL)==false){
+    header('location:gestiondeusuario?User=true&&Error=Campo');
+} else {
+
+    if ($COMPROB > 0) {
+        header("location:gestiondeusuario?User=true&&Error=Card");
+    } else {
+
+        if (empty($NAME) && $NAME == NULL || empty($SURNAME) && $SURNAME == NULL || empty($CEDULA) && $CEDULA == NULL || empty($USER) && $USER == NULL || empty($correo) && $correo == NULL || empty($AREA) && $AREA == NULL) {
+            header('location:gestiondeusuario.php?User=true&&Error=Campo');
+        } else {
+            $COMPROB = mysqli_query($conn, "SELECT `EMAIL` FROM `user_datos` WHERE EMAIL='$EMAIL'");
+            $COMPROB = mysqli_num_rows($COMPROB);
+            if ($COMPROB > 3) {
+                header("location:gestiondeusuario.php?User=true&&Error=Email");
+            } else {
+                $COMPROB = mysqli_query($conn, "SELECT `USER` FROM `user_datos` WHERE USER='$USER'");
+                $COMPROB = mysqli_num_rows($COMPROB);
+
+                if ($COMPROB > 0) {
+                    header("location:gestiondeusuario.php?User=true&&Error=User_use");
+                } else {
+                    //mayuscula
+                    $NAME = ucfirst($NAME);
+                    $SURNAME = ucfirst($SURNAME);
+                    $CEDULA = trim($CEDULA, '.');
+                    
+                    if ($PASSWORD == null) {
+                    
+                    
+                    mysqli_query($conn, "INSERT INTO `user_datos`(`IDDATOS`, `NAME`, `SURNAME`,`GENDER`,`CEDULA`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`,`PASSWORD_ID`) VALUES ( NULL,'$NAME','$SURNAME','$GENDER','$CEDULA','$USER',sha1(12345678),'$correo','$IDROLS','$LOGIN','$AREA','TRUE')");
+                    echo "registro exitoso";
+                    header("location:gestiondeusuario.php");
+                    } else {
+                    mysqli_query($conn, "INSERT INTO `user_datos`(`IDDATOS`, `NAME`, `SURNAME`,`GENDER`,`CEDULA`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`,`PASSWORD_ID`) VALUES ( NULL,'$NAME','$SURNAME','$GENDER','$CEDULA','$USER',sha1('$PASSWORD'),'$correo','$IDROLS','$LOGIN','$AREA',null)");
+                    echo "registro exitos";
+                    header("location:gestiondeusuario.php");
+                    
+                }
+
+            }
+        }
+    }
+}
+}
 
 
-
-
-
-
-?>
+  ?>
