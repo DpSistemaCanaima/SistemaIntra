@@ -60,6 +60,7 @@
                                 <th scope="col">Nombre y Apellido</th>
                                 <th scope="col">Cedula</th>
                                 <th scope="col">Oficina</th>
+                                <th scope="col">Opciones</th>
                                
 
 

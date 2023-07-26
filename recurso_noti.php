@@ -33,8 +33,8 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="cla.css">
-        <title>Inicio</title>
+        <link rel="stylesheet" href="usuario.css">
+        <title>RRHH</title>
     </head>
 
     <body class="is-preload">
@@ -80,31 +80,15 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
                         while ($row = mysqli_fetch_assoc($res)) {
                         ?>
 
-                                        <div class="classy">
-
-
-                                            <hr>
-
-
-                                            <img class="imagen"
-                                                src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
-
-                                            <p><?php echo $row['nombre']; ?>
-                                            <p>
-
-
-
-
-                                            <form action="elimin.php" method="pot">
-                                                <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
-
-
-                                                <button class="sub">eliminar</button>
-
-
-                                            </form>
-
-                                        </div>
+                                      
+    <div class="contenedor">                
+<div class="capa"></div>
+   <div class="parrafo">
+   <img  src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
+   <p><?php echo $row['nombre']; ?> </p>
+   </div>
+                            
+                        </div>
                                         <?php
                         }
                         ?>
@@ -136,7 +120,7 @@ if ($_SESSION['Users'][4]== null){//si el usuario inicio sesion
                     <!-- Menu -->
                     <nav id="menu">
                         <header class="major">
-                            <h2>Administrador<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
+                            <h2>RRHH<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
                             <h3>Menu</h3>
                         </header>
                         <ul>

@@ -585,7 +585,7 @@ while ($row = mysqli_fetch_assoc($res)) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="cla.css">
+        <link rel="stylesheet" href="usuario.css">
         <title>Inicio</title>
     </head>
 
@@ -625,23 +625,13 @@ while ($row = mysqli_fetch_assoc($res)) {
                         $res = mysqli_query($conn, $query);
                         while ($row = mysqli_fetch_assoc($res)) {
                         ?>
-
-                                        <div class="classy">
-
-
-                                            <hr>
-
-
-                                            <img class="imagen"
-                                                src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
-
-                                            <p><?php echo $row['nombre']; ?>
-                                            <p>
-
-
-
-
-                                            <form action="elimin.php" method="pot">
+                        <div class="contenedor">                
+                  <div class="capa"></div>
+                   <div class="parrafo">
+                     <img  src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
+                 <p><?php echo $row['nombre']; ?> </p>
+                     </div><br>
+                     <form action="elimin.php" method="pot">
                                                 <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
 
 
@@ -649,6 +639,10 @@ while ($row = mysqli_fetch_assoc($res)) {
 
 
                                             </form>
+                            
+                        </div>
+
+                                         
 
                                         </div>
                                         <?php
