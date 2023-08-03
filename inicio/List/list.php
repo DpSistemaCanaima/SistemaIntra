@@ -233,9 +233,9 @@ function limitar_cadena($cadena, $limite, $sufijo){
               <td class="u-border-1 u-border-grey-90 u-palette-4-light-3 u-table-cell u-table-cell-13">
                 <span style="font-size: 0.625rem; text-transform: uppercase;"><b>ID</b></span>
               </td>
-              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table-cell-14"><b>Fecha de creación</b></td>
-              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table-cell-15"><b>Usuario</b></td>
-              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table-cell-16"><b>Descripción</b></td>
+              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table-cell-14"></td>
+              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table</td>
+              <td class="u-border-1 u-border-grey-dark-1 u-palette-4-light-3 u-table-cell u-table-cel</td>
             </tr>
           </tbody>
         </table>
@@ -258,16 +258,16 @@ function limitar_cadena($cadena, $limite, $sufijo){
            ?> 
             <tr style="height: 44px;">
               <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
-                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>"  class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-9"  target="barra2"><?php echo $row["ID_REPORT"];?></a>
+                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>"   target="barra2"><?php echo $row["ID_REPORT"];?></a>
               </td>
               <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
-                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-10" target="barra2"><?php echo $row["CREATION_DATE"];?></a>
+                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>"  target="barra2"><?php echo $row["CREATION_DATE"];?></a>
               </td>
               <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
-                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-11" target="barra2"><?php echo limitar_cadena($row["NAME"],10, "...");?></a>
+                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>"  target="barra2"><?php echo limitar_cadena($row["NAME"],10, "...");?></a>
               </td>
               <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
-                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-12" target="barra2"><?php echo limitar_cadena($text,15, "...");?></a>
+                <a href="./Registro2/intro.php?Id=<?php echo $row["ID_REPORT"];?>"  target="barra2"><?php echo limitar_cadena($text,15, "...");?></a>
               </td>
             </tr>
             <?php
