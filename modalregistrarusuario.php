@@ -8,31 +8,25 @@
             </div>
             <div class="modal-body">
                 <link rel="stylesheet" href="cla.css">
-                <form id="form" action="registrar.php" method="POST">
+                
 
-<input type="hidden" name="IDDATOS">
+                <form  action="registrar.php" method="POST">
+<input type="text"  name="name" placeholder="Nombre" size="20">
 
-<input type="text" id="name" name="name" placeholder="Nombre" size="20">
+<input type="text"  name="surname" placeholder="Apellido">
 
-<input type="text" id="surname"  name="surname" placeholder="Apellido">
-
-<select name="nacionalidad" id="">
+<select name="nacionalidad" >
     <option value="1">V</option>
     <option value="2">E</option>
 </select> 
 <input type="text" id="cedula" name="cedula" placeholder="Cedula" size="20">
-<select name="nivel" id="nivel">
-    <option value="1">primaria</option>
-    <option value="2">bachiller</option>
-    <option value="3">universitario</option>
-    <option value="4">otro</option>
-</select>
-<input type="text" namer="oficio" placeholder="Oficio ó Abilidad">
+
+<input type="text" name="oficio" placeholder="Oficio ó Abilidad">
 <input type="text" name="direccion" placeholder="Direccion Completa">
 <input type="text" name="ciudad" placeholder="Ciudad">
 <input type="text" name="municipio" placeholder="Municipio">
 <input type="text" name="parroquia" placeholder="Parroquia">
-<input type="text" id="user" name="user" placeholder="Ingrese usuario">
+<input type="text"  name="user" placeholder="Ingrese usuario">
 <input type="password" name="password" placeholder="Ingrese contraseña">
 <input type="text" name="email" placeholder="Ingrese correo">
 <select name="idrols">
@@ -51,26 +45,14 @@
 </select>
 
 <?php $result3 = mysqli_query($conn, "SELECT * FROM area");?>
-<select name="assgned_area" class="selectpicker" data-show-subtext="true"
-    data-live-search="true" >
-    <option value="<?php echo $mostrar['ASSIGNED_AREA']?>" selected="true">--Defecto--</option>
-    <?php while ($area = mysqli_fetch_array($result3)) {
-?>
-    <option value="<?php echo $area['ID_AREA']; ?>"><?php echo $area['AREA']; ?></option>
-    <?php }?>
+<select name="assigned_area" >
+    
+      <option value="1">1</option>
+      <option value="2">2</option> 
+      <option value="3">3</option>
 </select>
 
 
-<h2>Tienes hijos </h2>
-
-
-<input type="radio" name="gender" class="i-radio" value="si"> Si
-<input type="radio" name="gender" class="i-radio" value="no"> No<br>
-<br>
-
-<input type="number" name="numero_de_hijos" class="i-text" placeholder="Numero de hijos">
-<input type="text" name="nombre_y_apellido" class="i-text" placeholder="Nombre del ñiño">
-<input type="date" name="fecha_de_nacimiento" class="i-text" placeholder="fecha de nacimiento"><br>
 
 
 <br>

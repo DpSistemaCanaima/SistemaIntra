@@ -1,85 +1,43 @@
 <?php
 
-require_once('conexion.php');
+ include('conexion.php');
     
-    $NAME =htmlentities(filter_var($_POST['name'],FILTER_SANITIZE_STRING));
-    $SURNAME =htmlentities(filter_var($_POST['surname'],FILTER_SANITIZE_STRING));
-    $CEDULA =htmlentities(filter_var($_POST['cedula'],FILTER_VALIDATE_INT));
-    $USER =htmlentities(filter_var($_POST['user'],FILTER_SANITIZE_STRING));
-    $PASSWORD =$_POST['password'];
-    $correo =htmlentities(($_POST['email']));
+    $NAME=$_POST['name'];
+    $NACIONALIDAD =$_POST['nacionalidad'];
+    $SURNAME =$_POST['surname'];
+    $CEDULA =$_POST['cedula'];
+    $OFICIO =$_POST['oficio'];
+    $DIRECCION =$_POST['direccion'];
+    $CIUDAD =$_POST['ciudad'];
+    $MUNICIPIO =$_POST['municipio'];
+    $PARROQUIA =$_POST['parroquia'];
+    $USER =$_POST['user'];
+    $PASSWORD_C = sha1('password');  
+    $CORREO =$_POST['email'];
     $IDROLS =$_POST['idrols'];
     $LOGIN =$_POST['login'];
     $GENDER=$_POST['gender'];
-    $AREA =htmlentities($_POST['assgned_area']);
+    $AREA =$_POST['assigned_area'];
 
  
 
-    //limpiar espacio
-   $NAME=trim($NAME);
-   $SURNAME=trim($SURNAME);
-   $CEDULA=trim($CEDULA);
-   $EMAIL=trim($correo);
-   $USER=trim($USER);
-
-    //limpieza
-    $cadena=preg_replace('/[0-9]+/','', $NAME);
-    $cadena2=preg_replace('/[0-9]+/','', $SURNAME);
-    $CEDULA=preg_replace('/([a-z|A-Z|@|^|\|s|+|"])+/','', $CEDULA);
-
-    //minuscula
-    $NAME=strtolower($cadena);
-    $SURNAME=strtolower($cadena2);
-    $EMAIL=strtolower($EMAIL);
-    $completo=$NAME.$SURNAME;
-
-    $COMPROB=mysqli_query($conn,"SELECT * FROM user_datos WHERE CEDULA='$CEDULA'");
-   $COMPROB=mysqli_num_rows($COMPROB);
-   if(filter_var($EMAIL, FILTER_VALIDATE_EMAIL)==false){
-    header('location:gestiondeusuario?User=true&&Error=Campo');
-} else {
-
-    if ($COMPROB > 0) {
-        header("location:gestiondeusuario?User=true&&Error=Card");
-    } else {
-
-        if (empty($NAME) && $NAME == NULL || empty($SURNAME) && $SURNAME == NULL || empty($CEDULA) && $CEDULA == NULL || empty($USER) && $USER == NULL || empty($correo) && $correo == NULL || empty($AREA) && $AREA == NULL) {
-            header('location:gestiondeusuario.php?User=true&&Error=Campo');
-        } else {
-            $COMPROB = mysqli_query($conn, "SELECT `EMAIL` FROM `user_datos` WHERE EMAIL='$EMAIL'");
-            $COMPROB = mysqli_num_rows($COMPROB);
-            if ($COMPROB > 3) {
-                header("location:gestiondeusuario.php?User=true&&Error=Email");
-            } else {
-                $COMPROB = mysqli_query($conn, "SELECT `USER` FROM `user_datos` WHERE USER='$USER'");
-                $COMPROB = mysqli_num_rows($COMPROB);
-
-                if ($COMPROB > 0) {
-                    header("location:gestiondeusuario.php?User=true&&Error=User_use");
-                } else {
-                    //mayuscula
-                    $NAME = ucfirst($NAME);
-                    $SURNAME = ucfirst($SURNAME);
-                    $CEDULA = trim($CEDULA, '.');
+    $sql =mysqli_query($conn, "INSERT INTO `user_datos`(`name`, `nacionalidad`, `surname`, `oficio` ,`direccion`,`ciudad`, `municipio`, `parroquia`, `gender`,`cedula`, `user`, `password`, `email`, `idrols`, `login`, `assigned_area`) VALUES ('$NAME', '$NACIONALIDAD' ,'$SURNAME', '$OFICIO', '$DIRECCION', '$CIUDAD', '$MUNICIPIO', '$PARROQUIA' ,'$GENDER','$CEDULA','$USER', '$PASSWORD_C','$CORREO','$IDROLS','$LOGIN','$AREA')");
                     
-                    if ($PASSWORD == null) {
-                    
-                    
-                    mysqli_query($conn, "INSERT INTO `user_datos`(`IDDATOS`, `NAME`, `SURNAME`,`GENDER`,`CEDULA`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`,`PASSWORD_ID`) VALUES ( NULL,'$NAME','$SURNAME','$GENDER','$CEDULA','$USER',sha1(12345678),'$correo','$IDROLS','$LOGIN','$AREA','TRUE')");
-                    echo "registro exitoso";
-                    header("location:gestiondeusuario.php");
-                    } else {
-                    mysqli_query($conn, "INSERT INTO `user_datos`(`IDDATOS`, `NAME`, `SURNAME`,`GENDER`,`CEDULA`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`,`PASSWORD_ID`) VALUES ( NULL,'$NAME','$SURNAME','$GENDER','$CEDULA','$USER',sha1('$PASSWORD'),'$correo','$IDROLS','$LOGIN','$AREA',null)");
-                    echo "registro exitos";
-                    header("location:gestiondeusuario.php");
-                    
-                }
+                    // header("location:gestiondeusuario.php");
+               
+    if($sql){
+      
+        echo '<script>
+            alert("Registro realizado");
+        </script>';
 
-            }
-        }
+    }else{
+        
+        echo '<script>
+        alert("Registro  no realizado");
+    </script>';
     }
-}
-}
 
+  
 
   ?>
