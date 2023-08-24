@@ -1,6 +1,8 @@
 <?php
- require_once('conexion.php');
+ 
  session_start();
+ 
+ require_once('conexion.php');
  if (isset($_GET['logout'])&& $_GET['logout']=="on"){
      session_destroy();
      header('location:index.php');
@@ -9,12 +11,21 @@
      header('location: index.php');
  }else{
      if ($_SESSION['Users'][2]== 2){//Si el usuario esta habilitado o no
-        header("location:index.php");
+         header("location:index.php");
      }else{
-         if ($_SESSION['Users'][1]== 3){//Lista
-            if(empty($_GET['Edit'])&& empty($_GET['Del']) && empty($_GET['User'])){
-
-                ?>
+         if ($_SESSION['Users'][1]== 1){//Usuario
+             if($_SESSION['Users'][3]==1){//RRHH
+                 if(isset($_POST['btnEliminar'])){//elimnar cont. RRHH
+             
+                 $IDDATOS=$_POST['id'];
+                 
+                 mysqli_query( $conn, "DELETE FROM `recursos` WHERE id='$IDDATOS'") or die ("error al eliminar");
+                 
+                 mysqli_close($conn);
+                 
+                 header("location: dashboard.php");
+             }else{
+                 ?>
 <!DOCTYPE HTML>
 
 <html>
@@ -25,7 +36,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="bu.css">
-    <link rel="stylesheet" href="usuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
@@ -54,8 +64,8 @@
 
                 <br>
 
-                <table id="example" class="table-primary table-bordered " style="width:100%">
-                    <thead class="thead">
+                <table id="example" class="table" style="width:100%">
+                    <thead class="table-primary">
                         <tr>
 
                             <th scope="col">Nombre y Apellido</th>
@@ -167,81 +177,72 @@
 
         <!-- Sidebar -->
         <div id="sidebar">
-            <div class="inner">
+                <div class="inner">
 
-                <!-- Search -->
+                    <!-- Search -->
 
-                <!-- Menu -->
-                <nav id="menu">
-                    <header class="major">
-                        <h3>Menu</h3>
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>RRHH<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
+                            <h3>Menu</h3>
+                        </header>
+                        <ul>
+                            <li><a href="recurso_noti.php">Noticias</a></li>
+                            <li><a href="dashboard.php">ver solicitudes</a></li>
 
 
+                            <li>
+                                <span class="opener">solicitudes</span>
+                                <ul>
+                                    <li><a href="solicitudes1.php?Soporte">Soporte tecnico</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">web</span>
+                                <ul>
+                                    <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
+                                    </li>
+                                    <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
+                                    <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
+                                    <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
+                                            petro</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Biblioteca digital</span>
+                                <ul>
+
+                                    <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
+                                            canaima(.PDF)</a></li>
+                                    <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
+                                            canaima(.DOCX)</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="gestiondeusuario1.php">Gestor de usuario</a>
+                            </li>
+                            <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
+
+
+
+                            <li><a href="dashboard.php?logout=on">
+                                    <font color="red">cerrar sesion
+                                </a></li>
                         </ul>
-                    </header>
-                    <ul>
-                        <li><a href="noticias.php">Noticias</a></li>
-                        <li><a href="dashboard.php">Subir publicacion</a></li>
+                    </nav>
+
+                    <!-- Section -->
 
 
-                        <li>
-                            <span class="opener">solicitudes</span>
-                            <ul>
-                                <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">web</span>
-                            <ul>
-                                <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
-                                </li>
-                                <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
-                                <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
-                                <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
-                                        petro</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">Biblioteca digital</span>
-                            <ul>
-
-                                <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
-                                        canaima(.PDF)</a></li>
-                                <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
-                                        canaima(.DOCX)</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="gestiondeusuario.php">Gestor de usuario</a>
-                        </li>
-                        <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
-
-                        <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
-
-                        <li><a href="dashboard.php?logout=on">
-                                <font color="red">cerrar sesion
-                            </a></li><br>
-                        <br>
-                        <br>
-                        <ul class="icons">
-                            <li><a href="https://twitter.com/ind_canaima" class="icon brands fa-twitter"><span
-                                        class="label">twitter</span></a></li>
-                            <li><a href="https://es-la.facebook.com/IndustriaCanaima/"
-                                    class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                            <li><a href="https://www.instagram.com/ind_canaima/" class="icon brands fa-instagram"><span
-                                        class="label">Instagram</span></a></li>
-                        </ul>
-                </nav>
-                <!-- Section -->
-
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -266,7 +267,7 @@
 
 </html>
 <?php
-                
+             }       
             
             }elseif(isset($_GET['Edit'])&& empty($_GET['Del'])){//editar usuario
                 include "editusuario.php";

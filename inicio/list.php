@@ -1,7 +1,9 @@
 <?php 
-session_start();
+ include("conexion.php");
+  session_start();
 if(isset($_GET['All']) && $_GET['All']=="true"){
   $_SESSION['Users'][6]=0; 
+    header("location:Reporte.php");
 }
  elseif(isset($_GET['Active']) && $_GET['Active']=="true"){
   $_SESSION['Users'][6]=1;

@@ -141,64 +141,70 @@ if ($_SESSION['Users'][0]== null){
 					</div>
 
 				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+					
 
 							<!-- Search -->
 								
 							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-									<h3>Menu</h3>	
+							<div id="sidebar">
+                <div class="inner">
+
+                    <!-- Search -->
+
+                    <!-- Menu -->
+                    <nav id="menu">
+                        <header class="major">
+                            <h2>Usuario<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?><h2>
+                                    <h3>Menu</h3>
+                        </header>
+                        <ul>
+                            <li><a href="dashboard.php">noticias</a></li>
 
 
-</ul>
-</header>
-<ul>
-<li><a href="noticias.php">Noticias</a></li>
-<li><a href="dashboard.php">Subir publicacion</a></li>
+                            <li>
+                                <span class="opener">solicitudes</span>
+                                <ul>
+                                    <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+                                    <li><a href="solicitudes.php?Soporte">soporte tecnico</a></li>
 
 
-<li>
-	<span class="opener">solicitudes</span>
-	<ul>
-		<li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">web</span>
+                                <ul>
+                                    <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
+                                    </li>
+                                    <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
+                                    <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
+                                    <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
+                                            petro</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Biblioteca digital</span>
+                                <ul>
+
+                                    <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
+                                            canaima(.PDF)</a>
+                                    </li>
+                                    <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
+                                            canaima(.DOCX)</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
+                            <li><a href="dashboard.php?logout=on"><font color="blue">cerrar sesion</a></li>
+                        </ul>
+                    </nav>
 
 
-	</ul>
-</li>
-<li>
-	<span class="opener">web</span>
-	<ul>
-		<li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
-		</li>
-		<li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
-		<li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
-		<li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
-				petro</a></li>
+   </div>
+            </div>
 
-	</ul>
-</li>
-<li>
-	<span class="opener">Biblioteca digital</span>
-	<ul>
-
-		<li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
-				canaima(.PDF)</a></li>
-		<li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
-				canaima(.DOCX)</a></li>
-	</ul>
-</li>
-
-<li>
-	<a href="gestiondeusuario.php">Gestor de usuario</a>
-</li>
-<li><a href="https://mail.industriacanaima.gob.ve/" target="_blank" >Correo</a></li>
-
-<li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
-
-<li><a href="dashboard.php?logout=on">
-		<font color="red">cerrar sesion
+        </div>
 	</a></li><br>
 	<br>
 	<br>
@@ -328,24 +334,24 @@ if ($_SESSION['Users'][0]== null){
 											
 										</ul>
 									</div>
-									<span class="image object">
+									
 									<form method="post" action="solicitudes.php?Soporte">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="solicitud" placeholder="Solicitud" type="text" maxlength="30"/>
-										</div>
-										<div class="col-12">
+									
+									<div class="mb-3">
+											
+						<input name="solicitud" class="form-control" id="exampleFormControlInput1" placeholder="Solicitud" type="text" />
+										
+                                   </div>
 											<textarea name="Message" placeholder="Descripcion" maxlength="100"></textarea>
-										</div>
+									
 										<br>
-										<div class="col-12">
+										
 										<br>
 											<ul class="actions">
 												<li><input type="submit" value="Enviar" /></li>
 												<li><input type="reset" value="Borrar" /></li>
 											</ul>
-										</div>
-									</div>
+									
 								</form>
 									</span>
 								</section>
@@ -367,6 +373,7 @@ if ($_SESSION['Users'][0]== null){
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
+									<h2>Usuario<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?><h2>
 										<h2>Menu</h2>
 									</header>
 									<ul>
@@ -383,25 +390,34 @@ if ($_SESSION['Users'][0]== null){
 											</ul>
 										</li>
 										<li>
-											<span class="opener">web</span>
-											<ul>
-												<li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a></li>
-												<li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
-												
-											</ul>
-										</li>
-										<li>
-										</li>
+                                <span class="opener">web</span>
+                                <ul>
+                                    <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
+                                    </li>
+                                    <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
+                                    <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
+                                    <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora
+                                            petro</a></li>
 
-										<ul>
-										
-										<li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de canaima(.PDF)</a></li>
-												<li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la canaima(.DOCX)</a></li>
-											</ul>
-			</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="opener">Biblioteca digital</span>
+                                <ul>
+
+                                    <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de
+                                            canaima(.PDF)</a></li>
+                                    <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
+                                            canaima(.DOCX)</a></li>
+                                </ul>
+                            </li>
+
 										
 										<li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 										
+										<li><a href="dashboard.php?logout=on">
+                                    <font color="red">cerrar sesion
+                                </a></li>
 									</ul>
 								</nav>
 

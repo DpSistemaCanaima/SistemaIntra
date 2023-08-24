@@ -16,6 +16,7 @@
 <input type="text"  name="surname" placeholder="Apellido">
 
 <select name="nacionalidad" >
+    <option ></option>
     <option value="1">V</option>
     <option value="2">E</option>
 </select> 
@@ -30,15 +31,17 @@
 <input type="password" name="password" placeholder="Ingrese contraseña">
 <input type="text" name="email" placeholder="Ingrese correo">
 <select name="idrols">
+    <option ></option>
     <option value="2">Usuario</option>
     <option value="3">Tecnico</option>
 </select>
 <select name="login">
+<option ></option>
     <option value="1">Habilitado</option>
     <option value="2">Deshabilitado</option>
 </select>
 <select name="gender" >
-   
+<option ></option>
     <option value=1>Hombre</option>
     <option value=2>Mujer</option>
     <option value=3>Otro</option>
@@ -46,7 +49,7 @@
 
 <?php $result3 = mysqli_query($conn, "SELECT * FROM area");?>
 <select name="assigned_area" >
-    
+     <option ></option>
       <option value="1">1</option>
       <option value="2">2</option> 
       <option value="3">3</option>
@@ -73,7 +76,7 @@ $('.selectpicker').selectpicker({
 </script>
 <br>
 
-<input type="submit">
+ <input type="submit" name="submit">
 </form>
             </div>
             

@@ -1,8 +1,14 @@
 <?php
 
- include('conexion.php');
-    
-    $NAME=$_POST['name'];
+
+include('conexion.php');
+
+
+
+   
+
+
+    $NAME =$_POST['name'];
     $NACIONALIDAD =$_POST['nacionalidad'];
     $SURNAME =$_POST['surname'];
     $CEDULA =$_POST['cedula'];
@@ -22,22 +28,22 @@
  
 
     $sql =mysqli_query($conn, "INSERT INTO `user_datos`(`name`, `nacionalidad`, `surname`, `oficio` ,`direccion`,`ciudad`, `municipio`, `parroquia`, `gender`,`cedula`, `user`, `password`, `email`, `idrols`, `login`, `assigned_area`) VALUES ('$NAME', '$NACIONALIDAD' ,'$SURNAME', '$OFICIO', '$DIRECCION', '$CIUDAD', '$MUNICIPIO', '$PARROQUIA' ,'$GENDER','$CEDULA','$USER', '$PASSWORD_C','$CORREO','$IDROLS','$LOGIN','$AREA')");
-                    
-                    // header("location:gestiondeusuario.php");
+
                
-    if($sql){
-      
-        echo '<script>
-            alert("Registro realizado");
-        </script>';
-
-    }else{
+      if($sql){
         
-        echo '<script>
-        alert("Registro  no realizado");
-    </script>';
-    }
+        echo "<script>
+        alert('El registro fue echo  correctamente');
+        location.assign('gestiondeusuario.php');
+    </script>";
 
+      } else{
+        echo "<script>
+        alert('El registro no se realizo');
+        location.assign('gestiondeusuario.php');
+    </script>";
+      }        
+ 
   
 
   ?>

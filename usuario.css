@@ -1,4 +1,42 @@
-.contenedor {
+.thead{
+    background:  #0d6efd;
+    color: rgb(0, 0, 0);
+    
+}
+
+
+tr,th{
+  border: 2px solid;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns:50% 50% 50%;
+    grid-template-rows: 100px;
+ }
+ 
+ .grid div{
+    background: #ecf0f1;
+    padding: 1em;
+}
+
+.grid div:hover{
+    border: 1px solid #128e3b;
+}
+
+
+
+.img{
+
+    height: 500px;
+    width: 100%;
+
+}
+
+
+
+/*.contenedor {
 	width: 800px;
 	height: 500px;
 	margin: 50px auto;
@@ -14,7 +52,7 @@
 
 /* Scroll Personalizado */
 
-.contenedor::-webkit-scrollbar {
+/*.contenedor::-webkit-scrollbar {
 	width: 7px;
 }
 

@@ -614,42 +614,30 @@ while ($row = mysqli_fetch_assoc($res)) {
                         <div class="row">
                             <div class="col-12">
 
-                                <table class="table table-striped">
+                              
 
-                                    <tbody>
+                               
 
                                         <?php
                         include('conexion.php');
 						$conn = mysqli_connect($servername, $username, $password, $database);
                         $query = "SELECT ID,nombre,tipo,contenido FROM imagen ORDER BY ID ASC, nombre,tipo,contenido";
                         $res = mysqli_query($conn, $query);
-                        while ($row = mysqli_fetch_assoc($res)) {
+                   while ($row = mysqli_fetch_assoc($res)) {
                         ?>
-                        <div class="contenedor">                
-                  <div class="capa"></div>
-                   <div class="parrafo">
-                     <img  src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
-                 <p><?php echo $row['nombre']; ?> </p>
-                     </div><br>
-                     <form action="elimin.php" method="pot">
-                                                <input type="hidden" value="<?php echo $row['ID']; ?>" name="ID">
+                     
 
+                     <img class="img" src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
+ 
 
-                                                <button class="sub">eliminar</button>
-
-
-                                            </form>
-                            
-                        </div>
-
+                    <p><?php echo $row['nombre']; ?> </p>
                                          
 
-                                        </div>
+                                  
                                         <?php
                         }
                         ?>
-                                    </tbody>
-                                </table>
+                              
 
                             </div>
                         </div>
@@ -691,7 +679,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             <li>
                                 <span class="opener">solicitudes</span>
                                 <ul>
-                                    <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+                                    <li><a href="solicitude2.php?RRHH">Recursos Humanos</a></li>
 
 
                                 </ul>
@@ -727,7 +715,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                             <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
 
                             <li><a href="dashboard.php?logout=on">
-                                    <font color="red">cerrar sesion
+                                    <font color="blue">cerrar sesion
                                 </a></li><br>
                                 <br>
                                 <br>

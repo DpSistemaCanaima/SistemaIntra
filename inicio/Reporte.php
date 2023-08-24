@@ -172,14 +172,14 @@ $Report1 = mysqli_fetch_assoc($Report1);
                             </ul>
                         </header>
                         <ul>
-                            <li><a href="noticias.php">Noticias</a></li>
-                            <li><a href="dashboard.php">Subir publicacion</a></li>
+                            <li><a href="../noticias.php">Noticias</a></li>
+                            <li><a href="../dashboard.php">Subir publicacion</a></li>
 
 
                             <li>
                                 <span class="opener">solicitudes</span>
                                 <ul>
-                                    <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+                                    <li><a href="../solicitudes.php?RRHH">Recursos Humanos</a></li>
 
 
                                 </ul>
@@ -208,13 +208,13 @@ $Report1 = mysqli_fetch_assoc($Report1);
                             </li>
 
                             <li>
-                                <a href="gestiondeusuario.php">Gestor de usuario</a>
+                                <a href="../gestiondeusuario.php">Gestor de usuario</a>
                             </li>
                             <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
                             <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
 
-                            <li><a href="dashboard.php?logout=on">
+                            <li><a href="../dashboard.php?logout=on">
                                     <font color="red">cerrar sesion
                                 </a></li><br>
                             <br>

@@ -8,6 +8,6 @@
  
      mysqli_close($conn);
 
-     header("location:dashboard.php");
+     header("location:noticias.php");
 
  ?>   
