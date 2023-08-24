@@ -75,7 +75,7 @@
                     
                 $sql = "SELECT  u.IDDATOS, u.NAME, u.SURNAME, u.OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, a.AREA, r.PRIVILEGE, n.NACINALIDAD, l.TIPO_USUARIOS, g.GENDER FROM user_datos AS u 
                  INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  
-                 INNER JOIN rols AS r ON u.IDROLS = R.IDROLS
+                 INNER JOIN rols AS r ON u.IDROLS = r.IDROLS
                  INNER JOIN nacionalidad AS n ON u.NACIONALIDAD = n.ID_NACIONALIDAD 
                  INNER JOIN gender AS g ON u.GENDER = g.ID
                  INNER JOIN login AS l ON u.LOGIN = l.TIPO WHERE IDDATOS NOT IN ('$IDDATOS1')";  
@@ -109,7 +109,7 @@
                                                             <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                         </li>
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal" href="#">Ver mas</a></li>
+                                                data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS'];?>" href="#">Ver mas</a></li>
                                     </ul>
                                 </div>
                                 <!---  <div class="btn-group dropend">

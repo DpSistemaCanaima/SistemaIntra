@@ -1,8 +1,8 @@
 <?php
 
-$servername = "localhost";
+$servername = "10.10.5.28";
 $database = "bbs1";
-$username = "intranet";
+$username = "sistema";
 $password = "123456";
 
 
