@@ -14,6 +14,7 @@ require_once('conexion.php');
     $AREA =htmlentities($_POST['assgned_area']);
 
  
+    
 
     //limpiar espacio
    $NAME=trim($NAME);
