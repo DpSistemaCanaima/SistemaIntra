@@ -26,6 +26,7 @@ include('conexion.php');
     $AREA =$_POST['assigned_area'];
 
  
+    
 
     $sql =mysqli_query($conn, "INSERT INTO `user_datos`(`name`, `nacionalidad`, `surname`, `oficio` ,`direccion`,`ciudad`, `municipio`, `parroquia`, `gender`,`cedula`, `user`, `password`, `email`, `idrols`, `login`, `assigned_area`) VALUES ('$NAME', '$NACIONALIDAD' ,'$SURNAME', '$OFICIO', '$DIRECCION', '$CIUDAD', '$MUNICIPIO', '$PARROQUIA' ,'$GENDER','$CEDULA','$USER', '$PASSWORD_C','$CORREO','$IDROLS','$LOGIN','$AREA')");
 
