@@ -8,7 +8,7 @@ body {
             padding: 0;
         }
 
-        .container {
+.container {
             display: flex;
             align-items: center;
             width: 80%;
@@ -54,3 +54,16 @@ body {
             border-radius: 15px;
             cursor: pointer;
         }
+
+@media screen and (max-width:800px) {
+    
+.container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+}
