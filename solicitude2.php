@@ -115,7 +115,7 @@ if ($_SESSION['Users'][0]== null){
 										</div>
 										<div class="col-6 col-12-mobile">
 											
-											<input type="text" class="form-control" name="cedula" placeholder="cedula"  aria-describedby="basic-addon2">
+											<input type="text" class="form-control" name="cedula" placeholder="cedula" maxlength="100"  aria-describedby="basic-addon2">
 										</div>
 										<div class="col-12">
 											<select class="form-select"  name="solicitud">
