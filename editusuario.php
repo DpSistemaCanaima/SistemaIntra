@@ -1,248 +1,100 @@
-<?php
-    require "conexion.php";
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<?php echo $mostrar['CEDULA'];?>" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
 
-      $id = $_GET['Edit'];
+                <form action="procesar_editar.php" method="POST">
+                    <input type="hidden" value="<?php echo $mostrar['IDDATOS']; ?>" name="IDDATOS">
+                    <label for="floatingInput">Nombre</label>
+                    <input type="text" class="form-control" value="<?php echo $mostrar['NAME'] ?>" name="NAME">
+                    <label for="floatingInput">Apellido</label>
+                    <input type="text" class="form-control" value="<?php echo $mostrar['SURNAME'] ?>" name="SURNAME">
+                   
+                    <label for="floatingInput">Cedula</label>
+                    <input type="text" class="form-control" value="<?php echo $mostrar['CEDULA'] ?>" name="CEDULA">
+                    <label for="floatingInput">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" name="FECHA" class="i-text"
+                       value="<?php echo $mostrar['FECHA'] ?>">
+                       <label for="floatingInput">Grado de Educacion</label>
+                    <select class="form-select" aria-label="Default select example" name="GRADO_DE_EDUCACION">
+                        <option value="11">Primaria</option>
+                        <option value="12">Secundaria</option>
+                        <option value="13">Universitario</option>
+                        <option value="14">otro</option>
+                    </select>
+                    <label for="floatingInput">Abilidad u oficio</label>
+                    <input type="text" class="form-control" aria-label="Username" name="ABILIDAD_U_OFICIO"
+                        value="<?php echo $mostrar['ABILIDAD_U_OFICIO'] ?>">
+                        <label for="floatingInput">Direccion</label>
+                    <input type="text" class="form-control" aria-label="Username" name="DIRECCION"
+                    value="<?php echo $mostrar['DIRECCION'] ?>">
+                    <label for="floatingInput">Ciudad</label>
+                    <input type="text" class="form-control" aria-label="Username" name="CIUDAD" value="<?php echo $mostrar['CIUDAD'] ?>">
+                    <label for="floatingInput">Municipio</label>
+                    <input type="text" class="form-control" aria-label="Username" name="MUNICIPIO"
+                    value="<?php echo $mostrar['MUNICIPIO'] ?>">
+                    <label for="floatingInput">Parroquia</label>
+                    <input type="text" class="form-control" aria-label="Username" name="PARROQUIA"
+                      value="<?php echo $mostrar['PARROQUIA'] ?>">
+                      <label for="floatingInput">Correo</label>
+                    <input type="text" class="form-control" aria-label="Username" name="EMAIL"
+                    value="<?php echo $mostrar['EMAIL'] ?>">
+        
+                    <label for="floatingInput">Contraseña</label>
+                    <div id=password2>
+                        <input type="password" class="form-control" name="PASSWORD" value="<?php echo $mostrar['PASSWORD'] ?>">
+                    </div>
+                    <label for="floatingInput">Correo</label>
+                    <input type="text" class="form-control" value="<?php echo $mostrar['EMAIL'] ?>" name="EMAIL">
 
-?>
+                    <label for="floatingInput">Rol</label>
+                    <select class="form-select" name="IDROLS">
+                        <option value="2">Usuario</option>
+                        <option value="3">Tecnico</option>
+                         <option value="4">Recursos Humanos</option>
+                    </select>
 
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
-    <title>Industria Canaima</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
-</head>
-
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-
-                <!-- Header -->
-
-
-
-
-                <div class="espacio-tabla">
-
-                    <!----------Mostrar-------->
-                    <table class="table">
-                        <?php if(isset($_GET['Error'])&&($_GET['Error']=='Campo')){
-                        echo '<br><p>Uno o varios campo tiene un error, intentelo de nuevo</p>';
-                        header("refresh:3;mostraredit.php?Edit={$_GET['Edit']}");
-                                                }elseif(isset($_GET['Error'])&&($_GET['Error']=='Cedula'))
-                                                {echo '<br><p>Ya existe un usuario con la misma cedula.</p>';
-                                                header("refresh:3;mostraredit.php?Edit={$_GET['Edit']}");
-                                            }elseif(isset($_GET['Error'])&&($_GET['Error']=='Correo'))
-                                            {echo '<br><p>existe 3 usuario con el mismo correo, por favor coloque otro.</p>';
-                                            header("refresh:3;mostraredit.php?Edit={$_GET['Edit']}");
-                                                }else{echo '';} ?>
-
-                        <tbody>
-
-                            <?php
-                
-            
-                
-                $result=mysqli_query($conn,"SELECT * FROM user_datos where `IDDATOS`='$id'");
-                $result2 = mysqli_query($conn, "SELECT * FROM gender");
-                $result3 = mysqli_query($conn, "SELECT * FROM area");
-                $mostrar=mysqli_fetch_array($result);
-                    if ($mostrar == null) {
-                        header('location:mostraredit.php');
-                    } else {
-                        
-              ?>
-                            <br>
-
-                            <br>
-                            <form action="procesar_editar.php" method="POST">
-                                <input type="hidden"   value="<?php echo $mostrar['IDDATOS']; ?>" name="IDDATOS">
-                                <p>Nombre</p>
-                                <input type="text"  value="<?php echo $mostrar['NAME'] ?>" name="NAME">
-                                <br>
-                                <p>Apellido</p>
-                                <input type="text" value="<?php echo $mostrar['SURNAME'] ?>" name="SURNAME">
-                                <br>
-                                <p>Cedula</p>
-                                <input type="text" value="<?php echo $mostrar['CEDULA'] ?>" name="CEDULA">
-                                <br>
-                                <p>Usuario</p>
-                                <input type="text" value="<?php echo $mostrar['USER'] ?>" name="USER" disabled>
-                                <br>
-                                <p>Contraseña</p>
-                                <div id=password2>
-                                    <input type="password" name="PASSWORD">
-                                </div>
-                                <br>
-                                <input type="checkbox" id="demo-copy" name="confirmation">
-                                <label for="demo-copy">Contraseña propia</label>
-                                <p>Correo</p>
-                                <input type="text" value="<?php echo $mostrar['EMAIL'] ?>" name="EMAIL">
-                                <br>
-                                <p>Cargo</p>
-                                <select name="IDROLS">
-                                    <option value="2">Usuario</option>
-                                    <option value="3">Tecnico</option>
-                                </select>
-                                <br>
-                                <p>Estado</p>
-                                <select name="LOGIN">
-                                    <option value="<?php echo $mostrar['LOGIN'];?>">--Defecto--</option>
-                                    <option value="1">Habilitado</option>
-                                    <option value="2">Deshabilitado</option>
-                                </select>
-                                <br>
-                                <p>Genero</p>
-                                <select name=GENDER>
-                                    <option value="<?php echo $mostrar['GENDER'];?>">--Defecto--</option>
-                                    <?php while ($gender = mysqli_fetch_array($result2)) {
-                        ?>
-                                    <option value="<?php echo $gender['ID']; ?>"><?php echo $gender['GENDER']; ?>
-                                    </option>
-                                    <?php }?>
-                                </select>
-                                <br>
-                                <p>Area asignada</p>
-
-                                <select name="ASSIGNED_AREA" class="selectpicker" data-show-subtext="true"
-                                    data-live-search="true">
-                                    <option value="<?php echo $mostrar['ASSIGNED_AREA']?>" selected="true">--Defecto--
-                                    </option>
-                                    <?php while ($area = mysqli_fetch_array($result3)) {
-                        ?>
-                                    <option value="<?php echo $area['ID_AREA']; ?>"><?php echo $area['AREA']; ?>
-                                    </option>
-                                    <?php }?>
-                                </select>
-                                <script type=text/javascript>
-                                $('.selectpicker').selectpicker({
-                                    style: 'btn-default'
-                                });
-                                </script>
+                    <label for="floatingInput">Status</label>
+                    <select class="form-select" name="LOGIN">
+                        <option value="1">Habilitado</option>
+                        <option value="2">Deshabilitado</option>
+                    </select>
+                    <label for="floatingInput">Sexo</label>
+                    <select class="form-select" name="GENDER">
+                        <option value="<?php echo $mostrar['GENDER'] ?>" ></option>
+                        <option value="1">Hombre</option>
+                        <option value="2">Mujer</option>
+                        <option value="3">Otro</option>
+                    </select>
+                    <label for="floatingInput">Area</label>
+                    <select class="form-select" name="ASSIGNED_AREA" class="selectpicker" data-show-subtext="true"
+                        data-live-search="true">
+                        <option value="1">Recurso Humanos</option>
+                        <option value="2">informatica</option>
+                        <option value="3">captacion</option>
+                    </select><label for="hijos">Seleccione si tiene hijos.</label>
+        <input type="radio" name="gender" class="i-radio" value="si"> Si
+        <input type="radio" name="gender" class="i-radio" value="no"> No <br>
+        <input type="number"  name="NUMERO_DE_HIJOS" class="i-text" placeholder="Numero de hijos">
+        <input type="text"  name="NOBRE_Y_APELLIDO" class="i-text" placeholder="Nombre y apellido">
+        <input type="date"  name="FECHA_DE_NACIMIENTO" class="i-text" placeholder="Fecha de nacimiento">
+       
 
 
-                                <br>
-                                <input type="submit" value="actualizar">
-
-                            </form>
-                            <script type="text/javascript">
-                            document.addEventListener('DOMContentLoaded', function() {
-                                // Adjunte el detector de eventos `change` al checkbox
-                                document.getElementById('demo-copy').onchange = toggleBilling;
-                            }, true);
-
-                            function toggleBilling() {
-                                // Seleccione los campos de texto de facturación
-                                var billingItems = document.querySelectorAll('#password2 input[type="password"]');
-
-                                // Alternar los campos de texto de facturación
-                                for (var i = 0; i < billingItems.length; i++) {
-                                    billingItems[i].disabled = !billingItems[i].disabled;
-                                }
-                            }
-                            </script>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Banner -->
-
-                <!-- Section -->
-
-
-
+                    <input type="submit" value="Actualizar" class="btn btn-outline-primary">
+                </form>
             </div>
         </div>
-
-        <!-- Sidebar -->
-        <div id="sidebar">
-            <div class="inner">
-
-                <!-- Search -->
-
-                <!-- Menu -->
-                <nav id="menu">
-                    <header class="major">
-                        <h2>Menu</h2>
-                    </header>
-                    <ul>
-                        <li><a href="dashboard.php">noticias</a></li>
+        <div class="modal-footer">
 
 
-                        <li>
-                            <span class="opener">solicitudes</span>
-                            <ul>
-                                <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">web</span>
-                            <ul>
-                                <li><a href="https://bdvenlinea.banvenez.com" target="_blank">Banco de Venezuela</a>
-                                </li>
-                                <li><a href="https://www.eluniversal.com/" target="_blank"> El universal</a></li>
-                                <li><a href="https://www.patria.org.ve" target="_blank">pagina patria</a></li>
-                                <li><a href="https://calculadorapetro.bt.gob.ve/" target="_blank">calculadora petro</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">Biblioteca digital</span>
-                            <ul>
-
-                                <li><a href="./pdf/103_Manual_Canaimit.pdf" target="_blank">Manual de canaima(.PDF)</a>
-                                </li>
-                                <li><a href="./pdf/para_el_usuario.docx" target="_blank">Cuidado de la
-                                        canaima(.DOCX)</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="mostraredit.php">Gestor de usuario</a>
-                        </li>
-                        <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
-                        <li><a href="mostraredit.php?logout=on">
-                                <font color="red">cerrar sesion
-                            </a></li>
-                    </ul>
-                </nav>
-
-            </div>
         </div>
-
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
-
-<?php
-    }
-
-?>
+</div>
+</div>

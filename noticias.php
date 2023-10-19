@@ -398,7 +398,7 @@ while ($row = mysqli_fetch_assoc($res)) {
             <div class="inner">
 
                 <!-- Header -->
-              
+
                 <br>
                 <div class="container mt-3">
                     <div class="row">
@@ -536,7 +536,23 @@ while ($row = mysqli_fetch_assoc($res)) {
 					$tipoArchivo = $_FILES['foto']['type'];
 					$permitido=array("image/png","image/jpeg");
 					if( in_array($tipoArchivo,$permitido) ==false ){
-						die("Archivo no permitido");
+						die("<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                        <script language='JavaScript'>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Algo salio mal. Intenta de nuevo',
+                                showCancelButton: false,
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK',
+                                timer: 1500
+                              }).then(() => {
+                
+                                location.assign('dashboard.php');
+                
+                             });
+                    });
+                        </script>");
 					}
 				   $nombreArchivo = $_POST['nombre'];
 					$tamanoArchivo = $_FILES['foto']['size'];
@@ -552,11 +568,24 @@ while ($row = mysqli_fetch_assoc($res)) {
 					$res = mysqli_query($conn, $query);
 					if ($res=true) {
 			?>
-<div class="alert alert-primary alert-dismissible fade show" role="alert">
-    <center>
-        <p>Registro insertado exitosamente</p>
-        <center>
-</div>
+    
+		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+		<script language='JavaScript'>
+		document.addEventListener('DOMContentLoaded', function() {
+			Swal.fire({
+				icon: 'success',
+				title: 'Se Registro correctamente',
+				showCancelButton: false,
+				confirmButtonColor: '#3085d6',
+				confirmButtonText: 'OK',
+				timer: 1500
+			  }).then(() => {
+
+				location.assign('noticias.php');
+
+			  });
+	});
+		</script>;
 <?php
 							   header("refresh:2;dashboard.php");
 					} else {
@@ -577,6 +606,16 @@ while ($row = mysqli_fetch_assoc($res)) {
 			}
 
 			?>
+            <?php 
+  include('Backend/conexion.php');
+  
+  $query = "select cod_imagen,imagen, nombre from imagenes  ";
+  $resultado = mysqli_query($conn,$query);
+  if(isset($_GET['Edit'])){//editar usuario
+    include "modalvermas.php";
+
+}
+?>
 <DOPCTYPE html>
     <html>
 
@@ -586,6 +625,16 @@ while ($row = mysqli_fetch_assoc($res)) {
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="usuario.css">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
         <title>Inicio</title>
     </head>
 
@@ -597,63 +646,49 @@ while ($row = mysqli_fetch_assoc($res)) {
             <!-- Main -->
             <div id="main">
                 <div class="inner">
+                    <header id="header">
+             <h1><a href="noticias.php" class="logo"><strong>Noticias</strong></a></h1>
 
-                    <!-- Header -->
-                    <br>
-                    <br>
-					<header id="header">
-                    <h1><a href="dashboard.php" class="logo"><strong>Noticias</strong></a></h1>
-                   
+             <a href="gestiondeusuario.php?User=true" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#registrarusuario"
+                    style="border-bottom: none; font-size:30px; display: block; position: absolute; left: 90%; top:0">+</a>
+                <br><br>
 
-               
-                </header>
+                <?php
+                        include "modalnoticias.php";
+                    ?>
 
-
-
-                    <div class="container mt-3">
-                        <div class="row">
-                            <div class="col-12">
-
-                              
-
-                               
-
-                                        <?php
-                        include('conexion.php');
-						$conn = mysqli_connect($servername, $username, $password, $database);
-                        $query = "SELECT ID,nombre,tipo,contenido FROM imagen ORDER BY ID ASC, nombre,tipo,contenido";
-                        $res = mysqli_query($conn, $query);
-                   while ($row = mysqli_fetch_assoc($res)) {
-                        ?>
-                     
-
-                     <img class="img" src="data:<?php echo $row['tipo']; ?>;base64,<?php echo  base64_encode($row['contenido']); ?>">
- 
-
-                    <p><?php echo $row['nombre']; ?> </p>
-                                         
-
-                                  
-                                        <?php
-                        }
-                        ?>
-                              
-
-                            </div>
-                        </div>
-                    </div>
+                    </header>
 
 
 
+                    <div class="col-lg-13">
+          
+        
+          <div class="card-columns">
+              <?php foreach($resultado as $row) { ?>
+        <div class="card">
+        <a style="text-decoration:none" href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
 
-                    <!-- Banner -->
+      <img  src="Backend/imagenes/<?php echo $row['imagen']; ?>" class="card-img-top" > 
+     
+      <div class="card-body">
+                                   
+     <h5 class="card-title"><strong><?php echo $row['nombre']; ?>   </strong></h5>ver mas </a>
+   </div>
 
-                    <!-- Section -->
+
+   </div>
+ <?php } ?>
+      </div>
+   </div>
+
+  
 
 
 
-                </div>
-            </div>
+               </div>
+           </div>
 
             <!-- Sidebar -->
             <div id="sidebar">
@@ -664,22 +699,52 @@ while ($row = mysqli_fetch_assoc($res)) {
                     <!-- Menu -->
                     <nav id="menu">
                         <header class="major">
-                            <h2>Administrador<br><?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
-							
-                            <h3>Menu</h3>	
+  <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+ 
+                </a>
+                <?php
+                        include "modalperfil.php";
+                    ?>
+                       <?php include 'conexion.php';
+	
+	if (isset($_SESSION['id'])) {
+		
+	}else{
+		?>
+		<script type="text/javascript">
+			window.location = "./";
+		</script>
+		<?php 
+	}
+	$id = $_SESSION['id'];
+	$consulta = mysqli_query($con, "SELECT * FROM usuarios ");
+	$valores = mysqli_fetch_array($consulta);
+	$foto = $valores['foto'];
+	 ?>
 
+	 
+	 		
+	 			<img class="perfil" src="<?php echo $foto; ?>">
+	 			
+	 		
+                        
+            
+                        
+                  
+
+                            <h2>Administrador  <?php echo  $_SESSION['Users'][0],' ',$_SESSION['Users'][5];?></h2>
 
                             </ul>
                         </header>
                         <ul>
                             <li><a href="noticias.php">Noticias</a></li>
-                            <li><a href="dashboard.php">Subir publicacion</a></li>
-
+                           
+                         
 
                             <li>
                                 <span class="opener">solicitudes</span>
                                 <ul>
                                     <li><a href="solicitude2.php?RRHH">Recursos Humanos</a></li>
+                                    <li><a href="soporteadmin.php?Soporte">Soporte tecnico</a></li>
 
 
                                 </ul>
@@ -712,25 +777,22 @@ while ($row = mysqli_fetch_assoc($res)) {
                             </li>
                             <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
-                            <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
+                            <li><a href="inicio/index.php">Encargar casos de soporte</a></li>
 
                             <li><a href="dashboard.php?logout=on">
                                     <font color="blue">cerrar sesion
                                 </a></li><br>
-                                <br>
-                                <br>
-								<ul class="icons">
-                        <li><a href="https://twitter.com/ind_canaima" class="icon brands fa-twitter"><span
-                                    class="label">twitter</span></a></li>
-                        <li><a href="https://es-la.facebook.com/IndustriaCanaima/"
-                                class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="https://www.instagram.com/ind_canaima/" class="icon brands fa-instagram"><span
-                                    class="label">Instagram</span></a></li>
-                        </ul>
+                           
+                            <ul class="icons">
+                                <li><a href="https://twitter.com/ind_canaima" class="icon brands fa-twitter"><span
+                                            class="label">twitter</span></a></li>
+                                <li><a href="https://es-la.facebook.com/IndustriaCanaima/"
+                                        class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                <li><a href="https://www.instagram.com/ind_canaima/"
+                                        class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            </ul>
                     </nav>
-
                     <!-- Section -->
-
 
                 </div>
             </div>
@@ -743,6 +805,17 @@ while ($row = mysqli_fetch_assoc($res)) {
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+    new DataTable('#example');
+    </script>
 
     </body>
 

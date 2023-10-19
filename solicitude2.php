@@ -23,7 +23,7 @@ if ($_SESSION['Users'][0]== null){
 					$validacion = mysqli_query($conn, "SELECT * FROM `recursos` WHERE cedula='$cedula'");
 				$validacion2 = mysqli_num_rows($validacion);
 					if($validacion2>2){
-						header('location:solicitudes.php?RRHH&Error=Report_max');	
+						header('location:solicitude2.php?RRHH&Error=Report_max');	
 					}else{
 
 					mysqli_query($conn, "INSERT INTO `recursos` (`nombre`, `apellido`, `cedula`, `solicitud`) VALUES ('$nombre', '$apellido', '$cedula', '$solicitud')");
@@ -33,16 +33,33 @@ if ($_SESSION['Users'][0]== null){
 
 						echo '<script>';
 						echo 'alert("solicitud enviada con exito !!!");';
-						echo 'window.location.href="dashboard.php";';
+						echo 'window.location.href="solicitude2.php";';
 						echo '</script>';
 						
 					} else {
-						header('location:solicitudes.php?RRHH&Error=no_send');
+						header('location:solicitude2.php?RRHH&Error=no_send');
 					}
 				}
 				} else {
-					header('location:solicitudes.php?RRHH&&Error=card');
-				}
+					echo "
+					<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+					<script language='JavaScript'>
+					document.addEventListener('DOMContentLoaded', function() {
+						Swal.fire({
+							icon: 'success',
+							title: 'Uno o varios campos estan vacios',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							confirmButtonText: 'OK',
+							timer: 1500
+						  }).then(() => { 
+							
+							location.assign('solicitude2.php?RRHH');
+			
+						  });
+				});
+					</script>";
+			}
 			} else {
 ?>
 <!DOCTYPE HTML>
@@ -70,14 +87,68 @@ if ($_SESSION['Users'][0]== null){
 					<div id="main">
 						<div class="inner">
 							<?php if (isset($_GET['Error']) && $_GET['Error'] == "no_send") {
-					echo "<br><p><font color='red'>Lo sentimos, ocurrio un error al intentar enviar la solicitud, intente mas tarde.</font></p>";
-					header('refresh:3;solicitudes.php?RRHH');
+					 echo "
+					<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+					<script language='JavaScript'>
+					document.addEventListener('DOMContentLoaded', function() {
+						Swal.fire({
+							icon: 'success',
+							title: 'Lo sentimos, ocurrio un error al intentar enviar la solicitud, intente mas tarde
+							',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							confirmButtonText: 'OK',
+							timer: 1500
+						  }).then(() => {
+			
+							location.assign('solicitude2.php');
+			
+						  });
+				});
+					</script>";
+					header('refresh:3;solicitude2.php?RRHH');
 				}elseif(isset($_GET['Error']) && $_GET['Error'] == "card"){
-					echo "<br><p><font color='red'>Su cedula no coincide con los datos de su cuenta, intente de nuevo.</font></p>";
-					header('refresh:3;solicitudes.php?RRHH');
+					echo "
+					<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+					<script language='JavaScript'>
+					document.addEventListener('DOMContentLoaded', function() {
+						Swal.fire({
+							icon: 'success',
+							title: 'Su cedula no coincide con los datos de su cuenta, intente de nuevo
+							',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							confirmButtonText: 'OK',
+							timer: 1500
+						  }).then(() => {
+			
+							location.assign('solicitude2.php');
+			
+						  });
+				});
+					</script>";
+					header('refresh:3;solicitude2.php?RRHH');
 				}elseif(isset($_GET['Error']) && $_GET['Error'] == "Report_max"){
-					echo "<br><p><font color='red'>Tiene 3 solicitudes activa en este momento, intente mas tarde.</font></p>";
-					header('refresh:3;solicitudes.php?RRHH');
+					echo "
+					<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+					<script language='JavaScript'>
+					document.addEventListener('DOMContentLoaded', function() {
+						Swal.fire({
+							icon: 'success',
+							title: 'Tiene 3 solicitudes activa en este momento, intente mas tarde
+							',
+							showCancelButton: false,
+							confirmButtonColor: '#3085d6',
+							confirmButtonText: 'OK',
+							timer: 1500
+						  }).then(() => {
+			
+							location.assign('solicitude2.php');
+			
+						  });
+				});
+					</script>";
+					header('refresh:3;solicitude2.php?RRHH');
 				} else {
 					echo '';
 				} ?>
@@ -105,7 +176,7 @@ if ($_SESSION['Users'][0]== null){
 										</ul>
 									</div>
 									<span class="image object">
-									<form method="post" action="solicitudes.php?RRHH">
+									<form method="post" action="solicitude2.php?RRHH">
 									<div class="row gtr-50">
 									<div class="col-12">
 											<input type="hidden" name="nombre" value="<?php echo $_SESSION['Users'][0]; ?>" maxlength="100"></textarea>
@@ -113,7 +184,7 @@ if ($_SESSION['Users'][0]== null){
 										<div class="col-12">
 										<input type="hidden" name="apellido" value="<?php echo $_SESSION['Users'][5]; ?>" maxlength="100"></textarea>
 										</div>
-										<div class="col-6 col-12-mobile">
+										<div class="mb-3">
 											
 											<input type="text" class="form-control" name="cedula" placeholder="cedula" maxlength="100"  aria-describedby="basic-addon2">
 										</div>
@@ -126,8 +197,8 @@ if ($_SESSION['Users'][0]== null){
 										<div class="col-12">
 										<br>
 											<ul class="actions">
-												<li><input type="submit" class="btn btn-outline-primary" value="Enviar" name="Envia" onclick="return Confirmdalet()" /></li>
-												<li><input type="reset" class="btn btn-outline-primary" value="Borrar" /></li>
+												<li><input type="submit"  value="Enviar" name="Envia" onclick="Confirmdalet()" /></li>
+												<li><input type="reset"  value="Borrar" /></li>
 											</ul>
 										</div>
 									</div>
@@ -161,14 +232,14 @@ if ($_SESSION['Users'][0]== null){
 </header>
 <ul>
 <li><a href="noticias.php">Noticias</a></li>
-<li><a href="dashboard.php">Subir publicacion</a></li>
+
 
 
 <li>
 	<span class="opener">solicitudes</span>
 	<ul>
 		<li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
-
+		<li><a href="soporteadmin.php">Soporte tecnico</a></li>
 
 	</ul>
 </li>
@@ -252,7 +323,7 @@ if ($_SESSION['Users'][0]== null){
 		}else{
 		$solicitud = $_POST['solicitud'];
 		$menssage = $_POST['Message'];
-		$id = $_SESSION['Users'][4];
+		$id = $_SESSION['Users'][1];
 		$a = strlen ($solicitud);
 		$b = strlen ($menssage);
 		
@@ -261,7 +332,7 @@ if ($_SESSION['Users'][0]== null){
 			<script>
 				var yes=alert('El campo "solicitud" ha superado el rango maximo');
 				if(yes=true){
-				window.location.href="solicitudes.php?Soporte";
+				window.location.href="solicitude2.php?Soporte";
 			}
 				</script><?php
 		}elseif($b > 100){
@@ -269,7 +340,7 @@ if ($_SESSION['Users'][0]== null){
 				<script>
 					var yes=alert('El campo "mensaje" ha superado el rango maximo');
 					if(yes=true){
-						window.location.href="solicitudes.php?Soporte";
+						window.location.href="solicitude2.php?Soporte";
 					}
 					</script><?php
 			}else
@@ -280,7 +351,7 @@ if ($_SESSION['Users'][0]== null){
 			?><script>
 					var yes=alert('Su reporte se ha enviado de manera exitosa');
 					if(yes=true){
-						window.location.href="solicitudes.php?Soporte";
+						window.location.href="solicitude2.php?Soporte";
 					}
 					</script><?php
 }}else{
@@ -334,7 +405,7 @@ if ($_SESSION['Users'][0]== null){
 										</ul>
 									</div>
 									
-									<form method="post" action="solicitudes.php?Soporte">
+									<form method="post" action="solicitude2.php?Soporte">
 									
 									<div class="mb-3">
 											
@@ -375,7 +446,7 @@ if ($_SESSION['Users'][0]== null){
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="dashboard.php">noticias</a></li>
+										<li><a href="noticias.php">noticias</a></li>
 										
 										
 										<li>
@@ -435,10 +506,9 @@ if ($_SESSION['Users'][0]== null){
 	</body>
 </html>
 <?php 
-}}elseif ($_SESSION['Users'][1]== 2){header('location:dashboard.php');
-}elseif ($_SESSION['Users'][1]== 3){header('location:dashboard.php');}
+}};
+}
 
-}else{
-/*header('location:dashboard.php');*/}}}
+}}
 ?>
 

@@ -1,0 +1,53 @@
+/*Estilos para el cuerpo de HTML*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* Estilos adicionales para el formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.num {
+    
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+
+.num{
+    padding: 10px 20px;
+  
+    cursor: pointer;
+}
+
+.boto {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+
+    
+}
+
+.boto {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    align-items: center;
+     justify-items: center;
+}

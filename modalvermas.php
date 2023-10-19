@@ -1,20 +1,59 @@
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php 
+ 
+  include('cone.php');
+  if (!isset($_SESSION['IDDATOS'])) {
+    header("Location: index.php");
+}
+
+$USER = $_SESSION['USER'];
+$NAME = $_SESSION['NAME'];
+$ROL = $_SESSION['IDROLS'];
+$CEDULA = $_SESSION['CEDULA'];
+?>
+   
+    <div class="modal fade" id="exampleModal<?php echo $mostrar['IDDATOS'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Informacion de Usuario</strong></h1>
+                   <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Informacion de Usuario </strong>
+                    <?php 
+                    if (isset($_SESSION['IDDATOS'])) {
+		
+  }else{
+      ?>
+      <script type="text/javascript">
+          window.location = "./";
+      </script>
+      <?php 
+  }
+
+  $consulta = mysqli_query($conn, "SELECT IDDATOS USER , foto FROM user_datos  WHERE `CEDULA` = '$CEDULA' ");
+  $valores = mysqli_fetch_array($consulta);
+  $foto = $valores['foto'];
+   ?>   
+        <input type="hidden" value="<?php echo $mostrar['CEDULA'];?>">
+        <img class="perfil" src="<?php echo $mostrar['foto']; ?>" >
+
+                 
+                    
+                  
+                    </strong></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <label for="floatingInput"><strong> Nombre y Apellido</strong></label>:
                     <?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?><br>
-                    <label for="floatingInput"><strong> Nacionalidad</strong> </label>:
-                      <?php echo $mostrar['NACINALIDAD']?><br>
+                    <label for="floatingInput"><strong>Nacionalidad</strong></label>:
+                    <?php echo $mostrar ['nacionalidad'] ?><br>
                       <label for="floatingInput"><strong>Cedula</strong></label>:
                     <?php echo $mostrar ['CEDULA'] ?><br>
+                      <label for="floatingInput"><strong>Grado de Educacion</strong></label>:
+                      <?php echo $mostrar['grado']?><br>
+                      <label for="floatingInput"><strong>Fecha de Nacimiento</strong></label>:
+                      <?php echo $mostrar['FECHA']?><br>
                       <label for="floatingInput"><strong>Oficio</strong></label>:
-                      <?php echo $mostrar['OFICIO']?><br>
+                      <?php echo $mostrar['ABILIDAD_U_OFICIO']?><br>
                       <label for="floatingInput"><strong>Direccion</strong></label>:
                       <?php echo $mostrar['DIRECCION']?><br>
                       <label for="floatingInput"><strong>Ciudad</strong></label>:
@@ -40,12 +79,19 @@
                     <label for="floatingInput"><strong>Rol</strong></label>:
                     <?php echo $mostrar ['PRIVILEGE'] ?><br>
                     <label for="floatingInput"><strong>Status</strong></label>:
-                    <?php echo $mostrar ['TIPO_USUARIOS'] ?>
+                    <?php echo $mostrar ['TIPO_USUARIOS'] ?><br>
+                    <label for="floatingInput"><strong>Nunero de Hijos</strong></label>:
+                    <?php echo $mostrar ['NUMERO_DE_HIJOS'] ?><br>
+                    <label for="floatingInput"><strong>Nombre y Apellido</strong></label>:
+                    <?php echo $mostrar ['NOBRE_Y_APELLIDO'] ?><br>
+                    <label for="floatingInput"><strong>Fecha de Nacimiento</strong></label>:
+                    <?php echo $mostrar ['FECHA_DE_NACIMIENTO'] ?>
+
 
                 </div>
                 <div class="modal-footer">
                    
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                   
                 </div>
             </div>
         </div>

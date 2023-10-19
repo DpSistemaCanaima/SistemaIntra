@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="bu.css">
     <link rel="stylesheet" href="usuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
 </head>
@@ -54,14 +54,14 @@
 
                 <br>
 
-                <table id="example" class="table-primary table-bordered " style="width:100%">
+                <table id="example" class=" table-bordered " style="width:100%">
                     <thead class="thead">
                         <tr>
 
-                            <th scope="col">Nombre y Apellido</th>
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Oficina</th>
-                            <th scope="col">Opciones</th>
+                            <th class="text" scope="col">Nombre y Apellido</th>
+                            <th class="text" scope="col">Cedula</th>
+                            <th class="text" scope="col">Oficina</th>
+                            <th class="text" scope="col">Opciones</th>
 
 
 
@@ -70,7 +70,7 @@
                     <tbody>
                         <?php
                     $IDDATOS1=$_SESSION['Users'][4];
-                        //  $sql="SELECT user_datos.IDDATOS,user_datos.NAME,user_datos.SURNAME,user_datos.CEDULA,user_datos.USER,user_datos.GENDER,user_datos.PASSWORD,user_datos.EMAIL,user_datos.IDROLS,user_datos.LOGIN, area.AREA FROM user_datos INNER JOIN area on user_datos.ASSIGNED_AREA=area.ID_AREA WHERE IDDATOS NOT IN ('$IDDATOS1')";
+                       
                       
                     
                 $sql = "SELECT  u.IDDATOS, u.NAME, u.SURNAME, u.OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, a.AREA, r.PRIVILEGE, n.NACINALIDAD, l.TIPO_USUARIOS, g.GENDER FROM user_datos AS u 
@@ -109,7 +109,7 @@
                                                             <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                         </li>
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal" href="#">Ver mas</a></li>
+                                                data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS']; ?>" href="#">Ver mas</a></li>
                                     </ul>
                                 </div>
                                 <!---  <div class="btn-group dropend">
@@ -187,7 +187,8 @@
                         <li>
                             <span class="opener">solicitudes</span>
                             <ul>
-                                <li><a href="solicitudes.php?RRHH">Recursos Humanos</a></li>
+                                <li><a href="solicitude2.php?RRHH">Recursos Humanos</a></li>
+                                <li><a href="soporteadmin.php?Soporte">Soporte tecnico</a></li>
 
 
                             </ul>
@@ -220,10 +221,10 @@
                         </li>
                         <li><a href="https://mail.industriacanaima.gob.ve/">Correo</a></li>
 
-                        <li><a href="inicio/reporte.php">Encargar casos de soporte</a></li>
+                        <li><a href="inicio/index.php">Encargar casos de soporte</a></li>
 
                         <li><a href="dashboard.php?logout=on">
-                                <font color="red">cerrar sesion
+                                <font color="blue">cerrar sesion
                             </a></li><br>
                         <br>
                         <br>
@@ -244,6 +245,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="bootstrap.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>

@@ -2,9 +2,9 @@
 require "inicio/conexion.php";
 
 
-	$IDDATOS = $_REQUEST['IDDATOS'];
+	$CEDULA = $_GET['CEDULA'];
 
-	$sql = "DELETE FROM user_datos WHERE IDDATOS ='".$IDDATOS."'"; 
+	$sql = "DELETE FROM user_datos WHERE CEDULA ='$CEDULA'"; 
 	$respuesta = mysqli_query($conn, $sql);
 	
 	if($respuesta){
@@ -21,7 +21,7 @@ require "inicio/conexion.php";
 				timer: 1500
 			  }).then(() => {
 
-				location.assign('gestiondeusuario.php');
+				location.assign('gestion_admin.php');
 
 			  });
 	});
@@ -40,7 +40,7 @@ require "inicio/conexion.php";
 				timer: 1500
 			  }).then(() => {
 
-				location.assign('gestiondeusuario.php');
+				location.assign('gestion_admin.php');
 
 			 });
 	});

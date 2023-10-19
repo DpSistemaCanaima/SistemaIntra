@@ -1,4 +1,10 @@
-.inpu{
+.file{
+	border: 1px solid rgb(0, 0, 0);
+}
+
+
+
+/*.inpu{
 	height: 100px;
 	width: 900px;
 }
