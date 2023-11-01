@@ -979,7 +979,7 @@ header p {
   text-transform: uppercase; }
 
 header.major > :last-child {
-  border-bottom: solid 3px blue;
+ 
   display: inline-block;
   margin: 1em 0 2em 0;
   padding: 0 1.75em 0.5em 26px;
@@ -1917,7 +1917,7 @@ button,
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
-      padding-top: 5em; } }
+      padding-top: 0em; } }
   @media screen and (max-width: 736px) {
     #header {
       padding-top: 6.5em; }

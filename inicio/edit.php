@@ -140,7 +140,7 @@ $ROL = $_SESSION['IDROLS'];
 
                             <h2>Administrador <?php  echo $NAME; ?></h2>
 
-                            <h3>Menu</h3>
+                         
 
                             </ul>
                         </header>

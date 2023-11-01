@@ -10,6 +10,37 @@ $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $ROL = $_SESSION['IDROLS'];
 
+date_default_timezone_set('America/caracas');
+     $fecha = date('Y-m-d');
+
+     $sql = "SELECT * FROM user_datos";
+      $result = mysqli_query($conn,$sql);
+      $mos = mysqli_fetch_assoc($result);
+
+      $db= $mos['FECHA'];
+
+      if ($fecha==$db) {
+
+        echo "
+		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+		<script language='JavaScript'>
+		document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Sweet!',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                        })
+	});
+		</script>";
+
+      }else{
+        
+      }
+
+
 include('Backend/conexion.php');
   $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
   $resultado = mysqli_query($conn,$query);
@@ -52,11 +83,11 @@ include('Backend/conexion.php');
             <div id="main">
                 <div class="inner">
                     <header id="header">
-                        <h1><a href="noticias.php" class="logo"><strong>Noticias</strong></a></h1>
+                        <center><h1 style="font-size: 70px;"><strong>Noticias</strong></h1></center>
 
                         <a href="gestiondeusuario.php?User=true" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#registrarusuario"
-                            style="border-bottom: none; font-size:15px; display: block; position: absolute; left: 90%; top:0; border-radius:30px;">+</a>
+                            style="border-bottom: none; font-size:15px; display: block; position: absolute; left: 90%; top:0; border-radius:30px;">Publicacion</a>
                        
 
                         <?php
@@ -82,14 +113,14 @@ include('Backend/conexion.php');
 
                                     <div class="card-columns">
                                         <?php foreach($resultado as $row) { ?>
-                                        <div class="card">
+                                        <div class="card"  style="width: 18em;">
                                             <a style="text-decoration:none"
                                                 href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
 
                                                 <img src="Backend/imagenes/<?php echo $row['imagen']; ?>"
                                                     class="card-img-top"></a>
 
-                                                 <center> <?php echo $row['nombre']; ?></center>  
+                                                    <center> <?php echo $row['nombre']; ?></center>  
 
 
 
@@ -124,13 +155,23 @@ include('Backend/conexion.php');
                         <nav id="menu">
                             <header class="major">
 
-                               
-                                        <a href="modal_admin.php" class="btn btn-primary" 
-                                        style=" border-radius:30px;">+
+                            <a class="btn btn-primary"   style=" border-radius:30px;" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">+</a>
+
+                           
+                                       
+                                        
                                         </a>
-                                        <?php } ?>
+                                        <?php
+
+include "modal_admin.php";
+
+
+
+?>
+                                        <?php }   ?>
                                         <?php 
-                       
+                                     
                        if (isset($_SESSION['IDDATOS'])) {
 		
                        }else{

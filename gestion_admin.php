@@ -22,9 +22,10 @@ $CEDULA = $_SESSION['CEDULA'];
 <html>
 
 <head>
-    <title>Gestor de usuario</title>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Gestor de usuario</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="bu.css">
     <link rel="stylesheet" href="usuario.css">
@@ -44,39 +45,33 @@ $CEDULA = $_SESSION['CEDULA'];
         <div id="main">
             <div class="inner">
 
-             
-
-                <?php
-                        include "modalregistrarusuario.php";
-                    ?>
-
-                <br>
-
-           
-         
-
-
-            <?php
-                        include "modalregistrarusuario.php";
-                    ?>
 
 
 
-            <table id="example" class=" table-bordered " style="width:100% ">
-                <thead class="thead">
-                    <tr>
-
-                        <th  class="text" scope="col">Nombre y Apellido</th>
-                        <th class="text" scope="col">Cedula</th>
-                        <th class="text" scope="col">Oficina</th>
-                        <th class="text" scope="col">Opciones</th>
 
 
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
+
+
+
+
+
+
+                <table id="example" class=" table-bordered " style="width:100% ">
+                    <thead class="thead">
+                        <tr>
+
+                            <th class="text" scope="col">Nombre y Apellido</th>
+                            <th class="text" scope="col">Cedula</th>
+                            <th class="text" scope="col">Oficina</th>
+                            <th class="text" scope="col">Opciones</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                    
                        
                       
@@ -95,45 +90,55 @@ $CEDULA = $_SESSION['CEDULA'];
                          
                       
                       while ($mostrar = mysqli_fetch_assoc($result)){?>
-                    <tr>
-                        <th class="nom"><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></th>
-                        <th class="nom"><?php echo $mostrar ['CEDULA'] ?></th>
-                        <th class="nom"><?php echo $mostrar ['AREA'] ?></th>
+                        <tr>
+                            <th class="nom"><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></th>
+                            <th class="nom"><?php echo $mostrar ['CEDULA'] ?></th>
+                            <th class="nom"><?php echo $mostrar ['AREA'] ?></th>
 
-                        <th>
+                            <th>
 
-                            <!------Editar------>
-                            <div class="btn-group dropend mx-auto " style=" width: 50px; margin-top: 1em; ">
-                                <button type="button"  class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    option
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                    <li><a class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal<?php echo $mostrar['CEDULA'];?>"><img
-                                                src="img/svg/editar.svg " alt="Industrias Canaima" width="15"
-                                                height="15"> Editar</a>
-                                    </li>
-                                    <li> <a class="dropdown-item btn btn-danger"
-                                            href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
-                                            <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                height="15"> Eliminar</a>
-                                    </li>
-                                    <li> <a class="dropdown-item btn btn-danger" href="gestion_admin.php?User=true" 
-                                            data-bs-toggle="modal" data-bs-target="#registrarusuario">Registrar</a>
-                                    </li>
-                                    <li><a class="dropdown-item" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS']; ?>"
-                                            href="#">Ver mas</a></li>
-                                </ul>
-                            </div>
+                                <!------Editar------>
+                                <div class="btn-group dropend mx-auto " style=" width: 50px; margin-top: 1em; ">
+                                    <button type="button" class="btn btn-outline-info dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        option
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <!-- Dropdown menu links -->
+                                        <li> <a class="dropdown-item btn btn-danger"
+                                                href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
+                                                data-bs-target="#registrarusuario"><img
+                                                    src="img/svg/person-add.svg " alt="Industrias Canaima" width="15"
+                                                    height="15">Registrar</a>
+                                        </li>
+
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal<?php echo $mostrar['CEDULA'];?>"><img
+                                                    src="img/svg/editar.svg " alt="Industrias Canaima" width="15"
+                                                    height="15"> Editar</a>
+                                        </li>
+                                        <li> <a class="dropdown-item btn btn-danger"
+                                                href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
+                                                <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
+                                                    height="15"> Eliminar</a>
+                                        </li>
+
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS']; ?>"
+                                                href="#"> <img src="img/svg/eye-fill.svg " alt="Industrias Canaima" width="15"
+                                                    height="15">Ver mas</a></li>
+                                    </ul>
+                                </div>
 
 
-                        </th>
+                            </th>
 
-                    </tr>
-                    <?php
+                        </tr>
+                        <?php
+                        include "modalregistrarusuario.php";
+                    ?>
+
+                        <?php
 
                              include "gestion_esdit.php";
                           
@@ -141,24 +146,24 @@ $CEDULA = $_SESSION['CEDULA'];
                      
                     ?>
 
-                    <?php
+                        <?php
 
                             include "modalvermas.php";
                            
                       }
                     ?>
-            </table>
+                </table>
 
 
-            <!-- Banner -->
+                <!-- Banner -->
 
-            <!-- Section -->
+                <!-- Section -->
 
 
 
+            </div>
         </div>
-    </div>
-                 
+
 
         <!-- Sidebar -->
         <div id="sidebar">
@@ -198,7 +203,7 @@ $CEDULA = $_SESSION['CEDULA'];
                         ?>
                         <img class="perfil" src="<?php echo $foto; ?>" width="200px">
 
-                      <h2 class="nombre" >Administrador <?php  echo $NAME; ?></h2>
+                        <h2 class="nombre">Administrador <?php  echo $NAME; ?></h2>
 
 
                         </ul>
@@ -285,11 +290,11 @@ $CEDULA = $_SESSION['CEDULA'];
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="assets/demo/chart-pie-demo.js"></script>
-        <script src="bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <script>
     new DataTable('#example');
     </script>
-    
+
 </body>
 
 </html>

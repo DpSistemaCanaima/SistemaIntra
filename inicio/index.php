@@ -35,7 +35,7 @@ $ROL = $_SESSION['IDROLS'];
 
     <body class="is-preload">
 
-        
+   
 
         <!-- Wrapper -->
         <div id="wrapper">
@@ -92,27 +92,23 @@ $ROL = $_SESSION['IDROLS'];
                                             <th>
 
 
-                                               <!--- <a href="" type="button" class="btn  btn-outline-primary"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT']; ?>">Ver
-                                                    mas</a>
-                                                </ul>--->
+                                               
                                               
-                                                <div class="btn-group dropend">
-                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                            <div class="btn-group dropend mx-auto" style=" width: 50px; margin-top: 1em;">
+                                    <button type="button" class="btn btn-outline-info dropdown-toggle"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Opciones
+                                        Option
                                     </button>
                                     <ul class="dropdown-menu">
                                         <!-- Dropdown menu links -->
  
                
-                                        <li><a class="dropdown-item"
-                                                href="edit.php?Edit=<?php echo $mostrar['ID_REPORT'];?>"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                        </li>
-                                      
+                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>"><img
+                                                src="img/svg/editar.svg " alt="Industrias Canaima" width="15"
+                                                height="15"> Editar</a>
+                                    </li>
+  
                                                               
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT']; ?>" href="#">Ver mas</a></li>
@@ -126,9 +122,16 @@ $ROL = $_SESSION['IDROLS'];
                                     </tr>
                                 </div>
                             </div>
+                            <?php
+
+include "gestion_esdit.php";
+
+
+
+?>
                 </div>
 
-
+       
 
 
 
@@ -163,6 +166,7 @@ $ROL = $_SESSION['IDROLS'];
               
                      
               ?>
+  
                 <!-- Banner -->
 
                 <!-- Section -->
@@ -214,7 +218,7 @@ $ROL = $_SESSION['IDROLS'];
 	 			
                                         <h2>Administrador <?php  echo $NAME; ?></h2>
 
-                        <h3>Menu</h3>
+                       
 
                         </ul>
                     </header>

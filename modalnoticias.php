@@ -18,10 +18,10 @@
        
        
              
-              <input  class="form-control" id="floatingInput" placeholder="Titulo" type="text" name="titulo">
+              <input  class="form-control" id="floatingInput" placeholder="Titulo" type="text" name="nombre">
             
         
-  <textarea class="form-control" placeholder="Descripcion"  name="comentario"  ></textarea>
+                 <textarea class="form-control" placeholder="Descripcion"  name="comentario"  ></textarea>
  
 
           

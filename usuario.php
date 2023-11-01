@@ -49,7 +49,8 @@ include('Backend/conexion.php');
 
                 <!-- Header -->
                 <header id="header">
-                    <h1><a href="dashboard.php" class="logo"><strong>Noticias</strong></a></h1>
+            
+                <center><h1 style="font-size: 70px;"><strong>Noticias</strong></h1></center>
 
                 </header>
                 <br>
@@ -111,7 +112,7 @@ include('Backend/conexion.php');
                     <header class="major">
 
 
-                        <a href="modal_usu.php" class="btn btn-primary">+
+                    <a href="modal_usu.php" class="btn btn-primary">+
                         </a>
                         <?php } ?>
                         <?php 
@@ -131,8 +132,8 @@ include('Backend/conexion.php');
                        $foto = $valores['foto'];
                         ?>
                         <img class="perfil" src="<?php echo $foto; ?>" width="200px">
-
-                        <h2>usuario <?php  echo $NAME; ?></h2>
+                        
+                           <h2>      Usuario <?php  echo $NAME; ?></h2>
                         
                     </header>
                     <ul>

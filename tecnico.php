@@ -50,7 +50,8 @@ include('Backend/conexion.php');
 
                 <!-- Header -->
                 <header id="header">
-                    <h1><a href="dashboard.php" class="logo"><strong>Noticias</strong></a></h1>
+                    
+                <center><h1 style="font-size: 70px;"><strong>Noticias</strong></h1></center>
 
                 </header>
                 <br>

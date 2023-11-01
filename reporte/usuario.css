@@ -2,27 +2,14 @@
     background:  #0d6efd;
     color: rgb(0, 0, 0);
     
+    
 }
 
 .text{
-  color: white;
+  color: rgb(0, 0, 0);
+  padding: 5px;
 }
 
-
-.grid{
-    display: grid;
-    grid-template-columns:50% 50% 50%;
-    grid-template-rows: 100px;
- }
- 
- .grid div{
-    background: #ecf0f1;
-    padding: 1em;
-}
-
-.grid div:hover{
-    border: 1px solid #128e3b;
-}
 
 
 
@@ -34,12 +21,32 @@
 }
 
 .perfil{
+    border-radius: 80%;
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 100px; 
+  }
+
+  .edit{
     border-radius: 50%;
     display: block;
-    margin: 0 8px;
+    margin: 0px 75px;
     height: 130px;
-    width: 160px; 
+  
   }
+
+.nom{
+    
+    margin: auto;
+  
+  
+}
+
+.boton{
+    height: 10px;
+}
+
 
 /*.contenedor {
 	width: 800px;

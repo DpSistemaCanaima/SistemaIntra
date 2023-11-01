@@ -111,11 +111,14 @@ $CEDULA = $_SESSION['CEDULA'];
                                                     height="15"> Eliminar</a>
                                                  
                                                     <li> <a class="dropdown-item btn btn-danger" href="gestion_rrhh.php?User=true" 
-                                            data-bs-toggle="modal" data-bs-target="#registrarusuario">Registrar</a>
+                                            data-bs-toggle="modal" data-bs-target="#registrarusuario"><img
+                                                    src="img/svg/person-add.svg " alt="Industrias Canaima" width="15"
+                                                    height="15">Registrar</a>
                                         </li>
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS']; ?>"
-                                                href="#">Ver mas</a></li>
+                                                href="#"><img src="img/svg/eye-fill.svg " alt="Industrias Canaima" width="15"
+                                                    height="15">Ver mas</a></li>
                                     </ul>
                                 </div>
 
@@ -187,8 +190,8 @@ $CEDULA = $_SESSION['CEDULA'];
                         ?>
                         <img class="perfil" src="<?php echo $foto; ?>" width="200px">
 
-                        <h2>RRHH <?php  echo $NAME; ?></h2>
-                                    <h3>Menu</h3>
+                        <h2>Recurso H. <?php  echo $NAME; ?></h2>
+                                  
                                 </header>
                                 <ul>
                                     <li><a href="rrhh.php">Noticias</a></li>

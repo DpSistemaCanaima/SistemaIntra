@@ -1,4 +1,4 @@
-    <!-- Modal -->
+ 
     <?php 
  
   include('cone.php');
@@ -12,6 +12,8 @@ $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
 ?>
    
+
+
     <div class="modal fade" id="exampleModal<?php echo $mostrar['IDDATOS'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

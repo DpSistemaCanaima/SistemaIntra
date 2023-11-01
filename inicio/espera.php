@@ -11,9 +11,7 @@ $NAME = $_SESSION['NAME'];
 $ROL = $_SESSION['IDROLS'];
  
 
-         if ($_SESSION['Users'][1]== 3){//Lista
-            if(empty($_GET['Edit'])&& empty($_GET['Del']) && empty($_GET['User'])){
-
+        
                 ?>
 
 
@@ -101,20 +99,21 @@ $ROL = $_SESSION['IDROLS'];
                                                     mas</a>
                                                 </ul>--->
 
-                                                <div class="btn-group dropend">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
+                                                <div class="btn-group dropend mx-auto" style=" width: 50px; margin-top: 1em;">
+                                    <button type="button" class="btn btn-outline-info dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Option
+                                    </button>
                                                     <ul class="dropdown-menu">
                                                         <!-- Dropdown menu links -->
 
 
-                                                        <li><a class="dropdown-item"
-                                                                href="edit.php?Edit=<?php echo $mostrar['ID_REPORT'];?>"><img
-                                                                    src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"> Editar</a>
-                                                        </li>
+                                                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>"><img
+                                                src="img/svg/editar.svg " alt="Industrias Canaima" width="15"
+                                                height="15"> Editar</a>
+                                    </li>
+  
 
 
                                                         <li><a class="dropdown-item" data-bs-toggle="modal"
@@ -130,6 +129,13 @@ $ROL = $_SESSION['IDROLS'];
                                         </tr>
                                     </div>
                                 </div>
+                                <?php
+
+include "gestion_esdit.php";
+
+
+
+?>
                             </div>
 
 
@@ -221,7 +227,7 @@ $ROL = $_SESSION['IDROLS'];
 
                             <h2>Administrador <?php  echo $NAME; ?></h2>
 
-                            <h3>Menu</h3>
+                           
 
                             </ul>
                         </header>
@@ -316,28 +322,4 @@ $ROL = $_SESSION['IDROLS'];
     </html>
 
 
-    <?php
-                
-            
-            }elseif(isset($_GET['Edit'])&& empty($_GET['Del'])){//editar usuario
-                include "editusuario.php";
-
-        }elseif(isset($_GET['Del'])&& empty($_GET['Edit'])){
-            $IDDATOS=$_GET['Del'];
-            
-            mysqli_query( $conn, "DELETE FROM `user_datos` WHERE `user_datos`.`IDDATOS` = '$IDDATOS'") or die ("error al eliminar");
-            
-            mysqli_close($conn);
-            
-            header("location: mostraredit.php");
-            
-            }elseif(isset($_GET['User'])){
-               include "registrodeusuario.php";
-            }else{
-                header('location:dashboard.php');
-            }
-         }else{
-            header('location:dashboard.php');   
-         }
-
-?>
+   

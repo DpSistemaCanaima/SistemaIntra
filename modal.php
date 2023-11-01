@@ -78,11 +78,11 @@ $ROL = $_SESSION['IDROLS'];
 
 
                                                 <img src="Backend/imagenes/<?php echo $row['imagen']; ?>"
-                                                    class="card-img-top"> </a>
+                                                    class="card-img-top" style="height: 350px;"> </a>
 
 
 
-                                                <h5><strong><?php echo $row['comentario']; ?></strong></h5>
+                                             <center>  <h5><strong><p><?php echo $row['comentario']; ?></p></strong></h5></center> 
                                               <center>  <a class="btn btn-outline-primary" href="admin.php">Regresar</a></center>
                                             </div>
 

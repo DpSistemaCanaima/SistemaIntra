@@ -1,6 +1,7 @@
 <?php
 require "cone.php";
-session_start();
+
+ session_start();
 
 //  Verificacion para el inicio de sesion.
 if ($_POST) {
@@ -33,7 +34,7 @@ if ($_POST) {
                         header("Location: usuario.php");
                         break;
                     case 3:
-                        header("Location: tecnico.php");
+                        header("Location: reporte/reporte.php");
                         break;
                     case 4:
                         header("Location: rrhh.php");
