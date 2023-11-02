@@ -25,7 +25,7 @@ $tmp_name = $foto['tmp_name'];
                 ?>
 
 <script type="text/javascript">
-     window.location = "rrhh.php";
+     window.location = "tecnico.php";
  </script>
                 <?php  
 

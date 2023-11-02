@@ -1,6 +1,6 @@
 <?php 
  
-  include('cone.php');
+ include('cone.php');
   session_start();
   if (!isset($_SESSION['IDDATOS'])) {
     header("Location: index.php");
@@ -8,7 +8,46 @@
 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
+$APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
+
+
+
+$consulta = mysqli_query($conn, "SELECT  foto FROM user_datos ");
+$valores = mysqli_fetch_array($consulta);
+$foto = $valores['foto'];
+
+date_default_timezone_set('America/caracas');
+     $fecha = date('Y-m-d');
+
+     $sql = "SELECT FECHA , NAME, SURNAME FROM user_datos WHERE FECHA = '$fecha'";
+      $result = mysqli_query($conn,$sql);
+      ($mos = mysqli_fetch_assoc($result));
+
+      $db= $mos['FECHA'];
+      $NOMBRE= $mos['NAME'];
+    
+      if ($fecha==$db) {
+        while ($mos = mysqli_fetch_assoc($result)){
+        echo "
+		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+		<script language='JavaScript'>
+		document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Hoy esta de cumpleaños $NOMBRE',3
+                text: 'Modal with a custom image.',
+                imageUrl: '$foto',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                        })
+	});
+		</script>";
+}
+    
+
+      }
+
 
 include('Backend/conexion.php');
   $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
@@ -18,6 +57,7 @@ include('Backend/conexion.php');
 
 }
 ?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -112,11 +152,22 @@ include('Backend/conexion.php');
                     <header class="major">
 
 
-                    <a href="modal_usu.php" class="btn btn-primary">+
-                        </a>
-                        <?php } ?>
+                    <a class="btn btn-primary"   style=" border-radius:30px;" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">+</a>
+
+                           
+                                       
+                                        
+                                        </a>
+                                        <?php
+
+include "modal_usu.php";
+
+
+
+?>
                         <?php 
-                       
+        }
                        if (isset($_SESSION['IDDATOS'])) {
 		
                        }else{

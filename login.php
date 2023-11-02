@@ -8,7 +8,7 @@ if ($_POST) {
     $USER = $_POST['USER'];
     $password = $_POST['PASSWORD'];
 
-    $sql = "SELECT IDDATOS, PASSWORD, USER, IDROLS , NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
+    $sql = "SELECT IDDATOS, PASSWORD, USER, IDROLS,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
     $num = $resultado->num_rows;

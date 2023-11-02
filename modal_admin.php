@@ -1,10 +1,19 @@
+<?php
 
+include('cone.php');
+
+  if (!isset($_SESSION['IDDATOS'])) {
+    header("Location: index.php");
+}
+
+$USER = $_SESSION['USER'];
+?>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar Perfil</h1>
+            <h1>Cambia tu foto de perfil</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
@@ -29,7 +38,7 @@
                 <center>  <strong>  Ingresa tu nuerva foto de perfil </strong></center><br>
                     <input  type="file" name="nfoto">
                     <button  type="submit" style="border-radius:10px"  class="btn btn-outline-info">Actualizar</button><br>
-                  <center>   <a  href="rrhh.php" class="btn btn-outline-info">Regresar</a></center>
+            
                 </form>
 
 

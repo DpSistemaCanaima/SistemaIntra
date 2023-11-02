@@ -8,37 +8,46 @@
 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
+$APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
+
+
+
+
+
 
 date_default_timezone_set('America/caracas');
      $fecha = date('Y-m-d');
 
-     $sql = "SELECT * FROM user_datos";
+     $sql = "SELECT FECHA , foto, NAME FROM user_datos ";
       $result = mysqli_query($conn,$sql);
-      $mos = mysqli_fetch_assoc($result);
-
-      $db= $mos['FECHA'];
-
+     $mos = mysqli_fetch_assoc($result);
+     $db= $mos['FECHA'];
+     $NOMBRE= $mos['NAME'];
+     $foto = $mos['foto'];
+    
+     
+     
       if ($fecha==$db) {
-
+        
         echo "
 		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 		<script language='JavaScript'>
 		document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
-                title: 'Sweet!',
+                title: 'Hoy esta de cumpleaños $NOMBRE',
                 text: 'Modal with a custom image.',
-                imageUrl: 'https://unsplash.it/400/200',
+                imageUrl: '$foto',
                 imageWidth: 400,
                 imageHeight: 200,
                 imageAlt: 'Custom image',
                         })
 	});
 		</script>";
+}
+    
 
-      }else{
-        
-      }
+      
 
 
 include('Backend/conexion.php');

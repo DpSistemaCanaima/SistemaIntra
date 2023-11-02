@@ -116,11 +116,22 @@ include('Backend/conexion.php');
                    
    ?>
                         
-                                        <a href="modal_tecnico.php" class="btn btn-primary" >+
+                        <a class="btn btn-primary"   style=" border-radius:30px;" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">+</a>
+
+                           
+                                       
+                                        
                                         </a>
-                                        <?php } ?>
+                                        <?php
+
+include "modal_tecnico.php";
+
+
+
+?>
                                         <?php 
-                       
+        }
                        if (isset($_SESSION['IDDATOS'])) {
 		
                        }else{

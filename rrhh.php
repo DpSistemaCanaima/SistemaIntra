@@ -115,11 +115,22 @@ include('Backend/conexion.php');
                     <nav id="menu">
                         <header class="major">
 
-                            
-                                    <a href="modal_foto.php" class="btn btn-primary"  style=" border-radius:30px;">+
-                                    </a>
-                                    <?php } ?>
+                        <a class="btn btn-primary"   style=" border-radius:30px;" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">+</a>
+
+                           
+                                       
+                                        
+                                        </a>
+                                        <?php
+
+include "cambiarfoto.php";
+
+
+
+?>
                                     <?php 
+        }
                        
                        if (isset($_SESSION['IDDATOS'])) {
 		
