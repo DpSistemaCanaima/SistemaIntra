@@ -24,7 +24,7 @@
   
                   <div class="text-center">
                     <img src="https://www.uneti.edu.ve/campus/pluginfile.php/34/block_edash_partners/content/Canaima.png"
-                      style="width: 250px;" alt="logo">
+                      style="width: 250px; " alt="logo">
                   </div>
   
                   <form  action="login.php" method="POST" class="m-auto" style="width: 90%">

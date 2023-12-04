@@ -8,7 +8,7 @@ if ($_POST) {
     $USER = $_POST['USER'];
     $password = $_POST['PASSWORD'];
 
-    $sql = "SELECT IDDATOS, PASSWORD, USER, IDROLS,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
+    $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, ABILIDAD_U_OFICIO, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
     $num = $resultado->num_rows;
@@ -24,20 +24,24 @@ if ($_POST) {
 			$_SESSION['NAME'] = $row['NAME'];
             $_SESSION['SURNAME'] = $row['SURNAME'];
             $_SESSION['CEDULA'] = $row['CEDULA'];
+            $_SESSION['ABILIDAD_U_OFICIO'] = $row['ABILIDAD_U_OFICIO'];
+            $_SESSION['PASSWORD'] = $row['PASSWORD'];
+            $_SESSION['telefono'] = $row['telefono']; 
+            $_SESSION['EMAIL'] = $row['EMAIL'];
         //    Comprobación de inicion de sesión y roles
             if (isset($_SESSION['IDROLS'])) {
                 switch ($_SESSION['IDROLS']) {
                    case 1:
-                        header("Location: admin.php");
+                        header("Location: admin/admin.php");
                         break;
                     case 2:
-                        header("Location: usuario.php");
+                        header("Location: usuario/usuario.php");
                         break;
                     case 3:
-                        header("Location: reporte/reporte.php");
+                        header("Location: tecnico/tecnico.php");
                         break;
                     case 4:
-                        header("Location: rrhh.php");
+                        header("Location: rrhh/rrhh.php");
                         break;
                    
                     default:
