@@ -1,4 +1,4 @@
 <?php 
 
-$conn = mysqli_connect('10.10.5.28','intranet','123456','bbs1');
+$conn = mysqli_connect('localhost','root','','bbs1');
  ?>

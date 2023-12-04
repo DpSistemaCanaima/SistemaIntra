@@ -1,3 +1,24 @@
+<?php
+ include('cone.php');
+date_default_timezone_set('America/caracas');
+     $fecha = date('Y-m-d');
+
+     $sql = "SELECT FECHA ,foto, NAME, SURNAME FROM user_datos WHERE FECHA = '$fecha'";
+      $result = mysqli_query($conn,$sql);
+     while ($mos = mysqli_fetch_assoc($result)){
+
+      $db= $mos['FECHA'];
+      $NOMBRE= $mos['NAME'];
+      $apellido=$mos['SURNAME'];
+      $foto = $mos['foto'];
+     }
+      if ($fecha==$db) {
+      
+        include 'modal_fecha.php';
+}
+
+?>
+   
 <?php 
  
  include('cone.php');
@@ -13,40 +34,12 @@ $ROL = $_SESSION['IDROLS'];
 
 
 
-$consulta = mysqli_query($conn, "SELECT  foto FROM user_datos ");
-$valores = mysqli_fetch_array($consulta);
-$foto = $valores['foto'];
 
-date_default_timezone_set('America/caracas');
-     $fecha = date('Y-m-d');
 
-     $sql = "SELECT FECHA , NAME, SURNAME FROM user_datos WHERE FECHA = '$fecha'";
-      $result = mysqli_query($conn,$sql);
-      ($mos = mysqli_fetch_assoc($result));
 
-      $db= $mos['FECHA'];
-      $NOMBRE= $mos['NAME'];
-    
-      if ($fecha==$db) {
-        while ($mos = mysqli_fetch_assoc($result)){
-        echo "
-		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-		<script language='JavaScript'>
-		document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                title: 'Hoy esta de cumpleaños $NOMBRE',3
-                text: 'Modal with a custom image.',
-                imageUrl: '$foto',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
-                        })
-	});
-		</script>";
-}
-    
 
-      }
+
+      
 
 
 include('Backend/conexion.php');
@@ -116,7 +109,7 @@ include('Backend/conexion.php');
 
                                             <img src="Backend/imagenes/<?php echo $row['imagen']; ?>"
                                                 class="card-img-top">
-                                                <?php echo $row['nombre']; ?>
+                                               <center><strong><?php echo $row['nombre']; ?></strong> </center>
 
 
 
@@ -125,7 +118,7 @@ include('Backend/conexion.php');
                                     <?php } ?>
                                 </div>
                             </div>
-
+                         
 
                         </div>
                     </div>
@@ -135,6 +128,7 @@ include('Backend/conexion.php');
 
             </div>
         </div>
+
         <!-- Sidebar -->
         <div id="sidebar">
             <div class="inner">

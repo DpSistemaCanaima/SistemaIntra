@@ -19,14 +19,13 @@ $ROL = $_SESSION['IDROLS'];
 date_default_timezone_set('America/caracas');
      $fecha = date('Y-m-d');
 
-     $sql = "SELECT FECHA , foto, NAME FROM user_datos ";
-      $result = mysqli_query($conn,$sql);
-     $mos = mysqli_fetch_assoc($result);
-     $db= $mos['FECHA'];
+     $sql = "SELECT FECHA , foto, NAME FROM user_datos WHERE FECHA = '$fecha'";
+     $result = mysqli_query($conn,$sql);
+     while($mos = mysqli_fetch_assoc($result)){
+     
      $NOMBRE= $mos['NAME'];
      $foto = $mos['foto'];
-    
-     
+     $db= $mos['FECHA'];
      
       if ($fecha==$db) {
         
@@ -46,7 +45,7 @@ date_default_timezone_set('America/caracas');
 		</script>";
 }
     
-
+}
       
 
 
