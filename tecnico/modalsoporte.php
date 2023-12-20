@@ -11,7 +11,7 @@
                                              
                                              <div class="form-floating">
                              
-                                  <input type="hidden" value="<?php echo $mostrar['ID_REPORT']  ?>" >
+                                  <input type="hidden" name="ID_REPORT" value="<?php echo $mostrar['ID_REPORT']  ?>" >
                                   
                          <textarea class="form-control"  name="SOLUTION"  style="height: 100px"></textarea>
                                      <label for="floatingTextarea2">Solucion</label>

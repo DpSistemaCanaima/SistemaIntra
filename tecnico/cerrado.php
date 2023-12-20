@@ -5,10 +5,11 @@ include('../cone.php');
 
 
 $SOLUTION = $_POST['SOLUTION'];
+$ID_REPORT = $_POST['ID_REPORT'];
 
 date_default_timezone_set('America/caracas');
 $fecha = date('Y-m-d');
-$sql= "UPDATE report SET FECHA_SOLUTION ='$fecha', SOLUTION = '$SOLUTION', STATUS = 2";
+$sql= "UPDATE report SET FECHA_SOLUTION ='$fecha', SOLUTION = '$SOLUTION', STATUS = 2  WHERE ID_REPORT = '$ID_REPORT' ";
 
   // $sql= " UPDATE `report` SET  `STATUS` = '2' WHERE ID_REPORT = '$ID_REPORT'";
       $result = mysqli_query($conn, $sql);
