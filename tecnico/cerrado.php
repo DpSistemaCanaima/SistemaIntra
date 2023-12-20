@@ -8,12 +8,15 @@ $SOLUTION = $_POST['SOLUTION'];
 
 date_default_timezone_set('America/caracas');
 $fecha = date('Y-m-d');
-
-$sql= "UPDATE `report` SET  `FECHA_SOLUTION` = '$fecha', `SOLUTION` = '$SOLUTION' `STATUS` = '2' ";
+$sql= "UPDATE report SET FECHA_SOLUTION ='$fecha', SOLUTION = '$SOLUTION', STATUS = 2";
 
   // $sql= " UPDATE `report` SET  `STATUS` = '2' WHERE ID_REPORT = '$ID_REPORT'";
       $result = mysqli_query($conn, $sql);
-  
+      if ($result === true) {
+        echo "Esta mierda sirve";
+      }else {
+        die("Error al realizar el registro: ".mysqli_error($conn));
+      }
   
 //    if($result){
 //     echo "
