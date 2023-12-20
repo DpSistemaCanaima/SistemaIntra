@@ -32,13 +32,13 @@ if ($_POST) {
             if (isset($_SESSION['IDROLS'])) {
                 switch ($_SESSION['IDROLS']) {
                    case 1:
-                        header("Location: admin/admin.php");
+                        header("Location: html/index.php");
                         break;
                     case 2:
-                        header("Location: usuario/usuario.php");
+                        header("Location: usuario/index.php");
                         break;
                     case 3:
-                        header("Location: tecnico/tecnico.php");
+                        header("Location: tecnico/index.php");
                         break;
                     case 4:
                         header("Location: rrhh/rrhh.php");

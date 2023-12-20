@@ -42,7 +42,7 @@
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-outline-danger btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
+                      <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
                       
                     </div>
                   </form>

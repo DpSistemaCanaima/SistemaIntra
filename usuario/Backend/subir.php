@@ -19,16 +19,48 @@ if(isset($_POST['Guardar'])){
          $resultado = mysqli_query($conn,$query);
          if($resultado){
               move_uploaded_file($temp,'imagenes/'.$imagen);   
-             $_SESSION['mensaje'] = 'se ha subido correctamente';
-             $_SESSION['tipo'] = 'success';
-             header('location:../admin.php');
+              echo "
+              <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+              <script language='JavaScript'>
+              document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Se a Subido du noticia correctamente',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK',
+                  timer: 1500
+                  }).then(() => {
+          
+                  location.assign('../index.php');
+          
+                  });
+            });
+              </script>";
          }else{
-             $_SESSION['mensaje'] = 'ocurrio un error en el servidor';
-             $_SESSION['tipo'] = 'danger';
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                icon: 'error',
+                title: 'Ocurrio un Error',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+                }).then(() => {
+         
+                    location.assign('../index.php');
+         
+               });
+          });
+            </script>";
+          }
          }
        }
     }
-}
+
 
 
 ?>
