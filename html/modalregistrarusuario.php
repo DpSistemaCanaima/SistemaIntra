@@ -82,13 +82,15 @@
                     </select><br>
 
 
-             <label for="hijos">Seleccione si tiene hijos.</label>
-        <input type="radio" name="gender" class="i-radio" value="si"> Si
-        <input type="radio" name="gender" class="i-radio" value="no"> No <br>
-        <input type="number"  name="NUMERO_DE_HIJOS" class="i-text form-control" placeholder="Numero de hijos"><br>
-        <input type="text"  name="NOBRE_Y_APELLIDO" class="i-text form-control" placeholder="Nombre y apellido"><br>
-        <input type="date"  name="FECHA_DE_NACIMIENTO" class="i-text form-control" placeholder="Fecha de nacimiento">
-        <input type="hidden" name="foto" value="<?php echo $foto; ?>">
+                    <label for="hijos">Seleccione si tiene hijos.</label>
+                    <br>
+                    <input type="radio" name="gender" class="i-radio" value="si"> Si
+                    <input type="radio" name="gender" class="i-radio" value="no"> No <br>
+                    <br>
+                    <input type="number"  name="NUMERO_DE_HIJOS" class="i-text form-control" placeholder="Numero de hijos"><br>
+                    <input type="text"  name="NOBRE_Y_APELLIDO" class="i-text form-control" placeholder="Nombre y apellido"><br>
+                    <input type="date"  name="FECHA_DE_NACIMIENTO" class="i-text form-control" placeholder="Fecha de nacimiento">
+                    <input type="hidden" name="foto" value="<?php echo $foto; ?>">
 
                     <br>
 

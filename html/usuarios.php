@@ -326,7 +326,7 @@ $CEDULA = $_SESSION['CEDULA'];
                     
                    $sql = "SELECT  u.IDDATOS, grado.grado, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, a.AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
                    INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  
-                   INNER JOIN rols AS r ON u.IDROLS = R.IDROLS
+                   INNER JOIN rols AS r ON u.IDROLS = r.IDROLS
                    INNER JOIN gender AS g ON u.GENDER = g.ID
                    INNER JOIN login AS l ON u.LOGIN = l.TIPO
                    INNER JOIN nacionalida As n ON u.NACIONALIDAD = n.ID_NACIONALIDA
