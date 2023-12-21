@@ -12,7 +12,7 @@
                 <strong>Nombre y Apellido</strong>: <?php echo $mostrar ['name_surname'] ?><br>
                 <strong>Fecha de creacion</strong>: <?php echo $mostrar ['CREATION_DATE'] ?><br>
                 <strong>Nivel</strong>: <?php echo $mostrar ['LEVEL'] ?><br>
-                <strong>Tecnico</strong>: <?php echo $mostrar ['NAME'] ?><br>
+           
                 <form action="cerrado.php" method="post">
 
                     <div class="form-floating">

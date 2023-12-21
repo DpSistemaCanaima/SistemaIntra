@@ -317,7 +317,8 @@ $ROL = $_SESSION['IDROLS'];
                                             <th>Fecha de Creacion</th>
                                             <th>Tecnicos</th>
                                             <th>Opcion</th>
-                                            <th>Opcion</th>
+                                         
+                                            <th>Ver</th>
                                           
                                         </tr>
                                     </thead>
@@ -351,7 +352,7 @@ $ROL = $_SESSION['IDROLS'];
                                                
                                                 <ul class="dropdown-menu" >
                                                
-                                                    <li><a  class="dropdown-item" href="activar.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">activar</a></li>
+                                                    <li><a  class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">activar</a></li>
                                                     <li><a  class="dropdown-item" href="espera.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">En espera</a></li>
                                                     <li><a   class="dropdown-item" href="cerrado.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">cerrado</a></li>
                                                    
@@ -361,13 +362,22 @@ $ROL = $_SESSION['IDROLS'];
                                   
                                 
                                             </td>
-                                          
+                                           
+                                           
+ 
                                             <td>
                                               <button type="button" class="btn btn-outline-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar ['ID_REPORT'] ?>">ver</button>
                                             </td>
                                            
                                             <?php
+                   
+include "modal_activar.php";                   
 
+
+
+?>
+                                            <?php
+                   
 include "sopor.php";                   
 }
 

@@ -5,7 +5,7 @@
   if (!isset($_SESSION['IDDATOS'])) {
     header("Location: index.php");
 }
-
+$ID_USER = $_SESSION['IDDATOS'];
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -319,7 +319,7 @@ $ROL = $_SESSION['IDROLS'];
                                             <th>Descripcion</th>
                                             <th>Nombre y Apellido</th>
                                             <th>Fecha de Creacion</th>
-                                            <th>Tecnicos</th>
+                                
 
                                             <th>Opcion</th>
 
@@ -328,10 +328,10 @@ $ROL = $_SESSION['IDROLS'];
 
                                     <?php
                             
-                            $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, u.NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
+                            $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, r.ID_NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
                             INNER JOIN status AS s ON r.STATUS = s.ID_STATUS
                             INNER JOIN level AS l ON r.ID_LEVEL = l.ID_LEVEL
-                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE  r.STATUS = '1' ";  
+                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE  r.STATUS = '1' AND r.ID_NAME = '$ID_USER' ";  
            
 
 
@@ -345,7 +345,7 @@ $ROL = $_SESSION['IDROLS'];
                                             <td><?php echo $mostrar ['TITLE'] ?></td>
                                             <td><?php echo $mostrar ['name_surname'] ?></td>
                                             <td><?php echo $mostrar ['CREATION_DATE'] ?></td>
-                                            <td><?php echo $mostrar ['NAME'] ?></td>
+                                          
 
 
 
