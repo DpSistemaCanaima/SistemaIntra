@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal<?php echo $mostrar ['ID_REPORT'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,12 +11,12 @@
                                              
                                              <div class="form-floating">
                              
-                                  <input type="hidden" name="ID_REPORT" value="<?php echo $mostrar['ID_REPORT']  ?>" >
+                                  <input type="text" name="ID_REPORT" value="<?php echo $mostrar['ID_REPORT']  ?>" >
                                   
                          <textarea class="form-control"  name="SOLUTION"  style="height: 100px"></textarea>
                                      <label for="floatingTextarea2">Solucion</label>
                                              </div>
-                                           <center>  <input type="submit" class="btn btn-outline-primary">  </center>
+                                           <center>  <input type="submit" class="btn btn-outline-primary"> </center>
       </form>
       </div>
      

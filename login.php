@@ -41,7 +41,7 @@ if ($_POST) {
                         header("Location: tecnico/index.php");
                         break;
                     case 4:
-                        header("Location: rrhh/rrhh.php");
+                        header("Location: rrhh/index.php");
                         break;
                    
                     default:

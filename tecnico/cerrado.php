@@ -13,51 +13,47 @@ $sql= "UPDATE report SET FECHA_SOLUTION ='$fecha', SOLUTION = '$SOLUTION', STATU
 
   // $sql= " UPDATE `report` SET  `STATUS` = '2' WHERE ID_REPORT = '$ID_REPORT'";
       $result = mysqli_query($conn, $sql);
-      if ($result === true) {
-        echo "Esta mierda sirve";
-      }else {
-        die("Error al realizar el registro: ".mysqli_error($conn));
-      }
+      
   
-//    if($result){
-//     echo "
-//     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-//     <script language='JavaScript'>
-//     document.addEventListener('DOMContentLoaded', function() {
-//         Swal.fire({
-//             icon: 'success',
-//             title: 'se cerro el caso correctamente',
-//             showCancelButton: false,
-//             confirmButtonColor: '#3085d6',
-//             confirmButtonText: 'OK',
-//             timer: 1500
-//           }).then(() => {
+   if($result){
+    echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script language='JavaScript'>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'se cerro el caso correctamente',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK',
+            timer: 1500
+          }).then(() => {
 
-//             location.assign('soporte.php');
+            location.assign('soporte.php');
 
-//           });
-// });
-//     </script>";
-// }else {
-//   echo "
-//  <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-//  <script language='JavaScript'>
-//  document.addEventListener('DOMContentLoaded', function() {
-//    Swal.fire({
-//      icon: 'error',
-//      title: 'Algo salio mal. Intenta de nuevo',
-//      showCancelButton: false,
-//      confirmButtonColor: '#3085d6',
-//      confirmButtonText: 'OK',
-//      timer: 1500
-//      }).then(() => {
+          });
+});
+    </script>";
+}else {
+  echo "
+ <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+ <script language='JavaScript'>
+ document.addEventListener('DOMContentLoaded', function() {
+   Swal.fire({
+     icon: 'error',
+     title: 'Algo salio mal. Intenta de nuevo',
+     showCancelButton: false,
+     confirmButtonColor: '#3085d6',
+     confirmButtonText: 'OK',
+     timer: 1500
+     }).then(() => {
 
-//      location.assign('soporte.php');
+     location.assign('soporte.php');
 
-//     });
-// });
-//  </script>";
-// }
+    });
+});
+ </script>";
+}
 
 
 ?>

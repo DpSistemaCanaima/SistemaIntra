@@ -12,9 +12,19 @@
                                       <strong>Fecha de creacion</strong>:   <?php echo $mostrar ['CREATION_DATE'] ?><br>
                                       <strong>Nivel</strong>:  <?php echo $mostrar ['LEVEL'] ?><br>
                                       <strong>Tecnico</strong>:     <?php echo $mostrar ['NAME'] ?><br>
-
+                                      <form action="cerrado.php" method="post">
+                                             
+                                             <div class="form-floating">
+                             
+                                  <input type="hidden" name="ID_REPORT" value="<?php echo $mostrar['ID_REPORT']  ?>" >
+                                  
+                         <textarea class="form-control"  name="SOLUTION"  style="height: 100px"></textarea>
+                                     <label for="floatingTextarea2">Solucion</label>
+                                             </div>
+                                           <center>  <input type="submit" class="btn btn-outline-primary" value="Cerrar caso">  </center>
+      </form>
                                      
-                                       <center> <a type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar caso</a> </center>
+                                       
                                      
                      
                                     </div>
