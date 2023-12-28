@@ -318,7 +318,7 @@ $ROL = $_SESSION['IDROLS'];
                                             <th>Tecnicos</th>
                                             <th>Opcion</th>
                                          
-                                            <th>Ver</th>
+                                       
                                           
                                         </tr>
                                     </thead>
@@ -344,42 +344,32 @@ $ROL = $_SESSION['IDROLS'];
                                             <td><?php echo $mostrar ['NAME'] ?></td>
                                             
                                            <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                                    data-bs-toggle="dropdown" aria-expanded="false" >
-                                                    activa
-                                                </button>
+                                            
                                                
-                                                <ul class="dropdown-menu" >
-                                               
-                                                    <li><a  class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">activar</a></li>
-                                                    <li><a  class="dropdown-item" href="espera.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">En espera</a></li>
-                                                    <li><a   class="dropdown-item" href="cerrado.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">cerrado</a></li>
+                                                 <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>">opcion</button>
+                                                  
                                                    
-                                                    
-                                                </ul>
-                                                 </div>
+                                                 <?php 
+                                           
+                                           $consultaTecnico = "SELECT IDDATOS, NAME ,IDROLS FROM user_datos WHERE IDROLS= 3";
+                                           $ve= mysqli_query($conn,$consultaTecnico);
+                                      
+                                           ?>
+                                         
+                                                
                                   
                                 
                                             </td>
                                            
                                            
- 
-                                            <td>
-                                              <button type="button" class="btn btn-outline-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar ['ID_REPORT'] ?>">ver</button>
-                                            </td>
-                                           
+
+                                            <?php  include "modal_activar.php";  ?>  
+                                                
                                             <?php
                    
-include "modal_activar.php";                   
-
-
-
-?>
-                                            <?php
-                   
-include "sopor.php";                   
+                
 }
+
 
 
 ?>
