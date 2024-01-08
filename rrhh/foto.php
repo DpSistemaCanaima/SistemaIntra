@@ -5,7 +5,7 @@ include '../cone.php';
 
 $foto = $_FILES['nfoto'];
 $USER = $_SESSION['USER'];
-$directorio_destino = "images";
+$directorio_destino = "../images";
 
 $tmp_name = $foto['tmp_name'];
     

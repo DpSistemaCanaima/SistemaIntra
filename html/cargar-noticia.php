@@ -304,7 +304,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
               <div class="card">
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Cargar nueva noticia</h5>
-                    <form action="Backend/subir.php" method="post" enctype="multipart/form-data">
+                    <form action="../subir.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Titulo de la noticia</label>
                         <input type="text" class="form-control" name="nombre"  aria-describedby="emailHelp">

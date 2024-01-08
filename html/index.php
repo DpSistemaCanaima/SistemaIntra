@@ -65,6 +65,12 @@ date_default_timezone_set('America/caracas');
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
   <link rel="stylesheet" href="../assets/css/general.css">
+
+  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+       
+    
 </head>
 
 <body>
@@ -340,30 +346,66 @@ date_default_timezone_set('America/caracas');
       </header>
       <!--  Header End -->
       <?php
-      include('Backend/conexion.php');
+      include('../conexion.php');
       $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
       $resultado = mysqli_query($conn,$query);
+   
       ?>
-      <div class="container-fluid">
-        <!--  Row 1 -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                <?php foreach($resultado as $row) { ?>
 
-                  <img style="height:auto;  " src="Backend/imagenes/<?php echo $row['imagen']; ?>" class="card-img-top">
-                  
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="./noticia.html" class="btn btn-primary">Leer más</a>
-                  </div>
-                  <?php } ?>
+
+
+<div id="wrapper">
+
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+
+
+
+
+
+        <div class="col-lg-13">
+
+
+            <div class="card-columns">
+                <?php foreach($resultado as $row) { ?>
+                <div class="card m-5">
+                    <a style="text-decoration:none"
+                        href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
+
+                        <img src="../imagenes/<?php echo $row['imagen']; ?>"
+                            class="card-img-top"></a>
+
+                            <div class="card-body">
+                    <center><h5 class="card-title"><?php echo $row['nombre'];?></h5></center>
+                   
+                  <center>  <a href="./noticia.php" class="btn btn-primary">Leer más</a></center>
+
+
+                    </div>
+
                 </div>
+                <?php } ?>
             </div>
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+      <!-- <div class="container-fluid"> 
+        <!--  Row 1 -->
+        <!-- <div class="row"> --> 
+         
+           
            
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card">
                   <img src="../assets/images/products/s5.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -383,13 +425,13 @@ date_default_timezone_set('America/caracas');
                   </div>
                 </div>
             </div>
-        </div>
-      </div>
-      <footer class="footer">
+        </div>-->
+      </div> 
+      <!-- <footer class="footer">
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </div>
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>

@@ -30,7 +30,7 @@ $CEDULA = $_SESSION['CEDULA'];
                 <?php 
     }
   
-    $consulta = mysqli_query($conn, "SELECT IDDATOS USER , foto FROM user_datos  WHERE `CEDULA` = '$CEDULA' ");
+    $consulta = mysqli_query($conn, "SELECT IDDATOS ,USER , foto FROM user_datos  WHERE `CEDULA` = '$CEDULA' ");
     $valores = mysqli_fetch_array($consulta);
     $foto = $valores['foto'];
      ?>

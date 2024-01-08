@@ -8,7 +8,7 @@ $USER = $_SESSION['USER'];
 $EMAIL = $_POST['EMAIL'];
 $PASSWORD = sha1($_POST['PASSWORD']);
 $foto = $_FILES['nfoto'];
-$directorio_destino = "images";
+$directorio_destino = "../images";
 
 $tmp_name = $foto['tmp_name'];
     
