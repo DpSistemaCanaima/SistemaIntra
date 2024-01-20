@@ -370,8 +370,7 @@ date_default_timezone_set('America/caracas');
             <div class="card-columns">
                 <?php foreach($resultado as $row) { ?>
                 <div class="card m-5">
-                    <a style="text-decoration:none"
-                        href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
+                    <a style="text-decoration:none">
 
                         <img src="../imagenes/<?php echo $row['imagen']; ?>"
                             class="card-img-top"></a>
@@ -379,7 +378,7 @@ date_default_timezone_set('America/caracas');
                             <div class="card-body">
                     <center><h5 class="card-title"><?php echo $row['nombre'];?></h5></center>
                    
-                  <center>  <a href="./noticia.php" class="btn btn-primary">Leer más</a></center>
+                  <center>  <a href="./noticia.php?Edit=<?php echo $row['cod_imagen'];?>" class="btn btn-primary">Leer más</a></center>
 
 
                     </div>

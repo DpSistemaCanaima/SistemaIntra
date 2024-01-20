@@ -58,8 +58,8 @@ $tmp_name = $foto['tmp_name'];
 		<script language='JavaScript'>
 		document.addEventListener('DOMContentLoaded', function() {
 			Swal.fire({
-				icon: 'error',
-				title: 'Algo salio mal. Intenta de nuevo',
+				icon: 'success',
+				title: 'Se Subio Correctamente la Foto',
 				showCancelButton: false,
 				confirmButtonColor: '#3085d6',
 				confirmButtonText: 'OK',

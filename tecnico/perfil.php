@@ -299,7 +299,9 @@ $correo = $_SESSION['EMAIL'];
                                             <input type="hidden" name="USER" value="<?php echo $USER; ?>">
                                         </div>
                                     </fieldset>
+                                    <label for="disabledTextInput" class="form-label">Cambiar foto de perfil</label>
                                     <div class="input-group mb-3">
+                                    
                                         <input type="file" name="nfoto" class="form-control" id="inputGroupFile02">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Guardar información</button>

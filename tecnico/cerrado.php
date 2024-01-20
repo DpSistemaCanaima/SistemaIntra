@@ -42,7 +42,7 @@ if ($_POST) {
       </script>";
       die();
   }
-  echo $SOLUTION . "<br>" . $ID_REPORT;
+  
   date_default_timezone_set('America/caracas');
   $fecha = date('Y-m-d');
   $sql= "UPDATE report SET FECHA_SOLUTION ='$fecha', SOLUTION = '$SOLUTION', STATUS = 2  WHERE ID_REPORT = '$ID_REPORT' ";

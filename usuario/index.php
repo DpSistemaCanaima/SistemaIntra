@@ -66,9 +66,10 @@ date_default_timezone_set('America/caracas');
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
   <link rel="stylesheet" href="../assets/css/general.css">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        
+       
     
 </head>
 
@@ -106,7 +107,6 @@ date_default_timezone_set('America/caracas');
               </a>
             </li>
             
-
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span>
@@ -236,8 +236,7 @@ date_default_timezone_set('America/caracas');
               </li>
 
               </div>
-              
-            
+           
               </div>
           </ul>
         </nav>
@@ -267,7 +266,7 @@ date_default_timezone_set('America/caracas');
           
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Usuario</p>
+            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Administrador</p>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -313,8 +312,12 @@ date_default_timezone_set('America/caracas');
       include('../conexion.php');
       $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
       $resultado = mysqli_query($conn,$query);
+   
       ?>
-    <div id="wrapper">
+
+
+
+<div id="wrapper">
 
 <!-- Main -->
 <div id="main">
@@ -329,9 +332,8 @@ date_default_timezone_set('America/caracas');
 
             <div class="card-columns">
                 <?php foreach($resultado as $row) { ?>
-                <div class="card">
-                    <a style="text-decoration:none"
-                        href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
+                <div class="card m-5">
+                    <a style="text-decoration:none">
 
                         <img src="../imagenes/<?php echo $row['imagen']; ?>"
                             class="card-img-top"></a>
@@ -339,7 +341,7 @@ date_default_timezone_set('America/caracas');
                             <div class="card-body">
                     <center><h5 class="card-title"><?php echo $row['nombre'];?></h5></center>
                    
-                  <center>  <a href="./noticia.php" class="btn btn-primary">Leer más</a></center>
+                  <center>  <a href="./noticia.php?Edit=<?php echo $row['cod_imagen'];?>" class="btn btn-primary">Leer más</a></center>
 
 
                     </div>
@@ -358,6 +360,12 @@ date_default_timezone_set('America/caracas');
 
 </div>
 </div>
+      <!-- <div class="container-fluid"> 
+        <!--  Row 1 -->
+        <!-- <div class="row"> --> 
+         
+           
+           
 
             <!-- <div class="col-md-4">
                 <div class="card">
@@ -379,8 +387,8 @@ date_default_timezone_set('America/caracas');
                   </div>
                 </div>
             </div>
-        </div>
-      </div> -->
+        </div>-->
+      </div> 
       <!-- <footer class="footer">
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>
