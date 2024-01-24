@@ -7,16 +7,31 @@ require "cone.php";
 if ($_POST) {
     $USER = $_POST['USER'];
     $password = $_POST['PASSWORD'];
+    
+ 
+
+// Otro código de tu sistema aquí...
+
+
+
+
+
 
     $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, ABILIDAD_U_OFICIO, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
     $num = $resultado->num_rows;
 
+    // if (strlen($_POST['PASSWORD']) <= 8){
+    //     echo "La contraseña tiene que ser al menos de 8 caracteres";
+    
+    //      }else{
     if ($num > 0) {
         $row = $resultado->fetch_assoc();
         $password_bd = $row['PASSWORD'];
         $pass_c = sha1($password);
+ 
+
         if ($password_bd == $pass_c) {
             $_SESSION['IDDATOS'] = $row['IDDATOS'];
             $_SESSION['USER'] = $row['USER'];
@@ -108,4 +123,8 @@ if ($_POST) {
                 </script>";
     }
 }
+
+// }
+
+
 ?>
