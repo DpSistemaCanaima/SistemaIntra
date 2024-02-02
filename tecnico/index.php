@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
-
+$ID = $_SESSION['IDDATOS']; 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -50,6 +50,7 @@ date_default_timezone_set('America/caracas');
    }
 
 
+   
  
 
 ?>
@@ -66,9 +67,11 @@ date_default_timezone_set('America/caracas');
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
   <link rel="stylesheet" href="../assets/css/general.css">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-     
+       
+    
 </head>
 
 <body>
@@ -104,7 +107,14 @@ date_default_timezone_set('America/caracas');
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-          
+            <li class="sidebar-item">
+                <!-- <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a> -->
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -112,14 +122,28 @@ date_default_timezone_set('America/caracas');
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
                   <span class="hide-menu">Constancia de trabajo</span>
                 </a>
               </li>
-            
+              <li class="sidebar-item">
+                <!-- <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-devices-pc"></i>
+                  </span>
+                  <span class="hide-menu">Soporte técnico</span>
+                </a> -->
+              </li>
             </div>
 
             <li class="nav-small-cap">
@@ -231,14 +255,24 @@ date_default_timezone_set('America/caracas');
               
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Soporte <i class="ti ti-caret-down"></i></span>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span>
               </li>
               <div class="collapse" id="collapseExample3">
                 <li class="sidebar-item">
-                 
+                  <!-- <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a> -->
                 </li>
                 <li class="sidebar-item">
-                 
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a> -->
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
@@ -320,11 +354,15 @@ date_default_timezone_set('America/caracas');
       </header>
       <!--  Header End -->
       <?php
-      include('../conexion.php');
+    
       $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
       $resultado = mysqli_query($conn,$query);
+   
       ?>
-      <div id="wrapper">
+
+
+
+<div id="wrapper">
 
 <!-- Main -->
 <div id="main">
@@ -339,9 +377,8 @@ date_default_timezone_set('America/caracas');
 
             <div class="card-columns">
                 <?php foreach($resultado as $row) { ?>
-                <div class="card">
-                    <a style="text-decoration:none"
-                        href="modal.php?Edit=<?php echo $row['cod_imagen'];?>">
+                <div class="card m-5">
+                    <a style="text-decoration:none">
 
                         <img src="../imagenes/<?php echo $row['imagen']; ?>"
                             class="card-img-top"></a>
@@ -349,7 +386,7 @@ date_default_timezone_set('America/caracas');
                             <div class="card-body">
                     <center><h5 class="card-title"><?php echo $row['nombre'];?></h5></center>
                    
-                  <center>  <a href="./noticia.php" class="btn btn-primary">Leer más</a></center>
+                  <center>  <a href="./noticia.php?Edit=<?php echo $row['cod_imagen'];?>" class="btn btn-primary">Leer más</a></center>
 
 
                     </div>
@@ -368,9 +405,14 @@ date_default_timezone_set('America/caracas');
 
 </div>
 </div>
-<!--            
+      <!-- <div class="container-fluid"> 
+        <!--  Row 1 -->
+        <!-- <div class="row"> --> 
+         
+           
+           
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card">
                   <img src="../assets/images/products/s5.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -390,8 +432,8 @@ date_default_timezone_set('America/caracas');
                   </div>
                 </div>
             </div>
-        </div>
-      </div> -->
+        </div>-->
+      </div> 
       <!-- <footer class="footer">
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>

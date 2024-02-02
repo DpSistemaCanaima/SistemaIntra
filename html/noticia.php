@@ -72,7 +72,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -297,7 +304,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
       <!--  Header End -->
       <div class="container-fluid">
         <?php 
-         include('../conexion.php');
+     
          $id = $_GET['Edit'];
          $query = "SELECT cod_imagen,imagen, nombre, comentario FROM imagenes WHERE `cod_imagen` = '$id' ";
          $resultado = mysqli_query($conn,$query);

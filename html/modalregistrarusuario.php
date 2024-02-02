@@ -62,9 +62,10 @@
                         <option value=2>Mujer</option>
                         <option value=3>Otro</option>
                     </select><br>
-
-                    <?php $result3 = mysqli_query($conn, "SELECT * FROM area");?>
-                    <select class="form-select" aria-label="Default select example" name="ASSIGNED_AREA">
+                    <input type="text" class="form-control" aria-label="Username" name="ASSIGNED_AREA"
+                        placeholder="Ingrese correo"><br>
+                    <!-- <?php //$result3 = mysqli_query($conn, "SELECT * FROM area");?> -->
+                    <!-- <select class="form-select" aria-label="Default select example" name="ASSIGNED_AREA">
                         <option>Area</option>
                         <option value="1">Presidencia</option>
                         <option value="2">Proyecto</option>
@@ -79,7 +80,7 @@
                         <option value="11">Seguridad</option>
                         <option value="12">Seguridad Integral</option>
                         <option value="13">Producción</option>
-                    </select><br>
+                    </select><br> -->
 
 
                     <label for="hijos">Seleccione si tiene hijos.</label>

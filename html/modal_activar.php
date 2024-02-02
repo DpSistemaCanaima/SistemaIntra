@@ -14,7 +14,7 @@
                                       <strong>Fecha de creacion</strong>:   <?php echo $mostrar ['CREATION_DATE'] ?><br>
                                       <strong>Status</strong>:     <?php echo $mostrar ['STATUS'] ?><br>
                                       <strong>Nivel</strong>:  <?php echo $mostrar ['LEVEL'] ?><br>
-                                      <strong>Tecnico</strong>:     <?php echo $mostrar ['NAME'] ?><br>
+                                     
                                       <strong>Fecha de solucion</strong>:<?php echo $mostrar ['FECHA_SOLUTION'] ?><br>
                      
        <form action="activar.php" method="post">

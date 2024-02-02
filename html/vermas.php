@@ -68,7 +68,7 @@ $CEDULA = $_SESSION['CEDULA'];
                 <label for="floatingInput"><strong>Usuario</strong></label>:
                 <?php echo $mostrar ['USER'] ?><br>
                 <label for="floatingInput"><strong>Area</strong></label>:
-                <?php echo $mostrar ['AREA'] ?><br>
+                <?php echo $mostrar ['ASSIGNED_AREA'] ?><br>
                 <label for="floatingInput"><strong>Sexo</strong></label>:
                 <?php if($mostrar ['GENDER']==1){
                           echo "H";

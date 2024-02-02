@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
-
+$ID = $_SESSION['IDDATOS']; 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -50,6 +50,7 @@ date_default_timezone_set('America/caracas');
    }
 
 
+   
  
 
 ?>
@@ -121,7 +122,14 @@ date_default_timezone_set('America/caracas');
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -259,13 +267,13 @@ date_default_timezone_set('America/caracas');
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
                     <span>
                       <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Constancia de trabajo</span>
-                  </a>
-                </li>
+                  </a>-->
+                </li> 
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
                     <span>
@@ -346,7 +354,7 @@ date_default_timezone_set('America/caracas');
       </header>
       <!--  Header End -->
       <?php
-      include('../conexion.php');
+    
       $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
       $resultado = mysqli_query($conn,$query);
    

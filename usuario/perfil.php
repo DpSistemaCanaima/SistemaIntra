@@ -6,13 +6,14 @@
     header("Location: index.php");
 }
 
+$ID = $_SESSION['IDDATOS']; 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
 $correo = $_SESSION['EMAIL'];
-$password = $_SESSION['PASSWORD'];
+$pass = $_SESSION['PASSWORD'];
 
 ?>
 
@@ -34,17 +35,18 @@ $password = $_SESSION['PASSWORD'];
         data-sidebar-position="fixed" data-header-position="fixed">
         <!-- Sidebar Start -->
         <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
-      <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
-            <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png" width="180" alt="" />
-          </a>
-          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-            <i class="ti ti-x fs-8"></i>
-          </div>
-        </div>
-        <!-- Sidebar navigation-->
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="./index.html" class="text-nowrap logo-img">
+                        <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png"
+                            width="180" alt="" />
+                    </a>
+                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
             <li class="nav-small-cap">
@@ -59,7 +61,14 @@ $password = $_SESSION['PASSWORD'];
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-            
+            <li class="sidebar-item">
+                <!-- <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a> -->
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -67,7 +76,14 @@ $password = $_SESSION['PASSWORD'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -131,11 +147,6 @@ $password = $_SESSION['PASSWORD'];
               </a>
               </li>
 
-              <li class="sidebar-item">
-              <a class="sidebar-link"  href="https://www.petro.gob.ve/es/" target="_blank" aria-expanded="false">
-              <span class="hide-menu">  Calculadora Petro </span>    
-              </a>
-              </li>
 
               <li class="sidebar-item">
               <a class="sidebar-link"  href="https://dolartoday.com/calculadora/" target="_blank" aria-expanded="false">
@@ -191,7 +202,35 @@ $password = $_SESSION['PASSWORD'];
 
               </div>
               
-            
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false"> </span>
+              </li>
+              <div class="collapse" id="collapseExample3">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-devices-pc"></i>
+                    </span>
+                    <span class="hide-menu">Soporte técnico</span>
+                  </a>
+                </li>
               </div>
           </ul>
         </nav>
@@ -237,7 +276,7 @@ $password = $_SESSION['PASSWORD'];
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -262,7 +301,6 @@ $password = $_SESSION['PASSWORD'];
           </div>
         </nav>
       </header>
-   
             <!--  Header End -->
             <div class="container-fluid">
                 <!--  Row 1 -->
@@ -273,27 +311,35 @@ $password = $_SESSION['PASSWORD'];
                                 <h5 class="card-title fw-semibold mb-4">Mi Perfil</h5>
 
                                
-                                    <fieldset >
+                                    <fieldset disabled>
                                         <div class="mb-3">
                                             <label for="disabledTextInput" class="form-label">Nombre y Apellido</label>
                                             <input type="text" id="disabledTextInput" class="form-control"
-                                                placeholder="<?php echo $NAME . " " . $APE  ?>" disabled>
+                                                placeholder="<?php echo $NAME . " " . $APE  ?>">
                                         </div>
+                                        <div class="mb-4">
+
+                                    <input type="hidden" name="USER" value="<?php echo $USER; ?>">
+                                    </div>
                                         <form action="foto.php" method="post"  enctype="multipart/form-data">
-                                        <div class="mb-4">
-                                            <label for="disabledTextInput" class="form-label">Correo electrónico</label>
-                                            <input type="text" name="EMAIL" id="disabledTextInput" class="form-control"  placeholder="<?php echo $correo  ?>"
-                                               >
-                                        </div>
-                                       
-                                        
-                                       
-                                        <div class="mb-4">
-                                            <label for="disabledTextInput" class="form-label">Contraseña</label>
-                                            <input type="text" name="PASSWORD" class="form-control"  placeholder="<?php echo $password  ?>"
-                                               >
-                                        </div>
+                                   
                                     </fieldset>
+                                    <!-- <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Correo electrónico</label>
+                                            <input type="text" id="disabledTextInput" name="EMAIL" class="form-control"
+                                                placeholder="<?php //echo $correo  ?>">
+                                        </div> -->
+                                    <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Cambiar Usuario</label>
+                                            <input type="text" id="disabledTextInput" name="USER" class="form-control"
+                                                placeholder="Ejemplo: Drangel">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Cambiar contraseña</label>
+                                            <input type="text" id="disabledTextInput" name="PASSWORD" class="form-control"
+                                                placeholder="contraseña con 8 o menos caracteres">
+                                        </div>
+                                    <label for="disabledTextInput" class="form-label">Cambiar foto de perfil</label>
                                     <div class="input-group mb-3">
                                         <input type="file" name="nfoto" class="form-control" id="inputGroupFile02">
                                     </div>

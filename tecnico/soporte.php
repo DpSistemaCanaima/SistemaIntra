@@ -5,7 +5,7 @@
   if (!isset($_SESSION['IDDATOS'])) {
     header("Location: index.php");
 }
-$ID_USER = $_SESSION['IDDATOS'];
+$ID = $_SESSION['IDDATOS'];
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -73,14 +73,21 @@ $ROL = $_SESSION['IDROLS'];
                                 <i class="ti ti-caret-down"></i></span>
                         </li>
                         <div class="collapse" id="collapseExample4">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-file-description"></i>
-                                    </span>
-                                    <span class="hide-menu">Constancia de trabajo</span>
-                                </a>
-                            </li>
+              <li class="sidebar-item">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
+                  <span>
+                    <i class="ti ti-file-description"></i>
+                  </span>
+                  <span class="hide-menu">Constancia de trabajo</span>
+                </a>
+              </li>
 
                         </div>
 

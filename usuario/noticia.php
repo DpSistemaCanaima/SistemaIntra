@@ -4,7 +4,7 @@
 if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
-
+$ID = $_SESSION['IDDATOS']; 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -57,7 +57,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-            
+            <li class="sidebar-item">
+                <!-- <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a> -->
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -65,7 +72,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -189,7 +203,35 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
 
               </div>
               
-            
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false"></span>
+              </li>
+              <div class="collapse" id="collapseExample3">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-devices-pc"></i>
+                    </span>
+                    <span class="hide-menu">Soporte técnico</span>
+                  </a>
+                </li>
               </div>
           </ul>
         </nav>
@@ -219,12 +261,12 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
           
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Usuario</p>
+            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE  ?><br>Usuario</p>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <?php 
-                                     
+                                 
                                      if (isset($_SESSION['IDDATOS'])) {
                   
                                      }else{
@@ -239,16 +281,15 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
-                  
                   <img src="<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="./perfil.php" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="./perfil.html" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">Mi Perfil</p>
                     </a>
-                    <a href="https://mail.industriacanaima.gob.ve/" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="#" class="d-flex align-items-center gap-2 dropdown-item">
                         <i class="ti ti-mail fs-6"></i>
                         <p class="mb-0 fs-3">Correo</p>
                     </a>
@@ -263,7 +304,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
       <!--  Header End -->
       <div class="container-fluid">
         <?php 
-         include('../conexion.php');
+     
          $id = $_GET['Edit'];
          $query = "SELECT cod_imagen,imagen, nombre, comentario FROM imagenes WHERE `cod_imagen` = '$id' ";
          $resultado = mysqli_query($conn,$query);

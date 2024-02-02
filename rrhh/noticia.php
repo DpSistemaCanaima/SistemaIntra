@@ -64,7 +64,21 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
               <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span>
             </li>
             <div class="collapse" id="collapseExample4">
-           
+              <li class="sidebar-item">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
+                  <span>
+                    <i class="ti ti-file-description"></i>
+                  </span>
+                  <span class="hide-menu">Constancia de trabajo</span>
+                </a>
+              </li>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
                   <span>

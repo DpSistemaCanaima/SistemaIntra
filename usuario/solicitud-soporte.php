@@ -7,6 +7,7 @@ if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
 
+$ID = $_SESSION['IDDATOS']; 
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -32,6 +33,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
@@ -43,8 +45,8 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
             <i class="ti ti-x fs-8"></i>
           </div>
         </div>
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+         <!-- Sidebar navigation-->
+         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -58,7 +60,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-            
+            <li class="sidebar-item">
+                <!-- <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a> -->
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -66,7 +75,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -130,11 +146,6 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
               </a>
               </li>
 
-              <li class="sidebar-item">
-              <a class="sidebar-link"  href="https://www.petro.gob.ve/es/" target="_blank" aria-expanded="false">
-              <span class="hide-menu">  Calculadora Petro </span>    
-              </a>
-              </li>
 
               <li class="sidebar-item">
               <a class="sidebar-link"  href="https://dolartoday.com/calculadora/" target="_blank" aria-expanded="false">
@@ -190,7 +201,35 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
 
               </div>
               
-            
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false"> </span>
+              </li>
+              <div class="collapse" id="collapseExample3">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-devices-pc"></i>
+                    </span>
+                    <span class="hide-menu">Soporte técnico</span>
+                  </a>
+                </li>
               </div>
           </ul>
         </nav>
@@ -261,7 +300,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
           </div>
         </nav>
       </header>
-         <!--  Header End -->
+            <!--  Header End -->
       <div class="container-fluid">
         <!--  Row 1 -->
         <div class="container-fluid">

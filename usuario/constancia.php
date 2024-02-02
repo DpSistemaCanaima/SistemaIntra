@@ -1,41 +1,41 @@
-<?php 
- 
-  include('../cone.php');
+<?php
+
+include('../cone.php');
+
   session_start();
-  if (!isset($_SESSION['IDDATOS'])) {
-    header("Location: index.php");
-}
-
-$USER = $_SESSION['USER'];
-$NAME = $_SESSION['NAME'];
-$APE = $_SESSION['SURNAME'];
-$ROL = $_SESSION['IDROLS'];
-$CEDULA = $_SESSION['CEDULA'];
-
-?>
+if (!isset($_SESSION['IDDATOS'])) {
+       header("Location: index.php");
+   }
+   
+   $USER = $_SESSION['USER'];
+   $NAME = $_SESSION['NAME'];
+   $ROL = $_SESSION['IDDATOS'];
+   $APE = $_SESSION['SURNAME'];
+				
+               
+				?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INTRANET</title>
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="../assets/css/styles.min.css" />
-  <link rel="stylesheet" href="oculto.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="../assets/css/general.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.bootstrap5.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INTRANET</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.bootstrap5.min.css">
 </head>
 
 <body>
-  <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
-    <!-- Sidebar Start -->
-    <aside class="left-sidebar">
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
@@ -299,159 +299,97 @@ $CEDULA = $_SESSION['CEDULA'];
           </div>
         </nav>
       </header>
-      <!--  Header End -->
-      <div id="para-datatable" class="container-fluid">
-        <!--  Row 1 -->
-        <div class="container-fluid">
-            <div class="container-fluid">
-              <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title fw-semibold mb-4">Gestión de Usuarios</h5>
-                    <table id="example" class="table table-striped my-datatable" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Nombre y Apellido</th>
-                                <th>Nacionalidad</th>
-                                <th>cadula</th>
-                                <th>area</th>
-                                <th>Educacion</th>
-                                <th>opcion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                   
-                       
-                      
-                    
-                   $sql = "SELECT  u.IDDATOS, grado.grado, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, a.AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
-                   INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  
-                   INNER JOIN rols AS r ON u.IDROLS = R.IDROLS
-                   INNER JOIN gender AS g ON u.GENDER = g.ID
-                   INNER JOIN login AS l ON u.LOGIN = l.TIPO
-                   INNER JOIN nacionalida As n ON u.NACIONALIDAD = n.ID_NACIONALIDA
-                   INNER JOIN grado As grado ON u.GRADO_DE_EDUCACION = grado.ID_GRADO";  
+            <!--  Header End -->
+            <div id="para-datatable" class="container-fluid">
+                <!--  Row 1 -->
+                <div class="container-fluid">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title fw-semibold mb-4">Solicitudes de Constancias de Trabajo</h5>
+                                <table id="example" class="table table-striped my-datatable" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre y Apellido</th>
+                                            <th>Cedula</th>
+                                            <th>Solicitud</th>
+                                            <th>Opcion</th>
+
+                                        </tr>
+                                    </thead>
+                                    <?php
 
 
-                       
-                    $result = mysqli_query($conn,$sql);
-                         
-                      
-                      while ($mostrar = mysqli_fetch_assoc($result)){?>
-                            <tr>
-                                <td><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></td>
-                                <td> <?php echo $mostrar ['nacionalidad'] ?></td>
-                                <td><?php echo $mostrar ['CEDULA'] ?></td>
-                                <td><?php echo $mostrar ['AREA'] ?></td>
-                                <td> <?php echo $mostrar['grado']?></td>
-                                <td>
 
-                                <div class="btn-group dropend mx-auto " style=" width: 50px; margin-top: 1em; ">
-                                    <button type="button" class="btn btn-outline-info dropdown-toggle"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        option
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <!-- Dropdown menu links -->
-                                        <li> <a class="dropdown-item btn btn-danger"
-                                                href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
-                                                data-bs-target="#registrarusuario"><img
-                                                    src="svg/person-add.svg " alt="Industrias Canaima" width="15"
-                                                    height="15">Registrar</a>
-                                        </li>
+                                                  $result =mysqli_query($conn,"SELECT * FROM recursos");
 
-                                        <li><a class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal<?php echo $mostrar['CEDULA'];?>"><img
-                                                    src="svg/editar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15"> Editar</a>
-                                        </li>
-                                        <li> <a class="dropdown-item btn btn-danger"
-                                                href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
-                                                <img src="svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15"> Eliminar</a>
-                                        </li>
+                                                    while ($mostrar = mysqli_fetch_array($result)){
+    ?>
+                                    <tbody>
+                                        <tr>
+                                            <td><?php echo $mostrar['nombre'];?></td>
 
-                                        <li><a class="dropdown-item" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal<?php echo $mostrar['IDDATOS']; ?>"
-                                                href="#"> <img src="svg/eye-fill.svg " alt="Industrias Canaima" width="15"
-                                                    height="15">Ver mas</a></li>
-                                    </ul>
-                                </div>
+                                            <td><?php echo $mostrar['cedula']?></td>
+                                            <td><?php echo $mostrar['solicitud']?></td>
+                                            <td>
+
+                                                <!------Eliminar------>
+                                                <form action="eliminar.re.php" method="POST">
+                                                    <input type="hidden" value="<?php echo $mostrar['cedula'] ?> "
+                                                        name="txtcedula">
+
+                                                    <button class="btn"><svg viewBox="0 0 15 17.5" height="17.5"
+                                                            width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                                                            <path transform="translate(-2.5 -1.25)"
+                                                                d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
+                                                                id="Fill"></path>
+                                                        </svg></button>
+                                                </form>
+                                            </td>
+
+                                        </tr>
 
 
-                            </td>
-                                            <!-- <div class="btn-group">
-                                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                                    data-bs-toggle="dropdown" aria-expanded="false" >
-                                                    activa
-                                                </button>
-                                               
-                                                <ul class="dropdown-menu" >
-                                               
-                                                    <li><a  class="dropdown-item" href="activar.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">activar</a></li>
-                                                    <li><a  class="dropdown-item" href="espera.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">En espera</a></li>
-                                                    <li><a   class="dropdown-item" href="cerrado.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">cerrado</a></li>
-                                                   
-                                                    
-                                                </ul>
-                                                 </div>
-                                  
-                                
-                                            </td> -->
-                               
-                            </tr>
-                            <?php
-                        include "modalregistrarusuario.php";
-                    ?>
+                                    </tbody>
 
-                        <?php
-
-                             include "gestion_esdit.php";
-                          
-                           
-                     
-                    ?>
-
-                      
-                            <?php
-      include "vermas.php";
+                                    <?php 
 }
-?>
-                           
-                        </tbody>
-                        
-                    </table>
+        ?>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-        </div>
-        
-      </div>
-      <footer class="footer">
-        <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/sidebarmenu.js"></script>
-  <script src="../assets/js/app.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/dashboard.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
-  <script type="text/javascript">
+            </div>
+            <footer class="footer">
+                <div class="py-6 px-6 text-center">
+                    <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank"
+                            class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
     $(document).ready(function() {
         $('#example').DataTable({
-          language: {
-            url: 'https://cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json'
-        }
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json'
+            }
         });
     });
-</script>
+    </script>
 </body>
+
 </html>

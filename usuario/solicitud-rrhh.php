@@ -58,7 +58,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-            
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a>
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -190,7 +197,35 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
 
               </div>
               
-            
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span>
+              </li>
+              <div class="collapse" id="collapseExample3">
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-devices-pc"></i>
+                    </span>
+                    <span class="hide-menu">Soporte técnico</span>
+                  </a>
+                </li>
               </div>
           </ul>
         </nav>
@@ -220,7 +255,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
           
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Usuario</p>
+            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Administrador</p>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -261,7 +296,6 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
           </div>
         </nav>
       </header>
-   
       <!--  Header End -->
       <div class="container-fluid">
         <!--  Row 1 -->

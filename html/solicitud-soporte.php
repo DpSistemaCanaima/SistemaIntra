@@ -74,7 +74,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -311,7 +318,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                        
                       <input type="hidden" name="name_surname" value=" <?php echo $NAME ." ". $APE ?> "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                         <label for="disabledSelect" class="form-label">Departamento</label>
                         <select name="area" id="disabledSelect" class="form-select">
                           <option selected>Selecciona tu departamento</option>
@@ -320,7 +327,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                           <option value="rrhh">RRHH</option>
                           <option value="precidencia">Presidencia</option>
                         </select>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Descripción de la falla presentada</label>
                         <textarea name="TITLE" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

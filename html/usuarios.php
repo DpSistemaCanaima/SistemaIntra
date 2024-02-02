@@ -76,7 +76,14 @@ $CEDULA = $_SESSION['CEDULA'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -313,7 +320,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                 <th>Nombre y Apellido</th>
                                 <th>Nacionalidad</th>
                                 <th>cadula</th>
-                                <th>area</th>
+                              
                                 <th>Educacion</th>
                                 <th>opcion</th>
                             </tr>
@@ -324,8 +331,7 @@ $CEDULA = $_SESSION['CEDULA'];
                        
                       
                     
-                   $sql = "SELECT  u.IDDATOS, grado.grado, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, a.AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
-                   INNER JOIN area AS a ON u.ASSIGNED_AREA = a.ID_AREA  
+                   $sql = "SELECT  u.IDDATOS, grado.grado, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, u.ASSIGNED_AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
                    INNER JOIN rols AS r ON u.IDROLS = r.IDROLS
                    INNER JOIN gender AS g ON u.GENDER = g.ID
                    INNER JOIN login AS l ON u.LOGIN = l.TIPO
@@ -342,7 +348,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                 <td><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></td>
                                 <td> <?php echo $mostrar ['nacionalidad'] ?></td>
                                 <td><?php echo $mostrar ['CEDULA'] ?></td>
-                                <td><?php echo $mostrar ['AREA'] ?></td>
+                                
                                 <td> <?php echo $mostrar['grado']?></td>
                                 <td>
 

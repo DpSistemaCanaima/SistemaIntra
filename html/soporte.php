@@ -78,7 +78,14 @@ $ROL = $_SESSION['IDROLS'];
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -315,7 +322,7 @@ $ROL = $_SESSION['IDROLS'];
                                             <th>Descripcion</th>
                                             <th>Nombre y Apellido</th>
                                             <th>Fecha de Creacion</th>
-                                            <th>Tecnicos</th>
+                                          
                                             <th>Opcion</th>
                                          
                                        
@@ -341,7 +348,7 @@ $ROL = $_SESSION['IDROLS'];
                                             <td><?php echo $mostrar ['TITLE'] ?></td>
                                             <td><?php echo $mostrar ['name_surname'] ?></td>
                                             <td><?php echo $mostrar ['CREATION_DATE'] ?></td>
-                                            <td><?php echo $mostrar ['NAME'] ?></td>
+                                            
                                             
                                            <td>
                                             

@@ -12,6 +12,7 @@ $APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
 $correo = $_SESSION['EMAIL'];
+$pass = $_SESSION['PASSWORD'];
 
 ?>
 
@@ -75,14 +76,21 @@ $correo = $_SESSION['EMAIL'];
                                 <i class="ti ti-caret-down"></i></span>
                         </li>
                         <div class="collapse" id="collapseExample4">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-file-description"></i>
-                                    </span>
-                                    <span class="hide-menu">Constancia de trabajo</span>
-                                </a>
-                            </li>
+              <li class="sidebar-item">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
+                  <span>
+                    <i class="ti ti-file-description"></i>
+                  </span>
+                  <span class="hide-menu">Constancia de trabajo</span>
+                </a>
+              </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
                                     <span>
@@ -296,7 +304,7 @@ $correo = $_SESSION['EMAIL'];
                                     <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -342,19 +350,30 @@ $correo = $_SESSION['EMAIL'];
                                                 placeholder="<?php echo $NAME . " " . $APE  ?>">
                                         </div>
                                         <div class="mb-4">
-                                            <label for="disabledTextInput" class="form-label">Correo electrónico</label>
-                                            <input type="text" id="disabledTextInput" class="form-control"
-                                                placeholder="<?php echo $correo  ?>">
-                                        </div>
-                                        <form action="foto.php" method="post"  enctype="multipart/form-data">
-                                        <div class="mb-4">
 
-                                            <input type="hidden" name="USER" value="<?php echo $USER; ?>">
-                                        </div>
+                                    <input type="hidden" name="USER" value="<?php echo $USER; ?>">
+                                    </div>
+                                        <form action="foto.php" method="post"  enctype="multipart/form-data">
+                                   
                                     </fieldset>
+                                    <!-- <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Correo electrónico</label>
+                                            <input type="text" id="disabledTextInput" name="EMAIL" class="form-control"
+                                                placeholder="<?php //echo $correo  ?>">
+                                        </div> -->
+                                    <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Cambiar Usuario</label>
+                                            <input type="text" id="disabledTextInput" name="USER" required  maxlength="8"  class="form-control"
+                                                  title="primera letra del en mayuscula nombre  y su apellido  Ejemplo: Drangel">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="disabledTextInput" class="form-label">Cambiar contraseña</label>
+                                            <input type="text" id="disabledTextInput" name="PASSWORD" required class="form-control"
+                                                placeholder="contraseña con 8 o menos caracteres">
+                                        </div>
                                     <label for="disabledTextInput" class="form-label">Cambiar foto de perfil</label>
                                     <div class="input-group mb-3">
-                                        <input type="file" name="nfoto" class="form-control" id="inputGroupFile02">
+                                        <input type="file" name="nfoto" class="form-control"  id="inputGroupFile02">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Guardar información</button>
                                 </form>

@@ -1,6 +1,6 @@
 <?php
 
-require "../conexion.php";
+require "../cone.php";
 
 
 	$cod_imagen = $_GET['cod_imagen'];
