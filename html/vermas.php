@@ -52,9 +52,7 @@ $CEDULA = $_SESSION['CEDULA'];
                 <label for="floatingInput"><strong>Cedula</strong></label>:
                 <?php echo $mostrar ['CEDULA'] ?><br>
                 <label for="floatingInput"><strong>Fecha de Nacimiento</strong></label>:
-                <?php echo $mostrar['FECHA']?><br>
-                <label for="floatingInput"><strong>Oficio</strong></label>:
-                <?php echo $mostrar['ABILIDAD_U_OFICIO']?><br>
+                <?php echo $mostrar['FECHA']?><br
                 <label for="floatingInput"><strong>Direccion</strong></label>:
                 <?php echo $mostrar['DIRECCION']?><br>
                 <label for="floatingInput"><strong>Ciudad</strong></label>:

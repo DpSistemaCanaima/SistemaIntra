@@ -29,8 +29,8 @@
                        <option value="13">Universitario</option>
                        <option value="14">otro</option>
                   </select><br>
-                    <input type="text" class="form-control" aria-label="Username" name="ABILIDAD_U_OFICIO"
-                        placeholder="Oficio ó Abilidad"><br>
+                    
+                        
                     <input type="text" class="form-control" aria-label="Username" name="DIRECCION"
                         placeholder="Direccion Completa"><br>
                     <input type="text" class="form-control" aria-label="Username" name="CIUDAD" placeholder="Ciudad"><br>
@@ -63,6 +63,8 @@
                         <option value=3>Otro</option>
                     </select><br>
                     <input type="text" class="form-control" aria-label="Username" name="ASSIGNED_AREA"
+                        placeholder="Cargo"><br>
+                        <input type="text" class="form-control" aria-label="Username" name="EMAIL"
                         placeholder="Ingrese correo"><br>
                     <!-- <?php //$result3 = mysqli_query($conn, "SELECT * FROM area");?> -->
                     <!-- <select class="form-select" aria-label="Default select example" name="ASSIGNED_AREA">
