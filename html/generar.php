@@ -5,7 +5,7 @@ require ('fpdf/fpdf.php');
 
 
 $id = $_GET['edi'];
-$sql = "SELECT NAME, CEDULA, ASSIGNED_AREA FROM user_datos WHERE IDDATOS = '$id'";
+$sql = "SELECT NAME, SURNAME, CEDULA, ASSIGNED_AREA FROM user_datos WHERE IDDATOS = '$id'";
 
 $resultado = $mysqli->query($sql);
 
@@ -72,15 +72,22 @@ $pdf->Cell(19);
 $pdf->MultiCell(0, 0, utf8_decode("APELLIDOS Y NOMBRES:") , 0, 'L');
 $pdf->Cell(65);
 $pdf->MultiCell(0, 0, utf8_decode($row['NAME'] ) , 0,'L');
-$pdf->Ln(10);
+$pdf->Cell(90);
+$pdf->MultiCell(0, 0, utf8_decode($row['SURNAME'] ) , 0,'L');
+$pdf->Ln(6);
 $pdf->Cell(19);
-$pdf->MultiCell(0, 7, utf8_decode("CEDULA IDENTIDAD Nº :") , 0, 'L');
+$pdf->MultiCell(0, 0, utf8_decode("CEDULA IDENTIDAD Nº :") , 0, 'L');
 $pdf->Cell(65);
-$pdf->MultiCell(0, 7, utf8_decode($row['CEDULA']) , 0, 'L');
+$pdf->MultiCell(0, 0, utf8_decode($row['CEDULA']) , 0, 'L');
+$pdf->Ln(3);
 $pdf->Cell(19);
 $pdf->MultiCell(0, 7, utf8_decode("FECHA DE INGRESO :"), 0, 'L');
+$pdf->Ln(3);
 $pdf->Cell(19);
-$pdf->MultiCell(0, 7, utf8_decode("CARGO :"), 0, 'L');
+$pdf->MultiCell(0, 0, utf8_decode("CARGO :"), 0, 'L');
+$pdf->Cell(35);
+$pdf->MultiCell(0, 0, utf8_decode($row['ASSIGNED_AREA']), 0, 'L');
+$pdf->Ln(3);
 $pdf->Cell(19);
 $pdf->MultiCell(0, 7, utf8_decode("UBICACION ADMINISTRATIVA:"), 0, 'L');
 }

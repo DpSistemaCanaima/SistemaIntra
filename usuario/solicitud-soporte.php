@@ -39,7 +39,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png" width="180" alt="" />
+            <img src="svg/canaima.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -314,7 +314,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                        
                       <input type="hidden" name="name_surname" value=" <?php echo $NAME ." ". $APE ?> "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                         <label for="disabledSelect" class="form-label">Departamento</label>
                         <select name="area" id="disabledSelect" class="form-select">
                           <option selected>Selecciona tu departamento</option>
@@ -323,7 +323,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                           <option value="rrhh">RRHH</option>
                           <option value="precidencia">Presidencia</option>
                         </select>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Descripción de la falla presentada</label>
                         <textarea name="TITLE" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

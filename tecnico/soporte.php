@@ -42,7 +42,7 @@ $ROL = $_SESSION['IDROLS'];
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
                     <a href="./index.html" class="text-nowrap logo-img">
-                        <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png"
+                        <img src="svg/canaima.png"
                             width="180" alt="" />
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -338,7 +338,7 @@ $ROL = $_SESSION['IDROLS'];
                             $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, r.ID_NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
                             INNER JOIN status AS s ON r.STATUS = s.ID_STATUS
                             INNER JOIN level AS l ON r.ID_LEVEL = l.ID_LEVEL
-                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE  r.STATUS = '1' AND r.ID_NAME = '$ID_USER' ";  
+                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE  r.STATUS = '1' AND r.ID_NAME = '$ID' ";  
            
 
 

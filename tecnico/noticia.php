@@ -36,7 +36,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png" width="180" alt="" />
+            <img src="svg/canaima.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -292,8 +292,9 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                 <div class="row">
                   <div class="col-6">
                     <img src="../imagenes/<?php echo $row['imagen']; ?>" class="card-img-noticia" alt="..." style="width: 100%;">
+                <center>   <a href="index.php" class="btn btn-primary">Regresar</a> </center> 
                   </div>
-
+               
                   <div class="col-6">
                     <h3 class="mt-3 mb-3"><?php echo $row['nombre'] ?></h5>
                       <p class="card-text text-noticia"><?php echo $row['comentario'] ?></p>

@@ -1,3 +1,17 @@
+<?php
+
+include "cone.php";
+
+session_start();
+
+$sql = "SELECT CEDULA  FROM user_datos WHERE  IDDATOS = IDDATOS";
+//   echo $sql;
+  $resul = mysqli_query($conn, $sql);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,24 +41,24 @@
                       style="width: 250px; " alt="logo">
                   </div>
   
-                  <form  action="login.php" method="POST" class="m-auto" style="width: 90%">
-                    <p class="text-center">Por favor, ingresa tus credenciales</p>
-  
-                    <div class="form-group has-feedback mb-4">
-                      <i class="fa fa-user form-control-feedback"></i>
-                      <input type="text" name="USER" maxlength="8" pattern="[A-Z-0-9]" required class="form-control my-input" placeholder="Usuario">
-                    </div>
-
+                  <form  action="contra.php" method="POST" class="m-auto" style="width: 90%">
+                    <p class="text-center">Cambiar  Contraseña</p>
+                    <?php
+                    while( $ver = mysqli_fetch_array($resul)){
+                      ?>
+                    <input type="hidden" name="cedula" value="<?php echo $ver['CEDULA']; ?>"  class="form-control my-input" placeholder="Contraseña">
+                  
+                 <?php   } ?>
                     <div class="form-outline has-feedback mb-4">
-                      <i class="fa fa-lock form-control-feedback"></i>
-                      <input type="password" name="PASSWORD" required maxlength="8" class="form-control my-input" placeholder="Contraseña">
+   
+                      <input type="password" name="password" required maxlength="8"  class="form-control my-input" placeholder="Contraseña">
 
                     </div>
   
 
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
-                      <a style="text-decoration: none;" href="reset.php">Restablecer Contraseña</a>
+                      <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">recuperar</button>
+                      <a style="text-decoration: none;" href="index.php">Cancelar</a>
                     </div>
                   </form>
                   <p class="text-muted text-center">&copy; Industria Canaima 2023</p>
@@ -56,12 +70,8 @@
                 background-size: cover;
                 background-blend-mode: overlay;
               ">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <form action="" method="POST">
-                
-<!-- <!-- <input pattern=".{3,}" required title="minimo 3 caracteres" maxlength="8">
-<input type="submit" value="aceptar">
-</form> -->
+             
+     
                 </div> 
               </div>
             </div>
@@ -74,3 +84,4 @@
 
 </body>
 </html>
+ 

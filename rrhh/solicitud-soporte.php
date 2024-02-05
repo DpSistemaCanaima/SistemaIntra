@@ -7,6 +7,7 @@ if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
 
+$ID = $_SESSION['IDDATOS'];
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -38,7 +39,7 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png" width="180" alt="" />
+            <img src="svg/canaima.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -212,12 +213,12 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
                     <span>
                       <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Constancia de trabajo</span>
-                  </a>
+                  </a> -->
                 </li>
                
               </div>
@@ -304,14 +305,14 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                       <input type="hidden" name="name_surname" value=" <?php echo $NAME ." ". $APE ?> "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Departamento</label>
-                        <select name="area" id="disabledSelect" class="form-select">
+                        <!-- <label for="disabledSelect" class="form-label">Departamento</label> -->
+                        <!-- <select name="area" id="disabledSelect" class="form-select">
                           <option selected>Selecciona tu departamento</option>
                           <option value="tecnologia">Tecnología</option>
                           <option value="oac">OAC</option>
                           <option value="rrhh">RRHH</option>
                           <option value="precidencia">Presidencia</option>
-                        </select>
+                        </select> -->
                         </div>
                         <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Descripción de la falla presentada</label>
