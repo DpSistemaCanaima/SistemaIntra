@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION['IDDATOS'])) {
   header("Location: index.php");
 }
-
+$ID  = $_SESSION['IDDATOS'];
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];

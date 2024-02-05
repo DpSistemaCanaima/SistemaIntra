@@ -51,8 +51,6 @@ $CEDULA = $_SESSION['CEDULA'];
                 <?php echo $mostrar ['nacionalidad'] ?><br>
                 <label for="floatingInput"><strong>Cedula</strong></label>:
                 <?php echo $mostrar ['CEDULA'] ?><br>
-                <label for="floatingInput"><strong>Grado de Educacion</strong></label>:
-                <?php echo $mostrar['grado']?><br>
                 <label for="floatingInput"><strong>Fecha de Nacimiento</strong></label>:
                 <?php echo $mostrar['FECHA']?><br>
                 <label for="floatingInput"><strong>Oficio</strong></label>:
@@ -67,16 +65,10 @@ $CEDULA = $_SESSION['CEDULA'];
                 <?php echo $mostrar ['PARROQUIA'] ?><br>
                 <label for="floatingInput"><strong>Usuario</strong></label>:
                 <?php echo $mostrar ['USER'] ?><br>
-                <label for="floatingInput"><strong>Area</strong></label>:
+                <label for="floatingInput"><strong>Cargo</strong></label>:
                 <?php echo $mostrar ['ASSIGNED_AREA'] ?><br>
                 <label for="floatingInput"><strong>Sexo</strong></label>:
-                <?php if($mostrar ['GENDER']==1){
-                          echo "H";
-                        }elseif($mostrar ['GENDER']==2){
-                          echo "M";
-                        }else{
-                          echo "otro";
-                        } ?> <br>
+                  <?php echo $mostrar ['GENDER'];?> <br>
                 <label for="floatingInput"><strong>Correo</strong></label>:
                 <?php echo $mostrar ['EMAIL'] ?><br>
                 <label for="floatingInput"><strong>Rol</strong></label>:

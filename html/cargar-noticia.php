@@ -320,7 +320,9 @@ $oficio = $_SESSION['ABILIDAD_U_OFICIO'];
                         <label for="exampleInputPassword1" class="form-label">Contenido</label>
                         <textarea class="form-control" name="comentario" rows="3"></textarea>
                         </div>
+                        <label for="exampleInputEmail1" class="form-label">Subir Imagen</label>
                         <div class="input-group mb-3">
+                       
                             <input type="file" name="imagen" class="form-control" >
                         </div>
                         <button type="submit" name="Guardar" class="btn btn-primary">Cargar noticia</button>

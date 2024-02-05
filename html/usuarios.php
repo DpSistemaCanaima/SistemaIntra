@@ -321,7 +321,6 @@ $CEDULA = $_SESSION['CEDULA'];
                                 <th>Nacionalidad</th>
                                 <th>cadula</th>
                               
-                                <th>Educacion</th>
                                 <th>opcion</th>
                             </tr>
                         </thead>
@@ -331,12 +330,12 @@ $CEDULA = $_SESSION['CEDULA'];
                        
                       
                     
-                   $sql = "SELECT  u.IDDATOS, grado.grado, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, u.ASSIGNED_AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
+                   $sql = "SELECT  u.IDDATOS,  n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, u.ASSIGNED_AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
                    INNER JOIN rols AS r ON u.IDROLS = r.IDROLS
                    INNER JOIN gender AS g ON u.GENDER = g.ID
                    INNER JOIN login AS l ON u.LOGIN = l.TIPO
                    INNER JOIN nacionalida As n ON u.NACIONALIDAD = n.ID_NACIONALIDA
-                   INNER JOIN grado As grado ON u.GRADO_DE_EDUCACION = grado.ID_GRADO";  
+                   ";  
 
 
                        
@@ -349,7 +348,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                 <td> <?php echo $mostrar ['nacionalidad'] ?></td>
                                 <td><?php echo $mostrar ['CEDULA'] ?></td>
                                 
-                                <td> <?php echo $mostrar['grado']?></td>
+                                
                                 <td>
 
                                 <div class="btn-group dropend mx-auto " style=" width: 50px; margin-top: 1em; ">

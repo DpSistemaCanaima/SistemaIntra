@@ -5,7 +5,7 @@
   if (!isset($_SESSION['IDDATOS'])) {
     header("Location: index.php");
 }
-
+$ID = $_SESSION['IDDATOS'];
 $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
@@ -363,7 +363,7 @@ $pass = $_SESSION['PASSWORD'];
                                     <div class="mb-4">
                                             <label for="disabledTextInput" class="form-label">Cambiar Usuario</label>
                                             <input type="text" id="disabledTextInput" name="USER" required  maxlength="8"  class="form-control"
-                                                  title="primera letra del en mayuscula nombre  y su apellido  Ejemplo: Drangel">
+                                                  placeholder=" Ejemplo: Drangel">
                                         </div>
                                         <div class="mb-4">
                                             <label for="disabledTextInput" class="form-label">Cambiar contraseña</label>
