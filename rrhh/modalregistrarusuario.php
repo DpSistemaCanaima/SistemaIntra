@@ -22,15 +22,7 @@
                     <input type="text" class="form-control" aria-label="Username" id="cedula" name="CEDULA"
                         placeholder="Cedula" size="20"><br>
                         <input type="date" class="form-control" name="FECHA" class="i-text" placeholder="Fecha de nacimiento"><br>
-                  <select class="form-select" aria-label="Default select example" name="GRADO_DE_EDUCACION" ><br>
-                      <option value="">Nivel de intruccion</option> 
-                      <option value="11">Primaria</option>
-                       <option value="12">Secundaria</option>
-                       <option value="13">Universitario</option>
-                       <option value="14">otro</option>
-                  </select><br>
-                    <input type="text" class="form-control" aria-label="Username" name="ABILIDAD_U_OFICIO"
-                        placeholder="Oficio ó Abilidad"><br>
+                 
                     <input type="text" class="form-control" aria-label="Username" name="DIRECCION"
                         placeholder="Direccion Completa"><br>
                     <input type="text" class="form-control" aria-label="Username" name="CIUDAD" placeholder="Ciudad"><br>

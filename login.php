@@ -17,7 +17,7 @@ if ($_POST) {
 
 
 
-    $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, ABILIDAD_U_OFICIO, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
+    $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
     $num = $resultado->num_rows;
@@ -39,7 +39,7 @@ if ($_POST) {
 			$_SESSION['NAME'] = $row['NAME'];
             $_SESSION['SURNAME'] = $row['SURNAME'];
             $_SESSION['CEDULA'] = $row['CEDULA'];
-            $_SESSION['ABILIDAD_U_OFICIO'] = $row['ABILIDAD_U_OFICIO'];
+           
             $_SESSION['PASSWORD'] = $row['PASSWORD'];
             $_SESSION['telefono'] = $row['telefono']; 
             $_SESSION['EMAIL'] = $row['EMAIL'];

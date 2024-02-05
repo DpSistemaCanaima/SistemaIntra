@@ -385,24 +385,7 @@ $CEDULA = $_SESSION['CEDULA'];
 
 
                             </td>
-                                            <!-- <div class="btn-group">
-                                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                                    data-bs-toggle="dropdown" aria-expanded="false" >
-                                                    activa
-                                                </button>
-                                               
-                                                <ul class="dropdown-menu" >
-                                               
-                                                    <li><a  class="dropdown-item" href="activar.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">activar</a></li>
-                                                    <li><a  class="dropdown-item" href="espera.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">En espera</a></li>
-                                                    <li><a   class="dropdown-item" href="cerrado.php?ID_REPORT=<?php echo $mostrar['ID_REPORT'];?>">cerrado</a></li>
-                                                   
-                                                    
-                                                </ul>
-                                                 </div>
-                                  
-                                
-                                            </td> -->
+                                            
                                
                             </tr>
                             <?php

@@ -22,13 +22,7 @@
                     <input type="text" class="form-control" aria-label="Username" id="cedula" name="CEDULA"
                         placeholder="Cedula" size="20"><br>
                         <input type="date" class="form-control" name="FECHA" class="i-text" placeholder="Fecha de nacimiento"><br>
-                  <select class="form-select" aria-label="Default select example" name="GRADO_DE_EDUCACION" ><br>
-                      <option value="">Nivel de intruccion</option> 
-                      <option value="11">Primaria</option>
-                       <option value="12">Secundaria</option>
-                       <option value="13">Universitario</option>
-                       <option value="14">otro</option>
-                  </select><br>
+                
                     
                         
                     <input type="text" class="form-control" aria-label="Username" name="DIRECCION"
@@ -64,26 +58,7 @@
                     </select><br>
                     <input type="text" class="form-control" aria-label="Username" name="ASSIGNED_AREA"
                         placeholder="Cargo"><br>
-                       <!-- <input type="text" class="form-control" aria-label="Username" name="EMAIL"
-                        placeholder="Ingrese correo"><br>-->
-                    <!-- <?php //$result3 = mysqli_query($conn, "SELECT * FROM area");?> -->
-                    <!-- <select class="form-select" aria-label="Default select example" name="ASSIGNED_AREA">
-                        <option>Area</option>
-                        <option value="1">Presidencia</option>
-                        <option value="2">Proyecto</option>
-                        <option value="3">Consultoria Juridica</option>
-                        <option value="4">Planificación y Presupuesto</option>
-                        <option value="5">Gestion Humana</option>
-                        <option value="6">Procura</option>
-                        <option value="7">Administración y Finanzas</option>
-                        <option value="8">Tic</option>
-                        <option value="9">Atencion al ciudadano</option>
-                        <option value="10">Comercializacion</option>
-                        <option value="11">Seguridad</option>
-                        <option value="12">Seguridad Integral</option>
-                        <option value="13">Producción</option>
-                    </select><br> -->
-
+                    
 
                     <label for="hijos">Seleccione si tiene hijos.</label>
                     <br>

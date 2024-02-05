@@ -11,9 +11,6 @@ $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
-$oficio = $_SESSION['ABILIDAD_U_OFICIO'];
-
-
 
 
 

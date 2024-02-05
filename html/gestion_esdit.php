@@ -21,16 +21,6 @@
                     <label for="floatingInput">Fecha de nacimiento</label>
                     <input type="date" class="form-control" name="FECHA" class="i-text"
                        value="<?php echo $mostrar['FECHA'] ?>">
-                       <label for="floatingInput">Grado de Educacion</label>
-                    <select class="form-select" aria-label="Default select example" name="GRADO_DE_EDUCACION">
-                        <option value="11">Primaria</option>
-                        <option value="12">Secundaria</option>
-                        <option value="13">Universitario</option>
-                        <option value="14">otro</option>
-                    </select>
-                    <label for="floatingInput">Abilidad u oficio</label>
-                    <input type="text" class="form-control" aria-label="Username" name="ABILIDAD_U_OFICIO"
-                        value="<?php echo $mostrar['ABILIDAD_U_OFICIO'] ?>">
                         <label for="floatingInput">Direccion</label>
                     <input type="text" class="form-control" aria-label="Username" name="DIRECCION"
                     value="<?php echo $mostrar['DIRECCION'] ?>">
