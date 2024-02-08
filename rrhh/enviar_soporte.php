@@ -14,7 +14,7 @@ $name_surname = $_POST['name_surname'];
 
 
 
-   $sql= "INSERT INTO `report` (`ID_REPORT`, `TITLE`, `name_surname`, `ID_NAME`, `area`, `CREATION_DATE`, `DATE_FINAL`, `FECHA_SOLUTION`, `STATUS`, `ID_LEVEL`, `SOLUTION`) VALUES (NULL, '$TITLE', '$name_surname', '$ROL','$area', '$fecha', NULL, NULL, '3', '3', NULL)";
+   $sql= "INSERT INTO `report` (`ID_REPORT`, `TITLE`, `name_surname`,`area`, `ID_NAME`, `CREATION_DATE`, `DATE_FINAL`, `FECHA_SOLUTION`, `STATUS`, `ID_LEVEL`, `SOLUTION`) VALUES (NULL, '$TITLE', '$name_surname', '$area' ,'$ROL', '$fecha', NULL, NULL, '3', '3', NULL)";
       
    $result = mysqli_query($conn, $sql);
 

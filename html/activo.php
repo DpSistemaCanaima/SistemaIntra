@@ -1,6 +1,6 @@
-<?php
-
-include('../cone.php');
+<?php 
+ 
+ include('../cone.php');
  session_start();
  if (!isset($_SESSION['IDDATOS'])) {
    header("Location: index.php");
@@ -15,39 +15,42 @@ include('../cone.php');
  
  
 
+        ?>
 
-     
-      ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INTRANET</title>
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="../assets/css/styles.min.css" />
-  <link rel="stylesheet" href="../assets/css/general.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INTRANET</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.4.1/css/rowReorder.bootstrap5.min.css">
 </head>
 
 <body>
-  <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
-    <!-- Sidebar Start -->
-    <aside class="left-sidebar">
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="svg/canaima.png" width="180" alt="" />
+          <img src="svg/Canaima.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
           </div>
         </div>
-      <!-- Sidebar navigation-->
-      <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -61,7 +64,14 @@ include('../cone.php');
                 <span class="hide-menu">Inicio</span>
               </a>
             </li>
-          
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="./cargar-noticia.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-article"></i>
+                  </span>
+                  <span class="hide-menu">Cargar noticia</span>
+                </a>
+            </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -83,7 +93,14 @@ include('../cone.php');
                   <span class="hide-menu">Constancia de trabajo</span>
                 </a>
               </li>
-            
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-devices-pc"></i>
+                  </span>
+                  <span class="hide-menu">Soporte técnico</span>
+                </a>
+              </li>
             </div>
 
             <li class="nav-small-cap">
@@ -195,14 +212,24 @@ include('../cone.php');
               
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Soporte <i class="ti ti-caret-down"></i></span>
+                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span>
               </li>
               <div class="collapse" id="collapseExample3">
                 <li class="sidebar-item">
-                 
+                  <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Usuarios</span>
+                  </a>
                 </li>
                 <li class="sidebar-item">
-                 
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-file-description"></i>
+                    </span>
+                    <span class="hide-menu">Constancia de trabajo</span>
+                  </a> -->
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
@@ -241,12 +268,12 @@ include('../cone.php');
           
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE  ?><br>Soporte</p>
+            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Administrador</p>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <?php 
-                                 
+                                     
                                      if (isset($_SESSION['IDDATOS'])) {
                   
                                      }else{
@@ -257,19 +284,20 @@ include('../cone.php');
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA'");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
+                  
                   <img src="<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="./perfil.html" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="./perfil.php" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">Mi Perfil</p>
                     </a>
-                    <a href="#" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="https://mail.industriacanaima.gob.ve/" class="d-flex align-items-center gap-2 dropdown-item">
                         <i class="ti ti-mail fs-6"></i>
                         <p class="mb-0 fs-3">Correo</p>
                     </a>
@@ -281,49 +309,129 @@ include('../cone.php');
           </div>
         </nav>
       </header>
-      <!--  Header End -->
-      <div class="container-fluid">
-        <?php 
-         include('../conexion.php');
-         $query = "SELECT cod_imagen,imagen, nombre, comentario FROM imagenes  ";
-         $resultado = mysqli_query($conn,$query);
-        ?>
-        <div class="container-fluid">
-          <div class="container-fluid">
-            <div class="card">
-            <?php foreach($resultado as $row) { ?>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-6">
-                    <img src="../imagenes/<?php echo $row['imagen']; ?>" class="card-img-noticia" alt="..." style="width: 100%;">
-                <center>   <a href="index.php" class="btn btn-primary">Regresar</a> </center> 
-                  </div>
-               
-                  <div class="col-6">
-                    <h3 class="mt-3 mb-3"><?php echo $row['nombre'] ?></h5>
-                      <p class="card-text text-noticia"><?php echo $row['comentario'] ?></p>
-                  </div>
+            <!--  Header End -->
+            <div id="para-datatable" class="container-fluid">
+                <!--  Row 1 -->
+                <div class="container-fluid">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico                             
+                                   <h6><a  href="historial.php" style="font-zise: 1px; color:black;">Historial</a>  |  <a style="font-zise: 1px; color:black;" href="soporte.php">regresar</a> |  <a style="font-zise: 1px; color:black;" href="activo.php">activos</a></h6></h5> 
+   
+                                <table id="example" class="table table-striped my-datatable" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripcion</th>
+                                            <th>Nombre y Apellido</th>
+                                            <th>Fecha de Creacion</th>
+                                          
+                                            <th>Opcion</th>
+                                         
+                                       
+                                          
+                                        </tr>
+                                    </thead>
+
+                                    <?php
+                            
+                            $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, u.NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
+                            INNER JOIN status AS s ON r.STATUS = s.ID_STATUS
+                            INNER JOIN level AS l ON r.ID_LEVEL = l.ID_LEVEL
+                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE r.STATUS = '1'";  
+           
+                                  
+                               $result =mysqli_query($conn,$sql);
+                          
+                  
+                      while ($mostrar = mysqli_fetch_assoc($result)){
+                             ?>
+                                    <tbody>
+                                        <tr>
+                                            <td><?php echo $mostrar ['TITLE'] ?></td>
+                                            <td><?php echo $mostrar ['name_surname'] ?></td>
+                                            <td><?php echo $mostrar ['CREATION_DATE'] ?></td>
+                                            
+                                            
+                                           <td>
+                                            
+                                           <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>" class="btn btn-primary">Asignar</button> 
+</div>
+                                               
+                                                 <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $mostrar['ID_REPORT'];?>">opcion</button> -->
+                                                  
+                                                   
+                                                 <?php 
+                                           
+                                           $consultaTecnico = "SELECT u.IDDATOS, u.NAME ,u.IDROLS FROM user_datos as u
+                                           WHERE IDROLS= 3";
+                                           $ve= mysqli_query($conn,$consultaTecnico);
+                                      
+                                           ?>
+                                         
+                                                
+                                  
+                                
+                                            </td>
+                                           
+                                           
+
+                                            <?php  include "modal _cerrado.php";  ?>  
+                                                
+                                            <?php
+                   
+                
+}
+
+
+
+?>
+ 
+
+                                               
+                                             
+                                        </tr>
+
+
+                                    </tbody>
+                                 
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <?php } ?>
+
             </div>
-          </div>
+            <footer class="footer">
+                <div class="py-6 px-6 text-center">
+                    <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank"
+                            class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8
+                    </p>
+                </div>
+            </footer>
         </div>
-      </div>
-      <footer class="footer">
-        <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>
-        </div>
-      </footer>
     </div>
-  </div>
-  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/sidebarmenu.js"></script>
-  <script src="../assets/js/app.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable({
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json'
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

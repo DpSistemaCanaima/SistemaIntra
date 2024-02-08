@@ -11,7 +11,7 @@ $USER = $_SESSION['USER'];
 $NAME = $_SESSION['NAME'];
 $APE = $_SESSION['SURNAME'];
 $ROL = $_SESSION['IDROLS'];
-
+$CEDULA = $_SESSION['CEDULA'];
 
 
 
@@ -324,7 +324,7 @@ date_default_timezone_set('America/caracas');
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>

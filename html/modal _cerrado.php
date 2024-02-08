@@ -15,32 +15,10 @@
                                       <strong>Status</strong>:     <?php echo $mostrar ['STATUS'] ?><br>
                                       <strong>Nivel</strong>:  <?php echo $mostrar ['LEVEL'] ?><br>
                                       <strong>Tecnico</strong>:  <?php echo $mostrar ['NAME'] ?><br>
+                                      <strong>Solucion</strong>:  <?php echo $mostrar ['SOLUTION'] ?><br>
                                       <strong>Fecha de solucion</strong>:<?php echo $mostrar ['FECHA_SOLUTION'] ?><br>
-                     
-       <form action="activar.php" method="post">
-         <input type="hidden" name="ID_REPORT" value="<?php echo $mostrar['ID_REPORT'];?>">
-       <select class="form-select" name="STATUS" aria-label="Default select example">
-                          <option value="3">En espera</option>
-                          <option value="1">Activo</option>
-                           <option value="2">Cerrados</option>
-                            
-                        </select>
-       <br>
-       <select class="form-select" name="ID_LEVEL" >
-                               
-                               <option value="1">Urgente</option>
-                               <option value="2">Alta</option>
-                               <option value="3">Normal</option>
-                               <option value="4">Baja</option>
-                           
-                               </select><br>
-        <select name="ID_NAME" class="form-select">
-        <?php    while($vio = mysqli_fetch_assoc($ve)){ ?>
-                <option  value="<?php echo $vio['IDDATOS']; ?>"><?php echo $vio['NAME']; ?></option>
-                <?php   }?>
-        </select><br>
-        <center>  <input type="submit" class="btn btn-outline-primary "></center>
-       </form>
+     
+
       </div>
      
     </div>

@@ -300,19 +300,27 @@ $ROL = $_SESSION['IDROLS'];
                     <h5 class="card-title fw-semibold mb-4">Solicitud de Soporte Técnico</h5>
                    
                     <form method="post" action="enviar_soporte.php">
+                        
                         <div class="mb-3">
-                       
-                      <input type="hidden" name="name_surname" value=" <?php echo $NAME ." ". $APE ?> "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="hidden" name="name_surname" value=" <?php echo $NAME ." ". $APE ?> "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                        <!-- <label for="disabledSelect" class="form-label">Departamento</label> -->
-                        <!-- <select name="area" id="disabledSelect" class="form-select">
-                          <option selected>Selecciona tu departamento</option>
-                          <option value="tecnologia">Tecnología</option>
-                          <option value="oac">OAC</option>
-                          <option value="rrhh">RRHH</option>
-                          <option value="precidencia">Presidencia</option>
-                        </select> -->
+                        <label for="disabledSelect" class="form-label">Departamento</label>
+                        <select class="form-select" aria-label="Default select example" name="area">
+                        <option value="1">Presidencia</option>
+                        <option value="2">Proyecto</option>
+                        <option value="3">Consultoria Juridica</option>
+                        <option value="4">Planificación y Presupuesto</option>
+                        <option value="5">Gestion Humana</option>
+                        <option value="6">Procura</option>
+                        <option value="7">Administración y Finanzas</option>
+                        <option value="8">Tic</option>
+                        <option value="9">Atencion al ciudadano</option>
+                        <option value="10">Comercializacion</option>
+                        <option value="11">Seguridad</option>
+                        <option value="12">Seguridad Integral</option>
+                        <option value="13">Producción</option>
+                    </select>
                         </div>
                         <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Descripción de la falla presentada</label>

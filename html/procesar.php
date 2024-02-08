@@ -1,7 +1,11 @@
 <?php
 
-  include('cone.php');
+
    
+  include('../cone.php');
+
+
+
   $IDDATOS = $_POST['IDDATOS'];
   $NAME = $_POST['NAME'];
  
@@ -22,8 +26,10 @@
   $NACIMIENTO = $_POST['FECHA_DE_NACIMIENTO'];
 
 
- $sql= ("UPDATE `user_datos` SET `NAME` = '$NAME', `CEDULA` = '$CEDULA', `FECHA` = '$FECHA', `SURNAME` = '$SURNAME', `DIRECCION` = '$DIRECCION', `CIUDAD` = '$CIUDAD', `MUNICIPIO` = '$MUNICIPIO', `PARROQUIA` = '$PARROQUIA', `EMAIL` = '$EMAIL', `IDROLS` = '$IDROLS', `LOGIN` = '$LOGIN', `ASSIGNED_AREA` = '$AREA', `NUMERO_DE_HIJOS` = '$NUMERO', `NOBRE_Y_APELLIDO` = '$NOMBRE', `FECHA_DE_NACIMIENTO` = '$NACIMIENTO' , `GENDER` = '$GENDER' WHERE `user_datos`.`CEDULA` = '$CEDULA' ;");
-
+ $sql= "UPDATE `user_datos` SET `NAME` = '$NAME', `CEDULA` = '$CEDULA', `FECHA` = '$FECHA', `SURNAME` = '$SURNAME', `DIRECCION` = '$DIRECCION', `CIUDAD` = '$CIUDAD', `MUNICIPIO` = '$MUNICIPIO',  `ASSIGNED_AREA`='$AREA' , `PARROQUIA` = '$PARROQUIA', `EMAIL` = '$EMAIL', `IDROLS` = '$IDROLS', `LOGIN` = '$LOGIN', `NUMERO_DE_HIJOS` = '$NUMERO', `NOBRE_Y_APELLIDO` = '$NOMBRE', `FECHA_DE_NACIMIENTO` = '$NACIMIENTO' , `GENDER` = '$GENDER' WHERE `user_datos`.`IDDATOS` = '$IDDATOS' ";
+ 
+ 
+   
  $resultado =  mysqli_query($conn, $sql);
 
  if($resultado){
@@ -40,7 +46,7 @@
       timer: 1500
       }).then(() => {
 
-      location.assign('gestion_admin.php');
+      location.assign('usuarios.php');
 
       });
 });
@@ -59,7 +65,7 @@
       timer: 1500
       }).then(() => {
 
-      location.assign('gestion_admin.php');
+      location.assign('usuarios.php');
 
      });
 });

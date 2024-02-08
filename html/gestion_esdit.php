@@ -57,13 +57,13 @@
                     </select>
                     <label for="floatingInput">Sexo</label>
                     <select class="form-select" name="GENDER">
-                        <option value="<?php echo $mostrar['GENDER'] ?>" ></option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                         <option value="3">Otro</option>
                     </select>
-                    <label for="floatingInput">Area</label>
-                    <select class="form-select" name="ASSIGNED_AREA" class="selectpicker" data-show-subtext="true"
+                    <label for="floatingInput">Cargo</label>
+                    <input type="text" class="form-control" value="<?php echo $mostrar['ASSIGNED_AREA'] ?>" name="ASSIGNED_AREA"><br>
+                    <!-- <select class="form-select" name="ASSIGNED_AREA" class="selectpicker" data-show-subtext="true"
                         data-live-search="true">
                         <option></option>
                         <option value="1">Presidencia</option>
@@ -79,7 +79,8 @@
                         <option value="11">Seguridad</option>
                         <option value="12">Seguridad Integral</option>
                         <option value="13">Producción</option>
-                    </select><label for="hijos">Seleccione si tiene hijos.</label>
+                    </select>-->
+                    <label for="hijos">Seleccione si tiene hijos.</label> 
         <input type="radio" name="gender" class="i-radio" value="si"> Si
         <input type="radio" name="gender" class="i-radio" value="no"> No <br>
         <input type="number"  name="NUMERO_DE_HIJOS" class="i-text form-control" placeholder="Numero de hijos"><br>

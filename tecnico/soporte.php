@@ -1,18 +1,19 @@
 <?php 
  
-  include('../cone.php');
-  session_start();
-  if (!isset($_SESSION['IDDATOS'])) {
-    header("Location: index.php");
-}
-$ID = $_SESSION['IDDATOS'];
-$USER = $_SESSION['USER'];
-$NAME = $_SESSION['NAME'];
-$APE = $_SESSION['SURNAME'];
-$ROL = $_SESSION['IDROLS'];
-
-
-
+ include('../cone.php');
+ session_start();
+ if (!isset($_SESSION['IDDATOS'])) {
+   header("Location: index.php");
+ }
+ $ID = $_SESSION['IDDATOS']; 
+ $USER = $_SESSION['USER'];
+ $NAME = $_SESSION['NAME'];
+ $APE = $_SESSION['SURNAME'];
+ $ROL = $_SESSION['IDROLS'];
+ $CEDULA = $_SESSION['CEDULA'];
+ 
+ 
+ 
 
         ?>
 
@@ -283,7 +284,7 @@ $ROL = $_SESSION['IDROLS'];
                                     <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -320,6 +321,7 @@ $ROL = $_SESSION['IDROLS'];
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico</h5>
+                                <h6><a  href="historial.php" style="font-zise: 1px; color:black;">Historial</a>  |  <a style="font-zise: 1px; color:black;" href="soporte.php">regresar</a></h6></h5> 
                                 <table id="example" class="table table-striped my-datatable" style="width:100%">
                                     <thead>
                                         <tr>

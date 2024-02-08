@@ -1,19 +1,22 @@
-<?php
+<?php 
+ 
+ include('../cone.php');
+ session_start();
+ if (!isset($_SESSION['IDDATOS'])) {
+   header("Location: index.php");
+ }
+ $ID = $_SESSION['IDDATOS']; 
+ $USER = $_SESSION['USER'];
+ $NAME = $_SESSION['NAME'];
+ $APE = $_SESSION['SURNAME'];
+ $ROL = $_SESSION['IDROLS'];
+ $CEDULA = $_SESSION['CEDULA'];
+ 
+ 
+ 
 
-include('../cone.php');
+        ?>
 
-  session_start();
-if (!isset($_SESSION['IDDATOS'])) {
-       header("Location: index.php");
-   }
-   
-   $USER = $_SESSION['USER'];
-   $NAME = $_SESSION['NAME'];
-   $ROL = $_SESSION['IDDATOS'];
-   $APE = $_SESSION['SURNAME'];
-				
-               
-				?>
 
 <!doctype html>
 <html lang="en">
@@ -40,7 +43,7 @@ if (!isset($_SESSION['IDDATOS'])) {
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="http://paginanueva.industriacanaima.gob.ve/wp-content/uploads/2023/11/IndustriaCanaimaRojo.png" width="180" alt="" />
+          <img src="svg/Canaima.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -76,7 +79,14 @@ if (!isset($_SESSION['IDDATOS'])) {
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./solicitud-rrhh.php" aria-expanded="false">
+             <?php 
+             $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+             $resulta = mysqli_query($conn,$sql1);
+          
+             $mostre = mysqli_fetch_assoc($resulta) 
+             ?>
+                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+             
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
@@ -214,12 +224,12 @@ if (!isset($_SESSION['IDDATOS'])) {
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
                     <span>
                       <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Constancia de trabajo</span>
-                  </a>
+                  </a> -->
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link" href="./soporte.php" aria-expanded="false">
@@ -274,7 +284,7 @@ if (!isset($_SESSION['IDDATOS'])) {
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA'");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -306,56 +316,90 @@ if (!isset($_SESSION['IDDATOS'])) {
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title fw-semibold mb-4">Solicitudes de Constancias de Trabajo</h5>
+                            <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico                             
+                                   <h6><a  href="historial.php" style="font-zise: 1px; color:black;">Historial</a>  |  <a style="font-zise: 1px; color:black;" href="soporte.php">regresar</a> |  <a style="font-zise: 1px; color:black;" href="activo.php">activos</a></h6></h5> 
+   
                                 <table id="example" class="table table-striped my-datatable" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Descripcion</th>
                                             <th>Nombre y Apellido</th>
-                                            <th>Cedula</th>
-                                            <th>Solicitud</th>
+                                            <th>Fecha de Creacion</th>
+                                          
                                             <th>Opcion</th>
-
+                                         
+                                       
+                                          
                                         </tr>
                                     </thead>
+
                                     <?php
-
-
-
-                                                  $result =mysqli_query($conn,"SELECT * FROM recursos");
-
-                                                    while ($mostrar = mysqli_fetch_array($result)){
-    ?>
+                            
+                            $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, u.NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
+                            INNER JOIN status AS s ON r.STATUS = s.ID_STATUS
+                            INNER JOIN level AS l ON r.ID_LEVEL = l.ID_LEVEL
+                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE r.STATUS = '2'";  
+           
+                                  
+                               $result =mysqli_query($conn,$sql);
+                          
+                  
+                      while ($mostrar = mysqli_fetch_assoc($result)){
+                             ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $mostrar['nombre'];?></td>
-
-                                            <td><?php echo $mostrar['cedula']?></td>
-                                            <td><?php echo $mostrar['solicitud']?></td>
-                                            <td>
-
-                                                <!------Eliminar------>
-                                                <form action="eliminar.re.php" method="POST">
-                                                    <input type="hidden" value="<?php echo $mostrar['cedula'] ?> "
-                                                        name="txtcedula">
-
-                                                    <button class="btn"><svg viewBox="0 0 15 17.5" height="17.5"
-                                                            width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
-                                                            <path transform="translate(-2.5 -1.25)"
-                                                                d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
-                                                                id="Fill"></path>
-                                                        </svg></button>
-                                                </form>
+                                            <td><?php echo $mostrar ['TITLE'] ?></td>
+                                            <td><?php echo $mostrar ['name_surname'] ?></td>
+                                            <td><?php echo $mostrar ['CREATION_DATE'] ?></td>
+                                            
+                                            
+                                           <td>
+                                            
+                                           <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>" class="btn btn-primary">Asignar</button>
+  
+  
+</div>
+                                               
+                                                 <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $mostrar['ID_REPORT'];?>">opcion</button> -->
+                                                  
+                                                   
+                                                 <?php 
+                                           
+                                           $consultaTecnico = "SELECT IDDATOS, NAME ,IDROLS FROM user_datos WHERE IDROLS= 3";
+                                           $ve= mysqli_query($conn,$consultaTecnico);
+                                      
+                                           ?>
+                                         
+                                                
+                                  
+                                
                                             </td>
+                                           
+                                           
 
+                                            <?php  include "modal _cerrado.php";  ?>  
+                                                
+                                            <?php
+                   
+                
+}
+
+
+
+?>
+ 
+
+                                               
+                                             
                                         </tr>
 
 
                                     </tbody>
-
-                                    <?php 
-}
-        ?>
+                                 
                                 </table>
+                                
                             </div>
                         </div>
                     </div>

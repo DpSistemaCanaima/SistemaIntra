@@ -8,14 +8,13 @@
     $NACIONALIDAD = $_POST['NACIONALIDAD'];
     $CEDULA = $_POST['CEDULA'];
     $FECHA = $_POST['FECHA'];
-    $GRADO = $_POST['GRADO_DE_EDUCACION'];
-    $ABILIDAD_U_OFICIO =$_POST['ABILIDAD_U_OFICIO'];
     $DIRECCION =$_POST['DIRECCION'];
     $CIUDAD =$_POST['CIUDAD'];
     $MUNICIPIO =$_POST['MUNICIPIO'];
     $PARROQUIA =$_POST['PARROQUIA'];
     $USER =$_POST['USER'];
-    $PASSWORD_C = sha1('PASSWORD');  
+    $password_ENVIO = $_POST['PASSWORD'];
+    $PASSWORD_C = sha1($password_ENVIO);  
     $CORREO =$_POST['EMAIL'];
     $IDROLS =$_POST['IDROLS'];
     $LOGIN =$_POST['LOGIN'];
@@ -25,9 +24,9 @@
     $NOBRE_Y_APELLIDO = $_POST['NOBRE_Y_APELLIDO'];
     $FECHA_DE_NACIMIENTO = $_POST['FECHA_DE_NACIMIENTO'];
     $foto = $_POST['foto'];
-
-
-    $consulta = "SELECT * FROM user_datos";
+   
+    
+    $consulta = "SELECT USER, CEDULA FROM user_datos";
     $result = mysqli_query($conn, $consulta );
     $mostra = mysqli_fetch_assoc($result);
     
@@ -78,8 +77,8 @@
      }else{
 
 
-   $sql="INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `FECHA`, `SURNAME`, `GRADO_DE_EDUCACION`, `ABILIDAD_U_OFICIO`, `DIRECCION`, `CIUDAD`, `MUNICIPIO`, `PARROQUIA`, `GENDER`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`, `PASSWORD_ID`, `NUMERO_DE_HIJOS`, `NOBRE_Y_APELLIDO`, `FECHA_DE_NACIMIENTO`, `foto`) VALUES (NULL, '$NAME', '$NACIONALIDAD', '$CEDULA', '$FECHA', '$SURNAME', '$GRADO', '$ABILIDAD_U_OFICIO', '$DIRECCION', '$CIUDAD', '$MUNICIPIO', '$PARROQUIA', '$GENDER', '$USER','$PASSWORD_C', '$CORREO', '$IDROLS', '$LOGIN', '$AREA', NULL, '0', '0', '0', 'images/defect.jpg')";
-
+   $sql="INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `telefono`, `FECHA`, `SURNAME`, `DIRECCION`, `CIUDAD`, `MUNICIPIO`, `PARROQUIA`, `GENDER`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`, `PASSWORD_ID`, `NUMERO_DE_HIJOS`, `NOBRE_Y_APELLIDO`, `FECHA_DE_NACIMIENTO`, `foto`) VALUES (NULL, '$NAME', '$NACIONALIDAD', '$CEDULA', '', '$FECHA', '$SURNAME', '', '', '', '', '$GENDER', '$USER', '$PASSWORD_C', '', '$IDROLS', '$LOGIN', '$AREA', NULL, '', '', '', '../images/defect.jpg')";
+       //echo $sql;
    
     $result = mysqli_query($conn,$sql);
      
@@ -127,9 +126,8 @@
    }
   
    
-  }
-
-}
+     }
+    }
         
 
   ?>

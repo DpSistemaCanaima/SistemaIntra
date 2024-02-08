@@ -1,18 +1,19 @@
 <?php 
  
-  include('../cone.php');
-  session_start();
-  if (!isset($_SESSION['IDDATOS'])) {
-    header("Location: index.php");
-}
-
-$USER = $_SESSION['USER'];
-$NAME = $_SESSION['NAME'];
-$APE = $_SESSION['SURNAME'];
-$ROL = $_SESSION['IDROLS'];
-
-
-
+ include('../cone.php');
+ session_start();
+ if (!isset($_SESSION['IDDATOS'])) {
+   header("Location: index.php");
+ }
+ $ID = $_SESSION['IDDATOS']; 
+ $USER = $_SESSION['USER'];
+ $NAME = $_SESSION['NAME'];
+ $APE = $_SESSION['SURNAME'];
+ $ROL = $_SESSION['IDROLS'];
+ $CEDULA = $_SESSION['CEDULA'];
+ 
+ 
+ 
 
         ?>
 
@@ -283,7 +284,7 @@ $ROL = $_SESSION['IDROLS'];
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA'");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -315,14 +316,16 @@ $ROL = $_SESSION['IDROLS'];
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico</h5>
+                                <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico                                 <h6><a  href="historial.php" style="font-zise: 1px; color:black;">Historial</a>  |  <a style="font-zise: 1px; color:black;" href="soporte.php">regresar</a> |  <a style="font-zise: 1px; color:black;" href="activo.php">activos</a></h6></h5> 
+   
+    
                                 <table id="example" class="table table-striped my-datatable" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>Descripcion</th>
                                             <th>Nombre y Apellido</th>
                                             <th>Fecha de Creacion</th>
-                                          
+                                            <th>Tecnico</th>
                                             <th>Opcion</th>
                                          
                                        
@@ -335,7 +338,7 @@ $ROL = $_SESSION['IDROLS'];
                             $sql = "SELECT  r.ID_REPORT, r.TITLE, r.name_surname, u.NAME, r.area , r.CREATION_DATE, r.DATE_FINAL, r.FECHA_SOLUTION, s.STATUS, l.LEVEL, r.SOLUTION FROM report AS r  
                             INNER JOIN status AS s ON r.STATUS = s.ID_STATUS
                             INNER JOIN level AS l ON r.ID_LEVEL = l.ID_LEVEL
-                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS";  
+                            INNER JOIN user_datos AS u ON r.ID_NAME = u.IDDATOS WHERE r.STATUS = '3'";  
            
                                   
                                $result =mysqli_query($conn,$sql);
@@ -348,12 +351,19 @@ $ROL = $_SESSION['IDROLS'];
                                             <td><?php echo $mostrar ['TITLE'] ?></td>
                                             <td><?php echo $mostrar ['name_surname'] ?></td>
                                             <td><?php echo $mostrar ['CREATION_DATE'] ?></td>
+                                            <td><?php echo $mostrar ['NAME'] ?></td>
                                             
                                             
                                            <td>
                                             
+                                           <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>" class="btn btn-primary">Asignar</button>
+ 
+ 
+</div>
                                                
-                                                 <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>">opcion</button>
+                                                 <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $mostrar['ID_REPORT'];?>">opcion</button> -->
                                                   
                                                    
                                                  <?php 
@@ -390,6 +400,9 @@ $ROL = $_SESSION['IDROLS'];
                                     </tbody>
                                  
                                 </table>
+                           
+                               
+                               
                             </div>
                         </div>
                     </div>
