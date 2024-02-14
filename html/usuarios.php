@@ -281,7 +281,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -314,13 +314,17 @@ $CEDULA = $_SESSION['CEDULA'];
               <div class="card">
                 <div class="card-body">
                     <h5 class="card-title fw-semibold mb-4">Gestión de Usuarios</h5>
+                    <a  href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
+                                                data-bs-target="#registrarusuario" class="btn btn-primary " style=" float:right;">Agregar Usuario</a><br>
+                                                <br>
+                                                <br>
                     <table id="example" class="table table-striped my-datatable" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Nombre y Apellido</th>
-                                <th>Nacionalidad</th>
+                               
                                 <th>cadula</th>
-                              
+                                <th>Cargo</th>
                                 <th>opcion</th>
                             </tr>
                         </thead>
@@ -345,8 +349,9 @@ $CEDULA = $_SESSION['CEDULA'];
                       while ($mostrar = mysqli_fetch_assoc($result)){?>
                             <tr>
                                 <td><?php echo $mostrar ['NAME'] . " "  .  $mostrar ['SURNAME'] ?></td>
-                                <td> <?php echo $mostrar ['nacionalidad'] ?></td>
+                              
                                 <td><?php echo $mostrar ['CEDULA'] ?></td>
+                                <td> <?php echo $mostrar ['ASSIGNED_AREA'] ?></td>
                                 
                                 
                                 <td>
@@ -358,12 +363,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                     </button>
                                     <ul class="dropdown-menu">
                                         <!-- Dropdown menu links -->
-                                        <li> <a class="dropdown-item btn btn-danger"
-                                                href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
-                                                data-bs-target="#registrarusuario"><img
-                                                    src="svg/person-add.svg " alt="Industrias Canaima" width="15"
-                                                    height="15">Registrar</a>
-                                        </li>
+                                   
 
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal<?php echo $mostrar['CEDULA'];?>"><img
@@ -373,7 +373,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                         <li> <a class="dropdown-item btn btn-danger"
                                                 href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
                                                 <img src="svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15"> Eliminar</a>
+                                                    height="15">Desabilitar</a>
                                         </li>
 
                                         <li><a class="dropdown-item" data-bs-toggle="modal"

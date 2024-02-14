@@ -6,23 +6,23 @@ include "cone.php";
 
 $cedula = $_POST['cedula'];
   
-  $sql = "SELECT CEDULA, FECHA, EMAIL FROM user_datos WHERE CEDULA = $cedula";
+  $sql = "SELECT CEDULA, FECHA FROM user_datos WHERE CEDULA = $cedula";
 //   echo $sql;
   $resul = mysqli_query($conn, $sql);
   $ver = mysqli_fetch_array($resul);
     $C = $ver['CEDULA'];
     $F = $ver['FECHA'];
-    $E = $ver['EMAIL'];
+
 
   $cedula = $_POST['cedula'];
   $fecha = $_POST['fecha'];
-  $correo = $_POST['email']; 
+   
 
  if ($cedula == $C ) {
 
              if ($fecha == $F) {
                   
-                 if ($correo == $E) {
+               
                   
                   $password = $_POST['password'];
                   $PASSWORD_C = sha1($password);  
@@ -73,30 +73,7 @@ $cedula = $_POST['cedula'];
                     </script>";
                    }
                 
-                  }else{
                   
-                       
-                    echo "
-                    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                    <script language='JavaScript'>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'El Correo no Coincide',
-                            showCancelButton: false,
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'OK',
-                            timer: 3000
-                          }).then(() => {
-            
-                            location.assign('reset.php');
-            
-                         });
-                });
-                    </script>";
-
-
-                 }
                  
 
              } else {

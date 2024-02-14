@@ -51,20 +51,28 @@ $CEDULA = $_SESSION['CEDULA'];
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Principal</span>
+              <!-- <span class="hide-menu">Principal</span> -->
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.php" aria-expanded="false">
+              <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
-                </span>
-                <span class="hide-menu">Inicio</span>
+                </span> 
+                 <span class="hide-menu">Inicio</span> 
               </a>
             </li>
-          
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./perfil.php" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+                 <span class="hide-menu">Perfil</span> 
+              </a>
+            </li>         
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span>
+              <!-- <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span> -->
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
@@ -74,26 +82,26 @@ $CEDULA = $_SESSION['CEDULA'];
           
              $mostre = mysqli_fetch_assoc($resulta) 
              ?>
-                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+                <!-- <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
              
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
                   <span class="hide-menu">Constancia de trabajo</span>
                 </a>
-              </li>
+              </li> -->
            
               <li class="sidebar-item">
                 <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
                   <span>
                     <i class="ti ti-devices-pc"></i>
                   </span>
-                  <span class="hide-menu">Soporte técnico</span>
+                  <!-- <span class="hide-menu">Soporte técnico</span> -->
                 </a>
               </li>
             </div>
 
-            <li class="nav-small-cap">
+            <!-- <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">DESCARGAS  <i class="ti ti-caret-down"></i></span>
             </li>
@@ -199,10 +207,10 @@ $CEDULA = $_SESSION['CEDULA'];
               </li>
 
               </div>
-              
+               -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span>
+                <!-- <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span> -->
               </li>
               <div class="collapse" id="collapseExample3">
                 <li class="sidebar-item">
@@ -214,13 +222,13 @@ $CEDULA = $_SESSION['CEDULA'];
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
                     <span>
                       <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Constancia de trabajo</span>
                   </a>
-                </li>
+                </li> -->
                
               </div>
           </ul>
@@ -251,7 +259,7 @@ $CEDULA = $_SESSION['CEDULA'];
           
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>RRHH</p>
+            <p class="mt-3" style="text-align: center;"><?php echo $NAME ." ". $APE ?><br>Gestion humana</p>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -267,7 +275,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE USER = '$USER';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
@@ -294,11 +302,20 @@ $CEDULA = $_SESSION['CEDULA'];
       </header>   <!--  Header End -->
       <div id="para-datatable" class="container-fluid">
         <!--  Row 1 -->
+        
+                                                <?php
+                        include "modalregistrarusuario.php";
+                    ?>
         <div class="container-fluid">
             <div class="container-fluid">
               <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title fw-semibold mb-4">Gestión de Usuarios</h5>
+                    <h5 class="card-title fw-semibold mb-4">Gestión de Usuarios </h5>
+                    <a  href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
+                                                data-bs-target="#registrarusuario" class="btn btn-primary " style=" float:right;">Agregar Usuario</a><br>
+                                                <br>
+                                                <br>
+                                               
                     <table id="example" class="table table-striped my-datatable" style="width:100%">
                         <thead>
                             <tr>
@@ -316,12 +333,12 @@ $CEDULA = $_SESSION['CEDULA'];
                        
                       
                     
-                   $sql = "SELECT  u.IDDATOS, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.ABILIDAD_U_OFICIO, u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, u.ASSIGNED_AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
+                   $sql = "SELECT  u.IDDATOS, n.nacionalidad, u.NAME, u.SURNAME, u.FECHA , u.NUMERO_DE_HIJOS, u.NOBRE_Y_APELLIDO, u.FECHA_DE_NACIMIENTO , u.DIRECCION, u.CIUDAD, u.MUNICIPIO, u.PARROQUIA, u.CEDULA, u.USER, u.PASSWORD, u.EMAIL, u.ASSIGNED_AREA, r.PRIVILEGE, l.TIPO_USUARIOS, g.GENDER, u.foto FROM user_datos AS u 
                  
                    INNER JOIN rols AS r ON u.IDROLS = r.IDROLS
                    INNER JOIN gender AS g ON u.GENDER = g.ID
                    INNER JOIN login AS l ON u.LOGIN = l.TIPO
-                   INNER JOIN nacionalida As n ON u.NACIONALIDAD = n.ID_NACIONALIDA
+                   INNER JOIN nacionalida As n ON u.NACIONALIDAD = n.ID_NACIONALIDA WHERE u.LOGIN = '1'
                    ";  
 
 
@@ -344,14 +361,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                         option
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <!-- Dropdown menu links -->
-                                        <li> <a class="dropdown-item btn btn-danger"
-                                                href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
-                                                data-bs-target="#registrarusuario"><img
-                                                    src="svg/person-add.svg " alt="Industrias Canaima" width="15"
-                                                    height="15">Registrar</a>
-                                        </li>
-
+                                     
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal<?php echo $mostrar['CEDULA'];?>"><img
                                                     src="svg/editar.svg " alt="Industrias Canaima" width="15"
@@ -360,7 +370,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                         <li> <a class="dropdown-item btn btn-danger"
                                                 href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
                                                 <img src="svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15"> Eliminar</a>
+                                                    height="15"> Deshabilitar</a>
                                         </li>
 
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
@@ -392,9 +402,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                             </td> -->
                                
                             </tr>
-                            <?php
-                        include "modalregistrarusuario.php";
-                    ?>
+                      
 
                         <?php
 

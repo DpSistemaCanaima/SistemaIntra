@@ -29,11 +29,10 @@ $correo = $_SESSION['EMAIL'];
 </head>
 
 <body>
-    <!--  Body Wrapper -->
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
-        <!-- Sidebar Start -->
-        <aside class="left-sidebar">
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
@@ -49,20 +48,30 @@ $correo = $_SESSION['EMAIL'];
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Principal</span>
+              <!-- <span class="hide-menu">Principal</span> -->
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.php" aria-expanded="false">
+              <a class="sidebar-link" href="./usuarios.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
-                </span>
-                <span class="hide-menu">Inicio</span>
+                </span> 
+                 <span class="hide-menu">Inicio</span> 
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./perfil.php" aria-expanded="false">
+              
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
           
+                 <span class="hide-menu">Perfil</span> 
+              </a>
+            </li>         
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span>
+              <!-- <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">SOLICITUDES  <i class="ti ti-caret-down"></i></span> -->
             </li>
             <div class="collapse" id="collapseExample4">
               <li class="sidebar-item">
@@ -72,25 +81,26 @@ $correo = $_SESSION['EMAIL'];
           
              $mostre = mysqli_fetch_assoc($resulta) 
              ?>
-                <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
+                <!-- <a class="sidebar-link" href="generar.php?edi=<?php echo $mostre['IDDATOS'];?>" aria-expanded="false">
              
                   <span>
                     <i class="ti ti-file-description"></i>
                   </span>
                   <span class="hide-menu">Constancia de trabajo</span>
                 </a>
-              </li>
+              </li> -->
+           
               <li class="sidebar-item">
                 <a class="sidebar-link" href="./solicitud-soporte.php" aria-expanded="false">
                   <span>
                     <i class="ti ti-devices-pc"></i>
                   </span>
-                  <span class="hide-menu">Soporte técnico</span>
+                  <!-- <span class="hide-menu">Soporte técnico</span> -->
                 </a>
               </li>
             </div>
 
-            <li class="nav-small-cap">
+            <!-- <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">DESCARGAS  <i class="ti ti-caret-down"></i></span>
             </li>
@@ -196,10 +206,10 @@ $correo = $_SESSION['EMAIL'];
               </li>
 
               </div>
-              
+               -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span>
+                <!-- <span class="hide-menu" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" aria-expanded="false">Gestión  <i class="ti ti-caret-down"></i></span> -->
               </li>
               <div class="collapse" id="collapseExample3">
                 <li class="sidebar-item">
@@ -211,13 +221,13 @@ $correo = $_SESSION['EMAIL'];
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
-                    <!-- <span>
+                  <!-- <a class="sidebar-link" href="./constancia.php" aria-expanded="false">
+                    <span>
                       <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Constancia de trabajo</span>
-                  </a> -->
-                </li>
+                  </a>
+                </li> -->
                
               </div>
           </ul>
@@ -230,7 +240,7 @@ $correo = $_SESSION['EMAIL'];
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
-      <header class="app-header">
+    <header class="app-header">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">

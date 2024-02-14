@@ -4,7 +4,7 @@ require "../cone.php";
 
 	$CEDULA = $_GET['CEDULA'];
 
-	$sql = "DELETE FROM user_datos WHERE CEDULA ='$CEDULA'"; 
+	$sql = "UPDATE `user_datos` SET `LOGIN` = '2' WHERE `user_datos`.`CEDULA` = '$CEDULA'"; 
 	$respuesta = mysqli_query($conn, $sql);
 	
 	if($respuesta){
@@ -14,7 +14,7 @@ require "../cone.php";
 		document.addEventListener('DOMContentLoaded', function() {
 			Swal.fire({
 				icon: 'success',
-				title: 'Se Elimino correctamente',
+				title: 'Se Desabilito Correctamente',
 				showCancelButton: false,
 				confirmButtonColor: '#3085d6',
 				confirmButtonText: 'OK',

@@ -53,10 +53,10 @@ if ($_POST) {
                         header("Location: usuario/index.php");
                         break;
                     case 3:
-                        header("Location: tecnico/index.php");
+                        header("Location: tecnico/soporte.php");
                         break;
                     case 4:
-                        header("Location: rrhh/index.php");
+                        header("Location: rrhh/usuarios.php");
                         break;
                    
                     default:

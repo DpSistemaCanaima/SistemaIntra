@@ -316,7 +316,7 @@
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-body">
-                            <h5 class="card-title fw-semibold mb-4">Solicitudes de Soporte Técnico                             
+                            <h5 class="card-title fw-semibold mb-4">Solicitudes Activas                          
                                    <h6><a  href="historial.php" style="font-zise: 1px; color:black;">Historial</a>  |  <a style="font-zise: 1px; color:black;" href="soporte.php">regresar</a> |  <a style="font-zise: 1px; color:black;" href="activo.php">activos</a></h6></h5> 
    
                                 <table id="example" class="table table-striped my-datatable" style="width:100%">
@@ -357,7 +357,7 @@
                                             
                                            <!-- Example split danger button -->
 <div class="btn-group">
-  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>" class="btn btn-primary">Asignar</button> 
+  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $mostrar['ID_REPORT'];?>" class="btn btn-primary">Ver detalles</button> 
 </div>
                                                
                                                  <!-- <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $mostrar['ID_REPORT'];?>">opcion</button> -->

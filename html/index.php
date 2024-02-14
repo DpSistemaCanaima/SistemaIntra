@@ -37,8 +37,8 @@ date_default_timezone_set('America/caracas');
       document.addEventListener('DOMContentLoaded', function() {
           Swal.fire({
               title: 'Hoy esta de cumpleaños $NOMBRE',
-              text: 'Modal with a custom image.',
-              imageUrl: '$foto',
+              text: 'Industria Canaima te desea un feliz cumpleaños',
+              imageUrl: 'feliz.jpg',
               imageWidth: 400,
               imageHeight: 200,
               imageAlt: 'Custom image',
@@ -327,7 +327,7 @@ date_default_timezone_set('America/caracas');
                                          <?php 
                                      }
                                   
-                                     $consulta = mysqli_query($conn, "SELECT USER , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
+                                     $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
