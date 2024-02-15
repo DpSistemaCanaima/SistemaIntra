@@ -7,16 +7,7 @@ require "cone.php";
 if ($_POST) {
     $USER = $_POST['USER'];
     $password = $_POST['PASSWORD'];
-    
- 
-
 // Otro código de tu sistema aquí...
-
-
-
-
-
-
     $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
