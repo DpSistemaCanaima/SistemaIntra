@@ -47,7 +47,7 @@
                       <a style="text-decoration: none;" href="reset.php">Restablecer Contraseña</a>
                     </div>
                   </form>
-                  <p class="text-muted text-center">&copy; Industria Canaima 2023</p>
+                  <p class="text-muted text-center">&copy; Industria Canaima 2024</p>
                 </div>
               </div>
               <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img" style="
