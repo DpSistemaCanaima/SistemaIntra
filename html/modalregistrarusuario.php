@@ -70,7 +70,7 @@
                     <input type="date"  name="FECHA_DE_NACIMIENTO" class="i-text form-control" placeholder="Fecha de nacimiento">
                     <input type="hidden" name="foto" value="<?php echo $foto; ?>">
 
-                    <br>
+                    
 
 
 
@@ -86,8 +86,6 @@
                         style: 'btn-default'
                     });
                     </script>
-                    <br>
-
                     <center>   <button type="submit" class="btn btn-outline-info "  name="submit">Registrar</button> </center>  
                 </form>
             </div>

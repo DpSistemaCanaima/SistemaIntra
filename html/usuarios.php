@@ -373,7 +373,7 @@ $CEDULA = $_SESSION['CEDULA'];
                                         <li> <a class="dropdown-item btn btn-danger"
                                                 href="eliminarr.php?CEDULA=<?php echo $mostrar['CEDULA'];?>">
                                                 <img src="svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15">Desabilitar</a>
+                                                    height="15"> Eliminar</a>
                                         </li>
 
                                         <li><a class="dropdown-item" data-bs-toggle="modal"
