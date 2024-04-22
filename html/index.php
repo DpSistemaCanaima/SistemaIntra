@@ -353,6 +353,9 @@ date_default_timezone_set('America/caracas');
         </nav>
       </header>
       <!--  Header End -->
+      <br>
+      <br>
+      <br>
       <?php
     
       $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
@@ -381,7 +384,7 @@ date_default_timezone_set('America/caracas');
                     <a style="text-decoration:none">
 
                         <img src="../imagenes/<?php echo $row['imagen']; ?>"
-                            class="card-img-top"></a>
+                            class="card-img-top" style="height: 250px; width:100%;"></a>
 
                             <div class="card-body">
                     <center><h5 class="card-title"><?php echo $row['nombre'];?></h5></center>
@@ -434,11 +437,11 @@ date_default_timezone_set('America/caracas');
             </div>
         </div>-->
       </div> 
-      <!-- <footer class="footer">
+     <!-- <footer class="footer">
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Desarrollado por <a href="https://www.industriacanaima.gob.ve/" target="_blank" class="pe-1 text-primary text-decoration-underline">Industria Canaima</a> RIF: G-20010288-8</p>
         </div>
-      </footer> -->
+      </footer>  -->
     </div>
   </div>
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>

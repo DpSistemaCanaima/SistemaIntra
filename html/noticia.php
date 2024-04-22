@@ -317,7 +317,7 @@ $ROL = $_SESSION['IDROLS'];
                 <div class="row">
                   <div class="col-6">
                     <img src="../imagenes/<?php echo $row['imagen']; ?>" class="card-img-noticia" alt="..." style="width: 100%;">
-                  <center> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>    <a href="eliminar_niticias.php?cod_imagen=<?php echo $row['cod_imagen'];?>" class="btn btn-outline-primary">Eliminar</a>  <a href="index.php" class="btn btn-outline-primary">Regresar</a></center> 
+              
 
                   </div>
                

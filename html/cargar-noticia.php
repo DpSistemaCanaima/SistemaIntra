@@ -303,6 +303,10 @@ $ROL = $_SESSION['IDROLS'];
           </div>
         </nav>
       </header>
+      <br>
+      <br>
+      <br>
+      <br>
       <!--  Header End -->
       <div class="container-fluid">
         <!--  Row 1 -->
