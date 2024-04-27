@@ -8,7 +8,7 @@ if ($_POST) {
     $USER = $_POST['USER'];
     $password = $_POST['PASSWORD'];
 // Otro código de tu sistema aquí...
-    $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
+    $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono, ASSIGNED_AREA,  NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
     $resultado = mysqli_query($conn,$sql);
 
     $num = $resultado->num_rows;
@@ -34,11 +34,12 @@ if ($_POST) {
             $_SESSION['PASSWORD'] = $row['PASSWORD'];
             $_SESSION['telefono'] = $row['telefono']; 
             $_SESSION['EMAIL'] = $row['EMAIL'];
+            $_SESSION['ASSIGNED_AREA'] = $row['ASSIGNED_AREA'];
         //    Comprobación de inicion de sesión y roles
             if (isset($_SESSION['IDROLS'])) {
                 switch ($_SESSION['IDROLS']) {
                    case 1:
-                        header("Location: html/index.php");
+                        header("Location: admin/index.php");
                         break;
                     case 2:
                         header("Location: usuario/index.php");
