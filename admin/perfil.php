@@ -410,7 +410,12 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         </div>
 
         <div class="col-xl-8">
+               <?php 
+               $sql1="SELECT * FROM user_datos WHERE CEDULA = '$CEDULA'";
+               $re= mysqli_query($conn, $sql1);
+               $mos = mysqli_fetch_array($re);{
 
+               ?>
           <div class="card">
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
@@ -439,37 +444,37 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Nombre completo</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['NAME'] ." ". $mos['SURNAME']  ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Compañía</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                    <div class="col-lg-9 col-md-8">Industria Canaima</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">cargo</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['ASSIGNED_AREA'] ?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
+                    <div class="col-lg-3 col-md-4 label">País</div>
+                    <div class="col-lg-9 col-md-8">Venezuela</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Direccion</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['DIRECCION'] ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Telefono</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['telefono'] ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Correo</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['EMAIL'] ?></div>
                   </div>
 
                 </div>
@@ -477,50 +482,69 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="foto.php" method="post"  enctype="multipart/form-data">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto de perfil</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
+                        <?php
+
+                      if (isset($_SESSION['IDDATOS'])) {
+              
+            }else{
+                ?>
+                <script type="text/javascript">
+                    window.location = "./";
+                </script>
+                <?php 
+            }
+         
+            $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
+            $valores = mysqli_fetch_array($consulta);
+            $foto = $valores['foto'];
+             ?>
+                        <img src="<?php echo $foto; ?>"  >
+                       
                         <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                        <input type="file" name="nfoto" class="btn btn-primary btn-sm" style="height:30px; ">
+                        
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                      
                         </div>
                       </div>
                                 </div>
 
-                    <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Cargo</label>
+                                <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Usuario</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
+                        <input name="USER" type="text" class="form-control"  value="<?php echo $mos['USER'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Direccion</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
+                        <input name="DIRECCION" type="text" class="form-control"  value="<?php echo $mos['DIRECCION'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Telefono</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                        <input name="telefono" type="text" class="form-control"  value="<?php echo $mos['telefono'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Correo</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                        <input name="EMAIL" type="email" class="form-control" value="<?php echo $mos['EMAIL'] ?>">
                       </div>
                     </div>
 
                    
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -528,70 +552,30 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form -->
-                  <form>
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="changesMade" checked>
-                          <label class="form-check-label" for="changesMade">
-                            Changes made to your account
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="newProducts" checked>
-                          <label class="form-check-label" for="newProducts">
-                            Information on new products and services
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="proOffers">
-                          <label class="form-check-label" for="proOffers">
-                            Marketing and promo offers
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
-                          <label class="form-check-label" for="securityNotify">
-                            Security alerts
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
-                    </div>
-                  </form><!-- End settings Form -->
+                
+                  
 
                 </div>
-
+                <?php  } ?>
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="password.php" method="POST">
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Contraseña actual</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input name="actual_pass" type="password" class="form-control" >
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nueva contraseña</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input name="PASSWORD" type="password" class="form-control" >
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Confirme nueva contraseña</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                      </div>
-                    </div>
+                    
 
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Change Password</button>
