@@ -4,6 +4,26 @@ include ('conexion.php');
 if(isset($_POST['Guardar'])){
     $imagen = $_FILES['imagen']['name'];
     $nombre = $_POST['nombre'];
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $nombre)) {
+      echo "
+              <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+              <script language='JavaScript'>
+              document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'El campo nombre no cumple con los caracteres establecidos.',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK',
+                  timer: 1500
+                  }).then(() => {
+          
+                  location.assign('html/index.php');
+          
+                  });
+            });
+              </script>";
+    }
     $comentario = $_POST['comentario'];
 
     if(isset($imagen) && $imagen != ""){

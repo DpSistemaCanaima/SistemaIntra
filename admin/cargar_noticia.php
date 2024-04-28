@@ -524,7 +524,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                     <form action="../subir.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label"><b>Titulo de la noticia</b></label>
-                        <input type="text" class="form-control" name="nombre"  aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="nombre"  aria-describedby="emailHelp" pattern="[a-zA-Z\s]{10,60}" maxlength="60" minlength="10">
                         </div>
                         <b>Contenido</b>
                         <div class="card">
