@@ -3,13 +3,15 @@
 <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['nombre'];?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <?php
+      <?php   
+
+        $codigoDeimagen = $row['cod_imagen'];
      
-         $query = "SELECT cod_imagen,imagen, nombre, comentario FROM imagenes ";
+         $query = "SELECT cod_imagen,imagen, nombre, comentario FROM imagenes WHERE cod_imagen = '$codigoDeimagen' ";
          $resultado = mysqli_query($conn,$query);
         
       ?>
