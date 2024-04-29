@@ -516,28 +516,28 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                                 <div class="row mb-3">
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Usuario</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="USER" type="text" class="form-control"  value="<?php echo $mos['USER'] ?>">
+                        <input name="USER" type="text" class="form-control" placeholder="<?php echo $mos['USER'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Direccion</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="DIRECCION" type="text" class="form-control"  value="<?php echo $mos['DIRECCION'] ?>">
+                        <input name="DIRECCION" type="text" class="form-control"  placeholder="<?php echo $mos['DIRECCION'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Telefono</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="telefono" type="text" class="form-control"  value="<?php echo $mos['telefono'] ?>">
+                        <input name="telefono" type="text" class="form-control"  placeholder="<?php echo $mos['telefono'] ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Correo</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="EMAIL" type="email" class="form-control" value="<?php echo $mos['EMAIL'] ?>">
+                        <input name="EMAIL" type="email" class="form-control" placeholder="<?php echo $mos['EMAIL'] ?>">
                       </div>
                     </div>
 

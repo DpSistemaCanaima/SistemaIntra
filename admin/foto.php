@@ -30,7 +30,8 @@ $tmp_name = $foto['tmp_name'];
             //¿Tenemos permisos para subir la imágen?
          
             $destino = $directorio_destino . '/' .  $img_file;
-            mysqli_query($conn, "UPDATE user_datos SET foto = '$destino', USER = '$USE' , telefono ='$TEL' , DIRECCION = '$DIR' , EMAIL = '$CORREO'   WHERE CEDULA = '$cedula' ");
+			
+            mysqli_query($conn, "UPDATE user_datos SET foto = '$destino', USER = '$USE' , telefono ='$TEL' , DIRECCION = '$DIR' , EMAIL = '$CORREO'  WHERE CEDULA = '$cedula' ");
            (move_uploaded_file($tmp_name, $destino))
         
                 ?>
@@ -41,7 +42,7 @@ $tmp_name = $foto['tmp_name'];
 		document.addEventListener('DOMContentLoaded', function() {
 			Swal.fire({
 				icon: 'success',
-				title: 'Se Subio Correctamente la Foto',
+				title: 'Fue todo un exito',
 				showCancelButton: false,
 				confirmButtonColor: '#3085d6',
 				confirmButtonText: 'OK',
@@ -56,8 +57,11 @@ $tmp_name = $foto['tmp_name'];
 
                 <?php  
 
-            }
-    
+            }else{
+
+                   
+
+			
 
 
 
@@ -66,19 +70,22 @@ $tmp_name = $foto['tmp_name'];
  ?>
 
 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-		<script language='JavaScript'>
-		document.addEventListener('DOMContentLoaded', function() {
-			Swal.fire({
-				icon: 'success',
-				title: 'Se Subio Correctamente la Foto',
-				showCancelButton: false,
-				confirmButtonColor: '#3085d6',
-				confirmButtonText: 'OK',
-				timer: 1500
-			  }).then(() => {
+				<script language='JavaScript'>
+				document.addEventListener('DOMContentLoaded', function() {
+					Swal.fire({
+						icon: 'error',
+						title: 'Error',
+						showCancelButton: false,
+						confirmButtonColor: '#3085d6',
+						confirmButtonText: 'OK',
+						timer: 1500
+					  }).then(() => {
+		
+						location.assign('perfil.php');
+		
+					  });
+			});
 
-				location.assign('perfil.php');
-
-			 });
-	});
-		</script>
+			</script>
+		<?php	}  ?>
+    
