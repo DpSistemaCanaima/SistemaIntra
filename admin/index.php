@@ -31,7 +31,8 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <title>Industria Canaima</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-<link rel="stylesheet" href="inicio.css">
+
+  <link rel="stylesheet" href="inicio.css">
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -392,26 +393,29 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             
              <div class="imagen">
              <img  src="../imagenes/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
-             <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['cod_imagen'];?>">   
+             <a href="#openModal<?php echo $row['cod_imagen'];?>">
+             <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
              <div class="overlay">
                 <h2 ><?php echo $row['nombre']; ?></h2>
+              
                     
                 </div>
                 </a>
              </div>
-             <?php  include "modal_noticias.php";  ?>  
+             <?php  include "modal_noticias.php"; ?>
+           
           </div>
         </div>
           <?php } ?>
           
  <!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
             <!-- Revenue Card -->
-          
-          
+         
+    
+               
 
-          
 
-           
+
 
           
 
@@ -512,6 +516,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
       &copy; Copyright <strong><span>Desarrollado por Industria Canaima</span></strong>. Reservados todos los derechos
     </div>
     <div class="credits">
+   
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
@@ -519,8 +524,9 @@ $area  = $_SESSION['ASSIGNED_AREA'];
     <a href="https://bootstrapmade.com/"> RIF: G-20010288-8</a>
     </div>
   </footer><!-- End Footer -->
-
+  
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
