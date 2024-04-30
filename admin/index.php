@@ -442,61 +442,44 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
             <div class="card-body">
               <h5 class="card-title">cumpleañeros del día<span>| hoy </span></h5>
+              <?php
+require_once '../cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
 
-              <div class="activity">
+// Establece la zona horaria y obtiene la fecha actual
+date_default_timezone_set('America/Caracas');
+$fechaActual = date('Y-m-d');
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">32 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                  <div class="activity-content">
-                    ------------------------
-                    <!-- Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae -->
-                  </div>
-                </div><!-- End activity item-->
+// Prepara la consulta SQL con parámetros para evitar inyecciones SQL
+$sql = "SELECT SURNAME, FECHA, foto, no_hay, NAME FROM user_datos WHERE FECHA = '$fechaActual'";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">56 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                  <div class="activity-content">
-                  ---------------------------
-                  </div>
-                </div><!-- End activity item-->
+// Verifica si hay resultados
+if (mysqli_num_rows($result) > 0) {
+    while ($fila = mysqli_fetch_assoc($result)) {
+        $nombre = $fila['NAME'];
+        $noHay = $fila['no_hay'];
+        $apellido = $fila['SURNAME'];
+        $foto = $fila['foto'];
+        $fechaNacimiento = $fila['FECHA'];
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 hrs</div>
-                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                  <div class="activity-content">
-                 ---------------------------
-                  </div>
-                </div><!-- End activity item-->
+        // Compara la fecha actual con la fecha de nacimiento
+        if ($fechaActual == $fechaNacimiento) {
+            echo "$nombre $apellido"; // Concatena los nombres con un espacio
+        } else {
+            echo $noHay;
+        }
+    }
+} else {
+    echo "No hay resultados";
+}
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">1 day</div>
-                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                  <div class="activity-content">
-                    -------------
-                    <!-- Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore -->
-                  </div>
-                </div><!-- End activity item-->
+// Cierra la conexión a la base de datos
+mysqli_close($conn);
+?>
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 days</div>
-                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                  <div class="activity-content">
-                    -----------------
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">4 weeks</div>
-                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                  <div class="activity-content">
-                  ----------------
-                  </div>
-                </div><!-- End activity item-->
-
-              </div>
-
+</div>
             </div>
           </div><!-- End Recent Activity -->
 

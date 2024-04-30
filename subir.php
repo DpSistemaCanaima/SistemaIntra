@@ -1,9 +1,12 @@
 <?php
-include ('conexion.php');
+include ('cone.php');
 
 if(isset($_POST['Guardar'])){
+  
+
     $imagen = $_FILES['imagen']['name'];
     $nombre = $_POST['nombre'];
+    
     if (!preg_match("/[a-zA-Z\s]{10,60}/", $nombre)) {
       echo "
               <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -11,21 +14,22 @@ if(isset($_POST['Guardar'])){
               document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                   icon: 'success',
-                  title: 'El campo nombre no cumple con los caracteres establecidos.',
+                  title: 'El campo Titulo no cumple con los caracteres establecidos.',
                   showCancelButton: false,
                   confirmButtonColor: '#3085d6',
                   confirmButtonText: 'OK',
                   timer: 1500
                   }).then(() => {
           
-                  location.assign('html/index.php');
+                  location.assign('admin/index.php');
           
                   });
             });
               </script>";
     }
     $comentario = $_POST['comentario'];
-
+   
+   
     if(isset($imagen) && $imagen != ""){
         $tipo = $_FILES['imagen']['type'];
         $temp  = $_FILES['imagen']['tmp_name'];
@@ -36,6 +40,7 @@ if(isset($_POST['Guardar'])){
           header('location:../index.php');
        }else{
          $query = "INSERT INTO imagenes (imagen,nombre,comentario) values ('$imagen ', '$nombre', '$comentario')";
+
          $resultado = mysqli_query($conn,$query);
          if($resultado){
               move_uploaded_file($temp,'imagenes/'.$imagen);   
@@ -52,7 +57,7 @@ if(isset($_POST['Guardar'])){
                   timer: 1500
                   }).then(() => {
           
-                  location.assign('html/index.php');
+                  location.assign('admin/index.php');
           
                   });
             });
@@ -71,7 +76,7 @@ if(isset($_POST['Guardar'])){
                 timer: 1500
                 }).then(() => {
          
-                    location.assign('html/index.php');
+                    location.assign('admin/index.php');
          
                });
           });

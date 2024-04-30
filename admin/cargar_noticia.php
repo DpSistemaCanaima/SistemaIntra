@@ -527,15 +527,15 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                         <input type="text" class="form-control" name="nombre"  aria-describedby="emailHelp" pattern="[a-zA-Z\s]{10,60}" maxlength="60" minlength="10">
                         </div>
                         <b>Contenido</b>
-                        <div class="card">
+                  
                 
-              <div class="quill-editor-full">
+                              
              
-                        <textarea class="form-control" name="comentario" rows="3"></textarea>
-              </div>
-              <!-- End Quill Editor Full -->
-
-            </div>
+                                   <textarea class="form-control  quill-editor-full" name="comentario" ></textarea>
+                             
+                                  
+    
+                        
                         <label for="exampleInputEmail1" class="form-label"><b>Subir Imagen</b></label>
                         <div class="input-group mb-3">
                        
