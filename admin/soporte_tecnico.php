@@ -265,7 +265,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="perfil.php">
                 <i class="bi bi-person"></i>
                 <span>Mi Perfil</span>
               </a>
@@ -278,7 +278,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+              <a class="dropdown-item d-flex align-items-center" href="ayuda.php">
                 <i class="bi bi-question-circle"></i>
                 <span>ayuda</span>
               </a>
@@ -288,7 +288,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="../logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Cerrar</span>
               </a>

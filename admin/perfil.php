@@ -120,7 +120,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+          <a class="dropdown-item d-flex align-items-center" href="perfil.php">
             <i class="bi bi-person"></i>
             <span>Mi Perfil</span>
           </a>
@@ -133,7 +133,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+          <a class="dropdown-item d-flex align-items-center" href="ayuda.php">
             <i class="bi bi-question-circle"></i>
             <span>ayuda</span>
           </a>
@@ -143,7 +143,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="#">
+          <a class="dropdown-item d-flex align-items-center" href="../logout.php">
             <i class="bi bi-box-arrow-right"></i>
             <span>Cerrar</span>
           </a>
@@ -601,14 +601,14 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Desarrollado por Industria Canaima</span></strong>. Reservados todos los derechos
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    <a href="https://bootstrapmade.com/"> RIF: G-20010288-8</a>
     </div>
   </footer><!-- End Footer -->
 
