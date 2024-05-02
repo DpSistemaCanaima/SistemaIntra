@@ -69,6 +69,7 @@
                     <input type="text"  name="NOBRE_Y_APELLIDO" class="i-text form-control" placeholder="Nombre y apellido"><br>
                     <input type="date"  name="FECHA_DE_NACIMIENTO" class="i-text form-control" placeholder="Fecha de nacimiento">
                     <input type="hidden" name="foto" value="<?php echo $foto; ?>">
+                  
 
                     
 

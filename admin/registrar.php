@@ -25,6 +25,7 @@
     $FECHA_DE_NACIMIENTO = $_POST['FECHA_DE_NACIMIENTO'];
     $foto = $_POST['foto'];
    
+   
     
     $consulta = "SELECT USER, CEDULA FROM user_datos";
     $result = mysqli_query($conn, $consulta );
@@ -77,7 +78,7 @@
      }else{
 
 
-   $sql="INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `telefono`, `FECHA`, `SURNAME`, `DIRECCION`, `CIUDAD`, `MUNICIPIO`, `PARROQUIA`, `GENDER`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`, `PASSWORD_ID`, `NUMERO_DE_HIJOS`, `NOBRE_Y_APELLIDO`, `FECHA_DE_NACIMIENTO`, `foto`) VALUES (NULL, '$NAME', '$NACIONALIDAD', '$CEDULA', '', '$FECHA', '$SURNAME', '', '', '', '', '$GENDER', '$USER', '$PASSWORD_C', '', '$IDROLS', '$LOGIN', '$AREA', NULL, '', '', '', '../images/defect.jpg')";
+   $sql="INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `telefono`, `FECHA`, `SURNAME`, `DIRECCION`, `CIUDAD`, `MUNICIPIO`, `PARROQUIA`, `GENDER`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`, `PASSWORD_ID`, `NUMERO_DE_HIJOS`, `NOBRE_Y_APELLIDO`, `FECHA_DE_NACIMIENTO`, `foto`,`no_hay`) VALUES (NULL, '$NAME', '$NACIONALIDAD', '$CEDULA', '', '$FECHA', '$SURNAME', '', '', '', '', '$GENDER', '$USER', '$PASSWORD_C', '', '$IDROLS', '$LOGIN', '$AREA', NULL, '', '', '' , '../images/defect.jpg' , 'no_hay')";
        //echo $sql;
    
     $result = mysqli_query($conn,$sql);
