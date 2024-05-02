@@ -33,7 +33,7 @@
   
                     <div class="form-group has-feedback mb-4">
                       <i class="fa fa-user form-control-feedback"></i>
-                      <input type="text" name="USER" maxlength="8"  required class="form-control my-input" placeholder="Usuario">
+                      <input type="text" name="USER" maxlength="30"  required class="form-control my-input" placeholder="Usuario">
                     </div>
 
                     <div class="form-outline has-feedback mb-4">
