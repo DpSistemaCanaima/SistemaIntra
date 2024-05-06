@@ -143,7 +143,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="..logout.php">
+              <a class="dropdown-item d-flex align-items-center" href="../logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Cerrar</span>
               </a>
@@ -480,12 +480,25 @@ mysqli_close($conn);
 ?>
 
 </div>
+
             </div>
+           
+             <iframe width="320" height="440" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
+              <br>
+              <br>
+            <div class="container-fluid row">
+                                
+                                <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white; ">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    </div>
+                            </div>
+         
+              
+             
+             
           </div><!-- End Recent Activity -->
+         
+         
 
-       
-
-        
 
       </div>
    

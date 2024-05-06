@@ -1,0 +1,14 @@
+/* oculto los elementos */
+input.i-text {
+    display: none;
+  }
+  
+  /* lo muestros si está seleccionado value=imagen */
+  input.i-radio[value="si"]:checked ~ input.i-text{
+    display: block;
+  }
+  
+  /* lo muestros si está seleccionado value=texto */
+  /*input.i-radio[value="no"]:checked ~ textarea {
+    display: block;
+  }*/

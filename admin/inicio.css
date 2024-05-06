@@ -1,3 +1,12 @@
+.este {
+    height: 5em;
+    line-height: 1em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    border: 1px solid;
+  }
+
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
