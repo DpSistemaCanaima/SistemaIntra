@@ -49,6 +49,8 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="oculto.css">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -217,14 +219,41 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
     <div class="pagetitle">
       
-        <!-----------------contenido ------------------------->
+       
+  <br>
+  <br>
+  <br>              <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800"> Sistema de gestion | Intranet </h1>
+                    </div>
+
+                    
+                        <div class="jumbotron">
+                        <h1 class="display-5">Registre un Usuario Nuevo!</h1>
+                                <p class="lead">Bienvenido al Intranet.</p>
+                            <hr class="my-4">
+                            <p>De click en el siguente boton.</p>
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  href="modalregistrarusuario.php?User=true" data-bs-toggle="modal"
+                      data-bs-target="#registrarusuario"  > <i class="fas fa-user fa-sm text-white-50"></i> Crear Usuario</a>
+                        </div>
+                    </div>
+                    <?php
+                      include "modalregistrarusuario.php";
+                  ?>
+                </div>
 
       </div>
    
     </section>
 
   </main><!-- End #main -->
-
+<br>
+<br><br>
+<br>
+<br>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">

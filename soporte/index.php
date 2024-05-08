@@ -31,12 +31,12 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <title>Industria Canaima</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="inicio.css">
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+ 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -49,6 +49,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -206,19 +207,48 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
   </aside><!-- End Sidebar-->
 
+
   <main id="main" class="main">
 
-    <div class="pagetitle">
-     
-       
-<!-------------------contenido ----------------------------->
-        
-
-      </div>
+<div class="pagetitle">
+  
    
-    </section>
+<br>
+<br>
+<br>              <!-- Begin Page Content -->
+            <div class="container-fluid">
 
-  </main><!-- End #main -->
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800"> Soporte Tecnico| Intranet </h1>
+                </div>
+
+                
+                    <div class="jumbotron">
+                    <h1 class="display-5">Bienvenidos al nuevo sistema de soporte!</h1>
+                            <p class="lead">Bienvenido al Intranet.</p>
+                   
+                        
+                       
+                    </div>
+                </div>
+              
+            </div>
+
+  </div>
+
+</section>
+
+</main><!-- End #main -->
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

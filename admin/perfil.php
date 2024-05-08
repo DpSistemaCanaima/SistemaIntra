@@ -562,9 +562,9 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                   <form action="password.php" method="POST">
 
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Contraseña actual</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Cedula</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="actual_pass" type="password" class="form-control" >
+                        <input name="CEDULA" type="text" class="form-control" >
                       </div>
                     </div>
 
@@ -578,7 +578,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                     
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
                     </div>
                   </form><!-- End Change Password Form -->
 

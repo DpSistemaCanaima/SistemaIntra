@@ -380,7 +380,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
  
             <?php
     
-    $query = "SELECT cod_imagen,imagen, nombre FROM imagenes  ";
+    $query = "SELECT cod_imagen,imagen, nombre FROM imagenes ORDER BY cod_imagen DESC ";
     $resultado = mysqli_query($conn,$query);
  
     ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 02-05-2024 a las 14:21:05
+-- Tiempo de generación: 08-05-2024 a las 05:09:00
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -308,7 +308,7 @@ CREATE TABLE `user_datos` (
 
 INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `telefono`, `FECHA`, `SURNAME`, `DIRECCION`, `CIUDAD`, `MUNICIPIO`, `PARROQUIA`, `GENDER`, `USER`, `PASSWORD`, `EMAIL`, `IDROLS`, `LOGIN`, `ASSIGNED_AREA`, `PASSWORD_ID`, `NUMERO_DE_HIJOS`, `NOBRE_Y_APELLIDO`, `FECHA_DE_NACIMIENTO`, `foto`, `no_hay`) VALUES
 (1, 'Reinaldo', 1, '2658439', '', '2024-01-01', 'MORALES CERTAD', '', '', '', '', 1, '2658439', '46ad1784cf775c2dea5b7dc2b8f4f2537e6c5b62', '', 2, 1, 'jubilado', NULL, '', '', '', '../images/defect.jpg', 'No Hay Cumpleañeros hoy'),
-(2, 'Luis manuel', 1, '31158004', '04241871113', '2024-04-30', 'Navarro Moreno', '', '', '', '', 1, '31158004', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'lm395746@gmail.com', 1, 1, 'Asistente de informática III', NULL, '', '', '', '../images/WhatsApp Image 2024-04-11 at 11.53.14.jpeg', ''),
+(2, 'Luis manuel', 1, '31158004', '04241871113', '2024-04-30', 'Navarro Moreno', 'antimano', '', '', '', 1, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'lm395746@mail.com', 1, 1, 'Asistente de informática III', NULL, '', '', '', '../images/Recursos-Humanos.jpg', ''),
 (3, 'Melvin daniel', 1, '30512676', '', '2003-03-26', 'Añez berrio', '', '', '', '', 1, 'admin', '9afbd981bb2da1514e74fb95c00fc85ed9fcafa6', '', 1, 1, 'Asistente de informática III ', NULL, '', '', '', '../images/pexels-roberto-nickson-2478248.jpg', ''),
 (4, 'Danyerbert jose', 1, '27047631', '', '0000-00-00', 'Brito rangel', '', '', '', '', 1, '27047631', '5b636adac1d67aa8fd1745a0f5ad63616138dcca', 'danyerbertbrito@gmail.com', 1, 1, 'Asistente de informática III', NULL, '', '', '', '../images/Canaima.png', ''),
 (5, 'Alfredo', 1, '3533098', '', '0000-00-00', 'Aguilar Rodriguez', '', '', '', '', 1, '3533098', 'e25230fac2bc24154e02f14c5cde36559123014b', '', 2, 1, 'Honorarios Profecionales', NULL, '', '', '', '../images/defect.jpg', ''),
@@ -449,12 +449,12 @@ INSERT INTO `user_datos` (`IDDATOS`, `NAME`, `NACIONALIDAD`, `CEDULA`, `telefono
 (146, 'Robert Alexander ', 1, '19089843', '', '', 'Matos Rodriguez', '', '', '', '', 1, '19089843', '029d4d6a7255c8de2ea24512544a38e89876dbc0', '', 2, 1, 'Operador - Almacenista', NULL, '', '', '', '../images/defect.jpg', ''),
 (147, 'Theyde Deyanira', 1, '19267177', '', '', 'Paraco Rondon', '', '', '', '', 2, '19267177', '19267177', '', 2, 1, 'Operador - Almacenista', NULL, '', '', '', '../images/defect.jpg', ''),
 (148, 'Yosibel Axibel', 1, '19314053', '', '', 'Garcia Sanchez', '', '', '', '', 2, '19314053', '30e00a513b181967c4bd1b7bc4bb85893362fc1f', '', 2, 1, 'Operador - Almacenista', NULL, '', '', '', '../images/defect.jpg', ''),
-(149, 'Mildred Coromoto ', 1, '19351559', '', '2024-03-15', 'Salazar Rodriguez', '', '', '', '', 2, '19351559', '3b37bd472089247d28b6ed67b66645cf33d2c429', '', 3, 1, 'Directora de linea. Atencion Tecnologica', NULL, '', '', '', '../images/defect.jpg', ''),
-(152, 'desarrollo', 1, '20010288-8', '', '', '', '', '', '', '', 1, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 1, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
-(153, 'desarrollo', 1, '20010288-8', '', '', '', '', '', '', '', 1, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 2, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
-(154, 'desarrollo', 1, '20010288-8', '', '', '', '', '', '', '', 1, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 3, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
+(149, 'Mildred Coromoto ', 1, '19351559', '', '2024-03-15', 'Salazar Rodriguez', '', '', '', '', 2, '19351559', '3b37bd472089247d28b6ed67b66645cf33d2c429', '', 2, 1, 'Directora de linea. Atencion Tecnologica', NULL, '', '', '', '../images/defect.jpg', ''),
+(152, 'ghumano', 1, '2022', '', '', '', '', '', '', '', 1, 'ghumano', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 4, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
+(153, 'admin', 1, '20010288-8', '', '', '', '', '', '', '', 1, 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 1, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
+(154, 'usuario', 1, '20010288-8', '', '', '', '', '', '', '', 1, 'usuario', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 2, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
 (155, 'desarrollo', 1, '20010288-8', '', '', '', '', '', '', '', 1, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 4, 1, '', NULL, '', '', '', '../images/Industria-Canaima-C.A.-abre-sus-puertas-para-la-formacion-especializada-en-Robotica-Educativa-4.jpg', ''),
-(156, 'andres', 1, '31158004', '', '2003-03-09', 'pedro', '', '', '', '', 1, '31158001', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 2, 1, 'analista', NULL, '', '', '', '../images/defect.jpg', 'no_hay');
+(157, 'Tecnico', 1, '2024', '', '', '', '', '', '', '', 3, '', '7c4a8d09ca3762af61e59520943dc26494f8941b', '', 3, 1, '', NULL, '', '', '', '../images/1.png', '');
 
 --
 -- Índices para tablas volcadas
@@ -564,7 +564,7 @@ ALTER TABLE `grado`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `cod_imagen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `cod_imagen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `level`
@@ -600,7 +600,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT de la tabla `user_datos`
 --
 ALTER TABLE `user_datos`
-  MODIFY `IDDATOS` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `IDDATOS` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- Restricciones para tablas volcadas
