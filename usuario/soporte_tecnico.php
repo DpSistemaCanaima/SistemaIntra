@@ -455,6 +455,16 @@ $area  = $_SESSION['ASSIGNED_AREA'];
           <i class="bi bi-circle"></i><span>Patria</span>
         </a>
       </li>
+      <li>
+            <a href="https://mincyt.gob.ve/">
+              <i class="bi bi-circle"></i><span>Myncyt</span>
+            </a>
+          </li>
+          <li>
+            <a href=" https://minmujer.gob.ve/">
+              <i class="bi bi-circle"></i><span>Mi mujer</span>
+            </a>
+          </li>
     </ul>
   </li><!-- End Charts Nav -->
   
