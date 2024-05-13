@@ -1,5 +1,5 @@
 .conte{
-    margin: 60px 150px 20px 36px;
+    margin: 60px 150px 20px -2px;
     padding: 0 300px 0 300px;
 }
 
@@ -11,6 +11,6 @@
 
 .imagen{
     float: left;
-    margin: 0px 7px 0px 0px;
+    margin: 0px 19px 0px 42px;
   
 }
