@@ -176,7 +176,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="soporte_tecnico.php">
-              <i class="bi bi-circle"></i><span>Soporte Tecnico</span>
+              <i class="bi bi-circle"></i><span>Arc</span>
             </a>
           </li>
           <?php
