@@ -418,7 +418,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
  
                              
      <?php foreach($resultado as $row) { ?>
-      <div class="card" style="width: 18rem; margin:0 30px 20px 0">
+      <div class="card" style="width: 18rem; margin:0 30px 20px 31px">
          <div class="contenedor-imagenes">
             
              <div class="imagen">
