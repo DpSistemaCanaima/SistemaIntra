@@ -36,6 +36,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="contenedor.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -176,7 +177,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="soporte_tecnico.php">
-              <i class="bi bi-circle"></i><span>Soporte Tecnico</span>
+              <i class="bi bi-circle"></i><span>Arc</span>
             </a>
           </li>
           <?php
@@ -310,6 +311,16 @@ $area  = $_SESSION['ASSIGNED_AREA'];
               <i class="bi bi-circle"></i><span>Patria</span>
             </a>
           </li>
+          <li>
+            <a href="https://mincyt.gob.ve/">
+              <i class="bi bi-circle"></i><span>Myncyt</span>
+            </a>
+          </li>
+          <li>
+            <a href=" https://minmujer.gob.ve/">
+              <i class="bi bi-circle"></i><span>Mi mujer</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Charts Nav -->
       
@@ -340,13 +351,8 @@ $area  = $_SESSION['ASSIGNED_AREA'];
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Noticias</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
+      <h1>Novedades</h1>
+  
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -357,6 +363,50 @@ $area  = $_SESSION['ASSIGNED_AREA'];
           <div class="row">
 <!-----------------------------SESION DE NOTICIAS   ------------------------------------------------------------->
             <!-- Sales Card -->
+            <div class="conte">
+       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <!-- <div class="carousel-indicators">
+          <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="1.jpg"  class="imagen" alt="...">
+            
+            <img src="img1.jpg" class="imagen" alt="...">
+            
+            <img src="img2.jpg" class="imagen" alt="...">
+            
+          </div>
+       
+          
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="2.jpg" class="imagen" alt="...">
+            <img src="1.jpg"  class="imagen" alt="...">
+               
+            <img src="img1.jpg" class="imagen" alt="...">
+          
+          </div>
+          <div class="carousel-item">
+            <img src="5.jpg" class="imagen" alt="...">
+            <img src="1.jpg"  class="imagen" alt="...">
+               
+               <img src="img1.jpg" class="imagen" alt="...">
+               
+              
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+ </div>
  
             <?php
     

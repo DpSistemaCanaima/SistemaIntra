@@ -178,7 +178,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a href="soporte_tecnico.php">
-          <i class="bi bi-circle"></i><span>Soporte Tecnico</span>
+          <i class="bi bi-circle"></i><span>Arc</span>
         </a>
       </li>
       <?php
@@ -312,6 +312,16 @@ $area  = $_SESSION['ASSIGNED_AREA'];
           <i class="bi bi-circle"></i><span>Patria</span>
         </a>
       </li>
+      <li>
+            <a href="https://mincyt.gob.ve/">
+              <i class="bi bi-circle"></i><span>Myncyt</span>
+            </a>
+          </li>
+      <li>
+            <a href=" https://minmujer.gob.ve/">
+              <i class="bi bi-circle"></i><span>Mi mujer</span>
+            </a>
+          </li>
     </ul>
   </li><!-- End Charts Nav -->
   
@@ -422,16 +432,16 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                 
 
                   <h5 class="card-title">Detalles del perfil</h5>
-
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Compañía</div>
+                    <div class="col-lg-9 col-md-8">Industria Canaima</div>
+                  </div>
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Nombre completo</div>
                     <div class="col-lg-9 col-md-8"><?php echo $mos['NAME'] ." ". $mos['SURNAME']  ?></div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Compañía</div>
-                    <div class="col-lg-9 col-md-8">Industria Canaima</div>
-                  </div>
+                 
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">cargo</div>
@@ -439,12 +449,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">País</div>
-                    <div class="col-lg-9 col-md-8">Venezuela</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Direccion</div>
+                    <div class="col-lg-3 col-md-4 label">Adscripción</div>
                     <div class="col-lg-9 col-md-8"><?php echo $mos['DIRECCION'] ?></div>
                   </div>
 
