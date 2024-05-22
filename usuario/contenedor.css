@@ -4,15 +4,15 @@
     box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px 12px 24px -4px;
 }
 
-.conte .imagen{
+.conte .im{
     height: 144px;
     width: 157px;
    
 }
 
-.imagen{
+.im{
     float: left;
-    margin: 0px -12px 0px 42px;
+    margin: 0px -12px 0px 64px;
   
 }
 

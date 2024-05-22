@@ -378,7 +378,7 @@ $CEDULA = $_SESSION['CEDULA'];
          <div class="contenedor-imagenes">
             
              <div class="imagen">
-             <img  src="../imagenes/<?php echo $row['imagen']; ?>" style="width: 15rem;" >
+             <img  src="../imagenes/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
              <a href="#openModal<?php echo $row['cod_imagen'];?>">
              <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
              <div class="overlay">
@@ -412,27 +412,27 @@ $CEDULA = $_SESSION['CEDULA'];
         </div> -->
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
-            <img src="1.jpg"  class="imagen" alt="...">
+            <img src="1.jpg"  class="im" alt="...">
             
-            <img src="img1.jpg" class="imagen" alt="...">
+            <img src="img1.jpg" class="im" alt="...">
             
-            <img src="img2.jpg" class="imagen" alt="...">
+            <img src="img2.jpg" class="im" alt="...">
             
           </div>
        
           
           <div class="carousel-item" data-bs-interval="2000">
-            <img src="2.jpg" class="imagen" alt="...">
-            <img src="1.jpg"  class="imagen" alt="...">
+            <img src="2.jpg" class="im" alt="...">
+            <img src="1.jpg"  class="im" alt="...">
                
-            <img src="img1.jpg" class="imagen" alt="...">
+            <img src="img1.jpg" class="im" alt="...">
           
           </div>
           <div class="carousel-item">
-            <img src="5.jpg" class="imagen" alt="...">
-            <img src="1.jpg"  class="imagen" alt="...">
+            <img src="5.jpg" class="im" alt="...">
+            <img src="1.jpg"  class="im" alt="...">
                
-               <img src="img1.jpg" class="imagen" alt="...">
+               <img src="img1.jpg" class="im" alt="...">
                
               
           </div>
