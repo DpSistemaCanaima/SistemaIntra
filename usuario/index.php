@@ -15,7 +15,7 @@ $APE = $_SESSION['SURNAME'];
 $primeraA = substr($APE, 0, 8);
 $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
-$area  = $_SESSION['ASSIGNED_AREA'];
+// $area = $_SESSION['ASSIGNED_AREA'];
  
  
 
@@ -362,8 +362,48 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         <div class="col-lg-8">
           <div class="row">
 <!-----------------------------SESION DE NOTICIAS   ------------------------------------------------------------->
-            <!-- Sales Card -->
-            <div class="conte">
+          
+ 
+            <?php
+    
+    $query = "SELECT cod_imagen,imagen, nombre FROM imagenes ORDER BY cod_imagen DESC ";
+    $resultado = mysqli_query($conn,$query);
+ 
+    ?>
+ 
+ 
+                             
+     <?php foreach($resultado as $row) { ?>
+      <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
+         <div class="contenedor-imagenes">
+            
+             <div class="imagen">
+             <img  src="../imagenes/<?php echo $row['imagen']; ?>" style="width: 15rem;" >
+             <a href="#openModal<?php echo $row['cod_imagen'];?>">
+             <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
+             <div class="overlay">
+                <h2 ><?php echo $row['nombre']; ?></h2>
+              
+                    
+                </div>
+                </a>
+             </div>
+             <?php  include "modal_noticias.php"; ?>
+           
+          </div>
+        </div>
+          <?php } ?>
+          
+ <!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
+            <!-- Revenue Card -->
+         
+    
+               
+
+  <!-- Sales Card -->
+ 
+  <div class="conte">
+  <center><h3>Tren Directivo</h3></center>
        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <!-- <div class="carousel-indicators">
           <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -407,44 +447,6 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         </button>
       </div>
  </div>
- 
-            <?php
-    
-    $query = "SELECT cod_imagen,imagen, nombre FROM imagenes ORDER BY cod_imagen DESC ";
-    $resultado = mysqli_query($conn,$query);
- 
-    ?>
- 
- 
-                             
-     <?php foreach($resultado as $row) { ?>
-      <div class="card" style="width: 18rem; margin:0 30px 20px 31px">
-         <div class="contenedor-imagenes">
-            
-             <div class="imagen">
-             <img  src="../imagenes/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
-             <a href="#openModal<?php echo $row['cod_imagen'];?>">
-             <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
-             <div class="overlay">
-                <h2 ><?php echo $row['nombre']; ?></h2>
-              
-                    
-                </div>
-                </a>
-             </div>
-             <?php  include "modal_noticias.php"; ?>
-           
-          </div>
-        </div>
-          <?php } ?>
-          
- <!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
-            <!-- Revenue Card -->
-         
-    
-               
-
-
 
 
           
@@ -513,12 +515,12 @@ mysqli_close($conn);
 
             </div>
            
-             <iframe width="320" height="440" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
+             <iframe class="inst" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
               <br>
               <br>
             <div class="container-fluid row">
                                 
-                                <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white; ">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white; box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px 12px 24px -4px; ">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                     </div>
                             </div>
          
