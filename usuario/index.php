@@ -395,7 +395,7 @@ $CEDULA = $_SESSION['CEDULA'];
   <!-- Sales Card -->
  
   <div class="conte">
-  <center><h3>Tren Directivo</h3></center>
+  <h3 class="text-center">Tren Directivo</h3>
        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <!-- <div class="carousel-indicators">
           <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
