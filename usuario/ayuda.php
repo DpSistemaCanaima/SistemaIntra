@@ -176,7 +176,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="soporte_tecnico.php">
-              <i class="bi bi-circle"></i><span>Arc</span>
+              <i class="bi bi-circle"></i><span>ARC</span>
             </a>
           </li>
           <?php
@@ -254,7 +254,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
           </li>
           <li>
             <a href="./pdf/fundamentos de linux.pdf">
-              <i class="bi bi-circle"></i><span>fundamentos de linux</span>
+              <i class="bi bi-circle"></i><span>Fundamentos de linux</span>
             </a>
           </li>
           <li>
@@ -285,16 +285,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
               <i class="bi bi-circle"></i><span>Banco del Tesoro</span>
             </a>
           </li>
-          <li>
-            <a href="https://www.eluniversal.com">
-              <i class="bi bi-circle"></i><span>Periodico Universal</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://dolartoday.com/calculadora/">
-              <i class="bi bi-circle"></i><span>calcular dolar</span>
-            </a>
-          </li>
+         
           <li>
             <a href="https://www.banesconline.com/mantis/Website/Login.aspx">
               <i class="bi bi-circle"></i><span>Banco Banesco</span>
