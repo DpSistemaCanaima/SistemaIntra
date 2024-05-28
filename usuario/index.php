@@ -15,7 +15,7 @@ $APE = $_SESSION['SURNAME'];
 $primeraA = substr($APE, 0, 8);
 $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
-// $area = $_SESSION['ASSIGNED_AREA'];
+ $area = $_SESSION['ASSIGNED_AREA'];
  
  
 
@@ -78,7 +78,7 @@ $CEDULA = $_SESSION['CEDULA'];
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" name="query" placeholder="Buscar" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -136,7 +136,7 @@ $CEDULA = $_SESSION['CEDULA'];
             <li>
               <a class="dropdown-item d-flex align-items-center" href="ayuda.php">
                 <i class="bi bi-question-circle"></i>
-                <span>ayuda</span>
+                <span>Ayuda</span>
               </a>
             </li>
             <li>
@@ -166,13 +166,13 @@ $CEDULA = $_SESSION['CEDULA'];
   <li class="nav-item">
     <a class="nav-link " href="index.php">
       <i class="bi bi-grid"></i>
-      <span>inicio</span>
+      <span>Inicio</span>
     </a>
   </li><!-- End Dashboard Nav -->
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-menu-button-wide"></i><span>solicitud</span><i class="bi bi-chevron-down ms-auto"></i>
+      <i class="bi bi-menu-button-wide"></i><span>Solicitud</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
@@ -207,12 +207,12 @@ $CEDULA = $_SESSION['CEDULA'];
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a  href="./pdf/vacaciones.xls" >
-          <i class="bi bi-circle"></i><span>planilla de vacaciones</span>
+          <i class="bi bi-circle"></i><span>Planilla de vacaciones</span>
         </a>
       </li>
       <li>
         <a href="./pdf/permiso.docx">
-          <i class="bi bi-circle"></i><span>planilla de permisos</span>
+          <i class="bi bi-circle"></i><span>Planilla de permisos</span>
         </a>
       </li>
       <!-- <li>
@@ -235,7 +235,7 @@ $CEDULA = $_SESSION['CEDULA'];
     <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
         <a href="./pdf/103_Manual_Canaimit.pdf">
-          <i class="bi bi-circle"></i><span> Manual de canaima</span>
+          <i class="bi bi-circle"></i><span>Manual de canaima</span>
         </a>
       </li>
       <li>
@@ -268,7 +268,7 @@ $CEDULA = $_SESSION['CEDULA'];
 
   <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-bar-chart"></i><span>web</span><i class="bi bi-chevron-down ms-auto"></i>
+      <i class="bi bi-bar-chart"></i><span>Web</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
@@ -316,7 +316,7 @@ $CEDULA = $_SESSION['CEDULA'];
   </li><!-- End Charts Nav -->
  
  
-  <li class="nav-heading">Pages</li>
+  <li class="nav-heading"></li>
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="perfil.php">
@@ -340,10 +340,10 @@ $CEDULA = $_SESSION['CEDULA'];
 </aside><!-- End Sidebar-->
 
 
-  <main id="main" class="main">
+<main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Novedades</h1>
+      <h1>Noticias</h1>
   
     </div><!-- End Page Title -->
 
@@ -512,7 +512,7 @@ mysqli_close($conn);
               <br>
             <div class="container-fluid row">
                                 
-                                <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white; box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px 12px 24px -4px; ">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white;  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                     </div>
                             </div>
          
@@ -528,7 +528,7 @@ mysqli_close($conn);
    
     </section>
 
-  </main><!-- End #main -->
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

@@ -248,7 +248,7 @@ h6 {
 
 .card-body {
   padding: 0 20px 20px 20px;
-  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px 12px 24px -4px;
+  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;
 }
 
 .card-img-overlay {
