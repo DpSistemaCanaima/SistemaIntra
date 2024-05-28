@@ -60,7 +60,7 @@
                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <form action="" method="POST">
                 
-<!-- <!-- <input pattern=".{3,}" required title="minimo 3 caracteres" maxlength="8">
+<!--  <input pattern=".{3,}" required title="minimo 3 caracteres" maxlength="8">
 <input type="submit" value="aceptar">
 </form> -->
                 </div> 
