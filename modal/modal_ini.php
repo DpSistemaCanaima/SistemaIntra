@@ -33,14 +33,25 @@
 
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
-                     
+                    
                     </div>
                   </form>
                   <p class="text-muted text-center">&copy; Industria Canaima 2024</p>
                 </div>
               </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img ">
-                <img src="../indus2.jpg" alt="">
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img" style="
+                background: url(./indus2.jpg) rgba(0, 0, 0, .3);
+                background-position: center;
+                background-size: cover;
+                background-blend-mode: overlay;
+              ">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <form action="" method="POST">
+                
+<!--  <input pattern=".{3,}" required title="minimo 3 caracteres" maxlength="8">
+<input type="submit" value="aceptar">
+</form> -->
+                </div> 
               </div>
             </div>
           </div>
