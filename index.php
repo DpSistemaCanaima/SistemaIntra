@@ -1,77 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+
  
+include('cone.php');
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./estilos.css">
-  <title>Intranet</title>
-  <link rel="shortcut icon" href="1.svg" type="image/x-icon">
-</head>
-<body class="vh-100" style="border: 1px solid black;">
-  <section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card text-black border-custom">
-            <div class="row g-0 rounded-5 caja-lg border-custom">
-              <div class="col-lg-6 border-custom">
-                <div class="card-body p-md-5 mx-md-4">
-  
-                  <div class="text-center">
-                    <img src="https://www.uneti.edu.ve/campus/pluginfile.php/34/block_edash_partners/content/Canaima.png"
-                      style="width: 250px; " alt="logo">
-                  </div>
-  
-                  <form  action="login.php" method="POST" class="m-auto" style="width: 90%">
-                    <p class="text-center">Por favor, ingresa tus credenciales</p>
-  
-                    <div class="form-group has-feedback mb-4">
-                      <i class="fa fa-user form-control-feedback"></i>
-                      <input type="text" name="USER" maxlength="30"  required class="form-control my-input" placeholder="Usuario">
-                    </div>
+session_start();
 
-                    <div class="form-outline has-feedback mb-4">
-                      <i class="fa fa-lock form-control-feedback"></i>
-                      <input type="password" name="PASSWORD" required maxlength="8" class="form-control my-input" placeholder="Contraseña">
 
-                    </div>
-  
+if (isset($_SESSION['IDDATOS'])) {
+  // El usuario ha iniciado sesión
+  $mostrar_li = true;
+} else {
+  // El usuario no ha iniciado sesión
+  $mostrar_li = false;
+}
 
-                    <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
-                      <a style="text-decoration: none;" href="reset.php">Restablecer Contraseña</a>
-                    </div>
-                  </form>
-                  <p class="text-muted text-center">&copy; Industria Canaima 2024</p>
-                </div>
-              </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img" style="
-                background: url(./indus2.jpg) rgba(0, 0, 0, .3);
-                background-position: center;
-                background-size: cover;
-                background-blend-mode: overlay;
-              ">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <form action="" method="POST">
-                
-<!--  <input pattern=".{3,}" required title="minimo 3 caracteres" maxlength="8">
-<input type="submit" value="aceptar">
-</form> -->
-                </div> 
-              </div>
+include "content/inc/header.php";
+   
+include "content/inc/sidebar.php";
+
+
+?>
+
+
+<body>
+
+
+<main id="main" class="main">
+
+<div class="pagetitle">
+  <h1>Noticias</h1>
+
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+<!-----------------------------SESION DE NOTICIAS   ------------------------------------------------------------->
+      
+
+        <?php
+
+$query = "SELECT cod_imagen,imagen, nombre FROM imagenes ORDER BY cod_imagen DESC ";
+$resultado = mysqli_query($conn,$query);
+
+?>
+
+
+                         
+ <?php foreach($resultado as $row) { ?>
+  <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
+     <div class="contenedor-imagenes">
+        
+         <div class="imagen">
+         <img  src="imagenes/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
+         <a href="#openModal<?php echo $row['cod_imagen'];?>">
+         <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
+         <div class="overlay">
+            <h2 ><?php echo $row['nombre']; ?></h2>
+          
+              
             </div>
-          </div>
-        </div>
+            </a>
+         </div>
+         <?php  include "modal/modal_noticias.php"; ?>
+       
       </div>
     </div>
-  </section>
+      <?php } ?>
+      
+<!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
+        <!-- Revenue Card -->
+     
 
+           
+
+<!-- Sales Card -->
+
+<div class="conte">
+<h3 class="text-center">Tren Directivo</h3>
+   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- <div class="carousel-indicators">
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="1.jpg"  class="im" alt="...">
+        
+        <img src="img1.jpg" class="im" alt="...">
+        
+        <img src="img2.jpg" class="im" alt="...">
+        
+      </div>
+   
+      
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="2.jpg" class="im" alt="...">
+        <img src="1.jpg"  class="im" alt="...">
+           
+        <img src="img1.jpg" class="im" alt="...">
+      
+      </div>
+      <div class="carousel-item">
+        <img src="5.jpg" class="im" alt="...">
+        <img src="1.jpg"  class="im" alt="...">
+           
+           <img src="img1.jpg" class="im" alt="...">
+           
+          
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+      
+
+      </div>
+    </div><!-- End Left side columns -->
+   
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="filter">
+          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+              <h6>Filter</h6>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Today</a></li>
+            <li><a class="dropdown-item" href="#">This Month</a></li>
+            <li><a class="dropdown-item" href="#">This Year</a></li>
+          </ul>
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">cumpleañeros del día<span>| hoy </span></h5>
+          <?php
+require_once 'cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
+
+// Establece la zona horaria y obtiene la fecha actual
+date_default_timezone_set('America/Caracas');
+$fechaActual = date('Y-m-d');
+
+// Prepara la consulta SQL con parámetros para evitar inyecciones SQL
+$sql = "SELECT SURNAME, FECHA, foto, no_hay, NAME FROM user_datos WHERE FECHA = '$fechaActual'";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
+// Verifica si hay resultados
+if (mysqli_num_rows($result) > 0) {
+while ($fila = mysqli_fetch_assoc($result)) {
+    $nombre = $fila['NAME'];
+    $noHay = $fila['no_hay'];
+    $apellido = $fila['SURNAME'];
+    $foto = $fila['foto'];
+    $fechaNacimiento = $fila['FECHA'];
+
+    // Compara la fecha actual con la fecha de nacimiento
+    if ($fechaActual == $fechaNacimiento) {
+        echo "$nombre $apellido"; // Concatena los nombres con un espacio
+    } else {
+        echo $noHay;
+    }
+}
+} else {
+echo "No hay resultados";
+}
+
+// Cierra la conexión a la base de datos
+mysqli_close($conn);
+?>
+
+</div>
+
+        </div>
+       
+         <iframe class="inst" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
+          <br>
+          <br>
+        <div class="container-fluid row">
+                            
+                            <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white;  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                        </div>
+     
+          
+         
+         
+      </div><!-- End Recent Activity -->
+     
+     
+
+
+  </div>
+
+</section>
+
+</main><!-- End #main -->
+  
+  <!-- Vendor JS Files -->
+  <?php include "content/inc/script.php";?> 
+<?php include "modal/modal_ini.php";
+include "content/inc/footer.php";
+?> 
 
 </body>
+
 </html>

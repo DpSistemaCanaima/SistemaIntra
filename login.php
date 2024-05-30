@@ -8,7 +8,7 @@ if ($_POST) {
   $USER = $_POST['USER'];
   $password = $_POST['PASSWORD'];
 
-  $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono, ASSIGNED_AREA, NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
+  $sql = "SELECT IDDATOS, PASSWORD, USER ,IDROLS  FROM user_datos WHERE USER='$USER' ";
   $resultado = mysqli_query($conn, $sql);
 
   $num = $resultado->num_rows;
@@ -28,13 +28,9 @@ if ($_POST) {
       $_SESSION['IDDATOS'] = $row['IDDATOS'];
       $_SESSION['USER'] = $row['USER'];
       $_SESSION['IDROLS'] = $row['IDROLS'];
-      $_SESSION['NAME'] = $row['NAME'];
-      $_SESSION['SURNAME'] = $row['SURNAME'];
-      $_SESSION['CEDULA'] = $row['CEDULA'];
       $_SESSION['PASSWORD'] = $row['PASSWORD']; // Not recommended to store hashed password in session
-      $_SESSION['telefono'] = $row['telefono'];
-      $_SESSION['EMAIL'] = $row['EMAIL'];
-      $_SESSION['ASSIGNED_AREA'] = $row['ASSIGNED_AREA'];
+    
+     
 
       // Redirect based on user role
       switch ($_SESSION['IDROLS']) {
@@ -42,7 +38,7 @@ if ($_POST) {
           header("Location: admin/index.php");
           break;
         case 2:
-          header("Location: usuario/index.php");
+          header("Location: index.php");
           break;
         case 3:
           header("Location: soporte/index.php");
