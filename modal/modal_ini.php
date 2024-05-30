@@ -1,7 +1,6 @@
 <div id="openModal" class="modalDialo">
 	<div>
   <a href="#close" title="Close" class="close">X</a>
-  
   <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -33,7 +32,7 @@
 
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
-                    
+                      <a style="text-decoration: none;" href="reset.php">Restablecer Contraseña</a>
                     </div>
                   </form>
                   <p class="text-muted text-center">&copy; Industria Canaima 2024</p>

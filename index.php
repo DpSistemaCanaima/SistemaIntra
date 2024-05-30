@@ -1,31 +1,31 @@
 <?php
-
- 
-include('cone.php');
+include "config/cone.php";
 
 session_start();
 
 
-if (isset($_SESSION['IDDATOS'])) {
+
+if (isset($_SESSION['IDROLS'])) {
   // El usuario ha iniciado sesión
   $mostrar_li = true;
+ 
 } else {
   // El usuario no ha iniciado sesión
   $mostrar_li = false;
 }
-
-include "content/inc/header.php";
-   
-include "content/inc/sidebar.php";
-
-
+  
+    include "content/inc/header.php";
+    include "modal/modal_ini.php";
 ?>
-
 
 <body>
 
-
-<main id="main" class="main">
+    <?php    
+        include "content/inc/navbar.php";
+        
+        include "content/inc/sidebar.php";
+    ?>
+   <main id="main" class="main">
 
 <div class="pagetitle">
   <h1>Noticias</h1>
@@ -55,7 +55,7 @@ $resultado = mysqli_query($conn,$query);
      <div class="contenedor-imagenes">
         
          <div class="imagen">
-         <img  src="imagenes/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
+         <img  src="assets/img/<?php echo $row['imagen']; ?>" style="width: 18rem;" >
          <a href="#openModal<?php echo $row['cod_imagen'];?>">
          <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal<?php //echo $row['cod_imagen'];?>">    -->
          <div class="overlay">
@@ -90,27 +90,27 @@ $resultado = mysqli_query($conn,$query);
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         
-        <img src="1.jpg"  class="im" alt="...">
+        <img src="assets/img/1.jpg"  class="im" alt="...">
         
-        <img src="img1.jpg" class="im" alt="...">
+        <img src="assets/img/img1.jpg" class="im" alt="...">
         
-        <img src="img2.jpg" class="im" alt="...">
+        <img src="assets/img/img2.jpg" class="im" alt="...">
         
       </div>
    
       
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="2.jpg" class="im" alt="...">
-        <img src="1.jpg"  class="im" alt="...">
+        <img src="assets/img/2.jpg" class="im" alt="...">
+        <img src="assets/img/1.jpg"  class="im" alt="...">
            
-        <img src="img1.jpg" class="im" alt="...">
+        <img src="assets/img/img1.jpg" class="im" alt="...">
       
       </div>
       <div class="carousel-item">
-        <img src="5.jpg" class="im" alt="...">
-        <img src="1.jpg"  class="im" alt="...">
+        <img src="assets/img/5.jpg" class="im" alt="...">
+        <img src="assets/img/1.jpg"  class="im" alt="...">
            
-           <img src="img1.jpg" class="im" alt="...">
+           <img src="assets/img/img1.jpg" class="im" alt="...">
            
           
       </div>
@@ -153,7 +153,7 @@ $resultado = mysqli_query($conn,$query);
         <div class="card-body">
           <h5 class="card-title">cumpleañeros del día<span>| hoy </span></h5>
           <?php
-require_once 'cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
+require_once 'config/cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
 
 // Establece la zona horaria y obtiene la fecha actual
 date_default_timezone_set('America/Caracas');
@@ -215,12 +215,13 @@ mysqli_close($conn);
 </section>
 
 </main><!-- End #main -->
-  
-  <!-- Vendor JS Files -->
-  <?php include "content/inc/script.php";?> 
-<?php include "modal/modal_ini.php";
-include "content/inc/footer.php";
-?> 
+    <!-- ======= Footer ======= -->
+    <?php
+       
+        include "content/inc/footer.php";
+        include "content/inc/script.php";
+    ?>
+
 
 </body>
 

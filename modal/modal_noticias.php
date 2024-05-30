@@ -16,7 +16,7 @@
    <?php  foreach($resultado as $row) { ?>
 
             <div class="contenedor">
-                    <div class="div1"><img style="width:85%;" src="imagenes/<?php echo $row['imagen']; ?>"   alt="..." ></div>
+                    <div class="div1"><img style="width:85%;" src="assets/img/<?php echo $row['imagen']; ?>"   alt="..." ></div>
                      <div class="div2"><h5 class="contenido"><?php  echo $row['comentario'] ?></h5></div>
               </div>
               

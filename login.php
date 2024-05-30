@@ -1,5 +1,6 @@
 <?php
-require "cone.php"; // Assuming this file contains your database connection
+
+ include ("config/cone.php"); // Assuming this file contains your database connection
 
 session_start();
 
@@ -8,9 +9,8 @@ if ($_POST) {
   $USER = $_POST['USER'];
   $password = $_POST['PASSWORD'];
 
-  $sql = "SELECT IDDATOS, PASSWORD, USER ,IDROLS  FROM user_datos WHERE USER='$USER' ";
+  $sql = "SELECT IDDATOS, PASSWORD, USER, EMAIL, IDROLS, telefono, ASSIGNED_AREA, NAME, SURNAME, CEDULA FROM user_datos WHERE USER='$USER' ";
   $resultado = mysqli_query($conn, $sql);
-
   $num = $resultado->num_rows;
 
    //Check password length (optional)
@@ -24,27 +24,31 @@ if ($_POST) {
     $pass_c = sha1($password); // Hashing the entered password
 
     if ($password_bd == $pass_c) {
-      // Login successful - Store user data in session
-      $_SESSION['IDDATOS'] = $row['IDDATOS'];
-      $_SESSION['USER'] = $row['USER'];
-      $_SESSION['IDROLS'] = $row['IDROLS'];
-      $_SESSION['PASSWORD'] = $row['PASSWORD']; // Not recommended to store hashed password in session
-    
-     
+       // Login successful - Store user data in session
+       $_SESSION['IDDATOS'] = $row['IDDATOS'];
+       $_SESSION['USER'] = $row['USER'];
+       $_SESSION['IDROLS'] = $row['IDROLS'];
+       $_SESSION['NAME'] = $row['NAME'];
+       $_SESSION['SURNAME'] = $row['SURNAME'];
+       $_SESSION['CEDULA'] = $row['CEDULA'];
+       $_SESSION['PASSWORD'] = $row['PASSWORD']; // Not recommended to store hashed password in session
+       $_SESSION['telefono'] = $row['telefono'];
+       $_SESSION['EMAIL'] = $row['EMAIL'];
+       $_SESSION['ASSIGNED_AREA'] = $row['ASSIGNED_AREA'];
 
       // Redirect based on user role
       switch ($_SESSION['IDROLS']) {
         case 1:
-          header("Location: admin/index.php");
+          header("Location: inde.php");
           break;
         case 2:
           header("Location: index.php");
           break;
         case 3:
-          header("Location: soporte/index.php");
+          header("Location: ind.php");
           break;
         case 4:
-          header("Location: ghumano/index.php");
+          header("Location: in.php");
           break;
         default:
           echo "<script>

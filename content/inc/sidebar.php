@@ -39,12 +39,6 @@
         </a>
       </li>
     
-
-      <li >
-      <a href="#openModal">Iniciar Sesion</a>
-         
-       
-      </li>
      
     </ul>
   </li><!-- End Components Nav -->
@@ -154,13 +148,41 @@
     </ul>
    
   </li><!-- End Charts Nav -->
-  <li class="nav-item"  <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
+  <li class="nav-heading"></li>
+
+<li class="nav-item" <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
+  <a class="nav-link collapsed" href="perfil.php">
+    <i class="bi bi-person"></i>
+    <span>Perfil</span>
+  </a>
+</li><!-- End Profile Page Nav -->
+
+<!-- <li class="nav-item" <?php //if ($mostrar_li == 1) echo 'style="display: none;"'; ?>>
+  <a class="nav-link collapsed" href="caso_soporte.php">
+    <i class="bi bi-question-circle"></i>
+    <span>Casos de Soporte</span>
+  </a>
+</li>
+
+<li class="nav-item" <?php //if ($mostrar_li == 1) echo 'style="display: none;"'; ?>>
+  <a class="nav-link collapsed" href="usuarios.php">
+    <i class="bi bi-envelope"></i>
+    <span>Gestion de usuarios</span>
+  </a>
+</li>
+
+<li class="nav-item" <?php //if ($mostrar_li == 1) echo 'style="display: none;"'; ?>>
+  <a class="nav-link collapsed" href="cargar_noticia.php">
+    <i class="bi bi-envelope"></i>
+    <span>Cargar Noticia</span>
+  </a>
+</li> -->
+<li class="nav-item"  <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
     <a class="nav-link collapsed" href="logout.php">
       <i class="bi bi-box-arrow-in-right"></i>
       <span>Cerrar</span>
     </a>
   </li><!-- End Login Page Nav -->
-
 </aside><!-- End Sidebar-->
 
 
