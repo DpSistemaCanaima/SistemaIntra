@@ -39,13 +39,8 @@
                   <p class="text-muted text-center">&copy; Industria Canaima 2024</p>
                 </div>
               </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img" style="
-                background: url(../indus2.jpg) rgba(0, 0, 0, .3);
-                background-position: center;
-                background-size: cover;
-                background-blend-mode: overlay;
-              ">
-                
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img ">
+                <img src="../indus2.jpg" alt="">
               </div>
             </div>
           </div>
