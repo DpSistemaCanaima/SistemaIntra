@@ -21,7 +21,14 @@
       </li>
       
       <li <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
-        <a href="recibo.php">
+      <?php
+      $ID = $_SESSION['IDDATOS'];
+      $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+         $resulta = mysqli_query($conn,$sql1);
+      
+         $mostre = mysqli_fetch_assoc($resulta) 
+         ?>
+        <a href="Constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
           <i class="bi bi-circle"></i><span>Contancia de Trabajo</span>
         </a>
       </li>
@@ -56,16 +63,7 @@
           <i class="bi bi-circle"></i><span>Planilla de Permisos</span>
         </a>
       </li>
-      <!-- <li>
-        <a href="forms-editors.html">
-          <i class="bi bi-circle"></i><span>Form Editors</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-validation.html">
-          <i class="bi bi-circle"></i><span>Form Validation</span>
-        </a>
-      </li> -->
+      
     </ul>
   </li><!-- End Forms Nav -->
 
