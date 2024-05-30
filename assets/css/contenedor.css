@@ -9,19 +9,23 @@
 .conte .im{
     max-height: 500px;
     height: 144px;
-    max-width: 100%;
+    width: 100%;
     width: 157px;
    
 }
 
 .im{
     float: left;
-    max-height: 500px;
-    height: 144px;
-    max-width: 100%;
-    width: 157px;
-    margin: 0px -12px 0px 64px;
-  
+    margin: 8px 2px 15px 73px;
+    height: 200px;
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.im:hover{
+    transform: scale(1.1);
+   
 }
 
 .inst{

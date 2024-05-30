@@ -80,7 +80,7 @@ $resultado = mysqli_query($conn,$query);
 <!-- Sales Card -->
 
 <div class="conte">
-<h3 class="text-center">Tren Directivo</h3>
+<h3 class="text-center fst-normal fs-3">Tren Directivo</h3>
    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <!-- <div class="carousel-indicators">
       <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -89,6 +89,7 @@ $resultado = mysqli_query($conn,$query);
     </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
+        
         <img src="1.jpg"  class="im" alt="...">
         
         <img src="img1.jpg" class="im" alt="...">

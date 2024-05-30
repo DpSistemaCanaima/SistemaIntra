@@ -148,7 +148,7 @@
       </li>
       <li>
         <a href=" https://minmujer.gob.ve/">
-          <i class="bi bi-circle"></i><span>Mimujer</span>
+          <i class="bi bi-circle"></i><span>Minmujer</span>
         </a>
       </li>
     </ul>
