@@ -39,7 +39,7 @@ if ($_POST) {
       // Redirect based on user role
       switch ($_SESSION['IDROLS']) {
         case 1:
-          header("Location: inde.php");
+          header("Location: admin/index.php");
           break;
         case 2:
           header("Location: index.php");
