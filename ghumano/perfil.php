@@ -76,7 +76,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
 <div class="search-bar">
   <form class="search-form d-flex align-items-center" method="POST" action="#">
-    <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+    <input type="text" name="query" placeholder="Buscar" title="Enter search keyword">
     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
   </form>
 </div><!-- End Search Bar -->
@@ -219,11 +219,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
     <div class="pagetitle">
       <h1>Perfil</h1>
       <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
-        </ol>
+       
       </nav>
     </div><!-- End Page Title -->
 

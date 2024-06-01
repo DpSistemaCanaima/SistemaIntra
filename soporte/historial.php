@@ -76,7 +76,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" name="query" placeholder="Buscar" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -104,7 +104,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
-            <img src="<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
+            <img src="../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $primeraN .".   ". $primeraA  ?></span>
           </a><!-- End Profile Iamge Icon -->
 
