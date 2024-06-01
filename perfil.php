@@ -25,6 +25,7 @@ if (isset($_SESSION['IDROLS'])) {
         include "content/inc/sidebar.php";
     ?>
 
+
 <main id="main" class="main">
 
 <div class="pagetitle">
@@ -50,17 +51,17 @@ if (isset($_SESSION['IDROLS'])) {
           
                              }else{
                                  ?>
-                                 
+                                 <script type="text/javascript">
+                                     window.location = "./";
+                                 </script>
                                  <?php 
                              }
-                             $CEDULA = $_SESSION['CEDULA'];
-                             $NAME = $_SESSION['NAME'];
-                            
+                          
                              $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
                              $valores = mysqli_fetch_array($consulta);
                              $foto = $valores['foto'];
                               ?>
-    <img src="assets/image/<?php echo $foto; ?>"  class="rounded-circle">
+    <img src="assets/images/<?php echo $foto; ?>"  class="rounded-circle">
           <h2><?php echo  $NAME ?></h2>
           <h3><?php echo  $area ?></h3>
           <div class="social-links mt-2">
@@ -110,20 +111,23 @@ if (isset($_SESSION['IDROLS'])) {
                 <div class="col-lg-3 col-md-4 label">Compañía</div>
                 <div class="col-lg-9 col-md-8">Industria Canaima</div>
               </div>
+
               <div class="row">
                 <div class="col-lg-3 col-md-4 label">Nombre completo</div>
                 <div class="col-lg-9 col-md-8"><?php echo $mos['NAME'] ." ". $mos['SURNAME']  ?></div>
               </div>
 
-             
+            
 
               <div class="row">
                 <div class="col-lg-3 col-md-4 label">cargo</div>
                 <div class="col-lg-9 col-md-8"><?php echo $mos['ASSIGNED_AREA'] ?></div>
               </div>
 
+             
+
               <div class="row">
-                <div class="col-lg-3 col-md-4 label">Adscripción</div>
+                <div class="col-lg-3 col-md-4 label">Direccion</div>
                 <div class="col-lg-9 col-md-8"><?php echo $mos['DIRECCION'] ?></div>
               </div>
 
@@ -142,27 +146,26 @@ if (isset($_SESSION['IDROLS'])) {
             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
               <!-- Profile Edit Form -->
-        <form action="foto.php" method="post"  enctype="multipart/form-data">
+              <form action="foto.php" method="post"  enctype="multipart/form-data">
                 <div class="row mb-3">
                   <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto de perfil</label>
                   <div class="col-md-8 col-lg-9">
-                 
-                  <?php
+                    <?php
 
-                        if (isset($_SESSION['IDDATOS'])) {
-
-                           }else{
-                    ?>
-                    <script type="text/javascript">
-                  window.location = "./";
-                        </script>
-                      <?php 
-                         }
-
-                $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
-                    $valores = mysqli_fetch_array($consulta);
-                $foto = $valores['foto'];
-                     ?>
+                  if (isset($_SESSION['IDDATOS'])) {
+          
+        }else{
+            ?>
+            <script type="text/javascript">
+                window.location = "./";
+            </script>
+            <?php 
+        }
+     
+        $consulta = mysqli_query($conn, "SELECT CEDULA , foto FROM user_datos WHERE CEDULA = '$CEDULA';");
+        $valores = mysqli_fetch_array($consulta);
+        $foto = $valores['foto'];
+         ?>
                     <img src="assets/images/<?php echo $foto; ?>"  >
                    
                     <div class="pt-2">
@@ -207,7 +210,7 @@ if (isset($_SESSION['IDROLS'])) {
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
-        </form><!-- End Profile Edit Form -->
+              </form><!-- End Profile Edit Form -->
 
             </div>
 
@@ -216,16 +219,16 @@ if (isset($_SESSION['IDROLS'])) {
             
               
 
-        </div>
+            </div>
             <?php  } ?>
             <div class="tab-pane fade pt-3" id="profile-change-password">
               <!-- Change Password Form -->
               <form action="password.php" method="POST">
 
                 <div class="row mb-3">
-                  <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Contraseña actual</label>
+                  <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Cedula</label>
                   <div class="col-md-8 col-lg-9">
-                    <input name="actual_pass" type="password" class="form-control" >
+                    <input name="CEDULA" type="text" class="form-control" >
                   </div>
                 </div>
 
@@ -239,7 +242,7 @@ if (isset($_SESSION['IDROLS'])) {
                 
 
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Change Password</button>
+                  <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
                 </div>
               </form><!-- End Change Password Form -->
 
@@ -253,8 +256,13 @@ if (isset($_SESSION['IDROLS'])) {
     </div>
   </div>
 </section>
-
+<br>
+<br>
+<br>
+<br>
 </main><!-- End #main -->
+
+
 <?php
        
        include "content/inc/footer.php";

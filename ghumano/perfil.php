@@ -105,7 +105,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                                  $valores = mysqli_fetch_array($consulta);
                                  $foto = $valores['foto'];
                                   ?>
-        <img src="<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
+        <img src="../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $primeraN .".   ". $primeraA  ?></span>
       </a><!-- End Profile Iamge Icon -->
 
@@ -249,7 +249,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                                  $valores = mysqli_fetch_array($consulta);
                                  $foto = $valores['foto'];
                                   ?>
-        <img src="<?php echo $foto; ?>"  class="rounded-circle">
+        <img src="../assets/images/<?php echo $foto; ?>"  class="rounded-circle">
               <h2><?php echo  $NAME ?></h2>
               <h3><?php echo  $area ?></h3>
               <div class="social-links mt-2">
@@ -295,29 +295,24 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                 
 
                   <h5 class="card-title">Detalles del perfil</h5>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Nombre completo</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $mos['NAME'] ." ". $mos['SURNAME']  ?></div>
-                  </div>
-
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Compañía</div>
                     <div class="col-lg-9 col-md-8">Industria Canaima</div>
                   </div>
 
                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Nombre completo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $mos['NAME'] ." ". $mos['SURNAME']  ?></div>
+                  </div>
+
+                  
+                  <div class="row">
                     <div class="col-lg-3 col-md-4 label">cargo</div>
                     <div class="col-lg-9 col-md-8"><?php echo $mos['ASSIGNED_AREA'] ?></div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">País</div>
-                    <div class="col-lg-9 col-md-8">Venezuela</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Direccion</div>
+                    <div class="col-lg-3 col-md-4 label">abscripcion</div>
                     <div class="col-lg-9 col-md-8"><?php echo $mos['DIRECCION'] ?></div>
                   </div>
 
@@ -356,7 +351,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
             $valores = mysqli_fetch_array($consulta);
             $foto = $valores['foto'];
              ?>
-                        <img src="<?php echo $foto; ?>"  >
+                        <img src="../assets/images/<?php echo $foto; ?>"  >
                        
                         <div class="pt-2">
                         <input type="file" name="nfoto" class="btn btn-primary btn-sm" style="height:30px; ">

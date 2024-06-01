@@ -3,7 +3,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center"  >
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="index.php" class="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">Industria Canaima</span>
         </a>
@@ -26,7 +26,7 @@
                                      <?php 
                                  }
 
-                                 $USER = $_SESSION['USER'];
+                               $USER = $_SESSION['USER'];
                                $NAME = $_SESSION['NAME'];
                                
                               
@@ -39,7 +39,7 @@
                                  $valores = mysqli_fetch_array($consulta);
                                  $foto = $valores['foto'];
                                   ?>
-        <img src="../../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
+        <img src="assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $NAME ?></span>
       </a><!-- End Profile Iamge Icon -->
 
@@ -77,7 +77,7 @@
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="../logout.php">
+          <a class="dropdown-item d-flex align-items-center" href="logout.php">
             <i class="bi bi-box-arrow-right"></i>
             <span>Cerrar</span>
           </a>

@@ -107,7 +107,7 @@ $area  = $_SESSION['ASSIGNED_AREA'];
                                      $valores = mysqli_fetch_array($consulta);
                                      $foto = $valores['foto'];
                                       ?>
-            <img src="<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
+            <img src="../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $primeraN .".   ". $primeraA  ?></span>
           </a><!-- End Profile Iamge Icon -->
 
