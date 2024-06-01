@@ -9,7 +9,7 @@
     </a>
   </li><!-- End Dashboard Nav -->
 
-  <li class="nav-item">
+  <li class="nav-item"  <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-menu-button-wide"></i><span>Solicitud</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>

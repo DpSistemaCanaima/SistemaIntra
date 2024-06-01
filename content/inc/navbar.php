@@ -39,7 +39,7 @@
                                  $valores = mysqli_fetch_array($consulta);
                                  $foto = $valores['foto'];
                                   ?>
-        <img src="assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
+        <img src="../../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2">luis navarro</span>
       </a><!-- End Profile Iamge Icon -->
 
@@ -47,7 +47,7 @@
         <li class="dropdown-header">
         
           <h6><?php echo  $NAME ?></h6>
-          <span><?php echo  $area ?></span>
+          
         </li>
         <li>
           <hr class="dropdown-divider">

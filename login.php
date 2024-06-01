@@ -45,10 +45,10 @@ if ($_POST) {
           header("Location: index.php");
           break;
         case 3:
-          header("Location: ind.php");
+          header("Location: soporte/index.php");
           break;
         case 4:
-          header("Location: in.php");
+          header("Location: ghumano/index.php");
           break;
         default:
           echo "<script>
