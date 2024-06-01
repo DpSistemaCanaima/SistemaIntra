@@ -47,7 +47,7 @@
       <i class="bi bi-journal-text"></i><span>Descargas</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-      <li>
+    <li>
         <a  href="./pdf/vacaciones.xls" >
           <i class="bi bi-circle"></i><span>Planilla de Vacaciones</span>
         </a>
