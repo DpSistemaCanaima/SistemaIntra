@@ -1,6 +1,6 @@
 <?php
 
-  include('../cone.php');
+include('../config/cone.php');
 
 
     $NAME = $_POST['NAME'];

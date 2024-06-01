@@ -1,6 +1,6 @@
 <?php
 
-include('../cone.php');
+include('../config/cone.php');
 
 $ID_REPORT= $_POST['ID_REPORT'];
 $STATUS = $_POST['STATUS'];

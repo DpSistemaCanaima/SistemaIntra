@@ -1,6 +1,6 @@
 <?php 
  
- include('../config/cone.php');
+ include('../cone.php');
  if (!isset($_SESSION['IDDATOS'])) {
    header("Location: index.php");
 }

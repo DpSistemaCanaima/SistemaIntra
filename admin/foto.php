@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include '../cone.php';
+include('../config/cone.php');
 
 $foto = $_FILES['nfoto'];
 $cedula = $_SESSION['CEDULA'];

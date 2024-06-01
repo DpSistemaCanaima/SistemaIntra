@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include '../cone.php';
+include('../config/cone.php');
 
 $ID= $_SESSION['IDDATOS'];
 $cedula= $_SESSION['CEDULA'];

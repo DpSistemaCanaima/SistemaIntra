@@ -1,6 +1,5 @@
 <?php
-require "../cone.php";
-
+include('../config/cone.php');
 
 	$CEDULA = $_GET['CEDULA'];
 

@@ -1,6 +1,6 @@
 <?php
 
-require "config/conexionProvi.php";
+require "../config/conexionProvi.php";
 require ('fpdf/fpdf.php');
 
 

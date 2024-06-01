@@ -1,7 +1,7 @@
 <?php
 
  
-include('../cone.php');
+include('../config/cone.php');
 
 session_start();
 if (!isset($_SESSION['IDDATOS'])) {
