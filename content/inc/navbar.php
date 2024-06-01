@@ -40,7 +40,7 @@
                                  $foto = $valores['foto'];
                                   ?>
         <img src="../../assets/images/<?php echo $foto; ?>" alt="" width="35" height="35" class="rounded-circle">
-        <span class="d-none d-md-block dropdown-toggle ps-2">luis navarro</span>
+        <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $NAME ?></span>
       </a><!-- End Profile Iamge Icon -->
 
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
