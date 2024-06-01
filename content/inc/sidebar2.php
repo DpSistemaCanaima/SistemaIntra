@@ -149,7 +149,7 @@
       </li>
       <li>
     <a href="https://mincyt.gob.ve/">
-      <i class="bi bi-circle"></i><span>MIncyt</span>
+      <i class="bi bi-circle"></i><span>Mincyt</span>
     </a>
   </li>
   <li>
