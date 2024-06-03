@@ -127,7 +127,7 @@ if (isset($_SESSION['IDROLS'])) {
 
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Abcripcion</div>
+                    <div class="col-lg-3 col-md-4 label">Adscripción</div>
                     <div class="col-lg-9 col-md-8"><?php echo $mos['DIRECCION'] ?></div>
                   </div>
 
