@@ -30,7 +30,7 @@ include "../content/inc/header.php";
 
 ?>
 
-  <main id="main" class="main">
+<main id="main" class="main">
 
     <div class="pagetitle">
       <h1>Perfil</h1>
@@ -65,7 +65,7 @@ include "../content/inc/header.php";
                                  $valores = mysqli_fetch_array($consulta);
                                  $foto = $valores['foto'];
                                   ?>
-        <img src="<?php echo $foto; ?>"  class="rounded-circle">
+        <img src="../assets/images/<?php echo $foto; ?>"  class="rounded-circle">
               <h2><?php echo  $NAME ?></h2>
               <h3><?php echo  $area ?></h3>
               <div class="social-links mt-2">
@@ -172,13 +172,13 @@ include "../content/inc/header.php";
             $valores = mysqli_fetch_array($consulta);
             $foto = $valores['foto'];
              ?>
-                        <img src="<?php echo $foto; ?>"  >
+                        <img src="../assets/images/<?php echo $foto; ?>"  >
                        
                         <div class="pt-2">
                         <input type="file" name="nfoto" class="btn btn-primary btn-sm" style="height:30px; ">
-                        
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                      
+                        <!-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> -->
+                          <!-- <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                       -->
                         </div>
                       </div>
                                 </div>
@@ -234,14 +234,14 @@ include "../content/inc/header.php";
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Cedula</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="CEDULA" type="text" class="form-control" >
+                        <input name="cedula" type="text" class="form-control" >
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nueva contraseña</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="PASSWORD" type="password" class="form-control" >
+                        <input name="password" type="password" class="form-control" >
                       </div>
                     </div>
 

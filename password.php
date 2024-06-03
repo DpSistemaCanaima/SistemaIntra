@@ -2,7 +2,7 @@
 
 session_start();
 
-include('../config/cone.php'); // Assuming 'cone.php' contains the database connection
+include('config/cone.php'); // Assuming 'cone.php' contains the database connection
 
 $password = $_POST['password'];
 $passwordEncriptada = SHA1($password); // Corrected variable name
@@ -127,6 +127,34 @@ if ($result) { // Check if query execution was successful
 mysqli_close($conn); // Close the database connection (assuming it's not done in 'cone.php')
 
 
+// session_start();
+
+// include('config/cone.php');
+
+
+// $password = $_POST['password'];
+// $passwordencriptada= SHA1($password);
+
+// $sql = "SELECT CEDULA FROM user_datos";
+// $result = mysqli_query($conn,$sql);
+// $verificar = mysqli_fetch_array($result);{
+
+// $cedu = $verificar['CEDULA'];
+// $cedula = $_POST['cedula'];
+// if ($cedula == $cedu) {
+// 	$actualizar="UPDATE `user_datos` SET `PASSWORD` = '$passwordencriptada' WHERE `CEDULA` = $cedula";
+//   echo $actualizar;
+// 	$resul=mysqli_query($conn,$actualizar);
+
+// 	if ($resul) {
+// 		echo "se  actualizar";
+// 	}else{
+// 		echo "Error al actualizar";
+// 	}
+// }else{
+// 	echo "error";
+// }
+// }
 
 
 
