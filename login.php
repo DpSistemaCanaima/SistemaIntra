@@ -22,6 +22,11 @@ if ($_POST) {
     $row = $resultado->fetch_assoc();
     $password_bd = $row['PASSWORD'];
     $pass_c = sha1($password); // Hashing the entered password
+    // $usuario= $row['USER'];
+    // $user_bd = sha1($usuario);
+    // if ($user_bd == $pass_c) {
+    //   header("Location: recovery.php");
+    // } else{
 
     if ($password_bd == $pass_c) {
        // Login successful - Store user data in session
@@ -79,6 +84,7 @@ if ($_POST) {
               });
             </script>";
     }
+ // }
   } else {
     // User not found
     echo "<script>
@@ -94,6 +100,8 @@ if ($_POST) {
             });
           </script>";
   }
+
 }
+
 
 ?>
