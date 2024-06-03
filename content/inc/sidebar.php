@@ -28,7 +28,7 @@
       
          $mostre = mysqli_fetch_assoc($resulta) 
          ?>
-        <a href="Constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
+        <a href="constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
           <i class="bi bi-circle"></i><span>Contancia de Trabajo</span>
         </a>
       </li>
