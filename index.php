@@ -16,6 +16,8 @@ if (isset($_SESSION['IDROLS'])) {
   
     include "content/inc/header.php";
     include "modal/modal_ini.php";
+    date_default_timezone_set('America/Caracas');
+$fechaActual = date('Y-m-d');
 ?>
 
 <body>
@@ -158,13 +160,12 @@ $resultado = mysqli_query($conn,$query);
         </div>
 
         <div class="card-body">
-          <h5 class="card-title">cumpleañeros del día<span>| hoy </span></h5>
+          <h5 class="card-title">cumpleañeros del día<span>| <?php echo $fechaActual; ?></span></h5>
           <?php
 require_once 'config/cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
 
 // Establece la zona horaria y obtiene la fecha actual
-date_default_timezone_set('America/Caracas');
-$fechaActual = date('Y-m-d');
+
 
 // Prepara la consulta SQL con parámetros para evitar inyecciones SQL
 $sql = "SELECT SURNAME, FECHA, foto, no_hay, NAME FROM user_datos WHERE FECHA = '$fechaActual'";

@@ -27,10 +27,18 @@
          $mostre = mysqli_fetch_assoc($resulta) 
          ?>
       <li>
-   <a  href="../../admin/constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>"></a> 
+      <?php
+      $ID = $_SESSION['IDDATOS'];
+      $sql1 = "SELECT IDDATOS FROM user_datos WHERE IDDATOS = '$ID' ";
+         $resulta = mysqli_query($conn,$sql1);
+      
+         $mostre = mysqli_fetch_assoc($resulta) 
+         ?>
+        <a href="../constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
           <i class="bi bi-circle"></i><span>Contancia de Trabajo</span>
         </a>
       </li>
+     
       <li>
         <a href="recibo.php">
           <i class="bi bi-circle"></i><span>Recibo de Pago</span>
