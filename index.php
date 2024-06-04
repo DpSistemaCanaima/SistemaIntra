@@ -25,7 +25,7 @@ if (isset($_SESSION['IDROLS'])) {
         
         include "content/inc/sidebar.php";
     ?>
-   <main id="main" class="main">
+<main id="main" class="main">
 
 <div class="pagetitle">
   <h1>Noticias</h1>
@@ -95,6 +95,10 @@ $resultado = mysqli_query($conn,$query);
         <img src="assets/img/img1.jpg" class="im" alt="...">
         
         <img src="assets/img/img2.jpg" class="im" alt="...">
+
+
+
+
         
       </div>
    
@@ -105,6 +109,8 @@ $resultado = mysqli_query($conn,$query);
            
         <img src="assets/img/img1.jpg" class="im" alt="...">
       
+      
+
       </div>
       <div class="carousel-item">
         <img src="assets/img/5.jpg" class="im" alt="...">
@@ -112,6 +118,7 @@ $resultado = mysqli_query($conn,$query);
            
            <img src="assets/img/img1.jpg" class="im" alt="...">
            
+        
           
       </div>
     </div>
