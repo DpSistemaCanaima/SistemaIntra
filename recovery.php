@@ -3,8 +3,6 @@ include "config/cone.php";
 
 session_start();
 
-
-
 if (isset($_SESSION['IDROLS'])) {
   // El usuario ha iniciado sesión
   $mostrar_li = true;
@@ -15,7 +13,7 @@ if (isset($_SESSION['IDROLS'])) {
 }
   
     include "content/inc/header.php";
-    include "modal/modal_ini.php";
+    
 ?>
 
 <body>
@@ -28,7 +26,7 @@ if (isset($_SESSION['IDROLS'])) {
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Noticias</h1>
+  
 
 </div><!-- End Page Title -->
 
@@ -38,11 +36,27 @@ if (isset($_SESSION['IDROLS'])) {
     <!-- Left side columns -->
     <div class="col-lg-8">
       <div class="row">
-<!-----------------------------SESION DE NOTICIAS   ------------------------------------------------------------->
-      
+<!-----------------------------SESION DE FORMULARIO  ------------------------------------------------------------->
+
+
+    <div class="conta">
+        <h1>Cambio de contraseña</h1>
+        <form action="cambio.php" method="post">
+        <label for="usuario">cedula:</label>
+           <input type="text" name="cedula" placeholder="Ingrese su cedula"  maxlength="8" required>
+            <label for="usuario">Nuva Contraseña:</label>
+            <input type="password" name="pass" onkeyup="validarContrasena()"   placeholder="Ingrese su nombre de usuario" maxlength="15" required>
+             <span id="error-contrasena"></span>
+            <label for="contrasena"></label>
+            
+            <button type="submit">Guardar</button>
+        </form>
+        
+    </div>
+
 
       
-<!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
+<!-----------------------------FIN DE FORMULARIO   ------------------------------------------------------------->
         <!-- Revenue Card -->
      
 
