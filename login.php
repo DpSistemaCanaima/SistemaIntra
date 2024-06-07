@@ -22,11 +22,11 @@ if ($_POST) {
     $row = $resultado->fetch_assoc();
     $password_bd = $row['PASSWORD'];
     $pass_c = sha1($password); // Hashing the entered password
-    // $usuario= $row['USER'];
-    // $user_bd = sha1($usuario);
-    // if ($user_bd == $pass_c) {
-    //   header("Location: recovery.php");
-    // } else{
+     $usuario= $row['USER'];
+     $user_bd = sha1($usuario);
+     if ($user_bd == $pass_c) {
+       header("Location: recovery.php");
+     } else{
 
     if ($password_bd == $pass_c) {
        // Login successful - Store user data in session
@@ -56,49 +56,68 @@ if ($_POST) {
           header("Location: ghumano/index.php");
           break;
         default:
-          echo "<script>
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Rol no existente',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
-                  }).then(() => {
-                    location.assign('index.php');
-                  });
-                </script>";
+        echo "
+				<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+				<script language='JavaScript'>
+				document.addEventListener('DOMContentLoaded', function() {
+				  Swal.fire({
+					icon: 'error',
+					title: 'Rol no existe',
+					showCancelButton: false,
+					confirmButtonColor: '#3085d6',
+					confirmButtonText: 'OK',
+					timer: 35000
+					}).then(() => {
+			 
+						location.assign('index.php');
+			 
+				   });
+			  });
+				</script>";
           break;
       }
     } else {
       // Incorrect password
-      echo "<script>
-              Swal.fire({
-                icon: 'error',
-                title: 'La contraseña no coincide',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
-                location.assign('index.php');
-              });
-            </script>";
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script language='JavaScript'>
+      document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+        icon: 'error',
+        title: 'La contraseña no coincide',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK',
+        timer: 35000
+        }).then(() => {
+     
+          location.assign('index.php');
+     
+         });
+      });
+      </script>";
     }
- // }
+   }
   } else {
     // User not found
-    echo "<script>
-            Swal.fire({
-              icon: 'error',
-              title: 'El usuario no coincide',
-              showCancelButton: false,
-              confirmButtonColor: '#3085d6',
-              confirmButtonText: 'OK',
-              timer: 1500
-            }).then(() => {
-              location.assign('index.php');
-            });
-          </script>";
+    echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script language='JavaScript'>
+    document.addEventListener('DOMContentLoaded', function() {
+      Swal.fire({
+      icon: 'error',
+      title: 'El usuario no existe',
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'OK',
+      timer: 35000
+      }).then(() => {
+   
+        location.assign('index.php');
+   
+       });
+    });
+    </script>";
   }
 
 }

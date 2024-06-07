@@ -20,7 +20,7 @@ if ($result) { // Check if query execution was successful
         if ($cedula = $cedu) {
 			$ID = $_SESSION['IDDATOS']; 
             $actualizar = "UPDATE `user_datos` SET `PASSWORD` = '$passwordEncriptada' WHERE `IDDATOS` = $ID";
-            echo $actualizar; // Optional: For debugging purposes
+           // echo $actualizar; // Optional: For debugging purposes
 
             $resul = mysqli_query($conn, $actualizar);
 

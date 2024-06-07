@@ -32,7 +32,6 @@
 
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button class="btn btn-outline-primary btn-custom fa-lg mb-3"  type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
-                      <a style="text-decoration: none;" href="reset.php">Restablecer Contraseña</a>
                     </div>
                   </form>
                   <p class="text-muted text-center">&copy; Industria Canaima 2024</p>

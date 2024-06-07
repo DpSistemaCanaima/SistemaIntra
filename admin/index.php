@@ -16,7 +16,10 @@ $primeraA = substr($APE, 0, 8);
 $ROL = $_SESSION['IDROLS'];
 $CEDULA = $_SESSION['CEDULA'];
 $area  = $_SESSION['ASSIGNED_AREA'];
- 
+$pass = $_SESSION['PASSWORD'];
+
+
+
 include "../content/inc/header.php";
 
 ?>

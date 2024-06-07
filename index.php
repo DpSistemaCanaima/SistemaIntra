@@ -30,7 +30,6 @@ $fechaActual = date('Y-m-d');
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Noticias</h1>
 
 </div><!-- End Page Title -->
 
@@ -160,14 +159,14 @@ $resultado = mysqli_query($conn,$query);
         </div>
 
         <div class="card-body">
-          <h5 class="card-title">cumpleañeros del día<span>| <?php echo $fechaActual; ?></span></h5>
+          <h6 class="card-title">cumpleañeros del día<span>| hoy </span></h6>
           <?php
 require_once 'config/cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
 
 // Establece la zona horaria y obtiene la fecha actual
 
 
-// Prepara la consulta SQL con parámetros para evitar inyecciones SQL
+// Prepara la consulta SQL con parámetros pabra evitar inyecciones SQL
 $sql = "SELECT SURNAME, FECHA, foto, no_hay, NAME FROM user_datos WHERE FECHA = '$fechaActual'";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
@@ -184,13 +183,13 @@ while ($fila = mysqli_fetch_assoc($result)) {
 
     // Compara la fecha actual con la fecha de nacimiento
     if ($fechaActual == $fechaNacimiento) {
-        echo "$nombre $apellido"; // Concatena los nombres con un espacio
+      echo "<img src='assets/img/feliz.png' alt='Descripción de la imagen' style='height:150px; width:300px;'><span style='color: black; size:8em; text-align: center;'>$nombre  $apellido</span> "; // Concatena los nombres con un espacio
     } else {
-        echo $noHay;
+        echo "$noHay";
     }
 }
 } else {
-echo "No hay resultados";
+echo "<img src='assets/img/no.png'  style='height:150px; width:300px;'>No hay cumpleañeros hoy";
 }
 
 // Cierra la conexión a la base de datos
