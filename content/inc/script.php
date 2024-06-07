@@ -11,17 +11,3 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!---<script>
-    function validarContrasena() {
-      const contrasena = document.getElementById('contrasena').value;
-      const errorContraseña = document.getElementById('error-contrasena');
-
-      const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%^&*()_+=-])[A-Za-z0-9!@#\$%^&*()_+=-]{8,}$/;
-
-      if (regex.test(contrasena)) {
-        errorContraseña.textContent = '';
-      } else {
-        errorContraseña.textContent = 'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial.';
-      }
-    }
-  </script>--->

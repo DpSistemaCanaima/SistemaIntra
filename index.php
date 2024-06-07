@@ -183,13 +183,13 @@ while ($fila = mysqli_fetch_assoc($result)) {
 
     // Compara la fecha actual con la fecha de nacimiento
     if ($fechaActual == $fechaNacimiento) {
-        echo "$nombre $apellido"; // Concatena los nombres con un espacio
+      echo "<img src='assets/img/feliz.png' alt='Descripción de la imagen' style='height:150px; width:300px;'><span style='color: black; size:8em; text-align: center;'>$nombre  $apellido</span> "; // Concatena los nombres con un espacio
     } else {
-        echo $noHay;
+        echo "$noHay";
     }
 }
 } else {
-echo "No hay resultados";
+echo "<img src='assets/img/no.png'  style='height:150px; width:300px;'>No hay cumpleañeros hoy";
 }
 
 // Cierra la conexión a la base de datos

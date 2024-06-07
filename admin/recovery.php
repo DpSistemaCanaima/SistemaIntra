@@ -45,14 +45,14 @@ if (isset($_SESSION['IDROLS'])) {
         <label for="usuario">cedula:</label>
            <input type="text" name="cedula" placeholder="Ingrese su cedula"  maxlength="8" required>
             <label for="usuario">Nuva Contraseña:</label>
-            <input type="password" name="pass" pattern="[a-zA-Z\s]+" title="no cumple con el formato solicitado" placeholder="Ingrese su nombre de usuario" maxlength="15" required>
-
+            <input type="password" name="pass" onkeyup="validarContrasena()"   placeholder="Ingrese su nombre de usuario" maxlength="15" required>
+             <span id="error-contrasena"></span>
             <label for="contrasena"></label>
             
             <button type="submit">Guardar</button>
         </form>
         
-    </div>  
+    </div>
 
 
       
