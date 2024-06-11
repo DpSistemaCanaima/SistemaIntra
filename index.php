@@ -91,11 +91,11 @@ $resultado = mysqli_query($conn,$query);
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         
-        <img src="assets/img/1.jpg"  class="im" alt="...">
+        <img src="assets/img/beronica.jpeg"  class="im" alt="...">
         
-        <img src="assets/img/img1.jpg" class="im" alt="...">
+        <img src="assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
         
-        <img src="assets/img/img2.jpg" class="im" alt="...">
+        <img src="assets/img/CONSULTORA.jpeg" class="im" alt="...">
 
 
 
@@ -105,20 +105,21 @@ $resultado = mysqli_query($conn,$query);
    
       
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="assets/img/2.jpg" class="im" alt="...">
-        <img src="assets/img/1.jpg"  class="im" alt="...">
+        <img src="assets/img/raquel.jpeg" class="im" alt="...">
+        <img src="assets/img/adriana.png"  class="im" alt="...">
            
-        <img src="assets/img/img1.jpg" class="im" alt="...">
+        <img src="assets/img/beronica.jpeg"  class="im" alt="...">
       
       
 
       </div>
       <div class="carousel-item">
-        <img src="assets/img/5.jpg" class="im" alt="...">
-        <img src="assets/img/1.jpg"  class="im" alt="...">
-           
-           <img src="assets/img/img1.jpg" class="im" alt="...">
-           
+      <img src="assets/img/beronica.jpeg"  class="im" alt="...">
+        
+        <img src="assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
+        
+        <img src="assets/img/CONSULTORA.jpeg" class="im" alt="...">
+
         
           
       </div>
