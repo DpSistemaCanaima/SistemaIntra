@@ -75,7 +75,23 @@ $resultado = mysqli_query($conn,$query);
 <!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
         <!-- Revenue Card -->
      
-
+        <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
+     <div class="contenedor-imagenes">
+        
+         <div class="imagen">
+         <img  src="assets/img/" style="width: 18rem;" >
+         <a href="#openModa">
+         <div class="overlay">
+            <h2 >Linea De Tiempo</h2>
+          
+              
+            </div>
+            </a>
+         </div>
+         <?php  include "modal/modal_noticias.php"; ?>
+         <?php  include "modal/modal_tiempo.php"; ?>
+      </div>
+    </div>
            
 
 <!-- Sales Card -->
@@ -190,7 +206,7 @@ while ($fila = mysqli_fetch_assoc($result)) {
     }
 }
 } else {
-echo "<img src='assets/img/no.png'  style='height:150px; width:300px;'>No hay cumpleañeros hoy";
+echo "<img src='assets/img/no.png'  style='height:150px; width:300px;'>";
 }
 
 // Cierra la conexión a la base de datos

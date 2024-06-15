@@ -174,7 +174,109 @@ box-shadow:rgba(145,158,171,0.2) 0px 0px 2px 0px,rgb(0 0 0) 0px 12px 24px -4px;
 	transition: opacity 400ms ease-in;
 	pointer-events: none;
 }
+
 .modalDialo:target {
 	opacity:1;
 	pointer-events: auto;
 }
+
+
+.a{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+    height: 152px
+}
+.b{
+    background-color: rgb(9, 226, 27);
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+}
+.c{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.d{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.f{
+    background-color: red;
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+}
+.g{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.h{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.j{
+    background-color: red;
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+}
+.k{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.l{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.q{
+    background-color: red;
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+}
+.w{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.e{
+    background-color: red;
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+.r{
+    background-color: red;
+    float: right;
+    border: 1px solid white;
+    width: 50%;
+}
+.t{
+    background-color: rgb(105, 72, 223);
+    float: left;
+    border: 1px solid white;
+    width: 50%;
+}
+
+.es {
+    height: 850px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    border: 1px solid;
+  }
