@@ -10,8 +10,9 @@
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
    
-                <a <?php if ($mostrar_li) echo 'style="display: none; "'; ?> style="margin: 0 0  0 839px;" href="#openModal" class="btn btn-primary">Iniciar Sesion</a>
-            
+              <div class="responsive" <?php if ($mostrar_li) echo 'style="display: none; "'; ?>>
+             <a   href="#openModal" class="btn btn-primary responsive-button">Iniciar Sesión</a>
+             </div>
                 <nav class="header-nav ms-auto"  <?php if (!$mostrar_li) echo 'style="display: none;"'; ?> >
         <ul class="d-flex align-items-center">
             <li class="nav-item dropdown pe-3">

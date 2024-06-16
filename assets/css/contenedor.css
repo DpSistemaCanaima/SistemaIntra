@@ -34,4 +34,24 @@
   }
 
 
+  /* Base styles for buttons (optional) */
+  .responsive {
+    display: flex;
+    margin-left: auto; /* Enable flexbox layout */
+  }
   
+/* Responsive button styles */
+.responsive-button {
+  text-align: right;
+  display: block;  /* Ensure button fills available space on small screens */
+  margin: 0 auto;  /* Center the button horizontally on all screen sizes */
+  width: fit-content;  /* Allow button to shrink to fit content (optional) */
+  padding: 10px 20px;
+}
+
+/* Media queries for additional responsiveness (optional) */
+@media (max-width: 768px) {  /* Adjust breakpoint as needed */
+  .responsive-button {
+    font-size: 14px;  /* Adjust font size for smaller screens */
+  }
+}
