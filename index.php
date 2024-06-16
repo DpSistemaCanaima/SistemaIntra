@@ -75,7 +75,23 @@ $resultado = mysqli_query($conn,$query);
 <!-----------------------------FIN DE NOTICIAS   ------------------------------------------------------------->
         <!-- Revenue Card -->
      
-
+        <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
+     <div class="contenedor-imagenes">
+        
+         <div class="imagen">
+         <img  src="assets/img/tiempo.png" style="width: 18rem;" >
+         <a href="#openModa">
+         <div class="overlay">
+            <h2 >Linea De Tiempo</h2>
+          
+              
+            </div>
+            </a>
+         </div>
+         <?php  include "modal/modal_noticias.php"; ?>
+         <?php  include "modal/modal_tiempo.php"; ?>
+      </div>
+    </div>
            
 
 <!-- Sales Card -->
@@ -190,9 +206,8 @@ while ($fila = mysqli_fetch_assoc($result)) {
     }
 }
 } else {
-echo "<img src='assets/img/no.png'  style='height:150px; width:300px;'>No hay cumpleañeros hoy";
+  echo "<img src='assets/img/no.png' style='height: 160px; width: 100%; max-width: 600px;'>";
 }
-
 // Cierra la conexión a la base de datos
 mysqli_close($conn);
 ?>
@@ -204,7 +219,7 @@ mysqli_close($conn);
          <iframe class="inst" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
           <br>
           <br>
-        <div class="container-fluid row">
+                          <div class="container-fluid row">
                             
                             <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white;  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 </div>
