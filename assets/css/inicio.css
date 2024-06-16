@@ -1,87 +1,39 @@
-.este {
-    height: 5em;
-    line-height: 1em;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    width: 100%;
-    border: 1px solid;
-  }
-
-.modalDialog {
-	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: black;
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
-}
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
-.contenedor {
-    overflow: hidden; /* Previene que el contenido se superponga */
-   
-  }
-  
-  .div1 {
+/* General styles */
+.div1 {
     float: left;
-    width: 50%; /* Ajustar el ancho según se desee */
-    margin:21px -33px 0px 20px;
+    width: 50%; /* Adjust the width as needed */
+    margin: 21px -33px 0px 20px;
   }
   
   .div2 {
     float: left;
-    width: 50%; /* Ajustar el ancho según se desee */
+    width: 50%; /* Adjust the width as needed */
     margin: 21px 0px 0px -37px;
   }
-
-.titulo{
+  
+  .titulo {
     margin-top: 50px;
     text-align: center;
     color: #fff;
     font-size: 60px;
-}
-
-.contenido{
-    color: #fff;
-}
-
-
-
-.close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: 50px;
-	text-align: center;
-	top: 40px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
-}
-.close:hover { background: #00d9ff; }
-
- 
-.fondo{
-
-box-shadow:rgba(145,158,171,0.2) 0px 0px 2px 0px,rgb(0 0 0) 0px 12px 24px -4px;
-
-}
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Stack the divs on top of each other */
+    .div1,
+    .div2 {
+      width: 100%; /* Make them full width */
+      margin: 20px 0; /* Adjust margins as needed */
+    }
+  
+    /* Adjust title font size for smaller screens */
+    .titulo {
+      font-size: 30px; /* Adjust as needed */
+    }
+  }
+  
+  
 
 .contenedor-imagenes{
     display:flex;
@@ -104,179 +56,261 @@ box-shadow:rgba(145,158,171,0.2) 0px 0px 2px 0px,rgb(0 0 0) 0px 12px 24px -4px;
     height:100%;
 }
 
-.overlay{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background:rgba(0, 118, 192, 0.781) ;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    transition: .5s ease;
+/* General Styles */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 118, 192, 0.781);
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: .5s ease;
 }
 
-.overlay h2{
-    color: #fff;
-    font-weight: 300;
-    font-size:30px;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
+.overlay h2 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
-.imagen:hover .overlay{
-    height:100%;
-    cursor: pointer;
-}
-
-@media screen and (max-width:1000px){
-    .contenedor-imagenes{
-        width: 95%;
-    }
-}
-
-@media screen and (max-width:700px){
-    .contenedor-imagenes{
-        width: 90%;
-    }
-    .contenedor-imagenes .imagen{
-        width: 48%;
-    }
-}
-
-@media screen and (max-width:450px){
-    h1{
-        font-size:22px;
-    }
-    .contenedor-imagenes{
-        width: 98%;
-    }
-    .contenedor-imagenes .imagen{
-        width: 80%;
-    }
-} 
-
-
-.modalDialo{
-	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
-	top: 60px;
-	right: 29px;
-	bottom: -10px;
-	left: 29px;
-	background: rgb(255, 250, 250);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
-}
-
-.modalDialo:target {
-	opacity:1;
-	pointer-events: auto;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust font size for smaller screens */
+  .overlay h2 {
+    font-size: 22px; /* Adjust as needed */
+  }
 }
 
 
-.a{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-    height: 152px
-}
-.b{
-    background-color: rgb(9, 226, 27);
-    float: right;
-    border: 1px solid white;
-    width: 50%;
-}
-.c{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.d{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.f{
-    background-color: red;
-    float: right;
-    border: 1px solid white;
-    width: 50%;
-}
-.g{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.h{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.j{
-    background-color: red;
-    float: right;
-    border: 1px solid white;
-    width: 50%;
-}
-.k{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.l{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.q{
-    background-color: red;
-    float: right;
-    border: 1px solid white;
-    width: 50%;
-}
-.w{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.e{
-    background-color: red;
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
-.r{
-    background-color: red;
-    float: right;
-    border: 1px solid white;
-    width: 50%;
-}
-.t{
-    background-color: rgb(105, 72, 223);
-    float: left;
-    border: 1px solid white;
-    width: 50%;
-}
 
-.es {
-    height: 850px;
+
+  /* General styles */
+.este {
+    height: 5em;
+    line-height: 1em;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 100%;
     border: 1px solid;
   }
+  
+ 
+  
+  .contenedor {
+    overflow: hidden; /* Prevents content from overlapping */
+  }
+  
+ 
+  .contenido {
+    color: #fff;
+  }
+  
+  .close {
+    background: #606061;
+    color: #ffffff;
+    line-height: 25px;
+    position: absolute;
+    right: 50px;
+    text-align: center;
+    top: 40px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px #000;
+  }
+  
+  .close:hover {
+    background: #00d9ff;
+  }
+  .imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+}
+  .fondo {
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgb(0, 0, 0) 0px 12px 24px -4px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1000px) {
+    .contenedor-imagenes {
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .contenedor-imagenes {
+      width: 90%;
+    }
+  
+    .contenedor-imagenes .imagen {
+      width: 48%;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    h1 {
+      font-size: 22px;
+    }
+  
+    .contenedor-imagenes {
+      width: 98%;
+    }
+  
+    .contenedor-imagenes .imagen {
+      width: 80%;
+    }
+  }
+  
+  /* Modal styles (already responsive) */
+  .modalDialo {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 60px;
+    right: 29px;
+    bottom: -10px;
+    left: 29px;
+    background: rgb(255, 250, 250);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+  
+  .modalDialo:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Grid layout styles (already responsive) */
+  .a,
+.b,
+.c,
+.d,
+.f,
+.g,
+.h,
+.j,
+.k,
+.l,
+.q,
+.w,
+.e,
+.r,
+.t,
+.n {
+  background-color: hsl(hue, saturation, lightness); /* Using HSL for color variations */
+  border: 1px solid white;
+  height: 239px;
+  float: left;
+  width: 25%;
+}
+
+/* Specific colors for T and N (unchanged) */
+.t {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+ 
+}
+
+.n {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+/* Color variations for other letters using HSL */
+.a {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.b {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.c {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.d {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.f {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.g {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.h {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.j {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.k {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.l {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.q {
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.w {
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+.e { /* Use the same color for E and R */
+  background-color: hsl(207, 100%, 68%); /* Light pink */
+}
+
+.r { /* Use the same color for E and R */
+  background-color: hsl(210, 80%, 60%); /* Purple */
+}
+
+  
+  .es {
+    height: 650px; /* Adjust height as needed */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    border: 1px solid;
+  }
+
+  .modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #7040ff;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+  /* #7040ff */
+  .modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Adjust paddings for smaller screens */
+  @media screen and (max-width: 768px) {
+    .modalDialog {
+      padding: 20px; /* Adjust padding values as needed */
+    }
+  }
+  

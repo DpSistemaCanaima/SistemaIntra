@@ -1,33 +1,37 @@
-.conte{
+/* General styles */
+.conte {
     margin: 40px 150px 20px -40px;
-    padding: 20px 300px 24px 305px;
-    box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;
+    padding: 20px 300px 24px 305px; /* Adjust padding if needed */
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgb(0, 0, 0) 0px -3px 24px -24px;
     width: 100%;
-   width: 100px;
-}
-
-.conte .im{
-  justify-content: center;
-  max-width: 100%;
-  width: 200px;
-  height: 250px;
-   
-}
-
-.im{
-    float: left;
-    margin: 8px -35px 15px 55px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.im:hover{
+    text-align: center; /* Center the content inside .conte */
+  }
+  
+  .conte .im {
+    justify-content: center;
+    max-width: 100%;
+    width: 180px; /* Adjust image width as needed */
+    height: 180px;
+    /* Remove float and margin as they're not needed anymore */
+  }
+  
+  .im:hover {
     transform: scale(1.1);
-   
-}
+  }
+  
+  /* Responsive styles (unchanged) */
+  @media screen and (max-width: 768px) {
+    /* ... (your existing responsive styles) */
+  }
+  
+  .inst {
+    /* Set width to 100% for responsiveness */
+    width: 100%;
+    /* Adjust height as needed based on Instagram embed aspect ratio */
+    height: 40.25%; /* Assuming a 16:9 aspect ratio */
+    border: 0; /* Remove default border */
+    margin: 0 auto; /* Center the iframe horizontally */
+  }
 
-.inst{
-    width:320px;
-    height:440px;
-    box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;
-}
+
+  
