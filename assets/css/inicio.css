@@ -14,7 +14,7 @@
   .titulo {
     margin-top: 50px;
     text-align: center;
-    color: #fff;
+    color: #000000;
     font-size: 60px;
   }
   
@@ -108,7 +108,7 @@
   
  
   .contenido {
-    color: #fff;
+    color: #000000;
   }
   
   .close {
@@ -295,7 +295,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: #7040ff;
+    background:  rgba(235, 212, 212, 0.8);
     z-index: 99999;
     opacity: 0;
     transition: opacity 400ms ease-in;

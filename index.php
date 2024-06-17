@@ -76,24 +76,50 @@ $resultado = mysqli_query($conn,$query);
         <!-- Revenue Card -->
      
         <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
-     <div class="contenedor-imagenes">
+          <div class="contenedor-imagenes">
         
-         <div class="imagen">
-         <img  src="assets/img/tiempo.png" style="width: 18rem;" >
-         <a href="#openModa">
-         <div class="overlay">
+            <div class="imagen">
+             <img  src="assets/img/tiempo.png" style="width: 18rem;" >
+           <a href="#openModa">
+            <div class="overlay">
             <h2 >Linea De Tiempo</h2>
           
               
+               </div>
+              </a>
             </div>
-            </a>
-         </div>
-         <?php  include "modal/modal_noticias.php"; ?>
-         <?php  include "modal/modal_tiempo.php"; ?>
-      </div>
-    </div>
-           
 
+           <?php  include "modal/modal_noticias.php"; ?>
+            <?php  include "modal/modal_tiempo.php"; ?>
+
+
+         
+        
+           </div>
+         </div>
+
+         <div class="card" style="width: 18rem; margin:0 5px 20px 10px">
+          <div class="contenedor-imagenes">
+        
+            <div class="imagen">
+             <img  src="assets/img/imawari.png" style="width: 18rem;" >
+           <a href="#openMod">
+            <div class="overlay">
+            <h2 >Sistema Operativo</h2>
+          
+              
+               </div>
+              </a>
+            </div>
+
+          
+            <?php  include "modal/sistema_operativo.php"; ?>
+
+
+         
+        
+           </div>
+         </div>
 <!-- Sales Card -->
 
 <div class="conte">
