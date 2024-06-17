@@ -25,7 +25,11 @@
 
                     <div class="form-outline has-feedback mb-4">
                       <i class="fa fa-lock form-control-feedback"></i>
+<<<<<<< HEAD
                       <input type="password" name="PASSWORD" required maxlength="10" class="form-control my-input" placeholder="Contraseña">
+=======
+                     <input type="password" name="PASSWORD" required maxlength="10" class="form-control my-input" placeholder="Contraseña">
+>>>>>>> 9623e0677014b644304aac133e3588578e581b82
 
                     </div>
   
