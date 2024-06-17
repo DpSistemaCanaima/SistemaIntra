@@ -18,6 +18,8 @@ $CEDULA = $_SESSION['CEDULA'];
 $area  = $_SESSION['ASSIGNED_AREA'];
 $pass = $_SESSION['PASSWORD'];
 
+date_default_timezone_set('America/Caracas');
+$fechaActual = date('Y-m-d');
 
 
 include "../content/inc/header.php";
@@ -89,32 +91,46 @@ $resultado = mysqli_query($conn,$query);
 <!-- Sales Card -->
 
 <div class="conte">
-<h3 class="text-center">Tren Directivo</h3>
+<h3 class="text-center fst-normal fs-3">Tren Directivo</h3>
    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- <div class="carousel-indicators">
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="hidden" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="1.jpg"  class="im" alt="...">
         
-        <img src="img1.jpg" class="im" alt="...">
+        <img src="../assets/img/beronica.jpeg"  class="im" alt="...">
         
-        <img src="img2.jpg" class="im" alt="...">
+        <img src="../assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
+        
+        <img src="../assets/img/CONSULTORA.jpeg" class="im" alt="...">
+
+
+
+
         
       </div>
    
       
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="2.jpg" class="im" alt="...">
-        <img src="1.jpg"  class="im" alt="...">
+        <img src="../assets/img/raquel.jpeg" class="im" alt="...">
+        <img src="../assets/img/adriana.png"  class="im" alt="...">
            
-        <img src="img1.jpg" class="im" alt="...">
+        <img src="../assets/img/beronica.jpeg"  class="im" alt="...">
       
+      
+
       </div>
       <div class="carousel-item">
-        <img src="5.jpg" class="im" alt="...">
-        <img src="1.jpg"  class="im" alt="...">
-           
-           <img src="img1.jpg" class="im" alt="...">
-           
+      <img src="../assets/img/beronica.jpeg"  class="im" alt="...">
+        
+        <img src="../assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
+        
+        <img src="../assets/img/CONSULTORA.jpeg" class="im" alt="...">
+
+        
           
       </div>
     </div>
@@ -129,7 +145,6 @@ $resultado = mysqli_query($conn,$query);
   </div>
 </div>
 
-
       
 
       </div>
@@ -141,12 +156,9 @@ $resultado = mysqli_query($conn,$query);
       <!-- Recent Activity -->
       <div class="card">
         <div class="filter">
-          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <a class="icon" href="#" data-bs-toggle="dropdown"></a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            <li class="dropdown-header text-start">
-              <h6>Filter</h6>
-            </li>
-
+           
             <li><a class="dropdown-item" href="#">Today</a></li>
             <li><a class="dropdown-item" href="#">This Month</a></li>
             <li><a class="dropdown-item" href="#">This Year</a></li>
@@ -156,13 +168,12 @@ $resultado = mysqli_query($conn,$query);
         <div class="card-body">
           <h5 class="card-title">cumpleañeros del día<span>| hoy </span></h5>
           <?php
-require_once "../config/cone.php"; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
+require_once '../config/cone.php'; // Utiliza require_once para asegurarte de que el archivo se incluya solo una vez
 
 // Establece la zona horaria y obtiene la fecha actual
-date_default_timezone_set('America/Caracas');
-$fechaActual = date('Y-m-d');
 
-// Prepara la consulta SQL con parámetros para evitar inyecciones SQL
+
+// Prepara la consulta SQL con parámetros pabra evitar inyecciones SQL
 $sql = "SELECT SURNAME, FECHA, foto, no_hay, NAME FROM user_datos WHERE FECHA = '$fechaActual'";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
@@ -179,15 +190,14 @@ while ($fila = mysqli_fetch_assoc($result)) {
 
     // Compara la fecha actual con la fecha de nacimiento
     if ($fechaActual == $fechaNacimiento) {
-        echo "$nombre $apellido"; // Concatena los nombres con un espacio
+      echo "<img src='../assets/img/feliz.png' alt='Descripción de la imagen' style='height:150px; width:300px;'><span style='color: black; size:8em; text-align: center;'>$nombre  $apellido</span> "; // Concatena los nombres con un espacio
     } else {
-        echo $noHay;
+        echo "$noHay";
     }
 }
 } else {
-echo "No hay resultados";
+  echo "<img src='../assets/img/no.png' style='height: 160px; width: 100%; max-width: 600px;'>";
 }
-
 // Cierra la conexión a la base de datos
 mysqli_close($conn);
 ?>

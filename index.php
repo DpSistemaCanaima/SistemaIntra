@@ -189,7 +189,7 @@ $resultado = mysqli_query($conn,$query);
       <!-- Recent Activity -->
       <div class="card">
         <div class="filter">
-          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+          <a class="icon" href="#" data-bs-toggle="dropdown"></a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             <li class="dropdown-header text-start">
               <h6>Filter</h6>
