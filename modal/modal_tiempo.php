@@ -5,7 +5,7 @@
  
 		<a href="#close" title="Close" class="close">X</a>
       
-        <h1 style="color:black;">Línea del Tiempo de la Industria Canaima</h1>
+        <h1 style="color:white;">Línea del Tiempo de la Industria Canaima</h1>
         <div id="detalleseleccion" name="detalleseleccion" class="es">
             <div class="a">
                 <div class="date">2002</div>

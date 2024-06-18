@@ -12,6 +12,7 @@
     <!-- Favicons -->
     <link href="assets/img/logo.png" rel="apple-touch-icon">
     <link href="assets/img/logo.png" rel="icon">
+    <link rel="stylesheet" href="assets/css/tyle.css">
     <link rel="stylesheet" href="assets/css/formulario.css">
       <link rel="stylesheet" href="../assets/css/contenedor.css">
       <link rel="stylesheet" href="assets/css/contenedor.css">
