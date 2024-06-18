@@ -1,8 +1,8 @@
 <!-- Modal -->
 
 <div id="openModal<?php echo $row['cod_imagen'];?>" class="modalDialog">
-	<div>
-  <?php   
+<div class="scrollll">
+   <?php   
 
      $codigoDeimagen = $row['cod_imagen'];
 
@@ -10,9 +10,11 @@
       $resultado = mysqli_query($conn,$query);
 
    ?>
-		<a href="#close" title="Close" class="close">X</a>
+   
+    <a href="#close" title="Close" class="close">X</a>
+    
 		<h2 class="titulo"><?php echo $row['nombre'];?></h2>
-		<div id="detalleseleccion" name="detalleseleccion" class="es">
+		
    <?php  foreach($resultado as $row) { ?>
 
             <div class="contenedor">
@@ -28,7 +30,7 @@
  
              
               
-   </div>
+ 
             
     <?php  } ?>
 
