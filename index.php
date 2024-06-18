@@ -80,7 +80,7 @@ $resultado = mysqli_query($conn,$query);
         
             <div class="imagen">
              <img  src="assets/img/tiempo.png" style="width: 18rem;" >
-           <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             <a href="#openModa">
             <div class="overlay">
             <h2 >Linea De Tiempo</h2>
           
@@ -89,7 +89,7 @@ $resultado = mysqli_query($conn,$query);
               </a>
             </div>
 
-           <?php  include "modal/modal_noticias.php"; ?>
+           
             <?php  include "modal/modal_tiempo.php"; ?>
 
 
