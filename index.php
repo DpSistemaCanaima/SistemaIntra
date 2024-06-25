@@ -133,34 +133,60 @@ $resultado = mysqli_query($conn,$query);
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         
-        <img src="assets/img/beronica.jpeg"  class="im" alt="...">
         
-        <img src="assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
-        
-        <img src="assets/img/CONSULTORA.jpeg" class="im" alt="...">
+      <div class="c">
+     <div class="cardi front"><img src="assets/img/adriana.png" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Adriana</div>
+    </div>
 
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/beronica.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Beronica</div>
+    </div>
 
-
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/raquel.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Raquel</div>
+    </div>
 
         
       </div>
    
       
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="assets/img/raquel.jpeg" class="im" alt="...">
-        <img src="assets/img/adriana.png"  class="im" alt="...">
-           
-        <img src="assets/img/beronica.jpeg"  class="im" alt="...">
-      
-      
+       
+      <div class="c">
+     <div class="cardi front"><img src="assets/img/CONSULTORA.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Consultora</div>
+    </div>
+
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/Nelson Sanchez.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Dir. Nelson Sanchez</div>
+    </div>
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/beronica.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Beronica</div>
+    </div>
 
       </div>
       <div class="carousel-item">
-      <img src="assets/img/beronica.jpeg"  class="im" alt="...">
+      
         
-        <img src="assets/img/Nelson Sanchez.jpeg" class="im" alt="...">
-        
-        <img src="assets/img/CONSULTORA.jpeg" class="im" alt="...">
+      <div class="c">
+     <div class="cardi front"><img src="assets/img/adriana.png" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Adriana</div>
+    </div>
+
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/beronica.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Beronica</div>
+    </div>
+
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/raquel.jpeg" style="height: 180px; width:100%;" alt=""></div>
+     <div class="cardi back">Raquel</div>
+    </div>
 
         
           

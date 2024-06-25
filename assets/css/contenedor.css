@@ -7,7 +7,7 @@
     text-align: center; /* Center the content inside .conte */
   }
   
-  .conte .im {
+  .conte .c {
     justify-content: center;
     max-width: 100%;
     width: 180px; /* Adjust image width as needed */
@@ -15,9 +15,16 @@
     /* Remove float and margin as they're not needed anymore */
   }
   
-  .im:hover {
+
+  /* .im:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;} */
+  
+    /* .im:hover {
     transform: scale(1.1);
-  }
+  } */
   
   /* Responsive styles (unchanged) */
   @media screen and (max-width: 768px) {
