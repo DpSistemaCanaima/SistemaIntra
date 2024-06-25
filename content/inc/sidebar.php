@@ -164,12 +164,7 @@
     </a>
   </li>
   
-  <li class="nav-item"  >
-    <a class="nav-link collapsed" href="prueba.php">
-      <i class="bi bi-box-arrow-in-right"></i>
-      <span> prueba </span>
-    </a>
-  </li><!-- End Login Page Nav -->
+  <!-- End Login Page Nav -->
 </aside><!-- End Sidebar-->
 
 
