@@ -10,7 +10,7 @@
   .conte  .im{
     justify-content: center;
     max-width: 100%;
-    width: 230px; /* Adjust image width as needed */
+    width: 296px; /* Adjust image width as needed */
     height: 260px;
     /* Remove float and margin as they're not needed anymore */
   }
