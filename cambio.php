@@ -51,7 +51,7 @@ if ($result->num_rows === 1) {
       timer: 15000
       }).then(() => {
    
-        location.assign('perfil.php');
+        location.assign('index.php');
    
        });
     });
@@ -70,7 +70,7 @@ if ($result->num_rows === 1) {
       timer: 15000
       }).then(() => {
    
-        location.assign('perfil.php');
+        location.assign('index.php');
    
        });
     });
@@ -95,7 +95,7 @@ if ($result->num_rows === 1) {
       timer: 15000
       }).then(() => {
    
-        location.assign('perfil.php');
+        location.assign('index.php');
    
        });
     });
