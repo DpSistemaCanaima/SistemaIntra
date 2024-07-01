@@ -157,7 +157,7 @@ $resultado = mysqli_query($conn,$query);
        
       <div class="c">
      <div class="cardi front"><img src="assets/img/CONSULTORA.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Consultora</div>
+     <div class="cardi back"><img src="assets/img/yelitza.png" class="im" alt=""></div>
     </div>
 
     <div class="c">
