@@ -1,8 +1,8 @@
 {
-  "name": "material-kit",
-  "version": "3.0.4",
-  "description": "Freebie UI Kit for Bootstrap 5",
-  "main": "index.html",
+  "name": "material-dashboard",
+  "version": "3.1.0",
+  "description": "Freebie Dashboard for Bootstrap 5",
+  "main": "pages/dashboard.html",
   "directories": {
     "example": "root"
   },
@@ -14,28 +14,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-kit.git"
+    "url": "git+https://github.com/creativetimofficial/material-dashboard.git"
   },
   "keywords": [
-    "material kit 2",
+    "material dashboard",
     "bootstrap 5",
-    "design system",
-    "ui kit",
+    "dashboard",
     "creative tim",
-    "html kit",
-    "html css kit",
-    "web kit",
+    "html dashboard",
+    "html css dashboard",
+    "web dashboard",
     "freebie",
-    "free bootstrap kit",
-    "css3 kit",
-    "bootstrap design system",
+    "free bootstrap dashboard",
+    "css3 dashboard",
+    "bootstrap dashboard",
     "frontend",
-    "responsive bootstrap kit"
+    "responsive bootstrap dashboard"
   ],
   "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-kit/issues"
+    "url": "https://github.com/creativetimofficial/material-dashboard/issues"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
@@ -47,5 +46,5 @@
     "gulp-open": "^3.0.1",
     "sass": "^1.49.9"
   },
-  "homepage": "https://creative-tim.com/product/material-kit"
+  "homepage": "http://creative-tim.com/product/material-dashboard"
 }

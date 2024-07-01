@@ -1,5 +1,5 @@
 # The name of the project.
-name: material-kit
+name: material-dashboard
 # The region where the project is deployed.
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
@@ -15,4 +15,5 @@ frontend:
     # List of scripts that build your frontend before deployment. It should populate the specified `publish` directory.
     build: npm install
     # List of scripts to run before deploying the frontend.
-    deploy: npm install
+    deploy:
+      - npm install

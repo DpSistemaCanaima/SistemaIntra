@@ -9,7 +9,7 @@ var Paths = {
   HERE: './',
   DIST: 'dist/',
   CSS: './assets/css/',
-  SCSS_TOOLKIT_SOURCES: './assets/scss/material-kit.scss',
+  SCSS_TOOLKIT_SOURCES: './assets/scss/material-dashboard.scss',
   SCSS: './assets/scss/**/**'
 };
 
@@ -27,7 +27,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('open', function() {
-  gulp.src('index.html')
+  gulp.src('pages/dashboard.html')
     .pipe(open());
 });
 

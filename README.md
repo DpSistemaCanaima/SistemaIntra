@@ -1,23 +1,28 @@
-# [Material Kit 2](http://demos.creative-tim.com/material-kit/presentation?ref=readme-mk2) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-kit&text=Check%20Material%20Kit%202%20made%20by%20@CreativeTim%20#webdesign%20#designSystem%20#uiKit%20#materialDesign%20#html%20https://www.creative-tim.com/product/material-kit) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/FhCJCaHdQa)
+# [Material Dashboard 2](http://demos.creative-tim.com/material-dashboard/pages/dashboard.html?ref=readme-md2) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-dashboard&text=Check%20Material%20Dashboard%202%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#materialdesign%20#html%20https://www.creative-tim.com/product/material-dashboard) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/FhCJCaHdQa)
 
-![version](https://img.shields.io/badge/version-3.0.4-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-kit.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-kit/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-kit.svg?maxAge=2592000)](https://github.com/creativetimofficial/material-kit/issues?q=is%3Aissue+is%3Aclosed)
-
-![Image](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-kit/material-kit.jpg)
+![version](https://img.shields.io/badge/version-3.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard.svg)](https://github.com/creativetimofficial/material-dashboard/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard.svg)](https://github.com/creativetimofficial/material-dashboard/issues?q=is%3Aissue+is%3Aclosed)
 
 
-**Material Kit** is a **Free Bootstrap 5 UI Kit** with a fresh, new design inspired by Google's material design. You asked for it, so we built it. It's a great pleasure to introduce to you the material concepts in an easy to use and beautiful set of components. Along with the restyling of the Bootstrap elements, you will find three fully-coded example pages, to help you design your next project.
+![Image](https://s3.amazonaws.com/creativetim_bucket/products/50/original/material-dashboard.jpg?1634648873)
 
-**Material Kit** makes use of light, surface, and movement. It uses a deliberate color choice, edge-to-edge imagery, and large scale typography. The general layout resembles sheets of paper following multiple different layers so that the depth and order are obvious. The navigation stays mainly on the left and the actions on the right.
+[Material Dashboard](https://www.creative-tim.com/product/material-dashboard) is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
 
-This new design has elements that have been the result of research regarding ink and paper and the way objects and materials interact in real life. The result is a beautiful and consistent set of elements that can get you started with your next project. Material Kit is a great tool if you are looking to create a web presence for your Android application and need to be consistent, leaving the impression of visually similar elements. It is also a great resource in its own right, looking gorgeous and helping you build your web pages.
+Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+
+This product came as a result of users asking for a material dashboard after we released our successful [Material Kit](https://www.creative-tim.com/product/material-kit). We developed it based on your feedback and it is a powerful bootstrap admin dashboard, which allows you to build products like admin panels, content managements systems and CRMs.
+
+Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
 
 Special thanks go to:
+- [Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.
+- [Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts.
+We are very excited to share this dashboard with you and we look forward to hearing your feedback!
 - [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Material Dashboard. You can use it to gain insights into your sources of traffic.
 
 
 ## Table of Contents
 
-- [Material Kit 2  ](#material-kit-2--)
+- [Material Dashboard 2  ](#material-dashboard-2--)
   - [Table of Contents](#table-of-contents)
   - [Versions](#versions)
   - [Demo](#demo)
@@ -28,79 +33,88 @@ Special thanks go to:
   - [Browser Support](#browser-support)
   - [Resources](#resources)
   - [Reporting Issues](#reporting-issues)
-  - [Upgrade to PRO Version](#upgrade-to-pro-version)
+  - [Upgrade to Premium version](#upgrade-to-premium-version)
+  - [Technical Support or Questions](#technical-support-or-questions)
   - [Licensing](#licensing)
   - [Useful Links](#useful-links)
-    - [Social Media](#social-media)
-- [Backend logic provided by genezio](#backend-logic-provided-by-genezio)
+        - [Social Media](#social-media)
+
 
 
 ## Versions
 
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-kit)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-kit)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-kit-react)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-native-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-kit-react-native)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/figma-logo.jpg?raw=true" width="60" height="60" />](https://demos.creative-tim.com/material-kit-figma/presentation.html)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/wordpress-logo.jpg?raw=true" width="60" height="60" />](https://themeisle.com/themes/hestia/?ref=creativetim)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/photoshop-logo.jpg" width="60" height="60" />](https://github.com/creativetimofficial/material-kit/tree/photoshop)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/sketch-logo.jpg" width="60" height="60" />](https://github.com/creativetimofficial/material-kit/tree/sketch)
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/figma-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/material-tailwind-dashboard-react) [<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/angular-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-angular2)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-native-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-kit-react-native)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/laravel-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-laravel)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vuetify-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vuetify-material-dashboard)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/django-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-django)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/nextjs-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/nextjs-material-dashboard)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/flask-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-flask)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/aspnet-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react-asp-net)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/nodejs-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react-nodejs)
 
-| HTML | React | Vue  |
-| --- | --- | ---  |
-| [![Material Kit  HTML](https://s3.amazonaws.com/creativetim_bucket/products/38/thumb/material-kit.jpg?1633601280)](https://www.creative-tim.com/product/material-kit)  | [![Material Kit  React](https://github.com/creativetimofficial/public-assets/blob/master/material-kit-react/material-kit-react.jpeg?raw=true)](https://www.creative-tim.com/product/material-kit-react)  | [![Vue Material Kit](https://github.com/creativetimofficial/public-assets/blob/master/vue-material-kit/vue-material-kit.jpeg?raw=true)](https://www.creative-tim.com/product/vue-material-kit)
 
-| React Native | Figma | WordPress |
-| ---  | --- | --- |
-| [![Material Kit React Native](https://github.com/creativetimofficial/public-assets/blob/master/material-kit-react-native/opt_mkrn_thumbnail.jpg?raw=true)](https://www.creative-tim.com/product/material-kit-react-native) | [![Material Kit Figma](https://github.com/creativetimofficial/public-assets/blob/master/material-kit-figma/material-kit-figma.jpg?raw=true)](https://demos.creative-tim.com/material-kit-figma/presentation.html) | [![Material Kit WordPress](https://github.com/creativetimofficial/public-assets/blob/master/material-kit-wordpress/opt_smd_thumbnail.jpg?raw=true)](https://themeisle.com/themes/hestia/?ref=creativetim)
+| Bootstrap 5 | Bootstrap 4 | Bootstrap 3 | Dark HTML |
+| --- | --- | --- | --- |
+| [![Material Dashboard  HTML](https://s3.amazonaws.com/creativetim_bucket/products/50/original/material-dashboard.jpg?1634648873)](https://www.creative-tim.com/product/material-dashboard)  | [![Material Dashboard  Bootstrap 4](https://s3.amazonaws.com/creativetim_bucket/products/537/original/opt_md_thumbnail.jpeg?1634047548)](https://www.creative-tim.com/product/material-dashboard-bs4)  | [![Material Dashboard  Bootstrap 3](https://s3.amazonaws.com/creativetim_bucket/products/78/original/opt_mdp_thumbnail.jpg?1521133551)](https://www.creative-tim.com/product/material-dashboard-bs4)  | [![Material Dashboard Dark Edition](https://s3.amazonaws.com/creativetim_bucket/products/95/original/opt_mdb_thumbnail.jpg?1535551949)](https://www.creative-tim.com/product/material-dashboard-dark) |
+
+| React | Tailwind | Vue | Angular |
+| --- | --- | --- | --- |
+| [![Material Dashboard  React](https://s3.amazonaws.com/creativetim_bucket/products/488/original/material-tailwind-react-dashboard.jpg?1667367968)](https://www.creative-tim.com/product/material-tailwind-dashboard-react) | [![Material Tailwind Dashboard React](https://s3.amazonaws.com/creativetim_bucket/products/71/original/material-dashboard-react.jpg?1638950990)](https://www.creative-tim.com/product/material-dashboard-react) | [![Vue Material Dashboard](https://s3.amazonaws.com/creativetim_bucket/products/81/original/opt_md_vue_thumbnail.jpg?1534938464)](https://www.creative-tim.com/product/vue-material-dashboard)  | [![Material Dashboard  Angular](https://s3.amazonaws.com/creativetim_bucket/products/53/original/opt_md_angular_thumbnail.jpg?1551358074)](https://www.creative-tim.com/product/material-dashboard-angular2) |
+
+| Vuetify | React Native | Nextjs | Nodejs |
+| --- | --- | --- | ---  |
+| [![Material Dashboard  Vuetify](https://s3.amazonaws.com/creativetim_bucket/products/100/original/opt_md_vuetify_thumbnail.jpg)](https://www.creative-tim.com/product/vuetify-material-dashboard)  | [![React Native](https://s3.amazonaws.com/creativetim_bucket/products/144/original/opt_mkrn_thumbnail.jpg)](https://www.creative-tim.com/product/material-kit-react-native)  | [![Nextjs Material Dashboard](https://s3.amazonaws.com/creativetim_bucket/products/341/original/opt_md_nextjs_thumbnail.jpg)](https://www.creative-tim.com/product/nextjs-material-dashboard)  | [![Material Dashboard React Nodejs](https://s3.amazonaws.com/creativetim_bucket/products/157/original/react-material-dashboard-nodejs.jpg?1680251614)](https://www.creative-tim.com/product/material-dashboard-react-nodejs)
+
+| Laravel | Asp.NET | Django | Flask |
+| --- | --- | --- | ---  |
+| [![Material Dashboard Laravel](https://s3.amazonaws.com/creativetim_bucket/products/154/original/material-dashboard-laravel.jpg?1664460694)](https://www.creative-tim.com/product/material-dashboard-laravel) | [![Asp.NET](https://s3.amazonaws.com/creativetim_bucket/products/397/original/opt_md_aspnet_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-react-asp-net)  | [![Material Dashboard Django](https://s3.amazonaws.com/creativetim_bucket/products/337/original/opt_md_django_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-django)  | [![Material Dashboard Flask](https://s3.amazonaws.com/creativetim_bucket/products/338/original/opt_md_flask_thumbnail.jpg)](https://www.creative-tim.com/product/material-dashboard-flask)
+
 
 ## Demo
 
-| Buttons | Inputs | Navbars  |
-| --- | --- | ---  |
-| [![Buttons](https://github.com/creativetimofficial/public-assets/blob/master/material-kit/buttons.png?raw=true)](https://demos.creative-tim.com/material-kit/index.html#buttons)  | [![Inputs](https://github.com/creativetimofficial/public-assets/blob/master/material-kit/inputs.png?raw=true)](https://demos.creative-tim.com/material-kit/index.html#inputs)  | [![Navbar](https://github.com/creativetimofficial/public-assets/blob/master/material-kit/navbar-section.png?raw=true)](https://demos.creative-tim.com/material-kit/index.html#navigation)
+- [Start page](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
+- [User profile page](https://demos.creative-tim.com/material-dashboard/examples/user.html)
+- [Tables page ](https://demos.creative-tim.com/material-dashboard/examples/tables.html)
+- [Maps Page](https://demos.creative-tim.com/material-dashboard/examples/map.html)
+- [Notifications page](https://demos.creative-tim.com/material-dashboard/examples/notifications.html)
 
-| Login Page | Landing Page | Profile Page  |
-| --- | --- | ---  |
-| [![Login Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-kit/login-page.png)](https://demos.creative-tim.com/material-kit/index.html#carousel)  | [![Landing Page](https://github.com/creativetimofficial/public-assets/blob/master/material-kit/landing-page.png?raw=true)](https://demos.creative-tim.com/material-kit/examples/landing-page.html)  | [![Profile Page](https://github.com/creativetimofficial/public-assets/blob/master/material-kit/profile-page.png?raw=true)](https://demos.creative-tim.com/material-kit/examples/profile-page.html)
-
-[View More](https://demos.creative-tim.com/material-kit/index.html)
+[View More](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html).
 
 
 ## Quick start
 
-- `npm i material-kit`
-- [Download from Github](https://github.com/creativetimofficial/material-kit/archive/master.zip).
-- [Download from Creative Tim](https://www.creative-tim.com/product/material-kit).
-- Install with [Bower](https://bower.io/): ```bower install material-kit```.
-- Clone the repo: `git clone https://github.com/creativetimofficial/material-kit.git`.
+- `npm i material-dashboard`
+- Clone the repo: `git clone https://github.com/creativetimofficial/material-dashboard.git`.
+- [Download from Github](https://github.com/creativetimofficial/material-dashboard/archive/master.zip).
+- [Download from Creative Tim](https://www.creative-tim.com/product/material-dashboard).
 
 ## Deploy
 :rocket: You can deploy your own version of the template to Genezio with one click:
 
-[![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/creativetimofficial/material-kit&utm_source=github&utm_medium=referral&utm_campaign=github-creativetim&utm_term=deploy-project&utm_content=button-head)
+[![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/creativetimofficial/material-dashboard&utm_source=github&utm_medium=referral&utm_campaign=github-creativetim&utm_term=deploy-project&utm_content=button-head)
+
 
 ## Documentation
-The documentation for the Material Kit is hosted at our [website](https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/introduction.html).
+The documentation for the Material Dashboard is hosted at our [website](https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html).
 
 
 ## File Structure
 Within the download you'll find the following directories and files:
 
 ```
-material-kit
-  ├── assets
-  │   ├── css/
-  │   ├── fonts/
-  │   ├── img/
-  │   ├── js
-  │   │   ├── core
-  │   │   ├── plugins
-  │   │   └── material-kit.min.js
-  │   └── scss
-  │       ├── material-kit/
-  │       └── material-kit.scss
-  ├── docs
-  │   ├── documentation.html
-  ├── pages/
-  ├── sections/
-  ├── CHANGELOG.md
-  ├── gulpfile.js
-  ├── package.json
-  ├── presentation.html
+material-dashboard
+    ├── assets
+    │   ├── css
+    │   ├── fonts
+    │   ├── img
+    │   ├── js
+    │   │   ├── core
+    │   │   ├── plugins
+    │   │   └── material-dashboard.js
+    │   │   └── material-dashboard.js.map
+    │   │   └── material-dashboard.min.js
+    │   └── scss
+    │       ├── material-dashboard
+    │       └── material-dashboard.scss
+    ├── docs
+    │   ├── documentation.html
+    ├── pages
+    ├── CHANGELOG.md
+    ├── gulpfile.js
+    ├── package.json
 ```
 
 
@@ -108,62 +122,57 @@ material-kit
 
 At present, we officially aim to support the last two versions of the following browsers:
 
-<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/chrome-logo.png?raw=true" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/firefox-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/edge-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/safari-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/opera-logo.png" width="64" height="64">
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
 
 
 ## Resources
-- Demo: <https://demos.creative-tim.com/material-kit/presentation.html>
-- Download Page: <https://www.creative-tim.com/product/material-kit>
-- Documentation: <https://www.creative-tim.com/learning-lab/bootstrap/overview/material-kit>
+- Demo: <https://demos.creative-tim.com/material-dashboard/pages/dashboard.html>
+- Download Page: <https://www.creative-tim.com/product/material-dashboard>
+- Documentation: <https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html>
 - License Agreement: <https://www.creative-tim.com/license>
+- PRO Version: <https://www.creative-tim.com/product/material-dashboard-pro>
 - Support: <https://www.creative-tim.com/contact-us>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-kit/issues)
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard/issues)
+- [Material Kit](https://www.creative-tim.com/product/material-kit?ref=github-md-free) - For Front End Development
 - [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
-
-
-- **Dashboards:**
-
-| HTML 5 | HTML 4 | React | Vue  | Angular |
-| --- | --- | --- | ---  | ---  |
-| [![Material Dashboard  HTML](https://s3.amazonaws.com/creativetim_bucket/products/38/thumb/material-kit.jpg?1633601280)](https://www.creative-tim.com/product/material-dashboard) | [![Material Dashboard  HTML](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-html/material-dashboard.jpeg?raw=true)](https://www.creative-tim.com/product/material-dashboard-bs4) | [![Material Dashboard  React](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-react/material-dashboard-react.jpeg?raw=true)](https://www.creative-tim.com/product/material-dashboard-react) | [![Vue Material Dashboard](https://github.com/creativetimofficial/public-assets/blob/master/vue-material-dashboard/vue-material-dashboard.jpeg?raw=true)](https://www.creative-tim.com/product/vue-material-dashboard)  | [![ Material Dashboard Angular](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-angular/material-dashboard-angular.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-angular2)
-
-| HTML Dark | Vuetify  |
-| --- | --- |
-| [![Material Dashboard Dark](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-dark/material-dashboard-dark.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-dark) | [![Material Dashboard Vuetify](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-vuetify/material-dashboard-vuetify.jpg?raw=true)](https://www.creative-tim.com/product/vuetify-material-dashboard)
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Material Kit. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the Material Dashboard. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Material Kit. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/?ref=mk2-github-readme).
+1. Make sure that you are using the latest version of the Material Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
-## Upgrade to PRO Version
+## Upgrade to Premium version
 
-Are you looking for more components? Please check our Premium Version of Material Kit right [here](https://www.creative-tim.com/product/material-kit-pro).
+Are you looking for more components? Please check our Premium Version of Material Dashboard [here](https://www.creative-tim.com/product/material-dashboard-pro/)
+
+## Technical Support or Questions
+
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
+
+
 
 ## Licensing
 
-- Copyright 2021 Creative Tim (https://www.creative-tim.com/?ref=mk2-github-readme)
+- Copyright 2023 Creative Tim (https://www.creative-tim.com/)
+- Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/blob/master/LICENSE.md)
 
-- Licensed under MIT (https://github.com/creativetimofficial/material-kit/blob/master/LICENSE.md)
+
 
 ## Useful Links
 
+- [More products](https://www.creative-tim.com/templates?ref=readme-sudp) from Creative Tim
 - [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=mk2-github-readme) (earn money)
-- [Blog Creative Tim](https://www.creative-tim.com/blog?ref=mk2-github-readme)
-- [Free Products](https://www.creative-tim.com/bootstrap-themes/free?ref=mk2-github-readme) from Creative Tim
-- [Premium Products](https://www.creative-tim.com/bootstrap-themes/premium?ref=mk2-github-readme) from Creative Tim
-- [React Products](https://www.creative-tim.com/bootstrap-themes/react-themes?ref=mk2-github-readme) from Creative Tim
-- [Angular Products](https://www.creative-tim.com/bootstrap-themes/angular-themes?ref=mk2-github-readme) from Creative Tim
-- [VueJS Products](https://www.creative-tim.com/bootstrap-themes/vuejs-themes?ref=mk2-github-readme) from Creative Tim
-- [More products](https://www.creative-tim.com/bootstrap-themes?ref=mk2-github-readme) from Creative Tim
-- Check our Bundles [here](https://www.creative-tim.com/bundles?ref=mk2-github-readme)
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-sudp) from Creative Tim
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-sudp) (earn money)
+- [Bundles](https://www.creative-tim.com/bundles)
+- [Material Design](https://www.creative-tim.com/design-system/material)
+- [Get Discount](https://www.creative-tim.com/coupon)
 
-### Social Media
+##### Social Media
 
 Twitter: <https://twitter.com/CreativeTim>
 
@@ -171,22 +180,6 @@ Facebook: <https://www.facebook.com/CreativeTim>
 
 Dribbble: <https://dribbble.com/creativetim>
 
-Instagram: <https://www.instagram.com/CreativeTimOfficial>
-
 TikTok: <https://tiktok.com/@creative.tim>
 
-
-
-# Backend logic provided by genezio
-
-`genezio` is a platform that allows developers to write, deploy, and use serverless APIs with ease. With `genezio`, developers can write their backend logic in classes and design their frontend using their preferred programming language.
-
-Once the backend classes are written, `genezio` deploys them onto a serverless infrastructure. The platform generates an SDK that developers can use to remotely call the methods of their class in a very natural way, making it easy to call backend logic from the client.
-
-The platform comes with a handful of examples to start from, and developers can integrate it into their CI/CD pipeline with a dedicated GitHub action.
-
-For more tutorials and details check the following resources:
-
-- Documentation: https://github.com/creativetimofficial/black-dashboard-genezio
-- Tutorials: https://genez.io/tags/tutorials/
-- Examples: https://github.com/Genez-io/genezio-examples
+Instagram: <https://instagram.com/creativetimofficial>

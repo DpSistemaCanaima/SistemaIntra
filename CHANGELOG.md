@@ -1,14 +1,35 @@
 # Change Log
 
-## [3.0.4] 2022-06-23
+## [3.1.0] 2023-05-03
+### Updates & Improvements
+- update Bootstrap to v5.2.2
+- update Popper to v2.11.6
+- fix issues
+- update sidebar & navbar
+
+## [3.0.5] 2022-10-10
+### Updates & Improvements
+- update Bootstrap to v5.2.2
+- update Popper to v2.11.6
+- update `start-0` and `end-0` classes on RTL
+- fix perfectScrollbar issue on RTL
+- fix the NavTabs second active tab issue
+
+## [3.0.4] 2022-06-15
 ### BugFixing
 - fix inputs on RTL
 - update <html> tag border
 
-## [3.0.3] 2022-06-09
+## [3.0.3] 2022-06-08
 ### Update and Improvements
 - update Bootstrap to v5.2.0-beta1
-- fix code preview for input-outine
+- fix modal close button on docs
+- update color of `.form-control` on Dark Mode
+- update typo on card stats
+- fix Safari browser button styling issue
+- add sticky navbar option on Profile page
+- add link to Sign In page in navbar
+- update dropdown item color on hover - Dark Mode
 
 ## [3.0.2] 2022-03-25
 ### Updates
@@ -19,25 +40,20 @@
 - fix running 'npm install' issue
 - fix SCSS compiling issues
 
-## [3.0.0] 2021-10-07
+## [3.0.0] 2021-10-19
 ### Refactor and Improvements
-- Update Bootstrap to v5.1.1
+- Update Bootstrap to v5.1.3
 - Update to Material Design 2
 - New Documentation version
 - New Product structure
 
-## [2.0.7] 2020-03-06
-### BugFixing
-- Solved the broken links
-- Updated NoUiSlider plugin
-- Solved the existing bugs
-- Change variables from `$brand-color` to `$color`
+## [2.1.2] 2020-02-11
+### Improvements, BugFixing
+- Fixed the broken links
+- Improvements and BugFixing for documentation
+- Change versions on CSS and JS files
 
-## [2.0.6] 2019-09-03
-### BugFixing
-- Fixed issue (javascript file)
-
-## [2.0.5] 2018-11-23
+## [2.1.1] 2018-11-13
 ### Improvements, BugFixing
 - Changes for responsive devices
 - Improvements and BugFixing for documentation
@@ -45,83 +61,47 @@
 - Pro Documentation integrated in Free Version
 - Eliminated extra CSS and JS
 
-## [2.0.4] 2018-07-02
-### BugFixing
-- Solved responsive issues
-- Updated plugins
-- Speed optimizations
-- Documentation errors fixed
-- Gulp compiling of the SASS files
-- Change versions on CSS and JS files
+## [2.1.0] 2018-06-13
+### Bug fixing
+- Card-chart fixed on Windows
+- Bug fixes for responsive devices
 - Small changes for components
 
-## [2.0.3] 2018-05-07
-### BugFixing
-- Scss cleaned and fixed issues when compiling
-- Archive cleaned
-- Other small bug fixing
-
-## [2.0.2] 2018-02-13
-### Improvements, Bootstrap 4.0.0 Final Included
-- Reestablish the routes/folder for images
-
-## [2.0.1] 2018-02-06
-### Bug fixing, Improvements
-- SASS issue compile fixed
-- Included gulp task that opens the project in browser
-
-## [2.0.0] 2018-01-12
+## [2.0.0] 2018-03-27
 ### Bootstrap 4 update
 - Core base code on Bootstrap 4
 - Documentation code base written from scratch
 - Speed optimizations
 - Class changes : .card-block to .card-body
-- .navbar-toggleable-* to .navbar-expand-*
-- .hidden-*-down to .d-none .d-*-block
-- .hidden-*-up to .d-*-none
-- .checkbox to .form-check
-- .radio to .form-check
-- more class changes here:https://medium.com/@lukaszholeczek/how-to-upgrade-bootstrap-4-alpha-6-to-bootstrap-4-beta-d43b4210f2a3
+    - .navbar-toggleable-* to .navbar-expand-*
+    - .hidden-*-down to .d-none .d-*-block
+    - .hidden-*-up to .d-*-none
+    - .checkbox to .form-check
+    - .radio to .form-check
+    - more class changes here:https://getbootstrap.com/docs/4.0/migration/
 - Bug fixes for responsive devices
 - Small changes for components
 
-## [1.2.1] 2017-11-09
+## [1.2.0] 2017-09-08
 ### BugFixing
-- fixed parallax page scroll
-- fixed cards from `ecommerce.html` page
+- added PerfectScrollbar for windows better scroll
+- added arrive.js library for dynamic content
+- fix issue with charts when resizing window
+- change size of buttons for notifications on mobile
+- added pagination style
+- fixed issue with Bootstrap modal
+- added fixed navbar
+- documentation updates
+- minor design fixes
 
-## [1.2.0] 2017-09-13
-### BugFixing
-- jQuery library update to the latest version
-- removed atv-img-animation.js library ( multiple problems with the browsers )
-- fixed rotating card system for IE, changed rotating cards with raised image with regular cards with background image or plain cards
-- bootstrap-selectpicker.js updated to the latest version
+## [1.1.1] 2017-02-08
+### MIT License
+- switched to MIT License
 
-## [1.1.1] 2017-05-22
-### BugFixing
-- fixed problem with Morphing Cards(rotating manual and auto) and Perspective Cards when images were loading later than the javascript
+## [1.1.0] 2016-11-10
+### New Page Added, Small Fixes
+- fix link in documentation
+- for those who want to upsell inside their dashboard we added a new page "Upgrade to PRO" with a pricing and options table
 
-## [1.1.0] 2017-04-14
-### BugFixing, Plugins Updates, New Cards (HTML Version)
-- v1.1.0 14 Apr, 2017 -
-- Bootstrap v3.3.7
-- Bootstrap DateTimePicker v4.17.45
-- Replace Bootstrap SelectPicker v1.11.2
-- Replace Tags with Bootstrap TagsInput v0.8.0
-- jQuery.Flexisel v2.1.0
-- NoUiSlider v9.0.0
-- jQuery v3.1.1
-- moment.js v2.14.1
-- Added new cards
-- Added 3D animation effect for images on cards(atvImg library)
-- Added DynamicShadows
-- Added New rotating cards
-- Added Ecommerce Page
-- Bug fixing
-- Documentation Updates
-- Added simple input example
-
-IMPORTANT! If you migrate from V1.0.0 to V1.1.0 please make sure your replace the '.content' class inside each card with '.card-content', we've made this adjustment for a better control of the content that is inside a card. Sorry for the inconvenience.
-
-## [1.0.0] 2016-06-15
+## [1.0.0] 2016-09-21
 ### Initial Release
