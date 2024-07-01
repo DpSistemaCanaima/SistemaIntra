@@ -100,10 +100,10 @@ INSERT INTO `grado` (`ID_GRADO`, `grado`) VALUES
 
 CREATE TABLE `imagenes` (
   `cod_imagen` int NOT NULL,
-  `imagen` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `imagen` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `comentario` varchar(10000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `imagenes`
@@ -278,7 +278,7 @@ CREATE TABLE `user_datos` (
   `NUMERO_DE_HIJOS` varchar(50) NOT NULL,
   `NOBRE_Y_APELLIDO` varchar(100) NOT NULL,
   `FECHA_DE_NACIMIENTO` varchar(50) NOT NULL,
-  `foto` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `foto` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `no_hay` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 

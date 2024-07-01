@@ -15,7 +15,7 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
-        <a href="soporte_tecnico.php">
+        <a   href="soporte_tecnico.php">
           <i class="bi bi-circle"></i><span>ARC</span>
         </a>
       </li>
@@ -28,13 +28,13 @@
       
          $mostre = mysqli_fetch_assoc($resulta) 
          ?>
-        <a href="constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
+        <a   href="constancia_de_trabajo.php?edi=<?php echo $mostre['IDDATOS'];?>">
           <i class="bi bi-circle"></i><span>Contancia de Trabajo</span>
         </a>
       </li>
       
       <li <?php if (!$mostrar_li) echo 'style="display: none;"'; ?>>
-        <a href="recibo.php">
+        <a  href="recibo.php">
           <i class="bi bi-circle"></i><span>Recibo de Pago</span>
         </a>
       </li>
@@ -48,12 +48,12 @@
     </a>
     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
     <li>
-        <a  href="./pdf/vacaciones.pdf" >
+        <a  target="_blank"  href="./pdf/vacaciones.pdf" >
           <i class="bi bi-circle"></i><span>Planilla de Vacaciones</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/permiso.pdf">
+        <a target="_blank" href="./pdf/permiso.pdf">
           <i class="bi bi-circle"></i><span>Planilla de Permisos</span>
         </a>
       </li>
@@ -67,32 +67,32 @@
     </a>
     <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="./pdf/103_Manual_Canaimit.pdf">
+        <a target="_blank" href="./pdf/103_Manual_Canaimit.pdf">
           <i class="bi bi-circle"></i><span>Manual de Canaima</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/para_el_usuario.docx">
+        <a target="_blank" href="./pdf/para_el_usuario.docx">
           <i class="bi bi-circle"></i><span>Cuidado de la Canaima</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/guia linux.pdf">
+        <a  target="_blank"href="./pdf/guia linux.pdf">
           <i class="bi bi-circle"></i><span>Guia de Linux</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/Linux Desde Cero.pdf">
+        <a target="_blank" href="./pdf/Linux Desde Cero.pdf">
           <i class="bi bi-circle"></i><span>Linux desde Cero</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/fundamentos de linux.pdf">
+        <a target="_blank" href="./pdf/fundamentos de linux.pdf">
           <i class="bi bi-circle"></i><span>Fundamentos de Linux</span>
         </a>
       </li>
       <li>
-        <a href="./pdf/administrador de linux.pdf">
+        <a target="_blank" href="./pdf/administrador de linux.pdf">
           <i class="bi bi-circle"></i><span>Administrador de Linux</span>
         </a>
       </li>
@@ -105,43 +105,43 @@
     </a>
     <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="https://bdvenlinea.banvenez.com">
+        <a target="_blank" href="https://bdvenlinea.banvenez.com">
           <i class="bi bi-circle"></i><span>Banco de Venezuela</span>
         </a>
       </li>
       <li>
-        <a href="https://bicentenarioenlinea.bicentenariobu.com.ve/?p=1">
+        <a target="_blank" href="https://bicentenarioenlinea.bicentenariobu.com.ve/?p=1">
           <i class="bi bi-circle"></i><span>Banco Bicentenario</span>
         </a>
       </li>
       <li>
-        <a href="https://btenlinea.bt.com.ve/lg">
+        <a  target="_blank"href="https://btenlinea.bt.com.ve/lg">
           <i class="bi bi-circle"></i><span>Banco del Tesoro</span>
         </a>
       </li>
      
       <li>
-        <a href="https://www.banesconline.com/mantis/Website/Login.aspx">
+        <a target="_blank" href="https://www.banesconline.com/mantis/Website/Login.aspx">
           <i class="bi bi-circle"></i><span>Banco Banesco</span>
         </a>
       </li>
       <li>
-        <a href="https://www.provincial.com/personas.html">
+        <a target="_blank" href="https://www.provincial.com/personas.html">
           <i class="bi bi-circle"></i><span>Banco Provincial</span>
         </a>
       </li>
       <li>
-        <a href="https://persona.patria.org.ve/login/clave/">
+        <a target="_blank" href="https://persona.patria.org.ve/login/clave/">
           <i class="bi bi-circle"></i><span>Patria</span>
         </a>
       </li>
       <li>
-        <a href="https://mincyt.gob.ve/">
+        <a target="_blank" href="https://mincyt.gob.ve/">
           <i class="bi bi-circle"></i><span>Mincyt</span>
         </a>
       </li>
       <li>
-        <a href=" https://minmujer.gob.ve/">
+        <a target="_blank" href=" https://minmujer.gob.ve/">
           <i class="bi bi-circle"></i><span>Minmujer</span>
         </a>
       </li>
