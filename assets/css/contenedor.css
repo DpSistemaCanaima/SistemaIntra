@@ -62,3 +62,10 @@
     font-size: 14px;  /* Adjust font size for smaller screens */
   }
 }
+
+.boto{
+  background: red;
+  border-radius: 180px;
+  margin:180px 0px 0px 0px;
+  
+}
