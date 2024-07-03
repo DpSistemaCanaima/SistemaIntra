@@ -1,116 +1,52 @@
-<?php
-require('fpdf/fpdf.php');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="defect.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="defect.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="defect.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
-$pdf = new FPDF('P', 'mm', 'A4');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-// Add a new page
-$pdf->AddPage();
-
-// Set the font
-$pdf->SetFont('Arial', 'B', 12);
-
-// Create the form title
-$pdf->Cell(0, 10, 'SOLICITUD DE PERMISO', 0, 1, 'C');
-
-// Add a line below the title
-$pdf->Line(10, 15, 287, 15);
-
-// Create the form fields
-$pdf->SetFont('Arial', '', 10);
-
-// Form field: Elaborado
-$pdf->Cell(50, 10, 'ELABORADO:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Blank space for signature
-
-// Form field: Firma del Solicitante
-$pdf->Cell(50, 10, 'FIRMA DEL SOLICITANTE:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Blank space for signature
-
-// Form field: Firma del Supervisor
-$pdf->Cell(50, 10, 'FIRMA DEL SUPERVISOR:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Blank space for signature
-
-// Form field: Firma del Director
-$pdf->Cell(50, 10, 'FIRMA DEL DIRECTOR:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Blank space for signature
-
-// Add a line below the form fields
-$pdf->Line(10, 35, 287, 35);
-
-// Create the form section titles
-$pdf->SetFont('Arial', 'B', 10);
-
-// Form section title: Datos del Solicitante
-$pdf->Cell(50, 10, 'DATOS DEL SOLICITANTE', 0, 0, 'L');
-
-// Form section title: Solicitud de Permiso
-$pdf->Cell(147, 10, 'SOLICITUD DE PERMISO', 0, 0, 'C');
-
-// Add a line below the section titles
-$pdf->Line(10, 45, 287, 45);
-
-// Create the form fields for Datos del Solicitante
-$pdf->SetFont('Arial', '', 10);
-
-// Form field: Dependencia Organizativa
-$pdf->Cell(50, 10, 'DEPENDENCIA ORGANIZATIVA:', 0, 0, 'L');
-$pdf->Cell(147, 10, '', 1, 0); // Text field for dependency
-
-// Form field: Apellidos
-$pdf->Cell(50, 10, 'APELLIDOS:', 0, 0, 'L');
-$pdf->Cell(147, 10, '', 1, 0); // Text field for last name
-
-// Form field: Nombres
-$pdf->Cell(50, 10, 'NOMBRES:', 0, 0, 'L');
-$pdf->Cell(147, 10, '', 1, 0); // Text field for first name
-
-// Form field: Cédula de Identidad
-$pdf->Cell(50, 10, 'CÉDULA DE IDENTIDAD:', 0, 0, 'L');
-$pdf->Cell(147, 10, '', 1, 0); // Text field for ID number
-
-// Add a line below the Datos del Solicitante fields
-$pdf->Line(10, 65, 287, 65);
-
-// Create the form fields for Solicitud de Permiso
-$pdf->SetFont('Arial', '', 10);
-
-// Form field: Motivo del Permiso
-$pdf->Cell(50, 10, 'MOTIVO DEL PERMISO:', 0, 0, 'L');
-$pdf->MultiCell(147, 10, '', 1, 'L'); // Multi-line text field for reason
-// Form field: Comprobante a Presentar
-$pdf->Cell(50, 10, 'COMPROBANTE A PRESENTAR:', 0, 0, 'L');
-$pdf->Cell(147, 10, '', 1, 0); // Text field for proof
-
-// Form field: Fecha de Salida
-$pdf->Cell(50, 10, 'FECHA DE SALIDA:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Text field for departure date
-
-// Form field: Hora de Salida
-$pdf->Cell(50, 10, 'HORA DE SALIDA:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Text field for departure time
-
-// Form field: Fecha de Regreso
-$pdf->Cell(50, 10, 'FECHA DE REGRESO:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Text field for return date
-
-// Form field: Hora de Regreso
-$pdf->Cell(50, 10, 'HORA DE REGRESO:', 0, 0, 'L');
-$pdf->Cell(50, 10, '', 1, 0); // Text field for return time
-
-// Add a line below the Solicitud de Permiso fields
-$pdf->Line(10, 115, 287, 115);
-
-// Create a signature block
-$pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(147, 10, 'OBSERVACIONES:', 0, 0, 'L');
-$pdf->Cell(140, 10, '', 1, 0); // Blank space for observations
-
-// Add a line below the signature block
-$pdf->Line(10, 125, 287, 125);
-
-// Output the PDF
-
-
-$pdf->Output();
-
-?>
+</body>
+</html>
