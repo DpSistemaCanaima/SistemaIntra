@@ -132,7 +132,7 @@ $resultado = mysqli_query($conn,$query);
      <div class="cardi back">Dir. Nelson Sanchez</div>
     </div>
     <div class="c">
-     <div class="cardi front"><img src="assets/img/beronica.jpeg" class="im" alt=""></div>
+     <div class="cardi front"><img src="../assets/img/beronica.jpeg" class="im" alt=""></div>
      <div class="cardi back">Beronica</div>
     </div>
 
