@@ -27,7 +27,7 @@ function Header()
 {
     // Logo
     
-    $this->Image('i.jpg' , 5,8, 200, -150,'JPG');
+    $this->Image('assets/img/i.jpg' , 5,8, 200, -150,'JPG');
     $this->Ln(20);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
