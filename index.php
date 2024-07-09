@@ -102,7 +102,7 @@ $resultado = mysqli_query($conn,$query);
           <div class="contenedor-imagenes">
         
             <div class="imagen">
-             <img  src="assets/img/imawari.png" style="width: 18rem;" >
+             <img  src="assets/img/sistema.png" style="width: 18rem;" >
            <a href="#openMod">
             <div class="overlay">
             <h2 >Sistema Operativo</h2>
@@ -136,17 +136,17 @@ $resultado = mysqli_query($conn,$query);
         
       <div class="c">
      <div class="cardi front"><img src="assets/img/adriana.png" class="im" alt=""></div>
-     <div class="cardi back">Adriana</div>
+     <div class="cardi back"><img src="assets/img/oac.png" class="im" alt=""></div>
     </div>
 
     <div class="c">
      <div class="cardi front"><img src="assets/img/beronica.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Beronica</div>
+     <div class="cardi back"><img src="assets/img/administracion.png" class="im" alt=""></div>
     </div>
 
     <div class="c">
      <div class="cardi front"><img src="assets/img/raquel.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Raquel</div>
+     <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
     </div>
 
         
@@ -162,11 +162,11 @@ $resultado = mysqli_query($conn,$query);
 
     <div class="c">
      <div class="cardi front"><img src="assets/img/Nelson Sanchez.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Dir. Nelson Sanchez</div>
+     <div class="cardi back"><img src="assets/img/talento.png" class="im" alt=""></div>
     </div>
     <div class="c">
      <div class="cardi front"><img src="assets/img/beronica.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Beronica</div>
+     <div class="cardi back"><img src="assets/img/administracion.png" class="im" alt=""></div>
     </div>
 
       </div>
@@ -175,17 +175,17 @@ $resultado = mysqli_query($conn,$query);
         
       <div class="c">
      <div class="cardi front"><img src="assets/img/adriana.png" class="im" alt=""></div>
-     <div class="cardi back">Adriana</div>
+     <div class="cardi back"><img src="assets/img/oac.png" class="im" alt=""></div>
     </div>
 
     <div class="c">
      <div class="cardi front"><img src="assets/img/beronica.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Beronica</div>
+     <div class="cardi back"><img src="assets/img/administracion.png" class="im" alt=""></div>
     </div>
 
     <div class="c">
      <div class="cardi front"><img src="assets/img/raquel.jpeg" class="im" alt=""></div>
-     <div class="cardi back">Raquel</div>
+     <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
     </div>
 
         
