@@ -5,15 +5,8 @@
 
 		<a href="#close" title="Close" class="close">X</a>
     
-	<head>
+	
     <style>
-      *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 button {
   background: transparent;
@@ -245,7 +238,7 @@ body {
   margin-left: 4px;
 }
     </style>
-  </head>
+  
 
         <section class="section intro">
     <div class="container">

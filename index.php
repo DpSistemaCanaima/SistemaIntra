@@ -149,6 +149,11 @@ $resultado = mysqli_query($conn,$query);
      <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
     </div>
 
+
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/raquel.jpeg" class="im" alt=""></div>
+     <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
+    </div>
         
       </div>
    
@@ -167,6 +172,11 @@ $resultado = mysqli_query($conn,$query);
     <div class="c">
      <div class="cardi front"><img src="assets/img/beronica.jpeg" class="im" alt=""></div>
      <div class="cardi back"><img src="assets/img/administracion.png" class="im" alt=""></div>
+    </div>
+
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/raquel.jpeg" class="im" alt=""></div>
+     <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
     </div>
 
       </div>
@@ -188,7 +198,10 @@ $resultado = mysqli_query($conn,$query);
      <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
     </div>
 
-        
+    <div class="c">
+     <div class="cardi front"><img src="assets/img/raquel.jpeg" class="im" alt=""></div>
+     <div class="cardi back"><img src="assets/img/planificacion.png" class="im" alt=""></div>
+    </div>
           
       </div>
     </div>
@@ -267,10 +280,6 @@ mysqli_close($conn);
 </div>
 
         </div>
-       
-         <iframe class="inst" src="https://www.instagram.com/gabrielajimenezve/embed/" frameborder="0"></iframe>
-          <br>
-          <br>
                           <div class="container-fluid row">
                             
                             <div id="detalleseleccion" name="detalleseleccion" style="overflow-x: hidden; overflow-y: auto; height: 20em; border: 1px solid white;  box-shadow: rgba(145,158,171,0.2) 0px 0px 2px 0px, rgb(0 0 0) 0px -3px 24px -24px;">  <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr">Tweets de @Gabrielasjr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
