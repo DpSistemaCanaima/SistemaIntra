@@ -57,10 +57,11 @@
                                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
                             </p>
                         </div>
-                        <!-- <div class="card-body p-3">
-                            <a class="twitter-timeline" href="https://twitter.com/Gabrielasjr"></a>
+                        <div class="card-body p-3">
+                            <a class="twitter-timeline" data-width="300" data-height="500"
+                                href="https://twitter.com/Gabrielasjr?ref_src=twsrc%5Etfw">Tweets by Gabrielasjr</a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
