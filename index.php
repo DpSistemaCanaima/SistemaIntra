@@ -30,9 +30,6 @@
                                 <img src="assets/img/noticias/indus2.jpg" alt="img-blur-shadow"
                                     class="img-fluid shadow border-radius-lg">
                             </a>
-                            <!-- <div class="colored-shadow"
-                                style="background-image: url(&quot;assets/img/noticias/indus2.jpg&quot;);">
-                            </div> -->
                         </div>
                         <div class="card-body px-4 pt-2">
                             <a href="javascript:;">
@@ -187,63 +184,33 @@
                                             <div class="carousel-item active">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/administracion.png" alt="First slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>First slide label</h5>
-                                                    <p>Some representative placeholder content for the first
-                                                        slide.
-                                                    </p>
-                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/oac.png" alt="Second slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>First slide label</h5>
-                                                    <p>Some representative placeholder content for the first
-                                                        slide.
-                                                    </p>
-                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/planificacion.png" alt="Third slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>First slide label</h5>
-                                                    <p>Some representative placeholder content for the first
-                                                        slide.
-                                                    </p>
-                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/talento.png" alt="Third slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>First slide label</h5>
-                                                    <p>Some representative placeholder content for the first
-                                                        slide.
-                                                    </p>
-                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/yelitza.png" alt="Third slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>First slide label</h5>
-                                                    <p>Some representative placeholder content for the first
-                                                        slide.
-                                                    </p>
-                                                </div>
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                             data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
+                                            <span class="sr-only">Anterior</span>
                                         </a>
                                         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
                                             data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
+                                            <span class="sr-only">Siguiente</span>
                                         </a>
                                     </div>
                                 </div>
@@ -314,30 +281,9 @@
                 </div>
             </div>
             <!--Pie de pagina de la plantilla.-->
-            <footer class="footer py-4  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                © <script>
-                                document.write(new Date().getFullYear())
-                                </script>,
-                                Desarrollado con <i class="fa fa-heart"></i> por
-                                <a href="https://www.industriacanaima.gob.ve/" class="font-weight-bold"
-                                    target="_blank">Industria Canaima C.A</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.industriacanaima.gob.ve/" class="nav-link text-muted"
-                                        target="_blank">Industria Canaima C.A</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <?php
+                include "content/inc/footer.php";
+            ?>
         </div>
     </main>
     <?php
