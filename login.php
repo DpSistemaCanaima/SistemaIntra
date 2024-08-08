@@ -17,17 +17,17 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
+                <form action="iniciar.php" method="post" role="form" class="text-start" >
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Usuario</label>
-                    <input type="email" class="form-control">
+                    <input type="text" name="USER" class="form-control">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control">
+                    <input type="password" name="PASSWORD" class="form-control">
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-info w-100 my-4 mb-2">Iniciar Sesión</button>
+                    <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Iniciar Sesión</button>
                   </div>
                 </form>
               </div>
