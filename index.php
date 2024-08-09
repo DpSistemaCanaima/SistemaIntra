@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
+include "config/cone.php";
   include "content/inc/header.php";
  ?>
 
@@ -30,6 +31,9 @@
                                 <img src="assets/img/noticias/indus2.jpg" alt="img-blur-shadow"
                                     class="img-fluid shadow border-radius-lg">
                             </a>
+                            <!-- <div class="colored-shadow"
+                                style="background-image: url(&quot;assets/img/noticias/indus2.jpg&quot;);">
+                            </div> -->
                         </div>
                         <div class="card-body px-4 pt-2">
                             <a href="javascript:;">
@@ -65,17 +69,25 @@
         </div>
         <!--De aqui en adelante agregar el contenido que va para cada vista-->
 
+        <?php
+
+$query = "SELECT cod_imagen,imagen, nombre FROM imagenes ORDER BY cod_imagen DESC ";
+$resultado = mysqli_query($conn,$query);
+
+?>
+                         
+                        
         <div class="row mt-2">
+        <?php foreach($resultado as $row) { ?>
             <div class="col-lg-3 col-md-6 mt-4 mb-5 ms">
                 <div class="card z-index-2  ">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                         <div class="text-center">
-                            <img src="assets/img/noticias/indus2.jpg" alt="profile_image"
-                                class=" img-fluid rounded float-end border-radius-lg ">
+                        <img  src="assets/img/noticias/<?php echo $row['imagen']; ?>" class=" img-fluid rounded float-end border-radius-lg" >
                         </div>
                     </div>
                     <div class="card-body">
-                        <h6 class="mb-0 ">Titulo Noticia 1</h6>
+                        <h6 class="mb-0 "><?php echo $row['nombre']; ?></h6>
                         <p class="text-sm ">Breve descripcion</p>
                         <hr class="dark horizontal">
                         <div class="d-flex ">
@@ -86,67 +98,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mt-4 mb-4 ms-1">
-                <div class="card z-index-2">
-                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                        <div class="text-center">
-                            <img src="assets/img/noticias/robotica_1.jpg" alt="profile_image"
-                                class=" img-fluid  rounded float-end border-radius-lg ">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="mb-0 ">Titulo Noticia 2</h6>
-                        <p class="text-sm ">Breve descripcion</p>
-                        <hr class="dark horizontal">
-                        <div class="d-flex ">
-                            <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Ver
-                                    toda la
-                                    informacion</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mt-4 mb-4 ms-3">
-                <div class="card z-index-2 ">
-                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                        <div class="text-center">
-                            <img src="assets/img/noticias/robotica_2.jpg" alt="profile_image"
-                                class=" img-fluid rounded float-end border-radius-lg ">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="mb-0 ">Titulo Noticia 3</h6>
-                        <p class="text-sm ">Breve descripcion</p>
-                        <hr class="dark horizontal">
-                        <div class="d-flex ">
-                            <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Ver
-                                    toda la
-                                    informacion</a></p>
-                        </div>
-                    </div>
-                </div>
+            <?php } ?>
+           
 
             </div>
-            <div class="col-lg-3 col-md-6 mt-4 mb-4 ms-3">
-                <div class="card z-index-2 ">
-                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                        <div class="text-center">
-                            <img src="assets/img/noticias/sistema.png" alt="profile_image"
-                                class=" img-fluid rounded float-end border-radius-lg ">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="mb-0 ">Titulo Noticia 4</h6>
-                        <p class="text-sm ">Breve descripcion</p>
-                        <hr class="dark horizontal">
-                        <div class="d-flex ">
-                            <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Ver
-                                    toda la
-                                    informacion</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             <div class="row mb-4">
                 <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
                     <div class="card">
@@ -184,33 +140,63 @@
                                             <div class="carousel-item active">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/administracion.png" alt="First slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>First slide label</h5>
+                                                    <p>Some representative placeholder content for the first
+                                                        slide.
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/oac.png" alt="Second slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>First slide label</h5>
+                                                    <p>Some representative placeholder content for the first
+                                                        slide.
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/planificacion.png" alt="Third slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>First slide label</h5>
+                                                    <p>Some representative placeholder content for the first
+                                                        slide.
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/talento.png" alt="Third slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>First slide label</h5>
+                                                    <p>Some representative placeholder content for the first
+                                                        slide.
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 border-radius-lg"
                                                     src="assets/img/directores/yelitza.png" alt="Third slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>First slide label</h5>
+                                                    <p>Some representative placeholder content for the first
+                                                        slide.
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                             data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Anterior</span>
+                                            <span class="sr-only">Previous</span>
                                         </a>
                                         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
                                             data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Siguiente</span>
+                                            <span class="sr-only">Next</span>
                                         </a>
                                     </div>
                                 </div>
@@ -281,9 +267,30 @@
                 </div>
             </div>
             <!--Pie de pagina de la plantilla.-->
-            <?php
-                include "content/inc/footer.php";
-            ?>
+            <footer class="footer py-4  ">
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6 mb-lg-0 mb-4">
+                            <div class="copyright text-center text-sm text-muted text-lg-start">
+                                © <script>
+                                document.write(new Date().getFullYear())
+                                </script>,
+                                Desarrollado con <i class="fa fa-heart"></i> por
+                                <a href="https://www.industriacanaima.gob.ve/" class="font-weight-bold"
+                                    target="_blank">Industria Canaima C.A</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                                <li class="nav-item">
+                                    <a href="https://www.industriacanaima.gob.ve/" class="nav-link text-muted"
+                                        target="_blank">Industria Canaima C.A</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </main>
     <?php
