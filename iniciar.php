@@ -42,7 +42,7 @@ if ($_POST) {
           header("Location: usuario.php");
           break;
         case 2:
-          header("Location: index.php");
+          header("Location: usuario1.php");
           break;
         case 3:
           header("Location: soporte/index.php");

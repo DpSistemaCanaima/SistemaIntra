@@ -25,7 +25,7 @@
                 </h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="./pdf/103_Manual_Canaimit.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="./pdf/para_el_usuario.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank"href="./pdf/guia linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -49,7 +49,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="./pdf/Linux Desde Cero.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -57,7 +57,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="./pdf/fundamentos de linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="./pdf/administrador de linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -77,7 +77,7 @@
                 </h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="https://persona.patria.org.ve/login/clave/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href="https://mincyt.gob.ve/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -93,7 +93,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/sign-up.html">
+                <a class="nav-link text-white " target="_blank" href=" https://minmujer.gob.ve/"">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>

@@ -1,6 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <?php 
+
+session_start();
     include "content/inc/header.php";
 ?>
 <body class="bg-gray-200">

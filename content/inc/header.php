@@ -20,4 +20,10 @@
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="https://www.industriacanaima.gob.ve/" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+ 
+    <style>
+    .search {
+      width: 50%;
+    }
+  </style>
   </head>
