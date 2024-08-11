@@ -39,10 +39,10 @@ if ($_POST) {
       // Redirect based on user role
       switch ($_SESSION['IDROLS']) {
         case 1:
-          header("Location: usuario.php");
+          header("Location: admin.php");
           break;
         case 2:
-          header("Location: usuario1.php");
+          header("Location: usuario.php");
           break;
         case 3:
           header("Location: soporte/index.php");

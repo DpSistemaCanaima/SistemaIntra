@@ -32,7 +32,7 @@ if (isset($_SESSION['IDROLS'])) {
 
 <body class="g-sidenav-show  bg-gray-100">
     <?php 
-        include "content/inc/sidebar1.php";
+        include "content/inc/sidebar3.php";
       ?>
        <main class="main-content border-radius-lg ">
         <?php 
