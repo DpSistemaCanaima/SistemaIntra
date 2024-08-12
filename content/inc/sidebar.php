@@ -13,9 +13,10 @@
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
+                
                 <a class="nav-link text-white " href="index.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <img src="svg/house.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Home</span>
                 </a>
@@ -27,15 +28,17 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="./pdf/103_Manual_Canaimit.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
+
+                    
                     <span class="nav-link-text ms-1">Manuel de Canaima</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="./pdf/para_el_usuario.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Cuidado de la Canaima</span>
                 </a>
@@ -43,7 +46,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank"href="./pdf/guia linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Guia de GNU/Linux</span>
                 </a>
@@ -51,7 +54,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="./pdf/Linux Desde Cero.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Linux desde Cero</span>
                 </a>
@@ -59,7 +62,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="./pdf/fundamentos de linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Fundamentos de Linux</span>
                 </a>
@@ -67,7 +70,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="./pdf/administrador de linux.pdf">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                    <img src="svg/libro.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Administración de Linux</span>
                 </a>
@@ -79,7 +82,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="https://persona.patria.org.ve/login/clave/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                        <img src="svg/flag.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Patria</span>
                 </a>
@@ -87,7 +90,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href="https://mincyt.gob.ve/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                     <img src="svg/robot.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Mincyt</span>
                 </a>
@@ -95,7 +98,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white " target="_blank" href=" https://minmujer.gob.ve/"">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                        <img src="svg/mujer.svg" alt="">
                     </div>
                     <span class="nav-link-text ms-1">Minmujer</span>
                 </a>
